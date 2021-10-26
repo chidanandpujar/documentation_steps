@@ -1,0 +1,59 @@
+mkdir jsnapy_debug
+python3 -m venv venv
+sourece venv/bin/activate
+git clone https://github.com/Juniper/jsnapy.git
+cd jsnapy/
+pip3 install junos-eznc
+python setup.py sdist
+python setup.py install
+pip3 install colorama
+pip3 install icdiff==1.9.1
+
+jsnapy --help
+usage: 
+This tool enables you to capture and audit runtime environment of 
+networked devices running the Junos operating system (Junos OS)
+
+Tool to capture snapshots and compare them
+It supports four subcommands:
+ --snap, --check, --snapcheck, --diff
+1. Take snapshot:
+        jsnapy --snap pre_snapfile -f main_configfile
+2. Compare snapshots:
+        jsnapy --check post_snapfile pre_snapfile -f main_configfile
+3. Compare current configuration:
+        jsnapy --snapcheck snapfile -f main_configfile
+4. Take diff without specifying test case:
+        jsnapy --diff pre_snapfile post_snapfile -f main_configfile
+
+positional arguments:
+  pre_snapfile          pre snapshot filename
+  post_snapfile         post snapshot filename
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --snap                take the snapshot for commands specified in test file
+  --check                compare pre and post snapshots based on test operators specified in test file
+  --snapcheck           check current snapshot based on test file
+  --diff                display difference between two snapshots
+  -V, --version         displays version
+  -T TESTFILES [TESTFILES ...], --testfiles TESTFILES [TESTFILES ...]
+                        test file paths
+  -f FILE, --file FILE  config file to take snapshot
+  --local               whether to run snapcheck on local snapshot
+  --folder FOLDER       custom directory path for lookup
+  -t HOSTNAME, --hostname HOSTNAME
+                        hostname
+  -p PASSWD, --passwd PASSWD
+                        password to login
+  -l LOGIN, --login LOGIN
+                        username to login
+  -P PORT, --port PORT  port no to connect to device
+  -v, --verbosity       Set verbosity
+                        -v: Debug level messages
+                        -vv: Info level messages
+                        -vvv: Warning level messages
+                        -vvvv: Error level messages
+                        -vvvvv: Critical level messages
+
+
