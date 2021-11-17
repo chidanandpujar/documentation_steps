@@ -1,0 +1,13 @@
+PyEZ unit test execution :
+nose tests:
+
+pip install nose
+pip instal mock
+
+cd /root/pyez/py-junos-eznc/tests/unit
+
+nosetests -v *
+
+pip install ntc-templates
+pip install textfsm
+
