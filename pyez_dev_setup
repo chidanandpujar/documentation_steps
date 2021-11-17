@@ -1,0 +1,9 @@
+git clone pyez
+uninstall any old pyez using "pip uninstall junos-eznc"
+go to folder where setup.py file is present in junos-eznc folder
+python setup.py install
+now you execute any pyez script , it will run using your local installed pyez
+
+
+Fix
+python3 -m pip install --upgrade pip setuptools wheel
