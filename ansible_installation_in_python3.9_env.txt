@@ -1,0 +1,81 @@
+mkdir ansible_debug
+cd ansible_debug
+python3.9 -m venv venv
+source venv/bin/activate
+python3.9 -m pip install junos-eznc
+python3.9 -m pip install jxmlease
+git clone https://github.com/Juniper/ansible-junos-stdlib.git
+cd ansible-junos-stdlib
+source env-setup
+
+Install the collection/roles 
+
+ansible-galaxy install juniper.junos
+ansible-galaxy collection install juniper.device
+
+ansible-galaxy list
+# /root/.ansible/roles
+- juniper.junos, 2.4.3
+- Juniper.junos, (unknown version)
+
+Ansible Dev setup.
+python3.9 setup.py install
+
+updated ansible.cfg file :
+
+find ./ -name ansible.cfg
+./ansible-junos-stdlib/tests/ansible.cfg
+
+vi ansible.cfg
+[defaults]
+inventory = inventory
+host_key_checking = False
+
+Update inventory file with following details:
+which python3.9
+
+vi ./ansible-junos-stdlib/tests/invetory
+test      ansible_host=xx.xx.xx.xx  ansible_user=xyz  ansible_password=xyz  ansible_port=22
+
+[all:vars]
+ansible_python_interpreter=/root/ansbile_debug/venv/bin/python3.9
+
+create ansible playbook file:
+
+vi ./ansible-junos-stdlib/tests/get_config.yaml 
+---
+- name: Test juniper_junos_config module
+  hosts: all
+  connection: local
+  gather_facts: no
+  roles:
+    - juniper.junos
+  tasks:
+#################
+    - name: Retrieve the committed configuration
+      juniper_junos_config:
+        retrieve: 'committed'
+        diff: false
+        check: false
+        commit: false
+      register: test1
+      ignore_errors: True
+      tags: [ test1 ]
+
+    - name: Check TEST 1
+      debug:
+        var: test1
+
+
+Run the playbook file:
+ansible-playbook get_config.yaml 
+
+PLAY [Test juniper_junos_config module] ************************************************************************************************************************************************************
+
+TASK [Retrieve the committed configuration] ********************************************************************************************************************************************************
+ok: [test]
+
+TASK [Check TEST 1] ********************************************************************************************************************************************************************************
+ok: [test] => {
+    "test1": {
+        "changed": false,
