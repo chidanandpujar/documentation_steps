@@ -1,5 +1,5 @@
 mkdir jsnapy_debug
-python3 -m venv venv
+python3.9 -m venv venv
 sourece venv/bin/activate
 git clone https://github.com/Juniper/jsnapy.git
 cd jsnapy/
