@@ -16,3 +16,7 @@ To run the unit tests :
 
 cd py-junos-eznc/tests/unit
 nosetests -v --with-coverage --cover-package=jnpr.junos --cover-inclusive -a unit
+
+
+To check compilation errors
+find . -iname '*.py' | xargs -P4 -I{} python3.7 -Wall -m py_compile {}
