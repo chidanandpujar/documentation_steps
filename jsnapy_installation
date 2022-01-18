@@ -57,3 +57,51 @@ optional arguments:
                         -vvvvv: Critical level messages
 
 
+~/jsnapy_debug3/jsnapy/samples# vi config_check.yml 
+    hosts:
+      - device: xx.xx.xx.xx
+        username : xyz
+        passwd: xyz
+    tests:
+      - test_no_diff.yml
+
+~/jsnapy_debug3/jsnapy/samples# vi test_no_diff.yml
+tests_include:
+  - test_command_version
+
+# use '/' in your test cases apart from xpath if u want to search all elements irrespective of hierarchy, ex: in id if u use /name instead of name
+# then it will search in all the names in given xpath irrespective of their position
+# for simple, one test using command
+
+test_command_version:
+  - command: show interfaces terse lo*
+  - iterate:
+      xpath: physical-interface
+      id: './name'
+      tests:
+        - no-diff: oper-status       # element in which test is performed
+          err: "Test Failed!! oper-status  got changed, before it was <{{pre['oper-status']}}>, now it is <{{post['oper-status']}}> with name <{{id_0}}> and admin status <{{post['admin-status']}}>
+"
+          info: "Test succeeded!! oper-status is same with value, before it is <{{pre['oper-status']}}> now it is <{{post['oper-status']}}> with admin status <{{post['admin-status']}}> "
+
+
+jsnapy --snap pre -f config_check.yml
+jsnapy --snap post -f config_check.yml
+jsnapy --check pre post -f config_check.yml
+
+/var/logs/jsnapy# ls -lrt
+total 20
+-rwxr-xr-x 1 root root    0 Jan 14 10:13 __init__.py
+-rwxr-xr-x 1 root root    0 Jan 14 10:13 info.log
+-rwxr-xr-x 1 root root    0 Jan 14 10:13 errors.log
+-rwxr-xr-x 1 root root    0 Jan 14 10:13 debug.log
+-rwxr-xr-x 1 root root    0 Jan 14 10:13 critical.log
+-rw-r--r-- 1 root root 1020 Jan 14 11:45 jsnapy.log.4
+-rw-r--r-- 1 root root  934 Jan 14 11:45 jsnapy.log.3
+-rw-r--r-- 1 root root  966 Jan 14 11:46 jsnapy.log.2
+-rw-r--r-- 1 root root  969 Jan 14 11:46 jsnapy.log.1
+-rw-r--r-- 1 root root  368 Jan 14 11:46 jsnapy.log
+
+etc/jsnapy# ls
+jsnapy.cfg  logging.yml  snapshots  testfiles
+
