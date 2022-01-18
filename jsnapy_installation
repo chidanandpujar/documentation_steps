@@ -57,7 +57,7 @@ optional arguments:
                         -vvvvv: Critical level messages
 
 
-~/jsnapy_debug3/jsnapy/samples# vi config_check.yml 
+~/jsnapy_debug/jsnapy/samples# vi config_check.yml 
     hosts:
       - device: xx.xx.xx.xx
         username : xyz
@@ -65,7 +65,7 @@ optional arguments:
     tests:
       - test_no_diff.yml
 
-~/jsnapy_debug3/jsnapy/samples# vi test_no_diff.yml
+~/jsnapy_debug/jsnapy/samples# vi test_no_diff.yml
 tests_include:
   - test_command_version
 
