@@ -90,3 +90,9 @@ ok: [test] => {
     "test1": {
         "changed": false,
 
+
+
+
+TO remove:
+
+ansible-galaxy remove juniper.junos
