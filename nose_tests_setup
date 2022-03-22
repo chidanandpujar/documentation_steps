@@ -3,6 +3,7 @@ nose tests:
 
 pip install nose
 pip instal mock
+pip install coverage
 
 cd /root/pyez/py-junos-eznc/tests/unit
 
@@ -20,3 +21,6 @@ nosetests -v --with-coverage --cover-package=jnpr.junos --cover-inclusive -a uni
 
 To check compilation errors
 find . -iname '*.py' | xargs -P4 -I{} python3.7 -Wall -m py_compile {}
+
+To run functional tests
+Command: nosetests -v --with-xunit --xunit-file=functionaltests.xml --with-coverage --cover-package=jnpr.junos --cover-xml --cover-inclusive --cover-erase test_utils_file_system.py test_config.py test_core.py test_exception.py test_file_ftp.py test_file_scp.py test_route_table.py test_rpc.py test_route_table.py test_shell.py test_table_present.py test_telnet.py test_utils_file_system.py test_utils_sw.py
