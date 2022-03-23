@@ -1,15 +1,10 @@
 black python code formatter 
 
-py -m pip install black
-
-python37.exe -m pip install black
-
-python38.exe -m pip install black
-
-python.exe -m pip install black 
-
-black --check --exclude=docs/* .
+pip install black
 
 black --check --diff test_current_re.py
 
 black --check --diff --exclude="docs|build|tests" .
+
+pip install pylint
+pylint <filename>
