@@ -3,11 +3,20 @@ python3.9 -m venv venv
 sourece venv/bin/activate
 git clone https://github.com/Juniper/jsnapy.git
 cd jsnapy/
+
+Install all the requirements :
+python -m pip install -r requirements.txt
+
+or Install the modules :
+
 python3.9 -m pip install junos-eznc
-python3.9 setup.py sdist
-python3.9 setup.py install
 python3.9 -m pip install colorama
 python3.9 -m pip install icdiff==1.9.1
+
+setup :
+
+python3.9 setup.py sdist
+python3.9 setup.py install
 
 jsnapy --help
 usage: 
