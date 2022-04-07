@@ -51,29 +51,27 @@ ansible_python_interpreter=/root/ansbile_debug/venv/bin/python3.9
 
 create ansible playbook 
 
-vi ./ansible-junos-stdlib/tests/get_config.yaml 
 ---
-- name: Test juniper_junos_config module
-  hosts: all
+- name: 'Get config using collections'
+  hosts: junos
+  serial: 1
   connection: local
   gather_facts: no
-  roles:
-    - juniper.junos
-  tasks:
-#################
-    - name: Retrieve the committed configuration
-      juniper_junos_config:
-        retrieve: 'committed'
-        diff: false
-        check: false
-        commit: false
-      register: test1
-      ignore_errors: True
-      tags: [ test1 ]
+  collections:
+    - juniper.device
 
-    - name: Check TEST 1
+  tasks:
+    - name: Retrieve the committed configuration
+      config:
+        retrieve: 'committed'
+        format: 'set'
+        dest_dir: "{{ playbook_dir }}/roles/junos_config/files/configs/set"
+      register: response
+
+    - name: Print the lines in the config.
       debug:
-        var: test1
+        var: response.config_lines
+
 
 
 
