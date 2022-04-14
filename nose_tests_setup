@@ -13,10 +13,14 @@ pip install ntc-templates
 pip install textfsm
 
 
-To run the unit tests :
+To run the pyez unit tests :
 
 cd py-junos-eznc/tests/unit
 nosetests -v --with-coverage --cover-package=jnpr.junos --cover-inclusive -a unit
+
+
+To run jsnap unit tests
+nosetests -v --with-coverage --cover-package=jnpr.jsnapy --cover-inclusive -a unit
 
 
 To check compilation errors
