@@ -31,3 +31,25 @@ Command: nosetests -v --with-xunit --xunit-file=functionaltests.xml --with-cover
 
 
 nosetests -v --with-xunit --xunit-file=functionaltests.xml --with-coverage --cover-package=jnpr.junos --cover-xml --cover-inclusive --cover-erase test_utils_file_system
+
+
+
+UT/FT execution on windows:
+
+tests\unit
+
+nosetests.exe  -v .\test_check.py
+nosetests.exe  -v .\test_comparison_op.py
+nosetests.exe  -v .\test_init.py
+nosetests.exe  -v .\test_jsnapy.py
+nosetests.exe  -v .\test_notify.py
+nosetests.exe  -v .\test_numeric_op.py
+nosetests.exe  -v .\test_operator.py
+nosetests.exe  -v .\test_snap.py
+nosetests.exe  -v .\test_snap_new.py
+nosetests.exe  -v .\test_sqlite.py
+nosetests.exe  -v .\test_string_op.py
+nosetests.exe  -v .\test_str_numeric_op.py
+
+
+ 
