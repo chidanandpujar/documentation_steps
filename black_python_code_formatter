@@ -8,3 +8,8 @@ black --check --diff --exclude="docs|build|tests" .
 
 pip install pylint
 pylint <filename>
+
+
+UT/FT for jsnapy
+
+black --check --exclude="docs|build|tests|samples" .
