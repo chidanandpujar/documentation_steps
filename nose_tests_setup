@@ -19,7 +19,8 @@ cd py-junos-eznc/tests/unit
 nosetests -v --with-coverage --cover-package=jnpr.junos --cover-inclusive -a unit
 
 
-To run jsnap unit tests
+To run jsnapy unit tests
+cd tests/unit
 nosetests -v --with-coverage --cover-package=jnpr.jsnapy --cover-inclusive -a unit
 
 
