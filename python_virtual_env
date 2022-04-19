@@ -1,6 +1,6 @@
-mkdir junos-pyez
+
 cd junos-pyez
 python3 -m venv venv
 source venv/bin/activate
-pip install git+https://github.com/Juniper/py-junos-eznc.git
+
 deactivate
