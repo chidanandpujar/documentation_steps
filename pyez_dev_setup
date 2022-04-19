@@ -4,7 +4,7 @@ python3 -m venv venv
 source venv/bin/activate
 git clone https://github.com/Juniper/py-junos-eznc.git
 uninstall any old pyez using "pip uninstall junos-eznc"
-go to folder where setup.py file is present in junos-eznc folder
+cd py-junos-eznc
 python setup.py install
 now you execute any pyez script , it will run using your local installed pyez
 
