@@ -1,9 +1,9 @@
 PyEZ unit test execution :
 nose tests:
 
-pip install nose
-pip instal mock
-pip install coverage
+python3.9 -m pip install nose
+python3.9 -m pip install mock
+python3.9 -m pip install coverage
 
 cd /root/pyez/py-junos-eznc/tests/unit
 
