@@ -10,13 +10,14 @@ python3.9 -m pip install jxmlease
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
 cd ansible-junos-stdlib
-source env-setup
+source venv/bin/activate
 
-Install the collection/roles 
+Install the collection
 
+To install ansible:
 python3.9 -m pip install ansible
 
-ansible-galaxy install juniper.junos
+To install collection :
 ansible-galaxy collection install juniper.device
 
 
