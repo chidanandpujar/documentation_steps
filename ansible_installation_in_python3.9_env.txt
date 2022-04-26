@@ -10,7 +10,6 @@ python3.9 -m pip install jxmlease
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
 cd ansible-junos-stdlib
-source venv/bin/activate
 
 Install the collection
 
