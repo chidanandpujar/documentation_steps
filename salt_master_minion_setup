@@ -1,0 +1,93 @@
+Install packages
+
+apt-get install salt-api
+apt-get install salt-cloud
+apt-get install salt-master
+apt-get install salt-minion
+apt-get install salt-ssh
+apt-get install salt-syndic
+
+
+
+Steps to clean-up salt-master:
+
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+/usr/local/bin/python get-pip.py
+pip install -U pip
+
+
+salt master setup:
+pip install salt
+apt-get update
+apt-get install libssl-dev openssh-server python2.7-dev python-pip git python2.7
+pip install git+https://github.com/Juniper/salt.git@2019.2  
+
+pip install setuptools -U
+pip install junos-eznc jxmlease 
+pip install pyparsing twisted
+pip install yamlordereddictloader 
+
+
+
+Salt proxy setup:
+pip install junos-eznc jxmlease 
+
+
+on salt master:
+cd /srv/pillar
+update top.sls
+base:
+  vmx1:
+    - vmx
+
+update vmx.sls
+proxy:
+   proxytype: junos
+   host: xx.xx.xx.xx
+   username: xyz
+   passwd: xyz 
+
+
+cd /etc/salt
+cat proxy
+master: 127.0.0.1
+
+
+start the salt master
+salt-master -l debug
+
+
+start the salt-proxy
+salt-proxy --proxyid=vmx1 -l debug
+
+check salt-key
+
+ salt-key
+Accepted Keys:
+vmx1
+Denied Keys:
+Unaccepted Keys:
+Rejected Keys:
+
+Accept the salt-key
+salt-keay -a vmx1
+
+
+Run the salt commands :
+
+ salt "vmx1" junos.cli "show version"
+ salt "vmx1" junos.rpc "get-software-information"
+ salt "vmx1" junos.commit
+ salt "vmx1" junos.commit_check
+ salt "vmx1" junos.diff id=3
+ salt "vmx1" junos.facts
+ salt "vmx1" junos.facts_refresh
+ salt "vmx1" junos.ping <ip>
+ salt "vmx1" junos.rollback id=3
+ salt "vmx1" junos.set_hostname test1
+
+
+
+
+
