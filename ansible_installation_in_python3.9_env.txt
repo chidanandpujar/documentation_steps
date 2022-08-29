@@ -7,9 +7,7 @@ source venv/bin/activate
 python -m pip install junos-eznc
 python -m pip install jxmlease
 
-git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
-cd ansible-junos-stdlib
 
 To install ansible:
 python -m pip install ansible
@@ -19,6 +17,8 @@ ansible-galaxy collection install juniper.device
 
 To install the developement collection 
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
+
+cd ansible-junos-stdlib
 
 Dev installation for debugging
 python setup.py install
