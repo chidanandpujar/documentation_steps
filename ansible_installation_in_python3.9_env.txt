@@ -13,20 +13,22 @@ cd ansible-junos-stdlib
 
 Install the collection
 
+
 To install ansible:
 python -m pip install ansible
 
 To install collection :
 ansible-galaxy collection install juniper.device
 
+To install the developement collection 
+sudo ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device
 
-ansible-galaxy list
-# /root/.ansible/roles
-- juniper.junos, 2.4.3
-- Juniper.junos, (unknown version)
+To check the installed version
+sudo ansible-galaxy collection list
 
 
-python3.9 setup.py install
+Dev installation for debugging
+python setup.py install
 
 find ./ -name ansible.cfg
 ./ansible-junos-stdlib/tests/ansible.cfg
