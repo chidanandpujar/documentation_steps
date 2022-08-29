@@ -4,8 +4,8 @@ mkdir ansible_debug
 cd ansible_debug
 python3.9 -m venv venv
 source venv/bin/activate
-python3.9 -m pip install junos-eznc
-python3.9 -m pip install jxmlease
+python -m pip install junos-eznc
+python -m pip install jxmlease
 
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
@@ -14,7 +14,7 @@ cd ansible-junos-stdlib
 Install the collection
 
 To install ansible:
-python3.9 -m pip install ansible
+python -m pip install ansible
 
 To install collection :
 ansible-galaxy collection install juniper.device
