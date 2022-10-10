@@ -93,3 +93,30 @@ ok: [test] => {
 TO remove:
 
 ansible-galaxy remove juniper.junos
+
+
+Ansible Roles:
+
+---
+- name: Test juniper_junos_config module
+  hosts: all
+  connection: local
+  gather_facts: no
+  roles:
+    - juniper.junos
+  tasks:
+#################
+    - name: Retrieve the committed configuration
+      juniper_junos_config:
+        retrieve: 'committed'
+        diff: false
+        check: false
+        commit: false
+      register: test1
+      ignore_errors: True
+      tags: [ test1 ]
+
+    - name: Check TEST 1
+      debug:
+        var: test1
+
