@@ -35,13 +35,22 @@ cat ansible.cfg
 inventory = inventory
 host_key_checking = False
 
+[defaults]
+hash_behaviour=merge
+#roles_path = ~/.ansible/roles
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+timeout=120
+
+
 
 Update inventory file with following details .
 which python3.9
 
 
 vi ./ansible-junos-stdlib/tests/invetory
-
+[junos]
 test      ansible_host=xx.xx.xx.xx  ansible_user=xyz  ansible_password=xyz  ansible_port=22
 
 [all:vars]
