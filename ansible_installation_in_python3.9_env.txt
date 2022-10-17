@@ -50,7 +50,7 @@ which python3.9
 
 vi ./ansible-junos-stdlib/tests/invetory
 [junos]
-test      ansible_host=xx.xx.xx.xx  ansible_user=xyz  ansible_password=xyz  ansible_port=22
+test      ansible_host=xx.xx.xx.xx  ansible_user=xyz  ansible_password=xyz ansible_ssh_pass=xyz ansible_port=22
 
 [all:vars]
 ansible_python_interpreter=/root/ansbile_debug/venv/bin/python3.9
