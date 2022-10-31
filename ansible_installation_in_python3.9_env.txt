@@ -13,6 +13,7 @@ To install ansible stable release:
 python -m pip install ansible
 
 To install ansible developement release:
+python -m pip install ansible-core==2.14.0rc1
 python -m pip install https://github.com/ansible/ansible/archive/devel.tar.gz
 
 To install collection :
