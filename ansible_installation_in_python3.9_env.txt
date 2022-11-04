@@ -1,4 +1,4 @@
-ansible installation on python3.9 vitual environment 
+ansible installation on python3.9 virtual environment 
 
 mkdir ansible_debug
 cd ansible_debug
