@@ -11,6 +11,7 @@ python -m pip install jsnapy==1.3.7 --no-binary :all:  --no-cache-dir
 
 To install ansible stable release:
 python -m pip install ansible
+python -m pip install ansible-core==2.14
 
 To install ansible developement release:
 python -m pip install ansible-core==2.14.0rc1
