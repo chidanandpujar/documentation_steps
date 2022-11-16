@@ -53,7 +53,7 @@ Update inventory file with following details .
 which python3.9
 
 
-vi ./ansible-junos-stdlib/tests/invetory
+vi ./ansible-junos-stdlib/tests/inventory
 [junos]
 test      ansible_host=xx.xx.xx.xx  ansible_user=xyz  ansible_pass=xyz ansible_ssh_pass=xyz ansible_port=22
 
