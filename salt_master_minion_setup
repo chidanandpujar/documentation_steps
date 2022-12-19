@@ -9,6 +9,8 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 pip install -U pip
 
 
+Python3.9 installation
+https://tecadmin.net/how-to-install-python-3-9-on-ubuntu-18-04/
 
 Install packages
 
