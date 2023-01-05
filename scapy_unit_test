@@ -37,3 +37,12 @@ sudo ./configure --enable-optimizations
 sudo make altinstall 
 
 apt install python3-pip
+
+
+scapy debugging:
+
+import logging
+import sys
+logging.getLogger("scapy").setLevel(1)
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+
