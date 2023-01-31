@@ -4,7 +4,13 @@ mkdir ansible_debug
 cd ansible_debug
 python3.9 -m venv venv
 source venv/bin/activate
+
+To insall pyez
 python -m pip install junos-eznc
+
+To install older release 
+python -m pip install junos-eznc==2.6.0
+
 python -m pip install jxmlease
 python -m pip install xmltodict
 python -m pip install jsnapy==1.3.7 --no-binary :all:  --no-cache-dir
