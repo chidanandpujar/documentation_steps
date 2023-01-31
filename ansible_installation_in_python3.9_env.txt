@@ -23,6 +23,9 @@ ansible-galaxy collection install juniper.device
 To install the developement collection 
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
+To install the v1.0.1 collection
+ansible-galaxy collection install juniper.device:1.0.1
+
 cd ansible-junos-stdlib
 
 Dev installation for debugging
