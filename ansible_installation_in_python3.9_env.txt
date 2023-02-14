@@ -23,6 +23,12 @@ To install ansible developement release:
 python -m pip install ansible-core==2.14.0rc1
 python -m pip install https://github.com/ansible/ansible/archive/devel.tar.gz
 
+Ansible persistent connection working release 
+python -m pip install ansible-core==2.12.7
+ansible==5.4.0
+ansible-core==2.12.7
+
+
 To install collection :
 ansible-galaxy collection install juniper.device
 
