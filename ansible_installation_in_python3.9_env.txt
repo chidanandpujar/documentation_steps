@@ -148,3 +148,7 @@ Ansible Roles:
       debug:
         var: test1
 
+
+Ansible Debug :
+
+export ANSIBLE_DEBUG=True
