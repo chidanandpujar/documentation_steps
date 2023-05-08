@@ -152,3 +152,26 @@ Ansible Roles:
 Ansible Debug :
 
 export ANSIBLE_DEBUG=True
+
+
+Ansible Module debugging:
+------------------------
+
+export ANSIBLE_KEEP_REMOTE_FILES=1
+
+ansible-playbook test_config_set_login_message.yml -vvvvv
+
+cd /root/.ansible/tmp/ansible-tmp-1683099427.4391778-11868-152799521893049/AnsiballZ_config.py
+
+python AnsiballZ_config.py explode
+
+cd ./debug_dir
+
+cat args
+
+python AnsiballZ_config.py execute
+
+python -m pdb AnsiballZ_config.py execute
+
+
+
