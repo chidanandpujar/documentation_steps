@@ -55,4 +55,13 @@ nosetests.exe  -v .\test_string_op.py
 nosetests.exe  -v .\test_str_numeric_op.py
 
 
+ Nosetest debugging:
+ 
+ To set breakpoints 
+ from nose.tools import set_trace; set_trace()
+ 
+ 
+ /root/sw_install_member/py-junos-eznc/tests/unit/utils
+ nosetests  -v ./test_sw.py:TestSW
+ 
  
