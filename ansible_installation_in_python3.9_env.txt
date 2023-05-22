@@ -159,6 +159,9 @@ export ANSIBLE_DEBUG=True
 Ansible Module debugging:
 ------------------------
 
+add raise exception:
+raise ValueError("value: '%s'" % value)
+
 export ANSIBLE_KEEP_REMOTE_FILES=1
 
 ansible-playbook test_config_set_login_message.yml -vvvvv
