@@ -65,3 +65,10 @@ nosetests.exe  -v .\test_str_numeric_op.py
  nosetests  -v ./test_sw.py:TestSW
  
  
+Python3.10:
+
+AttributeError: module 'collections' has no attribute 'Callable'
+pip uninstall -y nose
+pip install -U nose --no-binary :all:
+https://github.com/nose-devs/nose/issues/1099
+
