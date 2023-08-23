@@ -5,3 +5,9 @@ ktrace -C
 kdump > /var/tmp/1
 netstat -anp | grep 514
 tcpdump -i <interface> 
+handle SIGPIPE nostop noprint pass
+
+gdd /usr/sbin/
+attach <pid>
+
+gdb -p <pid>
