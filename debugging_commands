@@ -1,13 +1,13 @@
 ss -np | grep 10514
 strace -s 1000 -p <> -o <filename>
-ktrace -p <eventd pid>
+ktrace -p <pid>
 ktrace -C
 kdump > /var/tmp/1
 netstat -anp | grep 514
 tcpdump -i <interface> 
 handle SIGPIPE nostop noprint pass
 
-gdd /usr/sbin/
+gdb /usr/sbin/
 attach <pid>
 
 gdb -p <pid>
