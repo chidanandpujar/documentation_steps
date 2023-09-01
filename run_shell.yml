@@ -1,0 +1,33 @@
+---
+- name: Test juniper.device.rpc module
+  hosts: all
+  connection: local
+  gather_facts: no
+  collections:
+    - juniper.device
+
+  tasks:
+#################
+    - name: "Execute shell command"
+      rpc:
+        rpcs:
+          - "request_shell_execute"
+        kwargs:
+          - command: "pkg setop rm previous"
+      register: test1
+
+    - name: "Execute shell command"
+      rpc:
+        rpcs:
+          - "request_shell_execute"
+        kwargs:
+          - command: "pkg delete old"
+      register: test2
+
+    - name: Check TEST 1
+      debug:
+        var: test1 
+
+    - name: Check TEST 1
+      debug:
+        var: test2 
