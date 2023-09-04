@@ -1,0 +1,305 @@
+(venv) root@masterhost:~# lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.3 LTS
+Release:	20.04
+Codename:	focal
+
+root@masterhost:~# python3.8 -m venv venv
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt install python3.8-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+Failing command: ['/root/venv/bin/python3.8', '-Im', 'ensurepip', '--upgrade', '--default-pip']
+
+root@masterhost:~# apt install python3.8-venv
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  cgmanager fonts-ubuntu-console fonts-ubuntu-font-family-console g++-5 g++-7 gcc-8-base:i386 guile-2.0-libs javascript-common libargon2-0 libbind9-140 libbind9-160
+  libboost-iostreams1.54.0 libcgi-fast-perl libcgi-pm-perl libcloog-isl4 libcryptsetup4 libcupsfilters1 libcupsimage2 libdns-export1100 libdns-export162 libdns1100
+  libdns162 libept1.4.12 libevent-2.1-6 libfcgi-perl libfile-copy-recursive-perl libgdbm5 libgrpc0 libgrpc3 libhogweed4 libicu55 libicu60 libip4tc0 libip6tc0 libiptc0
+  libirs160 libisc-export160 libisc-export169 libisc160 libisc169 libisccc140 libisccc160 libisccfg140 libisccfg160 libisl19 libjansson4 libjbig0 libjpeg-turbo8 libjpeg8
+  libjs-jquery libjs-sphinxdoc libjs-underscore libjson-c3 liblwres141 liblwres160 libmpfr4 libmysqlclient20 libnettle6 libntfs-3g88 libperl5.26 libprocps4 libprocps6
+  libpython-all-dev libpython2-dev libpython2.7-dev libpython3.5 libpython3.5-dev libpython3.5-minimal libpython3.5-stdlib libpython3.6 libpython3.6-dev
+  libpython3.6-minimal libpython3.6-stdlib libreadline7 librpm3 librpmbuild3 librpmio3 librpmsign3 libstdc++-5-dev libstdc++-7-dev libtiff5 libtimedate-perl
+  libunistring0 libwebp6 libxtables11 linux-headers-4.4.0-148 linux-headers-4.4.0-148-generic linux-headers-4.4.0-174 linux-headers-4.4.0-174-generic
+  linux-headers-4.4.0-210 linux-headers-4.4.0-210-generic linux-headers-4.4.0-31 linux-headers-4.4.0-31-generic linux-image-4.4.0-148-generic
+  linux-image-4.4.0-174-generic linux-image-4.4.0-210-generic linux-image-4.4.0-31-generic linux-image-extra-4.4.0-31-generic linux-modules-4.4.0-148-generic
+  linux-modules-4.4.0-174-generic linux-modules-4.4.0-210-generic linux-modules-extra-4.4.0-148-generic linux-modules-extra-4.4.0-174-generic
+  linux-modules-extra-4.4.0-210-generic nplan python-all python-all-dev python-asn1crypto python-attr python-automat python-certifi python-configparser python-constantly
+  python-crypto python-dbus python-entrypoints python-gi python-html5lib python-hyperlink python-idna python-keyring python-pyasn1 python-pyasn1-modules
+  python-service-identity python-webencodings python-xdg python2-dev python2.7-dev python3-asn1crypto python3-pam python3-xdg python3.5 python3.5-dev python3.5-minimal
+  python3.6 python3.6-dev python3.6-minimal rename s-nail
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  libpython3.8 libpython3.8-dev libpython3.8-minimal libpython3.8-stdlib python3.8 python3.8-dev python3.8-minimal
+Suggested packages:
+  python3.8-doc binfmt-support
+The following NEW packages will be installed:
+  python3.8-venv
+The following packages will be upgraded:
+  libpython3.8 libpython3.8-dev libpython3.8-minimal libpython3.8-stdlib python3.8 python3.8-dev python3.8-minimal
+7 upgraded, 1 newly installed, 0 to remove and 307 not upgraded.
+Need to get 10.8 MB of archives.
+After this operation, 51.2 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8-dev amd64 3.8.10-0ubuntu1~20.04.8 [514 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-dev amd64 3.8.10-0ubuntu1~20.04.8 [3,950 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8 amd64 3.8.10-0ubuntu1~20.04.8 [1,625 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8 amd64 3.8.10-0ubuntu1~20.04.8 [387 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-stdlib amd64 3.8.10-0ubuntu1~20.04.8 [1,675 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8-minimal amd64 3.8.10-0ubuntu1~20.04.8 [1,902 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-minimal amd64 3.8.10-0ubuntu1~20.04.8 [717 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 python3.8-venv amd64 3.8.10-0ubuntu1~20.04.8 [5,448 B]
+Fetched 10.8 MB in 4s (2,846 kB/s)         
+(Reading database ... 254819 files and directories currently installed.)
+Preparing to unpack .../0-python3.8-dev_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking python3.8-dev (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Preparing to unpack .../1-libpython3.8-dev_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking libpython3.8-dev:amd64 (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Preparing to unpack .../2-libpython3.8_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking libpython3.8:amd64 (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Preparing to unpack .../3-python3.8_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking python3.8 (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Preparing to unpack .../4-libpython3.8-stdlib_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Preparing to unpack .../5-python3.8-minimal_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking python3.8-minimal (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Preparing to unpack .../6-libpython3.8-minimal_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.8) over (3.8.10-0ubuntu1~20.04.1) ...
+Selecting previously unselected package python3.8-venv.
+Preparing to unpack .../7-python3.8-venv_3.8.10-0ubuntu1~20.04.8_amd64.deb ...
+Unpacking python3.8-venv (3.8.10-0ubuntu1~20.04.8) ...
+Setting up libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.8) ...
+Setting up python3.8-minimal (3.8.10-0ubuntu1~20.04.8) ...
+Setting up libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.8) ...
+Setting up python3.8 (3.8.10-0ubuntu1~20.04.8) ...
+Setting up libpython3.8:amd64 (3.8.10-0ubuntu1~20.04.8) ...
+Setting up python3.8-venv (3.8.10-0ubuntu1~20.04.8) ...
+Setting up libpython3.8-dev:amd64 (3.8.10-0ubuntu1~20.04.8) ...
+Setting up python3.8-dev (3.8.10-0ubuntu1~20.04.8) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+root@masterhost:~# python3.8 -m venv venv
+root@masterhost:~# source venv/bin/activate
+(venv) root@masterhost:~# ls
+go  grpctunnel  jtimon  testtools  venv
+(venv) root@masterhost:~# pip install junos-eznc
+Collecting junos-eznc
+  Downloading junos_eznc-2.6.7-py2.py3-none-any.whl (197 kB)
+     |████████████████████████████████| 197 kB 1.8 MB/s 
+Collecting paramiko>=1.15.2
+  Downloading paramiko-3.3.1-py3-none-any.whl (224 kB)
+     |████████████████████████████████| 224 kB 18.6 MB/s 
+Collecting pyserial
+  Downloading pyserial-3.5-py2.py3-none-any.whl (90 kB)
+     |████████████████████████████████| 90 kB 9.3 MB/s 
+Collecting PyYAML>=5.1
+  Downloading PyYAML-6.0.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (736 kB)
+     |████████████████████████████████| 736 kB 36.9 MB/s 
+Collecting netaddr
+  Downloading netaddr-0.8.0-py2.py3-none-any.whl (1.9 MB)
+     |████████████████████████████████| 1.9 MB 24.3 MB/s 
+Collecting transitions
+  Downloading transitions-0.9.0-py2.py3-none-any.whl (97 kB)
+     |████████████████████████████████| 97 kB 10.3 MB/s 
+Collecting jinja2>=2.7.1
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     |████████████████████████████████| 133 kB 23.1 MB/s 
+Collecting ncclient==0.6.13
+  Downloading ncclient-0.6.13.tar.gz (105 kB)
+     |████████████████████████████████| 105 kB 27.6 MB/s 
+Collecting scp>=0.7.0
+  Downloading scp-0.14.5-py2.py3-none-any.whl (8.7 kB)
+Collecting yamlordereddictloader
+  Downloading yamlordereddictloader-0.4.0.tar.gz (3.3 kB)
+Collecting lxml>=3.2.4
+  Downloading lxml-4.9.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (7.1 MB)
+     |████████████████████████████████| 7.1 MB 19.9 MB/s 
+Collecting six
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting pyparsing
+  Downloading pyparsing-3.1.1-py3-none-any.whl (103 kB)
+     |████████████████████████████████| 103 kB 13.5 MB/s 
+Collecting pynacl>=1.5
+  Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (856 kB)
+     |████████████████████████████████| 856 kB 26.4 MB/s 
+Collecting cryptography>=3.3
+  Downloading cryptography-41.0.3-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+     |████████████████████████████████| 4.3 MB 17.8 MB/s 
+Collecting bcrypt>=3.2
+  Downloading bcrypt-4.0.1-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (593 kB)
+     |████████████████████████████████| 593 kB 30.9 MB/s 
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Requirement already satisfied: setuptools>0.6 in ./venv/lib/python3.8/site-packages (from ncclient==0.6.13->junos-eznc) (44.0.0)
+Collecting cffi>=1.4.1
+  Downloading cffi-1.15.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (442 kB)
+     |████████████████████████████████| 442 kB 23.6 MB/s 
+Collecting pycparser
+  Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+     |████████████████████████████████| 118 kB 23.5 MB/s 
+Building wheels for collected packages: ncclient, yamlordereddictloader
+  Building wheel for ncclient (setup.py) ... error
+  ERROR: Command errored out with exit status 1:
+   command: /root/venv/bin/python3.8 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-xyr07dzf/ncclient/setup.py'"'"'; __file__='"'"'/tmp/pip-install-xyr07dzf/ncclient/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-kyhxy2ym
+       cwd: /tmp/pip-install-xyr07dzf/ncclient/
+  Complete output (6 lines):
+  usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: setup.py --help [cmd1 cmd2 ...]
+     or: setup.py --help-commands
+     or: setup.py cmd --help
+  
+  error: invalid command 'bdist_wheel'
+  ----------------------------------------
+  ERROR: Failed building wheel for ncclient
+  Running setup.py clean for ncclient
+  Building wheel for yamlordereddictloader (setup.py) ... error
+  ERROR: Command errored out with exit status 1:
+   command: /root/venv/bin/python3.8 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-xyr07dzf/yamlordereddictloader/setup.py'"'"'; __file__='"'"'/tmp/pip-install-xyr07dzf/yamlordereddictloader/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-a40x8lu7
+       cwd: /tmp/pip-install-xyr07dzf/yamlordereddictloader/
+  Complete output (6 lines):
+  usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: setup.py --help [cmd1 cmd2 ...]
+     or: setup.py --help-commands
+     or: setup.py cmd --help
+  
+  error: invalid command 'bdist_wheel'
+  ----------------------------------------
+  ERROR: Failed building wheel for yamlordereddictloader
+  Running setup.py clean for yamlordereddictloader
+Failed to build ncclient yamlordereddictloader
+Installing collected packages: pycparser, cffi, pynacl, cryptography, bcrypt, paramiko, pyserial, PyYAML, netaddr, six, transitions, MarkupSafe, jinja2, lxml, ncclient, scp, yamlordereddictloader, pyparsing, junos-eznc
+    Running setup.py install for ncclient ... done
+    Running setup.py install for yamlordereddictloader ... done
+Successfully installed MarkupSafe-2.1.3 PyYAML-6.0.1 bcrypt-4.0.1 cffi-1.15.1 cryptography-41.0.3 jinja2-3.1.2 junos-eznc-2.6.7 lxml-4.9.3 ncclient-0.6.13 netaddr-0.8.0 paramiko-3.3.1 pycparser-2.21 pynacl-1.5.0 pyparsing-3.1.1 pyserial-3.5 scp-0.14.5 six-1.16.0 transitions-0.9.0 yamlordereddictloader-0.4.0
+(venv) root@masterhost:~# pip install colorama
+Collecting colorama
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Installing collected packages: colorama
+Successfully installed colorama-0.4.6
+(venv) root@masterhost:~# pip install icdiff==1.9.1
+Collecting icdiff==1.9.1
+  Downloading icdiff-1.9.1.tar.gz (9.1 kB)
+Building wheels for collected packages: icdiff
+  Building wheel for icdiff (setup.py) ... error
+  ERROR: Command errored out with exit status 1:
+   command: /root/venv/bin/python3.8 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-tcabt1z0/icdiff/setup.py'"'"'; __file__='"'"'/tmp/pip-install-tcabt1z0/icdiff/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-tmjood7x
+       cwd: /tmp/pip-install-tcabt1z0/icdiff/
+  Complete output (6 lines):
+  usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: setup.py --help [cmd1 cmd2 ...]
+     or: setup.py --help-commands
+     or: setup.py cmd --help
+  
+  error: invalid command 'bdist_wheel'
+  ----------------------------------------
+  ERROR: Failed building wheel for icdiff
+  Running setup.py clean for icdiff
+Failed to build icdiff
+Installing collected packages: icdiff
+    Running setup.py install for icdiff ... done
+Successfully installed icdiff-1.9.1
+(venv) root@masterhost:~# pip install -U jsnapy==1.3.7 --no-binary :all:  --no-cache-dir
+Collecting jsnapy==1.3.7
+  Downloading jsnapy-1.3.7.tar.gz (57 kB)
+     |████████████████████████████████| 57 kB 2.1 MB/s 
+Requirement already satisfied, skipping upgrade: colorama in ./venv/lib/python3.8/site-packages (from jsnapy==1.3.7) (0.4.6)
+Collecting configparser
+  Downloading configparser-6.0.0.tar.gz (68 kB)
+     |████████████████████████████████| 68 kB 10.5 MB/s 
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+    Preparing wheel metadata ... done
+Collecting future
+  Downloading future-0.18.3.tar.gz (840 kB)
+     |████████████████████████████████| 840 kB 12.6 MB/s 
+Requirement already satisfied, skipping upgrade: icdiff==1.9.1 in ./venv/lib/python3.8/site-packages (from jsnapy==1.3.7) (1.9.1)
+Requirement already satisfied, skipping upgrade: junos-eznc in ./venv/lib/python3.8/site-packages (from jsnapy==1.3.7) (2.6.7)
+Requirement already satisfied, skipping upgrade: lxml in ./venv/lib/python3.8/site-packages (from jsnapy==1.3.7) (4.9.3)
+Requirement already satisfied, skipping upgrade: pyparsing in ./venv/lib/python3.8/site-packages (from jsnapy==1.3.7) (3.1.1)
+Requirement already satisfied, skipping upgrade: six in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (1.16.0)
+Requirement already satisfied, skipping upgrade: netaddr in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (0.8.0)
+Requirement already satisfied, skipping upgrade: jinja2>=2.7.1 in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (3.1.2)
+Requirement already satisfied, skipping upgrade: scp>=0.7.0 in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (0.14.5)
+Requirement already satisfied, skipping upgrade: PyYAML>=5.1 in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (6.0.1)
+Requirement already satisfied, skipping upgrade: paramiko>=1.15.2 in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (3.3.1)
+Requirement already satisfied, skipping upgrade: transitions in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (0.9.0)
+Requirement already satisfied, skipping upgrade: yamlordereddictloader in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (0.4.0)
+Requirement already satisfied, skipping upgrade: ncclient==0.6.13 in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (0.6.13)
+Requirement already satisfied, skipping upgrade: pyserial in ./venv/lib/python3.8/site-packages (from junos-eznc->jsnapy==1.3.7) (3.5)
+Requirement already satisfied, skipping upgrade: MarkupSafe>=2.0 in ./venv/lib/python3.8/site-packages (from jinja2>=2.7.1->junos-eznc->jsnapy==1.3.7) (2.1.3)
+Requirement already satisfied, skipping upgrade: cryptography>=3.3 in ./venv/lib/python3.8/site-packages (from paramiko>=1.15.2->junos-eznc->jsnapy==1.3.7) (41.0.3)
+Requirement already satisfied, skipping upgrade: pynacl>=1.5 in ./venv/lib/python3.8/site-packages (from paramiko>=1.15.2->junos-eznc->jsnapy==1.3.7) (1.5.0)
+Requirement already satisfied, skipping upgrade: bcrypt>=3.2 in ./venv/lib/python3.8/site-packages (from paramiko>=1.15.2->junos-eznc->jsnapy==1.3.7) (4.0.1)
+Requirement already satisfied, skipping upgrade: setuptools>0.6 in ./venv/lib/python3.8/site-packages (from ncclient==0.6.13->junos-eznc->jsnapy==1.3.7) (44.0.0)
+Requirement already satisfied, skipping upgrade: cffi>=1.12 in ./venv/lib/python3.8/site-packages (from cryptography>=3.3->paramiko>=1.15.2->junos-eznc->jsnapy==1.3.7) (1.15.1)
+Requirement already satisfied, skipping upgrade: pycparser in ./venv/lib/python3.8/site-packages (from cffi>=1.12->cryptography>=3.3->paramiko>=1.15.2->junos-eznc->jsnapy==1.3.7) (2.21)
+Skipping wheel build for jsnapy, due to binaries being disabled for it.
+Skipping wheel build for future, due to binaries being disabled for it.
+Building wheels for collected packages: configparser
+  Building wheel for configparser (PEP 517) ... done
+  Created wheel for configparser: filename=configparser-6.0.0-py3-none-any.whl size=19373 sha256=e555e2b7661e45c9706379ce52c9228e97a79cc8c4d48e7514bb8f85a6509fb6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-hfwxiygi/wheels/72/15/fc/3fb237d2948344f398960e24d4cded365f126d0822533c2441
+Successfully built configparser
+Installing collected packages: configparser, future, jsnapy
+    Running setup.py install for future ... done
+    Running setup.py install for jsnapy ... done
+Successfully installed configparser-6.0.0 future-0.18.3 jsnapy-1.3.7
+(venv) root@masterhost:~# jsnapy --help
+usage: 
+This tool enables you to capture and audit runtime environment of 
+networked devices running the Junos operating system (Junos OS)
+
+Tool to capture snapshots and compare them
+It supports four subcommands:
+ --snap, --check, --snapcheck, --diff
+1. Take snapshot:
+        jsnapy --snap pre_snapfile -f main_configfile
+2. Compare snapshots:
+        jsnapy --check post_snapfile pre_snapfile -f main_configfile
+3. Compare current configuration:
+        jsnapy --snapcheck snapfile -f main_configfile
+4. Take diff without specifying test case:
+        jsnapy --diff pre_snapfile post_snapfile -f main_configfile
+
+positional arguments:
+  pre_snapfile          pre snapshot filename
+  post_snapfile         post snapshot filename
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --snap                take the snapshot for commands specified in test file
+  --check                compare pre and post snapshots based on test operators specified in test file
+  --snapcheck           check current snapshot based on test file
+  --diff                display difference between two snapshots
+  -V, --version         displays version
+  -T TESTFILES [TESTFILES ...], --testfiles TESTFILES [TESTFILES ...]
+                        test file paths
+  -f FILE, --file FILE  config file to take snapshot
+  --local               whether to run snapcheck on local snapshot
+  --folder FOLDER       custom directory path for lookup
+  -t HOSTNAME, --hostname HOSTNAME
+                        hostname
+  -p PASSWD, --passwd PASSWD
+                        password to login
+  -l LOGIN, --login LOGIN
+                        username to login
+  -P PORT, --port PORT  port no to connect to device
+  -v, --verbosity       Set verbosity
+                        -v: Debug level messages
+                        -vv: Info level messages
+                        -vvv: Warning level messages
+                        -vvvv: Error level messages
+                        -vvvvv: Critical level messages
+                          
+
