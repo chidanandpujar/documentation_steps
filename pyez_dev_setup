@@ -11,3 +11,7 @@ now you execute any pyez script , it will run using your local installed pyez
 
 Fix
 python3 -m pip install --upgrade pip setuptools wheel
+
+Debug:
+from lxml import etree
+print (etree.tostring(current_re))
