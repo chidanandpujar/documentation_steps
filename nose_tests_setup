@@ -72,3 +72,7 @@ pip uninstall -y nose
 pip install -U nose --no-binary :all:
 https://github.com/nose-devs/nose/issues/1099
 
+nose2:
+
+nose2 -v --coverage jnpr.junos --with-coverage
+
