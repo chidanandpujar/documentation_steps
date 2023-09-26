@@ -6,6 +6,9 @@ python -m pip install mock
 python -m pip install coverage
 python -m pip install ntc_templates
 
+nose2 tests:
+python -m pip install nose2
+
 cd /root/pyez/py-junos-eznc/tests/unit
 
 nosetests -v *
