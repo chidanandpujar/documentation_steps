@@ -11,3 +11,9 @@ gdb /usr/sbin/
 attach <pid>
 
 gdb -p <pid>
+
+
+Python:
+Debug:
+from lxml import etree
+print (etree.tostring(current_re))
