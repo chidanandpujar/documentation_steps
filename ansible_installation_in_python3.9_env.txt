@@ -179,4 +179,15 @@ python AnsiballZ_config.py execute
 python -m pdb AnsiballZ_config.py execute
 
 
+debug collection paths:
+
+[defaults]
+hash_behaviour=merge
+roles_path = ~/.ansible/roles
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+collections_paths = /root/ansible_get_unresolved_route/ansible-junos-stdlib/ansible_collections
+
+
 
