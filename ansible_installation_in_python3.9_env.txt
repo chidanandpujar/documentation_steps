@@ -190,4 +190,11 @@ log_path = ./ansible.log
 collections_paths = /root/ansible_get_unresolved_route/ansible-junos-stdlib/ansible_collections
 
 
+sphinx documentation:
+
+https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html
+pip install sphinx
+		i) Within repo, cd docs
+		ii) sphinx-build -b html . _build/html/
+
 
