@@ -194,6 +194,8 @@ sphinx documentation:
 
 https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html
 pip install sphinx
+pip install sphinx_bootstrap_theme
+
 		i) Within repo, cd docs
 		ii) sphinx-build -b html . _build/html/
 
