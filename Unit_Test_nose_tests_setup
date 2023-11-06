@@ -78,4 +78,5 @@ https://github.com/nose-devs/nose/issues/1099
 nose2:
 
 nose2 -v --coverage jnpr.junos --with-coverage
+nose2 -v --coverage jnpr.junos 
 
