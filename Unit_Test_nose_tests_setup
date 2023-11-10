@@ -79,4 +79,5 @@ nose2:
 
 nose2 -v --coverage jnpr.junos --with-coverage
 nose2 -v --coverage jnpr.junos 
+python -m pip install nose2[coverage_plugin]
 
