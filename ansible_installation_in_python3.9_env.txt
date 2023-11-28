@@ -242,3 +242,7 @@ for arp in arps:
         print ('flag:', arp.flag)
 
 dev.close()
+fix:
+supported versions
+        pip install ntc_templates==1.4.1
+        pip install textfsm==0.4.1
