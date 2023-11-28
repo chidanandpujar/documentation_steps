@@ -200,3 +200,45 @@ pip install sphinx_bootstrap_theme
 		ii) sphinx-build -b html . _build/html/
 
 
+
+
+tables and views debugging :
+
+from jnpr.junos import Device
+from jnpr.junos.factory.factory_loader import FactoryLoader
+import yamlordereddictloader
+import yaml
+
+yaml_data="""
+---
+ARPtable:
+    command: show arp no-resolve
+    platform: juniper_junos
+    key:
+      - mac
+      - ip
+    use_textfsm: True
+    view: ARPview
+
+
+ARPview:
+    fields:
+        mac: MAC
+        ip: IP_ADDRESS
+        interface: INTERFACE
+        flag: FLAGS
+"""
+
+dev = Device(host='xx.xx.xx.xx', user='xyz', password='xyz', gather_facts=False)
+dev.open()
+
+globals().update(FactoryLoader().load(yaml.load(yaml_data,Loader=yamlordereddictloader.Loader)))
+arps = ARPtable(dev)
+arps.get()
+for arp in arps:
+        print ('mac_address: ', arp.mac)
+        print ('ip_address: ', arp.ip)
+        print ('interface_name:', arp.interface)
+        print ('flag:', arp.flag)
+
+dev.close()
