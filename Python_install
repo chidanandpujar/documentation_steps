@@ -1,1 +1,2 @@
 https://www.linuxtuto.com/how-to-install-python-3-12-on-ubuntu-22-04/
+docker run -i -t 8dbd9e392a96 /bin/bash
