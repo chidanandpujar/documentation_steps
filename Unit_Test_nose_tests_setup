@@ -81,3 +81,8 @@ nose2 -v --coverage jnpr.junos --with-coverage
 nose2 -v --coverage jnpr.junos 
 python -m pip install nose2[coverage_plugin]
 
+
+
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/subprocess.py:935: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stdin = io.open(p2cwrite, 'wb', bufsize)
+https://github.com/yadage/packtivity/pull/78/files
