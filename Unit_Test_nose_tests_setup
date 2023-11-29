@@ -13,8 +13,8 @@ cd /root/pyez/py-junos-eznc/tests/unit
 
 nosetests -v *
 
-python -m pip install ntc-templates
-python -m pip install textfsm
+python -m pip install ntc_templates==1.4.1
+python -m pip install textfsm==0.4.1
 
 
 To run the pyez unit tests :
