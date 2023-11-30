@@ -4,21 +4,10 @@ nose tests:
 python -m pip install nose
 python -m pip install mock
 python -m pip install coverage
-python -m pip install ntc_templates
-
-nose2 tests:
-python -m pip install nose2
-
-cd /root/pyez/py-junos-eznc/tests/unit
-
-nosetests -v *
-
 python -m pip install ntc_templates==1.4.1
 python -m pip install textfsm==0.4.1
 
-
 To run the pyez unit tests :
-
 cd py-junos-eznc/tests/unit
 nosetests -v --with-coverage --cover-package=jnpr.junos --cover-inclusive -a unit
 
@@ -38,6 +27,9 @@ nosetests -v --with-xunit --xunit-file=functionaltests.xml --with-coverage --cov
 
 nosetests -v --with-xunit --xunit-file=functionaltests.xml --with-coverage --cover-package=jnpr.junos --cover-xml --cover-inclusive --cover-erase test_utils_file_system
 
+cd /root/pyez/py-junos-eznc/tests/unit
+
+nosetests -v *
 
 
 UT/FT execution on windows:
@@ -76,6 +68,9 @@ pip install -U nose --no-binary :all:
 https://github.com/nose-devs/nose/issues/1099
 
 nose2:
+
+nose2 tests:
+python -m pip install nose2
 
 nose2 -v --coverage jnpr.junos --with-coverage
 nose2 -v --coverage jnpr.junos 
