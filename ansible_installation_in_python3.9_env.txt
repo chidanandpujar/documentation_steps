@@ -154,6 +154,7 @@ Ansible Debug :
 ================================
 
 export ANSIBLE_DEBUG=True
+export ANSIBLE_KEEP_REMOTE_FILES=1
 
 
 Ansible Module debugging:
