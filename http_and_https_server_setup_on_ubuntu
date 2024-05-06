@@ -170,55 +170,6 @@ ls: cannot access '/etc/apache2/certficate/apache.key': No such file or director
 root@masterhost:/etc/apache2/certificate# ls
 apache-certificate.crt  apache.key
 root@masterhost:/etc/apache2/certificate# cat apache.key
------BEGIN PRIVATE KEY-----
-MIIJQwIBADANBgkqhkiG9w0BAQEFAASCCS0wggkpAgEAAoICAQDJVMyYyQIrdErp
-fTH35Xm2j7ycmbVgRSgEGxcUy2nPMtpB6G91GQeKRqwQ7T/glb5HSZAorEfVHTW1
-L2pp8FuHGgFhIiYRX4nKj1UurDRiOdtthLot4jtt7NTnaSapSxXD1GvlO8di2D8d
-zT949d3GkXNYHi/NiZj1vhjGKpB1pfwUjvXWZXcjpMzWXWvSeu4UgkkxZAXyVAyB
-mhYUu4S0JJo8FbgVtmkjb+ealpRUVzMuZvDMONKBarwbgAI4bGUsBNCs8I84RsUq
-mmDzoAiBZ6V8B1BeQXq7PIYPi9lrc0gmjGBygk9auux0BCUpIR5qMwa6pF7B5Cal
-dxmPv4loLCjAtGvOHpUmIG2Cms8viEhgHMM4VMHOISfoi7ajGL1RamWHW/2fHzSr
-1Mk4BCddxDgl7zKzbrLAjJtioeqM25U2VLbz3g36FnG1HjbsbPC4ndRG+j8DJvsY
-V4aup7jo4znoOihVKRChbDHGg7pbjxst9LT/J+SjHhseOBLTyyhzkNEn6LHTTrzt
-3bNjj5UtBfLG9MKKnsMRY3hWS/1JFkfFOimupnwoGhEb04xudDlcpI/fktTlGkPQ
-5e638BKUi8IZfI0TiUqNQh0ptIeW5hRAOpAOmNCuBixeZGRb+wgfhZECUA1L6xOb
-9uTYOkH+enwh/HzTiajuS5guOCxlBQIDAQABAoICAHceI/sVmqIJKTViLElGTS/1
-dRuWWdi+sgFT4eEcxNqhdL7f/enjSDHIxI8zP8Lp9e2JmbBm1g1CPf+YMTbCzfRu
-L3i/0pQe2ZCuIzD9E/U11BzFFb6GBrFwGTtdXFF3qkX2DWxQZRSXayh/wlkX5wJQ
-FlWBbrkF+ykSMug0UMo6zZ2AQ/V4jPfazpLaLSwYLXqW5yVAz7/jeI7JktzrYYWP
-zm1UUFkQVr5vvDEbfGE2QoLmxvuddva5JtiCcU3e3DEiHDDmF2atgIRHWKtr+PxP
-<VirtualHost *:443>
-        # The ServerName directive sets the request scheme, hostname and port that
-        # the server uses to identify itself. This is used when creating
-        # redirection URLs. In the context of virtual hosts, the ServerName
-        # specifies what hostname must appear in the request's Host: header to
-        # match this virtual host. For the default virtual host (this file) this
-        # value is not decisive as it is used as a last resort host regardless.
-        # However, you must set it for any further virtual host explicitly.
-        #ServerName www.example.com
-
-        ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/html
-
-        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
-        # error, crit, alert, emerg.
-        # It is also possible to configure the loglevel for particular
-        # modules, e.g.
-        #LogLevel info ssl:warn
-
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-        # For most configuration files from conf-available/, which are
-        # enabled or disabled at a global level, it is possible to
-        # include a line for only one particular virtual host. For example the
-        # following line enables the CGI configuration for this host only
-        # after it has been globally disabled with "a2disconf".
-        #Include conf-available/serve-cgi-bin.conf
-        SSLEngine on
-        SSLCertificateFile /etc/apache2/certificate/apache-certificate.crt
-        SSLCertificateKeyFile /etc/apache2/certificate/apache.key
-</VirtualHost>
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 ~                                                                                                                                                                                                                               
