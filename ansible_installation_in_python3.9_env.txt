@@ -1,10 +1,12 @@
 ansible installation on python3.9 virtual environment 
 
+1)
 mkdir ansible_debug
 cd ansible_debug
 python3.9 -m venv venv
 source venv/bin/activate
 
+2)
 To insall pyez
 python -m pip install junos-eznc
 
@@ -18,10 +20,12 @@ OR
 To install older release 
 python -m pip install junos-eznc==2.6.0
 
+3)
 python -m pip install jxmlease
 python -m pip install xmltodict
 python -m pip install jsnapy==1.3.7 --no-binary :all:  --no-cache-dir
 
+4)
 To install ansible stable release:
 python -m pip install ansible
 python -m pip install ansible-core==2.14
@@ -54,19 +58,21 @@ OR
 To clone the developement Collection for dev and debugging 
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
-OR
-
-To install the v1.0.1 collection
-ansible-galaxy collection install juniper.device:1.0.1
-
 cd ansible-junos-stdlib
 
 Dev installation for debugging
 python setup.py install
 
+OR
+
+To install the v1.0.1 collection
+ansible-galaxy collection install juniper.device:1.0.1
+
+5)
 To check the installed version
 sudo ansible-galaxy collection list
 
+6)
 find ./ -name ansible.cfg
 ./ansible-junos-stdlib/tests/ansible.cfg
 
@@ -82,8 +88,6 @@ inventory = inventory
 host_key_checking = False
 log_path = ./ansible.log
 timeout=120
-
-
 
 Update inventory file with following details .
 which python3.9
