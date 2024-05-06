@@ -273,3 +273,32 @@ fix1:
 To take the patch diff from pull requests
 https://github.com/Juniper/ansible-junos-stdlib/pull/650.patch
 
+
+Ansible ssh_config option:
+
+
+Host Test
+   HostName xx.xx.xx.xx
+   User root
+   IdentityFile ~/.ssh/id_rsa
+
+
+
+ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+
+ssh-copy-id root@xx.xx.xx.xx
+
+ssh root@xx.xx.xx.xx
+Last login: Fri May  3 13:57:04 2024 from 10.220.0.191
+--- JUNOS 21.4R3-S2.3 Kernel 64-bit  JNPR-12.1-20221028.898be19_buil
+
+
+
