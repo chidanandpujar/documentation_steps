@@ -8,6 +8,13 @@ source venv/bin/activate
 To insall pyez
 python -m pip install junos-eznc
 
+OR
+
+To install the latest MASTER code
+pip install git+https://github.com/Juniper/py-junos-eznc.git
+
+OR
+
 To install older release 
 python -m pip install junos-eznc==2.6.0
 
@@ -19,25 +26,35 @@ To install ansible stable release:
 python -m pip install ansible
 python -m pip install ansible-core==2.14
 
+OR
+
 To install ansible developement release:
 python -m pip install ansible-core==2.14.0rc1
 python -m pip install https://github.com/ansible/ansible/archive/devel.tar.gz
+
+OR
 
 Ansible persistent connection working release 
 python -m pip install ansible-core==2.12.7
 ansible==5.4.0
 ansible-core==2.12.7
 
+OR
 
 To install collection :
 ansible-galaxy collection install juniper.device
 
+OR
 
 To install the developement collection 
 ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device
 
+OR
+
 To clone the developement Collection for dev and debugging 
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
+
+OR
 
 To install the v1.0.1 collection
 ansible-galaxy collection install juniper.device:1.0.1
