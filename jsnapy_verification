@@ -319,3 +319,57 @@ Total No of tests passed: 1
 Total No of tests failed: 0 
 Overall Tests passed!!! 
 
+
+:~/ansible_release_test5/ansible-junos-stdlib/tests# cat test.py 
+from jnpr.jsnapy import SnapAdmin
+from pprint import pprint
+from jnpr.junos import Device
+
+js = SnapAdmin()
+
+config_file = "/root/ansible_release_test5/ansible-junos-stdlib/tests/junos_jsnapy/common_config.yml"
+js.snap(config_file, "/root/ansible_release_test5/venv/etc/jsnapy/snapshots/pre_test1.xml")
+js.snap(config_file, "/root/ansible_release_test5/venv/etc/jsnapy/snapshots/post_test1.xml")
+chk = js.check(config_file, "/root/ansible_release_test5/venv/etc/jsnapy/snapshots/pre_test1.xml", "/root/ansible_release_test5/venv/etc/jsnapy/snapshots/post_test1.xml")
+
+for check in chk:
+    print ("Tested on", check.device)
+    print ("Final result: ", check.result)
+    print ("Total passed: ", check.no_passed)
+    print ("Total failed:", check.no_failed)
+    pprint(check.test_results)
+
+
+~/ansible_release_test5/ansible-junos-stdlib/tests# python test.py 
+Connecting to device x.x.x.x ................
+Taking snapshot of COMMAND: show system storage 
+Connecting to device x.x.x.x ................
+Taking snapshot of COMMAND: show system storage 
+**************************** Device: x.x.x.x ****************************
+Tests Included: check_storage 
+************************ Command: show system storage ************************
+PASS | All "used-percent" is less than 95 [ 1 value matched ]
+------------------------------- Final Result!! -------------------------------
+check_storage : Passed
+Total No of tests passed: 1
+Total No of tests failed: 0 
+Overall Tests passed!!! 
+Tested on x.x.x.x
+Final result:  Passed
+Total passed:  1
+Total failed: 0
+{'show system storage': [{'count': {'fail': 0, 'pass': 1},
+                          'expected_node_value': 95.0,
+                          'failed': [],
+                          'node_name': 'used-percent',
+                          'passed': [{'actual_node_value': '61',
+                                      'id': {},
+                                      'message': 'File system /.mount use less '
+                                                 'than 95%',
+                                      'post': {'mounted-on': '/.mount',
+                                               'used-percent': '61'},
+                                      'pre': {'used-percent': '61'}}],
+                          'result': True,
+                          'test_name': 'check_storage',
+                          'testoperation': 'is-lt',
+                          'xpath': "//system-storage-information/filesystem[normalize-space(mounted-on)='/.mount']"}]}
