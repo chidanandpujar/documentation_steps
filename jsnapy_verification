@@ -260,3 +260,62 @@ Fix for mising logging.yml file :
 pip3 install -U jsnapy==1.3.7 --no-binary :all:  --no-cache-dir 
 
 
+To check with predefined snapshot filenames instead of pre and post :
+
+cat junos_jsnapy/common_config.yml 
+    hosts:
+      - device: x.x.x.x 
+        username : xyz
+        passwd: xyz
+        port: 22
+    tests:
+      - junos_jsnapy/test_junos_storage.yml
+
+
+cat junos_jsnapy/test_junos_storage.yml 
+tests_include:
+  - check_storage
+
+check_storage:
+    - command: show system storage
+    - iterate:
+        xpath: //system-storage-information/filesystem[normalize-space(mounted-on)='/.mount']
+        tests:
+          - is-lt: used-percent, 95
+            info: "File system {{post['mounted-on']}} use less than 95%"
+            err: "File system {{post['mounted-on']}} use  {{post['used-percent']}} %"
+
+
+~/ansible_release_test5/ansible-junos-stdlib/tests# jsnapy --snapcheck /root/ansible_release_test5/venv/etc/jsnapy/snapshots/test1_pre_show_system_storage.xml -f junos_jsnapy/common_config.yml -v
+jsnapy.cfg file location used : /root/ansible_release_test5/venv/etc/jsnapy
+Configuration file location used : /root/ansible_release_test5/venv/etc/jsnapy
+Connecting to device x.x.x.x ................
+Tests Included: check_storage 
+Taking snapshot of COMMAND: show system storage 
+**************************** Device: x.x.x.x ****************************
+Tests Included: check_storage 
+************************ Command: show system storage ************************
+-----------------------Performing is-lt Test Operation-----------------------
+File system /.mount use less than 95%
+PASS | All "used-percent" is less than 95 [ 1 value matched ]
+------------------------------- Final Result!! -------------------------------
+check_storage : Passed
+Total No of tests passed: 1
+Total No of tests failed: 0 
+Overall Tests passed!!! 
+
+:~/ansible_release_test5/ansible-junos-stdlib/tests# jsnapy --check /root/ansible_release_test5/venv/etc/jsnapy/snapshots/test1_pre_show_system_storage.xml /root/ansible_release_test5/venv/etc/jsnapy/snapshots/test1_pre_show_system_storage.xml -f junos_jsnapy/common_config.yml -v
+jsnapy.cfg file location used : /root/ansible_release_test5/venv/etc/jsnapy
+Configuration file location used : /root/ansible_release_test5/venv/etc/jsnapy
+**************************** Device: x.x.x.x ****************************
+Tests Included: check_storage 
+************************ Command: show system storage ************************
+-----------------------Performing is-lt Test Operation-----------------------
+File system /.mount use less than 95%
+PASS | All "used-percent" is less than 95 [ 1 value matched ]
+------------------------------- Final Result!! -------------------------------
+check_storage : Passed
+Total No of tests passed: 1
+Total No of tests failed: 0 
+Overall Tests passed!!! 
+
