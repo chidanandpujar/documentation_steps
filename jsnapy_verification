@@ -9,14 +9,14 @@ python -m pip install -r requirements.txt
 
 or Install the modules :
 
-python3.9 -m pip install junos-eznc
-python3.9 -m pip install colorama
-python3.9 -m pip install icdiff==1.9.1
+python -m pip install junos-eznc
+python -m pip install colorama
+python -m pip install icdiff==1.9.1
 
 setup :
 
-python3.9 setup.py sdist
-python3.9 setup.py install
+python setup.py sdist
+python setup.py install
 
 jsnapy --help
 usage: 
