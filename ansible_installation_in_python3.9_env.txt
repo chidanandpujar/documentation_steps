@@ -232,6 +232,18 @@ Note:
     To build rst files
     sphinx-apidoc  -o . -f ../plugins/modules/
 
+sphinx-build -b html . _build/html/
+
+To build new  module.rst files :
+comment out the line from ansible_collections/juniper/device/docs/ansible2rst.py
+
+    # here is where we build the table of contents...
+    text = template.render(doc)
+    write_data(text, outputname, module_name, OUTPUTDIR)
+
+python3 ansible2rst.py
+sphinx-build -b html . _build/html/
+
 
 
 tables and views debugging :
