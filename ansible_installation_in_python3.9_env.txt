@@ -225,6 +225,9 @@ pip install sphinx_bootstrap_theme
 		i) Within repo, cd docs
 		ii) sphinx-build -b html . _build/html/
 
+Note:
+    For python3.9 below
+    pip install MarkupSafe==2.0.0
 
 
 
