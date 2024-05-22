@@ -229,6 +229,9 @@ Note:
     For python3.9 below
     pip install MarkupSafe==2.0.0
 
+    To build rst files
+    sphinx-apidoc  -o . -f ../plugins/modules/
+
 
 
 tables and views debugging :
