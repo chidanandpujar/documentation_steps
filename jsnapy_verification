@@ -65,6 +65,68 @@ optional arguments:
                         -vvvv: Error level messages
                         -vvvvv: Critical level messages
 
+
+------------------------------------------------------------------------------------------------
+jsnapy verification using config file
+------------------------------------------------------------------------------------------------
+
+1) Create config file with host and test details 
+    hosts:
+      - device: x.x.x.x 
+        username : xyz
+        passwd: xyz 
+        port: 22
+    tests:
+      - test_sw_version.yml
+2) Create test file test_sw_version.yml
+tests_include:
+  - test_sw_version
+
+test_sw_version:
+  - command: show version
+  - item:
+      xpath: '//software-information'
+      tests:
+        - all-same: junos-version
+          err: "Test Failed!!! The versions are not the same. From the PRE snapshot, the version is: <{{pre['junos-version']}}>. From the POST snapshot, the version is <{{post['junos-version']}}>!! "
+3) Take the pre snapshot
+jsnapy --snap pre -f common_config.yml 
+Connecting to device x.x.x.x ................
+Taking snapshot of COMMAND: show version 
+
+4) Take the post snapshot
+jsnapy --snap post -f common_config.yml 
+Connecting to device x.x.x.x ................
+Taking snapshot of COMMAND: show version 
+
+5) Compare the pre and post snapshots are same or not 
+jsnapy --check pre  post -f common_config.yml 
+**************************** Device: x.x.x.x ****************************
+Tests Included: test_sw_version 
+*************************** Command: show version ***************************
+PASS | Value of all "junos-version" at xpath "//software-information" is same [ 1 value matched ]
+------------------------------- Final Result!! -------------------------------
+test_sw_version : Passed
+Total No of tests passed: 1
+Total No of tests failed: 0 
+Overall Tests passed!!! 
+
+6) Take the snapshot and test 
+jsnapy --snapcheck -f common_config.yml 
+Connecting to device 10.220.1.222 ................
+Taking snapshot of COMMAND: show version 
+**************************** Device: x.x.x.x ****************************
+Tests Included: test_sw_version 
+*************************** Command: show version ***************************
+PASS | Value of all "junos-version" at xpath "//software-information" is same [ 1 value matched ]
+------------------------------- Final Result!! -------------------------------
+test_sw_version : Passed
+Total No of tests passed: 1
+Total No of tests failed: 0 
+Overall Tests passed!!! 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
 Config.yml file with default port 830
 
 ~/jsnapy_debug/jsnapy/samples# vi config_check.yml 
