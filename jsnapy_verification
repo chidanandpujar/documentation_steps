@@ -141,7 +141,16 @@ on><package-information><name>os-kernel</name><package-name>os-kernel-prd-x86-64
 240227.bc22e47_builder_stable_12_223</package-name><comment>JUNOS OS Kernel 64-bit   .bc22e47_builder_stable_12_223</package-name><comment>JUNOS OS Kernel 64-bit  [2024 
 
 
+8) jsnapy tests with snap filename
 
+jsnapy --snap /root/ansible_release_v105_final/venv/etc/jsnapy/snapshots/pre_show_version.xml -f common_config.yml -v 
+
+jsnapy --snap /root/ansible_release_v105_final/venv/etc/jsnapy/snapshots/post_show_version.xml -f common_config.yml -v
+
+jsnapy --check /root/ansible_release_v105_final/venv/etc/jsnapy/snapshots/pre_show_version.xml /root/ansible_release_v105_final/venv/etc/jsnapy/snapshots/post_show_version.xml -f common_config.yml -v
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Config.yml file with default port 830
