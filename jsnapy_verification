@@ -111,7 +111,7 @@ Total No of tests passed: 1
 Total No of tests failed: 0 
 Overall Tests passed!!! 
 
-6) Take the snapshot and test 
+6) Take the snapshot and verify the test 
 jsnapy --snapcheck -f common_config.yml 
 Connecting to device 10.220.1.222 ................
 Taking snapshot of COMMAND: show version 
@@ -124,6 +124,23 @@ test_sw_version : Passed
 Total No of tests passed: 1
 Total No of tests failed: 0 
 Overall Tests passed!!! 
+
+
+7) Get the diff between pre and post snapshots
+
+jsnapy --diff pre  post -f common_config.yml -v
+jsnapy.cfg file location used : /root/ansible_release_v105_final/venv/etc/jsnapy
+Configuration file location used : /root/ansible_release_v105_final/venv/etc/jsnapy
+**************************** Device: x.x.x.x ****************************
+Tests Included: test_sw_version 
+*************************** Command: show version ***************************
+/root/ansible_release_v105_final/venv/etc/jsnapy/snapshots/x.x.x.x_pre_show_version.xml /root/ansible_release_v105_final/venv/etc/jsnapy/snapshots/x.x.x.x_post_show_version.xml
+<software-information><host-name>evoeventtesta</host-name><product-model>mx960</pro  <software-information><host-name>evoeventtesta</host-name><product-model>mx960</pro 
+duct-model><product-name>mx960</product-name><junos-version>22.3X60.28</junos-versi  duct-model><product-name>mx960</product-name><junos-version>22.3</junos-version><pa 
+on><package-information><name>os-kernel</name><package-name>os-kernel-prd-x86-64-20  ckage-information><name>os-kernel</name><package-name>os-kernel-prd-x86-64-20240227 
+240227.bc22e47_builder_stable_12_223</package-name><comment>JUNOS OS Kernel 64-bit   .bc22e47_builder_stable_12_223</package-name><comment>JUNOS OS Kernel 64-bit  [2024 
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
