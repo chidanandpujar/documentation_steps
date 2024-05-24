@@ -159,41 +159,42 @@ jsnapy verifcation with interfaces admin-status
 1) create config file
 cat common_config.yml 
     hosts:
-      - device: x.x.x.x 
+      - device: 10.220.1.222
         username : regress 
         passwd: MaRtInI 
         port: 22
     tests:
-      - test_loopback.yml 
+      - test_loopback_no_diff.yml 
+
 
 2) Create test file
-cat test_loopback.yml 
+cat test_loopback_no_diff.yml 
 tests_include:
-  - test_command_version
+  - test_loopback_admin_status
 
-test_command_version:
+test_loopback_admin_status:
   - command: show interfaces terse lo*
   - iterate:
       xpath: //logical-interface
       id: './name'
       tests:
-        - list-not-more: admin-status
-          err: "Test Failed!! name list changed, <{{pre['admin-status']}}>  with name <{{id_0}}> is not found in post snapshot"
-          info: "Test successful!! name list is same, with name <{{id_0}}>"
+        - no-diff: admin-status 
+          err: "Test Failed!! name list changed, <{{pre['admin-status']}}>  with name <{{id_0}}>"
+          info: "Test successful!! name list is same>"
 
-        - list-not-less: admin-status
-          err: "Test Failed!! name list changed, <{{pre['admin-status']}}>  with name <{{id_0}}> was not present in PRE snapshot"
-          info: "Test successful!! name list is same, with name <{{id_0}}>"
+1) Modify the device config
+set routing-instances LO10 interface lo0.10
+set routing-instances LO10 instance-type virtual-router
+set interfaces lo0 unit 10 family inet
+commit
 
-3) Take the pre snapshot
+2) Take the pre snapshot
 jsnapy --snap pre -f common_config.yml 
 Connecting to device x.x.x.x ................
 Taking snapshot of COMMAND: show interfaces terse lo* 
 
-4) Modify the device confi
-set routing-instances LO10 interface lo0.10
-set routing-instances LO10 instance-type virtual-router
-set interfaces lo0 unit 10 family inet
+3) Deactivate the interface config
+deactivate interface lo0
 commit
 
 4) Take the post snapshot
@@ -204,16 +205,16 @@ Taking snapshot of COMMAND: show interfaces terse lo*
 5) Compare the pre and post snapshots
 jsnapy --check post pre -f common_config.yml 
 **************************** Device: x.x.x.x ****************************
-Tests Included: test_command_version 
+Tests Included: test_loopback_admin_status 
 ********************* Command: show interfaces terse lo* *********************
-PASS | All "admin-status" in post snapshot is present in pre snapshot [ 3 value matched ]
-Test Failed!! name list changed, <['up']>  with name <['lo0.10']> was not present in PRE snapshot
-FAIL | All "admin-status" in pre snapshot is not present in post snapshot [ 3 value matched / 1 value failed ]
+Test Failed!! name list changed, <None>  with name <['lo0.10']>
+FAIL | All "admin-status" is not same in pre and post snapshot [ 3 value matched / 1 value failed ]
 ------------------------------- Final Result!! -------------------------------
-test_command_version : Failed
-Total No of tests passed: 1
+test_loopback_admin_status : Failed
+Total No of tests passed: 0
 Total No of tests failed: 1 
 Overall Tests failed!!! 
+
 
 =============================================================================================================================
 =============================================================================================================================
