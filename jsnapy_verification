@@ -581,3 +581,71 @@ Total failed: 0
                           'test_name': 'check_storage',
                           'testoperation': 'is-lt',
                           'xpath': "//system-storage-information/filesystem[normalize-space(mounted-on)='/.mount']"}]}
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Example:
+
+ cat common_config.yml
+
+tests:
+  - test_snmp.yml 
+
+#can send mail by specifying:
+#mail: send_mail.yml
+
+cat test_snmp.yml 
+tests_include:
+  - test_snmp_config 
+
+test_snmp_config:
+  - rpc: get-configuration
+  - iterate:
+      xpath: /configuration/snmp
+      tests:
+        - exists: community[name='mycommunity'] 
+          info: SNMP community ''mycommunity' is configured. 
+          err: SNMP community ''mycommunity' is not configured!
+
+Without device handle
+
+from jnpr.jsnapy import SnapAdmin
+from pprint import pprint
+from jnpr.junos import Device
+
+js = SnapAdmin()
+
+config_file = "/root/jsnapy_test1/jsnapy/common_config.yml"
+#js.snap(config_file, "pre")
+#js.snap(config_file, "post")
+chk = js.snapcheck(config_file)
+#chk = js.check(config_file, "pre", "post")
+for check in chk:
+    print ("Tested on", check.device)
+    print ("Final result: ", check.result)
+    print ("Total passed: ", check.no_passed)
+    print ("Total failed:", check.no_failed)
+    print(check.test_details['get-configuration'])
+    #print(type(check))
+    #pprint(dir(check))
+
+
+with Dev handle:
+
+from jnpr.jsnapy import SnapAdmin
+from pprint import pprint
+from jnpr.junos import Device
+
+dev_obj = Device(host='x.x.x.x, user='xyz', password='xyz')
+dev_obj.open()
+
+js = SnapAdmin()
+config_file = "common_config.yml"
+snapvalue = js.snapcheck(config_file, "pre", dev=dev_obj)
+
+for snapcheck in snapvalue:
+    print ("\n -----------snapcheck----------")
+    print ("Tested on", snapcheck.device)
+    print ("Final result: ", snapcheck.result)
+    print ("Total passed: ", snapcheck.no_passed)
+    print ("Total failed:", snapcheck.no_failed)
+    pprint(snapcheck.test_results) 
