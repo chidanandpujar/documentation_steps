@@ -20,3 +20,7 @@ print (etree.tostring(current_re))
 
 
 find / -size +10M
+
+
+logging
+logging.basicConfig(level=logging.INFO)
