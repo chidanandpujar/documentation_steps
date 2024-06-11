@@ -1,3 +1,5 @@
+https://github.com/Juniper/jsnapy/wiki/4.-Module
+
 mkdir jsnapy_debug
 python3.9 -m venv venv
 source venv/bin/activate
