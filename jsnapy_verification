@@ -651,3 +651,19 @@ for snapcheck in snapvalue:
     print ("Total passed: ", snapcheck.no_passed)
     print ("Total failed:", snapcheck.no_failed)
     pprint(snapcheck.test_results) 
+
+
+---------------------------------------------------------------------
+
+
+from jnpr.jsnapy import SnapAdmin
+from pprint import pprint
+from jnpr.junos import Device
+
+dev_obj = Device(host='x.x.x.x', user='xyz', password='xyz')
+dev_obj.open()
+config_data = {'tests': ['TEST_FILES/test_interface.yml']}
+
+js = SnapAdmin()
+config_file = "jsnapy_main.yml"
+snapvalue = js.snap(config_file, "pre", dev=dev_obj)
