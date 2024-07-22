@@ -7,13 +7,13 @@ git clone https://github.com/Juniper/jsnapy.git
 cd jsnapy/
 
 Install all the requirements :
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 
 or Install the modules :
 
-python -m pip install junos-eznc
-python -m pip install colorama
-python -m pip install icdiff==1.9.1
+pip install junos-eznc
+pip install colorama
+pip install icdiff==1.9.1
 
 setup :
 
