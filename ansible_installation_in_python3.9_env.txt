@@ -8,7 +8,7 @@ source venv/bin/activate
 
 2)
 To insall pyez
-python -m pip install junos-eznc
+pip install junos-eznc
 
 OR
 
@@ -18,14 +18,14 @@ pip install git+https://github.com/Juniper/py-junos-eznc.git
 OR
 
 To install older release 
-python -m pip install junos-eznc==2.6.0
+pip install junos-eznc==2.6.0
 
 3)
-python -m pip install jxmlease
-python -m pip install xmltodict
+pip install jxmlease
+pip install xmltodict
 
 To innstall jsnapy specific version:
-python -m pip install jsnapy==1.3.7 --no-binary :all:  --no-cache-dir
+pip install jsnapy==1.3.7 --no-binary :all:  --no-cache-dir
 or
 
 To install jnsapy from master 
@@ -33,19 +33,19 @@ pip install git+https://github.com/Juniper/jsnapy.git
 
 4)
 To install ansible stable release:
-python -m pip install ansible
-python -m pip install ansible-core==2.14
+pip install ansible
+pip install ansible-core==2.14
 
 OR
 
 To install ansible developement release:
-python -m pip install ansible-core==2.14.0rc1
-python -m pip install https://github.com/ansible/ansible/archive/devel.tar.gz
+pip install ansible-core==2.14.0rc1
+pip install https://github.com/ansible/ansible/archive/devel.tar.gz
 
 OR
 
 Ansible persistent connection working release 
-python -m pip install ansible-core==2.12.7
+pip install ansible-core==2.12.7
 ansible==5.4.0
 ansible-core==2.12.7
 
