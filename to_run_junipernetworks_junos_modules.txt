@@ -1,0 +1,121 @@
+reference: https://github.com/ansible/ansible/issues/58003
+
+cat inventory
+[junos]
+x.x.x.x
+
+[all:vars]
+ansible_connection=netconf
+ansible_network_os=junos
+ansible_user=root
+ansible_ssh_pass=secret
+
+
+cat ansible.cfg 
+[defaults]
+hash_behaviour=merge
+#roles_path = ~/.ansible/roles
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+timeout = 120
+# Use the YAML callback plugin.
+#stdout_callback = yaml
+# Use the stdout_callback when running ad-hoc commands.
+#bin_ansible_callbacks = True
+#collections_paths = /root/ansible_jsnapy_issue/ansible-junos-stdlib/ansible_collections
+#deprecation_warnings=False
+callback_enabled = jsnapy
+CALLBACK_NEEDS_WHITELIST = True
+
+[persistent_connection]
+connect_timeout = 600
+command_timeout = 600 
+
+
+playbook:
+
+cat main_provider.yml 
+--- # Full Playbook
+- name: Ansible Jsnapy Health Check
+  hosts: all 
+  connection: local # connection local support for this module is deprecated
+  gather_facts: no #instead uses the facts module in the juniper.device
+  any_errors_fatal: true
+  collections:
+    - juniper.device
+ 
+  vars_prompt:
+    - name: ansible_ssh_user
+      prompt: JUNOS USERNAME
+      default: xyz
+      private: no
+    - name: ansible_ssh_pass
+      prompt: JUNOS PASSWORD
+      default: xyz
+      private: no
+
+  vars:
+    host: "{{ inventory_hostname }}"
+    user:  "{{ ansible_ssh_user }}"
+    passwd:  "{{ ansible_ssh_pass }}"
+    log_dir: "./ansible_logs"
+    netconf_port: 830
+    wait_time: 3600
+
+  tasks:
+
+    - name: Retrieve facts from devices running Junos OS with configuration
+      junipernetworks.junos.junos_facts:
+        gather_subset:
+          - config
+          - hardware
+        config_format: json
+      ignore_errors: true
+      register: result
+
+    - debug: var=result
+
+    - name: Interface Configuration
+      junipernetworks.junos.junos_l3_interfaces:
+        config:
+        - name: ge-0/0/0
+          ipv4:
+            - address: 192.168.12.1/24
+          ipv6:
+            - address: 2001:B00B:C0FE:12::1/64
+        state: merged
+
+
+ansible-playbook main_provider.yml
+JUNOS USERNAME []: 
+JUNOS PASSWORD []: 
+
+PLAY [Ansible Jsnapy Health Check] ****************************************************************************************************************************************
+
+TASK [Retrieve facts from devices running Junos OS with configuration] ****************************************************************************************************
+ok: [x.x.x.x]
+
+TASK [debug] **************************************************************************************************************************************************************
+ok: [x.x.x.x] => {
+    "result": {
+        "ansible_facts": {
+            "ansible_net_api": "netconf",
+            "ansible_net_config": {
+                "configuration": {
+                    "@": {
+                        "junos:changed-localtime": "2024-08-06 10:39:11 IST",
+                        "junos:changed-seconds": "1722920951",
+                        "xmlns": "http://xml.juniper.net/xnm/1.1/xnm"
+                    },
+                    "apply-groups": [
+                        "global",
+                        "member0",
+                        "underlay"
+                    ],
+                    "groups": [
+                        {
+                            "interfaces": {
+                                "interface": [
+                                    {
+
