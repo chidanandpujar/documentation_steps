@@ -24,3 +24,13 @@ find / -size +10M
 
 logging
 logging.basicConfig(level=logging.INFO)
+
+
+Ansible debugging:
+
+file1 = open("/var/tmp/debug_ansible_issue1", "a")
+file1.write("================pyez conn===========" + "\n")
+file1.write("data: " + str(data) + "\n")
+file1.write("dev: " + str(self.dev) + "\n")
+file1.close()
+
