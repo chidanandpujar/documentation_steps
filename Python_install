@@ -1,4 +1,9 @@
+
+Python 3.12 installation:
+
 https://www.linuxtuto.com/how-to-install-python-3-12-on-ubuntu-22-04/
+
+Docker:
 docker run -i -t <img id> /bin/bash
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
 docker exec -it 1381230e5edd /bin/bash
