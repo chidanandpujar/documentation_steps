@@ -84,5 +84,9 @@ https://github.com/yadage/packtivity/pull/78/files
 
 Fix for Unit test faliures:
 
+Fix1:
 python -m pip install ntc_templates==1.4.1
 python -m pip install textfsm==0.4.1
+
+Fix2:
+https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html
