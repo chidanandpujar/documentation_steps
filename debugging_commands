@@ -34,3 +34,13 @@ file1.write("data: " + str(data) + "\n")
 file1.write("dev: " + str(self.dev) + "\n")
 file1.close()
 
+
+
+
+Python 3.6.9 (default, Oct  8 2020, 12:12:24) 
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import jnpr.junos
+>>> jnpr.junos.__version__
+'2.6.0'
