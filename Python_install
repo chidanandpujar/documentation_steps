@@ -11,6 +11,8 @@ sudo apt clean
 sudo apt autoclean
 sudo apt update
 
+apt-get update && apt-get upgrade
+
 Docker:
 docker run -i -t <img id> /bin/bash
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
