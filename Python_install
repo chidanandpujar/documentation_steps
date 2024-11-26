@@ -17,3 +17,16 @@ Docker:
 docker run -i -t <img id> /bin/bash
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
 docker exec -it 1381230e5edd /bin/bash
+
+
+
+
+docker save -o <path for created tar file> <image name>
+docker load -i <path to docker image tar file>
+
+apt update
+apt install docker.io -y
+systemctl enable docker --now
+docker --version
+
+docker build -t myimg:latest .
