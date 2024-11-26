@@ -5,6 +5,12 @@ https://www.linuxtuto.com/how-to-install-python-3-12-on-ubuntu-22-04/
 apt update
 https://github.com/pypa/pip/issues/10939
 
+
+I correct the time zone
+sudo apt clean
+sudo apt autoclean
+sudo apt update
+
 Docker:
 docker run -i -t <img id> /bin/bash
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
