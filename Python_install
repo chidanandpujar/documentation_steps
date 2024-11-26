@@ -2,6 +2,7 @@
 Python 3.12 installation:
 
 https://www.linuxtuto.com/how-to-install-python-3-12-on-ubuntu-22-04/
+ apt update
 
 Docker:
 docker run -i -t <img id> /bin/bash
