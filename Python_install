@@ -30,6 +30,15 @@ docker --version
 
 docker build -t myimg:latest .
 
+example
+|playbook.yml
+|hosts
+|-vars
+|-templates
+|-scripts
+
+cd example/ docker run -it --rm -v $PWD:/playbooks juniper/pyez-ansible ansible-playbook -i hosts playbook.yml
+
 
 
 podman installation:
@@ -38,3 +47,12 @@ sudo apt-get update
 sudo apt-get -y install podman
 
 podman build -t ansible:v1.0.6 .
+
+example
+|playbook.yml
+|hosts
+|-vars
+|-templates
+|-scripts
+
+cd example/ podman run -it --rm -v $PWD:/playbooks juniper/pyez-ansible ansible-playbook -i hosts playbook.yml
