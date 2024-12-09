@@ -77,3 +77,41 @@ command_timeout = 300
 
 ~/ansible_docker_test1/ansible-junos-stdlib/tests$ podman run -it --rm -v $PWD:/project  ansible:v1.0.6 ansible-playbook -i inventory pb.juniper_junos_table.yml 
 
+~/ansible_docker_test1/ansible-junos-stdlib/tests$ podman run -it --rm -v $PWD:/project  ansible:v1.0.6 ansible-playbook -i inventory pb.juniper_junos_table.yml 
+Executing given commands
+
+PLAY [Test juniper.device.table PyEZ table/view module.] ******************************************************************************************************************
+
+TASK [Retrieve LLDP Neighbor Information Using PyEZ-included Table] *******************************************************************************************************
+[WARNING]: Platform linux on host local_connection_testcases is using the discovered Python interpreter at /usr/local/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [local_connection_testcases]
+
+TASK [Check TEST 1] *******************************************************************************************************************************************************
+ok: [local_connection_testcases] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve routes within 192.68.1/8] **********************************************************************************************************************************
+ok: [local_connection_testcases]
+
+TASK [Check TEST 2] *******************************************************************************************************************************************************
+ok: [local_connection_testcases] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Retrieve ethernet devices] ******************************************************************************************************************************************
+ok: [local_connection_testcases]
+
+TASK [Check TEST 3] *******************************************************************************************************************************************************
+ok: [local_connection_testcases] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP ****************************************************************************************************************************************************************
+local_connection_testcases : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
