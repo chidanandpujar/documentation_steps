@@ -29,3 +29,12 @@ systemctl enable docker --now
 docker --version
 
 docker build -t myimg:latest .
+
+
+
+podman installation:
+https://podman.io/docs/installation
+sudo apt-get update
+sudo apt-get -y install podman
+
+podman build -t ansible:v1.0.6 .
