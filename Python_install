@@ -42,17 +42,38 @@ cd example/ docker run -it --rm -v $PWD:/playbooks juniper/pyez-ansible ansible-
 
 
 podman installation:
+
 https://podman.io/docs/installation
 sudo apt-get update
 sudo apt-get -y install podman
-
 podman build -t ansible:v1.0.6 .
 
-example
-|playbook.yml
-|hosts
-|-vars
-|-templates
-|-scripts
+~/ansible_docker_test1/ansible-junos-stdlib/tests$ pwd
+/home/labroot/ansible_docker_test1/ansible-junos-stdlib/tests
 
-cd example/ podman run -it --rm -v $PWD:/playbooks juniper/pyez-ansible ansible-playbook -i hosts playbook.yml
+~/ansible_docker_test1/ansible-junos-stdlib/tests$ ls
+ansible.cfg  junos_jsnapy                  pb.juniper_junos_facts.yml   pb.juniper_junos_ping.yml   pb.juniper_junos_software_member.yml  pb.juniper_junos_system.yml
+ansible.log  pb.juniper_junos_command.yml  pb.juniper_junos_file.yml    pb.juniper_junos_pmtud.yml  pb.juniper_junos_software.yml         pb.juniper_junos_table.yml
+inventory    pb.juniper_junos_config.yml   pb.juniper_junos_jsnapy.yml  pb.juniper_junos_rpc.yml    pb.juniper_junos_srx_cluster.yml      README.md
+
+~/ansible_docker_test1/ansible-junos-stdlib/tests$ cat inventory 
+[junos]
+local_connection_testcases  ansible_host=x.x.x.x  ansible_user=xyz  ansible_pass=xyz ansible_port=22 ansible_connection=local ansible_command_timeout=300
+
+#pyez_connection_testcases  ansible_host=x.x.x.x  ansible_user=xyz  ansible_ssh_pass=xyz ansible_port=22 ansible_connection=juniper.device.pyez ansible_command_timeout=300
+
+[all:vars]
+#ansible_python_interpreter=/root/ansible_release_test1/venv/bin/python
+
+~/ansible_docker_test1/ansible-junos-stdlib/tests$ cat ansible.cfg 
+[defaults]
+hash_behaviour=merge
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+
+[persistent_connection]
+command_timeout = 300
+
+~/ansible_docker_test1/ansible-junos-stdlib/tests$ podman run -it --rm -v $PWD:/project  ansible:v1.0.6 ansible-playbook -i inventory pb.juniper_junos_table.yml 
+
