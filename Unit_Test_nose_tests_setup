@@ -1,3 +1,18 @@
+ansible-test:
+
+1) Integration 
+
+ansible-test network-integration --python 3.12 --inventory /root/ansible_integration_test/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking
+
+2) Sanity
+ansible-test sanity
+
+3) Unit
+
+python3.12 -m  pytest 
+
+
+
 PyEZ unit test execution :
 nose tests:
 
