@@ -11,6 +11,9 @@ ansible-test sanity
 
 python3.12 -m  pytest 
 
+4) To run specific target
+ansible-test network-integration --python 3.12 --inventory /root/pyez_ansible_release_validation1/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking --start-at junos_system
+
 
 
 PyEZ unit test execution :
