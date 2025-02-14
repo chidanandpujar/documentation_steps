@@ -25,6 +25,14 @@ python -m pip install coverage
 python -m pip install ntc_templates==1.4.1
 python -m pip install textfsm==0.4.1
 
+
+nose2 unit tests:
+
+nose2 --with-coverage -vvv tests.unit
+
+nose2 functional tests:
+
+
 To run the pyez unit tests :
 cd py-junos-eznc/tests/unit
 nosetests -v --with-coverage --cover-package=jnpr.junos --cover-inclusive -a unit
