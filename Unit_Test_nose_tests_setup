@@ -15,6 +15,17 @@ python3.12 -m  pytest
 ansible-test network-integration --python 3.12 --inventory /root/pyez_ansible_release_validation1/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking --start-at junos_system
 
 
+nose2:
+
+Unit:
+nose2 -v --coverage jnpr.junos  tests.unit
+
+Functional:
+cd tests/functional
+cat nose2.cfg 
+[unittest]
+start-dir=./
+nose2 -v -c nose2.cfg
 
 PyEZ unit test execution :
 nose tests:
