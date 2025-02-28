@@ -70,7 +70,7 @@ git clone https://github.com/Juniper/ansible-junos-stdlib.git
 cd ansible-junos-stdlib
 
 Dev installation for debugging
-python setup.py install
+python setup.py install or pip install .
 
 OR
 
