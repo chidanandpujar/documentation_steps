@@ -4,6 +4,16 @@ ansible-test:
 
 ansible-test network-integration --python 3.12 --inventory /root/ansible_integration_test/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking
 
+Issues:
+1)
+File "/tmp/ansible_ansible.builtin.find_payload_jsp87qb9/ansible_ansible.builtin.find_payload.zip/ansible/module_utils/basic.py", line 5
+SyntaxError: future feature annotations is not defined
+
+Fix:
+update python interpreter path in inventory.networking.
+[all:vars]
+ansible_python_interpreter=/root/pyez_ansible_release_validation1/venv/bin/python
+
 2) Sanity
 ansible-test sanity
 
