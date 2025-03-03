@@ -137,6 +137,7 @@ create ansible playbook
 
 
 
+
 ansible-playbook get_config.yaml 
 
 PLAY [Test juniper_junos_config module] ************************************************************************************************************************************************************
@@ -148,6 +149,64 @@ TASK [Check TEST 1] ************************************************************
 ok: [test] => {
     "test1": {
         "changed": false,
+
+
+
+---
+- name: Test juniper.device.software module
+  hosts: all
+  gather_facts: false
+  vars:
+    wait_time: 3600
+    pkg_dir: /var/tmp/
+    os_version: 
+    os_package: junos-vmhost-install-mx-x86-64.tgz 
+    log_dir: /var/log/
+
+  tasks:
+    - name: Checking NETCONF connectivity
+      ansible.builtin.wait_for:
+        host: "{{ ansible_ssh_host }}"
+        port: 830
+        timeout: 30
+    - name: Install Junos OS package
+      juniper.device.software:
+        vmhost: true
+        reboot: true 
+        no_copy: true
+        all_re: false
+        validate: false
+        package: "{{ pkg_dir }}/{{ os_package }}"
+        logfile: "{{ log_dir }}/software.log"
+        timeout: 30
+      register: test1
+      ignore_errors: true
+      notify:
+        - Wait_reboot
+
+    - name: Print response
+      ansible.builtin.debug:
+        var: test1
+
+    - name: Check TEST - 1
+      ansible.builtin.assert:
+        that:
+          - test1.failed == false
+
+    - name: Checking NETCONF connectivity
+      ansible.builtin.wait_for:
+        host: "{{ ansible_ssh_host }}"
+        port: 830
+        timeout: 600 
+        delay: 120 
+
+  handlers:
+    - name: Wait_reboot
+      ansible.builtin.wait_for:
+        host: "{{ ansible_ssh_host }}"
+        port: 830
+        timeout: "{{ wait_time }}"
+      when: not test1.check_mode
 
 
 
