@@ -408,4 +408,7 @@ Last login: Fri May  3 13:57:04 2024 from 10.220.0.191
 --- JUNOS 21.4R3-S2.3 Kernel 64-bit  JNPR-12.1-20221028.898be19_buil
 
 
+Debug logs:
+
+ANSIBLE_DEBUG=1  ansible-playbook -i inventory_netconf pb.junos_facts.yml -vvvvv
 
