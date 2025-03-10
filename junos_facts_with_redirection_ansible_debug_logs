@@ -1,97 +1,97 @@
 root@masterhost:~/ansible_modules_redirection3/ansible-junos-stdlib/tests# ANSIBLE_DEBUG=1 ansible-playbook -i inventory_netconf pb.junos_facts.yml 
 [DEPRECATION WARNING]: [defaults]collections_paths option. Reason: does not fit var naming standard, use the singular form collections_path instead 
 Alternatives: none. This feature will be removed in version 2.19. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
-318287 1741589304.68947: starting run
-318287 1741589304.69331: Added group all to inventory
-318287 1741589304.69337: Added group ungrouped to inventory
-318287 1741589304.69343: Group all now contains ungrouped
-318287 1741589304.69348: Examining possible inventory source: /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/inventory_netconf
-318287 1741589304.80647: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/cache
-318287 1741589304.80712: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py
-318287 1741589304.80741: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory
-318287 1741589304.80797: Loading InventoryModule 'host_list' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py
-318287 1741589304.80866: Loaded config def from plugin (inventory/script)
-318287 1741589304.80871: Loading InventoryModule 'script' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py
-318287 1741589304.80908: Loading InventoryModule 'auto' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py
-318287 1741589304.80982: Loaded config def from plugin (inventory/yaml)
-318287 1741589304.80988: Loading InventoryModule 'yaml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py
-318287 1741589304.81070: Loading InventoryModule 'ini' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py
-318287 1741589304.81436: Loading InventoryModule 'toml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/toml.py
-318287 1741589304.81443: Attempting to use plugin host_list (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py)
-318287 1741589304.81449: Attempting to use plugin script (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py)
-318287 1741589304.81460: Attempting to use plugin auto (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py)
-318287 1741589304.81463: Attempting to use plugin yaml (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py)
-318287 1741589304.81491: Loading data from /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/inventory_netconf
-318287 1741589304.81549: /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/inventory_netconf was not parsable by yaml
-318287 1741589304.81619: Attempting to use plugin ini (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py)
-318287 1741589304.81685: Added group junos to inventory
-318287 1741589304.81698: set inventory_file for 10.220.10.59
-318287 1741589304.81704: set inventory_dir for 10.220.10.59
-318287 1741589304.81707: Added host 10.220.10.59 to inventory
-318287 1741589304.81711: Added host 10.220.10.59 to group junos
-318287 1741589304.81722: set ansible_connection for all
-318287 1741589304.81729: set ansible_network_os for all
-318287 1741589304.81734: set ansible_user for all
-318287 1741589304.81740: set ansible_ssh_pass for all
-318287 1741589304.81745: set ansible_ssh_port for all
-318287 1741589304.81767: set ansible_pass for all
-318287 1741589304.81773: set ansible_python_interpreter for all
-318287 1741589304.81778: Reconcile groups and hosts in inventory.
-318287 1741589304.81784: Group all now contains junos
-318287 1741589304.81866: '/usr/local/lib/python3.12/site-packages/ansible/plugins/vars/__init__' skipped due to reserved name
-318287 1741589304.81985: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments
-318287 1741589304.82039: Loading ModuleDocFragment 'vars_plugin_staging' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/vars_plugin_staging.py
-318287 1741589304.82064: Loaded config def from plugin (vars/host_group_vars)
-318287 1741589304.82069: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=False, class_only=True)
-318287 1741589304.82078: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/vars
-318287 1741589304.82089: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
-318287 1741589304.82131: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
-318287 1741589304.82470: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
-318287 1741589304.82559: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py
-318287 1741589304.82591: Loaded config def from plugin (connection/local)
-318287 1741589304.82596: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=False, class_only=True)
-318287 1741589304.82907: Loaded config def from plugin (connection/paramiko_ssh)
-318287 1741589304.82913: Loading Connection 'paramiko_ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/paramiko_ssh.py (found_in_cache=False, class_only=True)
-318287 1741589304.83669: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
-318287 1741589304.83703: Loaded config def from plugin (connection/psrp)
-318287 1741589304.83708: Loading Connection 'psrp' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/psrp.py (found_in_cache=False, class_only=True)
-318287 1741589304.84180: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
-318287 1741589304.84212: Loaded config def from plugin (connection/ssh)
-318287 1741589304.84217: Loading Connection 'ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
-318287 1741589304.85725: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
-318287 1741589304.85760: Loaded config def from plugin (connection/winrm)
-318287 1741589304.85766: Loading Connection 'winrm' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/winrm.py (found_in_cache=False, class_only=True)
-318287 1741589304.85802: '/usr/local/lib/python3.12/site-packages/ansible/plugins/shell/__init__' skipped due to reserved name
-318287 1741589304.85863: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py
-318287 1741589304.85910: Loaded config def from plugin (shell/cmd)
-318287 1741589304.85915: Loading ShellModule 'cmd' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/cmd.py (found_in_cache=False, class_only=True)
-318287 1741589304.85933: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py (found_in_cache=True, class_only=False)
-318287 1741589304.85975: Loaded config def from plugin (shell/powershell)
-318287 1741589304.85979: Loading ShellModule 'powershell' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=False, class_only=True)
-318287 1741589304.86032: Loading ModuleDocFragment 'shell_common' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_common.py
-318287 1741589304.86150: Loaded config def from plugin (shell/sh)
-318287 1741589304.86155: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=False, class_only=True)
-318287 1741589304.86195: '/usr/local/lib/python3.12/site-packages/ansible/plugins/become/__init__' skipped due to reserved name
-318287 1741589304.86291: Loaded config def from plugin (become/runas)
-318287 1741589304.86297: Loading BecomeModule 'runas' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/runas.py (found_in_cache=False, class_only=True)
-318287 1741589304.86442: Loaded config def from plugin (become/su)
-318287 1741589304.86448: Loading BecomeModule 'su' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/su.py (found_in_cache=False, class_only=True)
-318287 1741589304.86571: Loaded config def from plugin (become/sudo)
-318287 1741589304.86577: Loading BecomeModule 'sudo' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/sudo.py (found_in_cache=False, class_only=True)
-318287 1741589304.86612: Loading data from /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/pb.junos_facts.yml
-318287 1741589304.86965: trying /usr/local/lib/python3.12/site-packages/ansible/modules
-318287 1741589304.87081: trying /usr/local/lib/python3.12/site-packages/ansible/modules/__pycache__
-318287 1741589304.87215: plugin lookup for junipernetworks.junos.junos_facts failed; errors: error parsing collection metadata: mapping values are not allowed in this context
+318395 1741589579.25001: starting run
+318395 1741589579.25376: Added group all to inventory
+318395 1741589579.25384: Added group ungrouped to inventory
+318395 1741589579.25390: Group all now contains ungrouped
+318395 1741589579.25395: Examining possible inventory source: /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/inventory_netconf
+318395 1741589579.36807: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/cache
+318395 1741589579.36876: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py
+318395 1741589579.36908: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory
+318395 1741589579.36966: Loading InventoryModule 'host_list' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py
+318395 1741589579.37033: Loaded config def from plugin (inventory/script)
+318395 1741589579.37040: Loading InventoryModule 'script' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py
+318395 1741589579.37079: Loading InventoryModule 'auto' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py
+318395 1741589579.37155: Loaded config def from plugin (inventory/yaml)
+318395 1741589579.37161: Loading InventoryModule 'yaml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py
+318395 1741589579.37249: Loading InventoryModule 'ini' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py
+318395 1741589579.37607: Loading InventoryModule 'toml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/toml.py
+318395 1741589579.37616: Attempting to use plugin host_list (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py)
+318395 1741589579.37621: Attempting to use plugin script (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py)
+318395 1741589579.37633: Attempting to use plugin auto (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py)
+318395 1741589579.37636: Attempting to use plugin yaml (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py)
+318395 1741589579.37664: Loading data from /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/inventory_netconf
+318395 1741589579.37724: /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/inventory_netconf was not parsable by yaml
+318395 1741589579.37793: Attempting to use plugin ini (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py)
+318395 1741589579.37857: Added group junos to inventory
+318395 1741589579.37871: set inventory_file for 10.220.10.59
+318395 1741589579.37878: set inventory_dir for 10.220.10.59
+318395 1741589579.37881: Added host 10.220.10.59 to inventory
+318395 1741589579.37885: Added host 10.220.10.59 to group junos
+318395 1741589579.37896: set ansible_connection for all
+318395 1741589579.37904: set ansible_network_os for all
+318395 1741589579.37910: set ansible_user for all
+318395 1741589579.37915: set ansible_ssh_pass for all
+318395 1741589579.37920: set ansible_ssh_port for all
+318395 1741589579.37943: set ansible_pass for all
+318395 1741589579.37949: set ansible_python_interpreter for all
+318395 1741589579.37955: Reconcile groups and hosts in inventory.
+318395 1741589579.37962: Group all now contains junos
+318395 1741589579.38045: '/usr/local/lib/python3.12/site-packages/ansible/plugins/vars/__init__' skipped due to reserved name
+318395 1741589579.38161: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments
+318395 1741589579.38213: Loading ModuleDocFragment 'vars_plugin_staging' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/vars_plugin_staging.py
+318395 1741589579.38239: Loaded config def from plugin (vars/host_group_vars)
+318395 1741589579.38245: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=False, class_only=True)
+318395 1741589579.38254: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/vars
+318395 1741589579.38265: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+318395 1741589579.38309: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
+318395 1741589579.38627: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+318395 1741589579.38716: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py
+318395 1741589579.38750: Loaded config def from plugin (connection/local)
+318395 1741589579.38756: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=False, class_only=True)
+318395 1741589579.39073: Loaded config def from plugin (connection/paramiko_ssh)
+318395 1741589579.39081: Loading Connection 'paramiko_ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/paramiko_ssh.py (found_in_cache=False, class_only=True)
+318395 1741589579.39845: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+318395 1741589579.39881: Loaded config def from plugin (connection/psrp)
+318395 1741589579.39888: Loading Connection 'psrp' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/psrp.py (found_in_cache=False, class_only=True)
+318395 1741589579.40374: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+318395 1741589579.40408: Loaded config def from plugin (connection/ssh)
+318395 1741589579.40415: Loading Connection 'ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
+318395 1741589579.41926: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+318395 1741589579.41962: Loaded config def from plugin (connection/winrm)
+318395 1741589579.41969: Loading Connection 'winrm' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/winrm.py (found_in_cache=False, class_only=True)
+318395 1741589579.42004: '/usr/local/lib/python3.12/site-packages/ansible/plugins/shell/__init__' skipped due to reserved name
+318395 1741589579.42067: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py
+318395 1741589579.42116: Loaded config def from plugin (shell/cmd)
+318395 1741589579.42121: Loading ShellModule 'cmd' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/cmd.py (found_in_cache=False, class_only=True)
+318395 1741589579.42140: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py (found_in_cache=True, class_only=False)
+318395 1741589579.42183: Loaded config def from plugin (shell/powershell)
+318395 1741589579.42188: Loading ShellModule 'powershell' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=False, class_only=True)
+318395 1741589579.42240: Loading ModuleDocFragment 'shell_common' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_common.py
+318395 1741589579.42355: Loaded config def from plugin (shell/sh)
+318395 1741589579.42361: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=False, class_only=True)
+318395 1741589579.42400: '/usr/local/lib/python3.12/site-packages/ansible/plugins/become/__init__' skipped due to reserved name
+318395 1741589579.42497: Loaded config def from plugin (become/runas)
+318395 1741589579.42503: Loading BecomeModule 'runas' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/runas.py (found_in_cache=False, class_only=True)
+318395 1741589579.42642: Loaded config def from plugin (become/su)
+318395 1741589579.42648: Loading BecomeModule 'su' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/su.py (found_in_cache=False, class_only=True)
+318395 1741589579.42766: Loaded config def from plugin (become/sudo)
+318395 1741589579.42773: Loading BecomeModule 'sudo' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/sudo.py (found_in_cache=False, class_only=True)
+318395 1741589579.42808: Loading data from /root/ansible_modules_redirection3/ansible-junos-stdlib/tests/pb.junos_facts.yml
+318395 1741589579.43153: trying /usr/local/lib/python3.12/site-packages/ansible/modules
+318395 1741589579.43271: trying /usr/local/lib/python3.12/site-packages/ansible/modules/__pycache__
+318395 1741589579.43403: plugin lookup for junipernetworks.junos.junos_facts failed; errors: error parsing collection metadata: mapping values are not allowed in this context
   in "<byte string>", line 5, column 15
 [WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_facts: ['error parsing collection metadata: mapping values are not
 allowed in this context\n  in "<byte string>", line 5, column 15']
-318287 1741589304.90141: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/action
-318287 1741589304.90204: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/action/__pycache__
-318287 1741589304.90259: plugin lookup for junos_facts failed; errors: error parsing collection metadata: mapping values are not allowed in this context
+318395 1741589579.46235: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/action
+318395 1741589579.46295: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/action/__pycache__
+318395 1741589579.46349: plugin lookup for junos_facts failed; errors: error parsing collection metadata: mapping values are not allowed in this context
   in "<byte string>", line 5, column 15
 [WARNING]: errors were encountered during the plugin load for junos_facts: ['error parsing collection metadata: mapping values are not allowed in this
 context\n  in "<byte string>", line 5, column 15']
-318287 1741589304.90291: RUNNING CLEANUP
+318395 1741589579.46383: RUNNING CLEANUP
 ERROR! couldn't resolve module/action 'junos_facts'. This often indicates a misspelling, missing collection, or incorrect module path.
 
 The error appears to be in '/root/ansible_modules_redirection3/ansible-junos-stdlib/tests/pb.junos_facts.yml': line 8, column 7, but may
