@@ -412,3 +412,21 @@ Debug logs:
 
 ANSIBLE_DEBUG=1  ansible-playbook -i inventory_netconf pb.junos_facts.yml -vvvvv
 
+
+kwargs for unlink:
+===================
+
+- name: Install new junos
+      juniper_junos_software:
+        provider:
+          host: "{{inventory_hostname}}"
+          user: "{{switch_user}}"
+          passwd: "{{switch_passwd}}"
+          port: 22
+        reboot: yes
+        version: "18.2R3-S2"
+        local_package: junos-arm-32-18.2R3-S2.9.tgz
+        logfile: {{inventory_hostname}}.log
+        cleanfs: true
+        kwargs: {"no-copy": true,"force": true,"unlink": true}
+
