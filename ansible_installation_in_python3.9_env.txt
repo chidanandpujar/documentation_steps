@@ -430,3 +430,14 @@ kwargs for unlink:
         cleanfs: true
         kwargs: {"no-copy": true,"force": true,"unlink": true}
 
+
+Ansible debugging:
+
+To delete the collections
+	$ rm -rf  /usr/local/lib/python3.12/site-packages/ansible_collections/junipernetworks 
+
+To delete the Ansible cache: 
+	$ rm -rf ~/.ansible/pc 
+
+$ ansible-config dump | grep COLLECTIONS
+
