@@ -10,3 +10,5 @@ or
 systemctl restart vsftpd
 
 copy the files under home dir of user on FTP server.
+
+apt-get remove vsftpd
