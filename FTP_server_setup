@@ -1,5 +1,5 @@
 apt-get install vsftpd
-gedit /etc/vsftpd.conf
+vi /etc/vsftpd.conf
 
 write_enable=YES #if you want people to be able to upload to the server 
 local_enable=YES #allows users in /etc/passwd to login with their linux username/password 
@@ -8,3 +8,5 @@ anonymous_enable=YES #Allows anonymous login
 service vsftpd restart
 or
 systemctl restart vsftpd
+
+copy the files under home dir of user on FTP server.
