@@ -1,3 +1,26 @@
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory
+[junos]
+x.x.x.x
+
+[junos:vars]
+#ansible_host=x.x.x.x
+ansible_network_os=junipernetworks.junos.junos
+ansible_ssh_user=xyz
+#ansible_user=xyz
+ansible_ssh_pass=xyz
+ansible_ssh_port=22
+ansible_connection=ansible.netcommon.netconf
+#ansible_connection=juniper.device.pyez
+#ansible_connection=local
+ansible_network_cli_ssh_type=libssh 
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+
+
+
+
 root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ANSIBLE_DEBUG=1 ansible-playbook -i inventory junos_facts.yml -vvvv
 690238 1743596128.20508: starting run
 ansible-playbook [core 2.18.3]
