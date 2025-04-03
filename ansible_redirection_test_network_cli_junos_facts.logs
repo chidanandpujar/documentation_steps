@@ -15,7 +15,18 @@ ansible_connection=ansible.netcommon.network_cli
 ansible_network_cli_ssh_type=libssh 
 
 
-junos_facts:
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_facts.yml 
+---
+- name: Test Junos Facts Module
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos 
+  tasks:
+    - name: Gather Junos Facts
+      junos_facts:
+      register: junos_facts_output
+
 
 root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ANSIBLE_DEBUG=1 ansible-playbook -i inventory junos_facts.yml -vvvvv
 705048 1743668972.94627: starting run
