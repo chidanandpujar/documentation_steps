@@ -1,3 +1,81 @@
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ls -l juniper/device/plugins/action/
+total 36
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 command.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 config.py -> juniper_junos_common_action.py
+-rw-r--r-- 1 root root 6295 Apr  3 02:06 extract_data.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 facts.py -> juniper_junos_common_action.py
+-rwxr-xr-x 1 root root 2351 Apr  3 02:06 file_copy.py
+lrwxrwxrwx 1 root root   30 Apr  2 23:18 hostname -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 jsnapy.py -> juniper_junos_common_action.py
+-rw-r--r-- 1 root root 6787 Apr  3 02:06 juniper_junos_common_action.py
+-rwxr-xr-x 1 root root 2350 Apr  3 02:06 juniper_junos_common_action.py_orig
+-rw-r--r-- 1 root root 6871 Apr  3 02:06 junos.py
+lrwxrwxrwx 1 root root   30 Apr  3 02:07 logging_global.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 ping.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 pmtud.py -> juniper_junos_common_action.py
+drwxr-xr-x 2 root root 4096 Apr  3 02:06 __pycache__
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 rpc.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 software.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 srx_cluster.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 system.py -> juniper_junos_common_action.py
+lrwxrwxrwx 1 root root   30 Mar 23 21:27 table.py -> juniper_junos_common_action.py
+
+
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ls -l juniper/device/plugins/modules/
+total 1228
+-rw-r--r-- 1 root root 19875 Mar 23 21:27 command.py
+-rw-r--r-- 1 root root 50260 Mar 23 21:27 config.py
+-rw-r--r-- 1 root root 13807 Mar 23 21:27 facts.py
+-rw-r--r-- 1 root root  5340 Mar 23 21:27 file_copy.py
+-rw-r--r-- 1 root root 17523 Mar 23 21:27 jsnapy.py
+-rw-r--r-- 1 root root  9051 Mar 23 21:48 junos_acl_interfaces.py
+-rw-r--r-- 1 root root 11759 Mar 23 21:48 junos_acls.py
+-rw-r--r-- 1 root root  5246 Mar 23 21:48 junos_banner.py
+-rw-r--r-- 1 root root 66546 Mar 23 21:48 junos_bgp_address_family.py
+-rw-r--r-- 1 root root 62235 Mar 23 21:48 junos_bgp_global.py
+-rw-r--r-- 1 root root 15143 Mar 23 21:48 junos_command.py
+-rw-r--r-- 1 root root 19155 Mar 23 21:48 junos_config.py
+-rw-r--r-- 1 root root  5346 Mar 23 21:48 junos_facts.py
+-rw-r--r-- 1 root root  9828 Mar 23 21:48 junos_hostname.py
+-rw-r--r-- 1 root root 24445 Mar 23 21:48 junos_interfaces.py
+-rw-r--r-- 1 root root 24327 Mar 23 21:48 junos_l2_interfaces.py
+-rw-r--r-- 1 root root 23467 Mar 23 21:48 junos_l3_interfaces.py
+-rw-r--r-- 1 root root 24155 Mar 23 21:48 junos_lacp_interfaces.py
+-rw-r--r-- 1 root root  8171 Mar 23 21:48 junos_lacp.py
+-rw-r--r-- 1 root root 22692 Mar 23 21:48 junos_lag_interfaces.py
+-rw-r--r-- 1 root root  9496 Mar 23 21:48 junos_lldp_global.py
+-rw-r--r-- 1 root root  9344 Mar 23 21:48 junos_lldp_interfaces.py
+-rw-r--r-- 1 root root 53293 Mar 23 21:48 junos_logging_global.py
+-rw-r--r-- 1 root root  5917 Mar 23 21:48 junos_netconf.py
+-rw-r--r-- 1 root root 33041 Mar 23 21:48 junos_ntp_global.py
+-rw-r--r-- 1 root root 16563 Mar 23 21:48 junos_ospf_interfaces.py
+-rw-r--r-- 1 root root 35079 Mar 23 21:48 junos_ospfv2.py
+-rw-r--r-- 1 root root 20663 Mar 23 21:48 junos_ospfv3.py
+-rw-r--r-- 1 root root 10325 Mar 23 21:48 junos_package.py
+-rw-r--r-- 1 root root  7450 Mar 23 21:48 junos_ping.py
+-rw-r--r-- 1 root root 16924 Mar 23 21:48 junos_prefix_lists.py
+-rw-r--r-- 1 root root 23990 Mar 23 21:48 junos_routing_instances.py
+-rw-r--r-- 1 root root 11198 Mar 23 21:48 junos_routing_options.py
+-rw-r--r-- 1 root root  5304 Mar 23 21:48 junos_rpc.py
+-rw-r--r-- 1 root root  7987 Mar 23 21:48 junos_scp.py
+-rw-r--r-- 1 root root 28185 Mar 23 21:48 junos_security_policies_global.py
+-rw-r--r-- 1 root root 99891 Mar 23 21:48 junos_security_policies.py
+-rw-r--r-- 1 root root 66483 Mar 23 21:48 junos_security_zones.py
+-rw-r--r-- 1 root root 51713 Mar 23 21:48 junos_snmp_server.py
+-rw-r--r-- 1 root root 14915 Mar 23 21:48 junos_static_routes.py
+-rw-r--r-- 1 root root  6196 Mar 23 21:48 junos_system.py
+-rw-r--r-- 1 root root 15297 Mar 23 21:48 junos_user.py
+-rw-r--r-- 1 root root 11517 Mar 23 21:48 junos_vlans.py
+-rw-r--r-- 1 root root 10780 Mar 23 21:48 junos_vrf.py
+-rw-r--r-- 1 root root 17008 Mar 23 21:27 ping.py
+-rw-r--r-- 1 root root 14525 Mar 23 21:27 pmtud.py
+-rw-r--r-- 1 root root 24861 Mar 23 21:27 rpc.py
+-rw-r--r-- 1 root root 37423 Mar 23 21:27 software.py
+-rw-r--r-- 1 root root 11481 Mar 23 21:27 srx_cluster.py
+-rw-r--r-- 1 root root 16566 Mar 23 21:27 system.py
+-rw-r--r-- 1 root root 16454 Mar 23 21:27 table.py
+
+
 root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml 
 requires_ansible: ">=2.15.0"
 plugin_routing:
