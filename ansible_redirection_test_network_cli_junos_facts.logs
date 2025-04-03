@@ -1,0 +1,260 @@
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory
+[junos]
+10.220.10.59
+
+[junos:vars]
+#ansible_host=10.220.10.59
+ansible_network_os=junos
+ansible_ssh_user=root
+#ansible_user=root
+ansible_ssh_pass=xyz
+ansible_ssh_port=22
+ansible_connection=ansible.netcommon.network_cli
+#ansible_connection=juniper.device.pyez
+#ansible_connection=local
+ansible_network_cli_ssh_type=libssh 
+
+
+junos_facts:
+
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ANSIBLE_DEBUG=1 ansible-playbook -i inventory junos_facts.yml -vvvvv
+705048 1743668972.94627: starting run
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+705048 1743668972.95148: Added group all to inventory
+705048 1743668972.95154: Added group ungrouped to inventory
+705048 1743668972.95166: Group all now contains ungrouped
+705048 1743668972.95184: Examining possible inventory source: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory
+setting up inventory plugins
+Loading collection ansible.builtin from 
+705048 1743668973.09590: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/cache
+705048 1743668973.09676: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py
+705048 1743668973.09721: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory
+705048 1743668973.09799: Loading InventoryModule 'host_list' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py
+705048 1743668973.09883: Loaded config def from plugin (inventory/script)
+705048 1743668973.09888: Loading InventoryModule 'script' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py
+705048 1743668973.09947: Loading InventoryModule 'auto' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py
+705048 1743668973.10041: Loaded config def from plugin (inventory/yaml)
+705048 1743668973.10046: Loading InventoryModule 'yaml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py
+705048 1743668973.10146: Loading InventoryModule 'ini' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py
+705048 1743668973.10547: Loading InventoryModule 'toml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/toml.py
+705048 1743668973.10555: Attempting to use plugin host_list (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py)
+host_list declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory as it did not pass its verify_file() method
+705048 1743668973.10563: Attempting to use plugin script (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py)
+script declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory as it did not pass its verify_file() method
+705048 1743668973.10581: Attempting to use plugin auto (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py)
+auto declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory as it did not pass its verify_file() method
+705048 1743668973.10594: Attempting to use plugin yaml (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py)
+705048 1743668973.10648: Loading data from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory
+705048 1743668973.10722: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory was not parsable by yaml
+705048 1743668973.10809: Attempting to use plugin ini (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py)
+705048 1743668973.10889: Added group junos to inventory
+705048 1743668973.10907: set inventory_file for 10.220.10.59
+705048 1743668973.10914: set inventory_dir for 10.220.10.59
+705048 1743668973.10923: Added host 10.220.10.59 to inventory
+705048 1743668973.10935: Added host 10.220.10.59 to group junos
+705048 1743668973.10953: set ansible_network_os for junos
+705048 1743668973.10966: set ansible_ssh_user for junos
+705048 1743668973.10979: set ansible_ssh_pass for junos
+705048 1743668973.10993: set ansible_ssh_port for junos
+705048 1743668973.11009: set ansible_connection for junos
+705048 1743668973.11052: set ansible_network_cli_ssh_type for junos
+705048 1743668973.11065: set ansible_python_interpreter for all
+Parsed /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory inventory source with ini plugin
+705048 1743668973.11073: Reconcile groups and hosts in inventory.
+705048 1743668973.11088: Group all now contains junos
+705048 1743668973.11188: '/usr/local/lib/python3.12/site-packages/ansible/plugins/vars/__init__' skipped due to reserved name
+705048 1743668973.11333: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments
+705048 1743668973.11405: Loading ModuleDocFragment 'vars_plugin_staging' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/vars_plugin_staging.py
+705048 1743668973.11445: Loaded config def from plugin (vars/host_group_vars)
+705048 1743668973.11451: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=False, class_only=True)
+705048 1743668973.11462: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/vars
+705048 1743668973.11487: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+705048 1743668973.11560: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
+705048 1743668973.12080: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+705048 1743668973.12197: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py
+705048 1743668973.12247: Loaded config def from plugin (connection/local)
+705048 1743668973.12255: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=False, class_only=True)
+705048 1743668973.12625: Loaded config def from plugin (connection/paramiko_ssh)
+705048 1743668973.12632: Loading Connection 'paramiko_ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/paramiko_ssh.py (found_in_cache=False, class_only=True)
+705048 1743668973.13456: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+705048 1743668973.13503: Loaded config def from plugin (connection/psrp)
+705048 1743668973.13509: Loading Connection 'psrp' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/psrp.py (found_in_cache=False, class_only=True)
+705048 1743668973.14011: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+705048 1743668973.14061: Loaded config def from plugin (connection/ssh)
+705048 1743668973.14067: Loading Connection 'ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
+705048 1743668973.15671: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+705048 1743668973.15720: Loaded config def from plugin (connection/winrm)
+705048 1743668973.15727: Loading Connection 'winrm' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/winrm.py (found_in_cache=False, class_only=True)
+705048 1743668973.15774: '/usr/local/lib/python3.12/site-packages/ansible/plugins/shell/__init__' skipped due to reserved name
+705048 1743668973.15847: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py
+705048 1743668973.15906: Loaded config def from plugin (shell/cmd)
+705048 1743668973.15911: Loading ShellModule 'cmd' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/cmd.py (found_in_cache=False, class_only=True)
+705048 1743668973.15943: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py (found_in_cache=True, class_only=False)
+705048 1743668973.15996: Loaded config def from plugin (shell/powershell)
+705048 1743668973.16000: Loading ShellModule 'powershell' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=False, class_only=True)
+705048 1743668973.16069: Loading ModuleDocFragment 'shell_common' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_common.py
+705048 1743668973.16202: Loaded config def from plugin (shell/sh)
+705048 1743668973.16207: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=False, class_only=True)
+705048 1743668973.16261: '/usr/local/lib/python3.12/site-packages/ansible/plugins/become/__init__' skipped due to reserved name
+705048 1743668973.16373: Loaded config def from plugin (become/runas)
+705048 1743668973.16379: Loading BecomeModule 'runas' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/runas.py (found_in_cache=False, class_only=True)
+705048 1743668973.16565: Loaded config def from plugin (become/su)
+705048 1743668973.16570: Loading BecomeModule 'su' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/su.py (found_in_cache=False, class_only=True)
+705048 1743668973.16710: Loaded config def from plugin (become/sudo)
+705048 1743668973.16715: Loading BecomeModule 'sudo' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/sudo.py (found_in_cache=False, class_only=True)
+705048 1743668973.16765: Loading data from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_facts.yml
+Loading collection junipernetworks.junos from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+Loading collection juniper.device from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device
+redirecting (type: action) junipernetworks.junos.junos_facts to juniper.device.facts
+705048 1743668973.17579: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/callback
+705048 1743668973.17702: Loading ModuleDocFragment 'default_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/default_callback.py
+705048 1743668973.17864: Loading ModuleDocFragment 'result_format_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/result_format_callback.py
+705048 1743668973.17928: Loaded config def from plugin (callback/default)
+705048 1743668973.17933: Loading CallbackModule 'default' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+705048 1743668973.18004: '/usr/local/lib/python3.12/site-packages/ansible/plugins/callback/__init__' skipped due to reserved name
+705048 1743668973.18009: Loading CallbackModule 'default' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py (found_in_cache=True, class_only=True)
+705048 1743668973.18920: Loaded config def from plugin (callback/junit)
+705048 1743668973.18926: Loading CallbackModule 'junit' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/junit.py (found_in_cache=False, class_only=True)
+705048 1743668973.18983: Loading ModuleDocFragment 'result_format_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/result_format_callback.py (found_in_cache=True, class_only=False)
+705048 1743668973.19045: Loaded config def from plugin (callback/minimal)
+705048 1743668973.19050: Loading CallbackModule 'minimal' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/minimal.py (found_in_cache=False, class_only=True)
+705048 1743668973.19101: Loading CallbackModule 'oneline' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/oneline.py (found_in_cache=False, class_only=True)
+705048 1743668973.19167: Loaded config def from plugin (callback/tree)
+705048 1743668973.19173: Loading CallbackModule 'tree' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/tree.py (found_in_cache=False, class_only=True)
+Attempting to use 'default' callback.
+Skipping callback 'default', as we already have a stdout callback.
+Attempting to use 'junit' callback.
+Attempting to use 'minimal' callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Attempting to use 'oneline' callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Attempting to use 'tree' callback.
+
+PLAYBOOK: junos_facts.yml ***********************************************************************************************************************************
+Positional arguments: junos_facts.yml
+verbosity: 5
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory',)
+forks: 5
+1 plays in junos_facts.yml
+705048 1743668973.19255: in VariableManager get_vars()
+705048 1743668973.19304: done with get_vars()
+705048 1743668973.19320: in VariableManager get_vars()
+705048 1743668973.19340: done with get_vars()
+705048 1743668973.19353: variable 'omit' from source: magic vars
+705048 1743668973.19393: in VariableManager get_vars()
+705048 1743668973.19412: done with get_vars()
+705048 1743668973.19447: variable 'omit' from source: magic vars
+
+PLAY [Test Junos Facts Module] ******************************************************************************************************************************
+705048 1743668973.24395: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/strategy
+705048 1743668973.24498: Loading StrategyModule 'linear' from /usr/local/lib/python3.12/site-packages/ansible/plugins/strategy/linear.py
+705048 1743668973.24557: getting the remaining hosts for this loop
+705048 1743668973.24563: done getting the remaining hosts for this loop
+705048 1743668973.24566: getting the next task for host 10.220.10.59
+705048 1743668973.24586: done getting next task for host 10.220.10.59
+705048 1743668973.24596:  ^ task is: TASK: Gather Junos Facts
+705048 1743668973.24599:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=1, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+705048 1743668973.24613: getting variables
+705048 1743668973.24622: in VariableManager get_vars()
+705048 1743668973.24649: Calling all_inventory to load vars for 10.220.10.59
+705048 1743668973.24656: Calling groups_inventory to load vars for 10.220.10.59
+705048 1743668973.24666: Calling all_plugins_inventory to load vars for 10.220.10.59
+705048 1743668973.24696: Calling all_plugins_play to load vars for 10.220.10.59
+705048 1743668973.24702: Calling groups_plugins_inventory to load vars for 10.220.10.59
+705048 1743668973.24712: Calling groups_plugins_play to load vars for 10.220.10.59
+705048 1743668973.24763: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+705048 1743668973.24818: done with get_vars()
+705048 1743668973.24834: done getting variables
+redirecting (type: action) junipernetworks.junos.junos_facts to juniper.device.facts
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+705048 1743668973.35126: Loading ActionModule 'ansible_collections.juniper.device.plugins.action.facts' from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/action/facts.py (found_in_cache=False, class_only=True)
+
+TASK [Gather Junos Facts] ***********************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_facts.yml:8
+705048 1743668973.35181: entering _queue_task() for 10.220.10.59/junos_facts
+705048 1743668973.35184: Creating lock for junos_facts
+705048 1743668973.35523: worker is 1 (out of 1 available)
+705048 1743668973.35571: exiting _queue_task() for 10.220.10.59/junos_facts
+705048 1743668973.35597: done queuing things up, now waiting for results queue to drain
+705048 1743668973.35602: waiting for pending results...
+705048 1743668973.36064: running TaskExecutor() for 10.220.10.59/TASK: Gather Junos Facts
+705048 1743668973.36249: in run() - task 54040adc-1369-52f7-1149-000000000004
+705048 1743668973.36267: variable 'ansible_search_path' from source: unknown
+705048 1743668973.36359: calling self._execute()
+705048 1743668973.36473: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+705048 1743668973.36492: variable 'ansible_ssh_user' from source: group vars, precedence entry 'groups_inventory'
+705048 1743668973.36510: variable 'ansible_ssh_pass' from source: group vars, precedence entry 'groups_inventory'
+705048 1743668973.36526: variable 'ansible_ssh_port' from source: group vars, precedence entry 'groups_inventory'
+705048 1743668973.36539: variable 'ansible_network_os' from source: group vars, precedence entry 'groups_inventory'
+705048 1743668973.36579: variable 'omit' from source: magic vars
+705048 1743668973.36771: variable 'omit' from source: magic vars
+705048 1743668973.36827: variable 'omit' from source: magic vars
+705048 1743668973.36890: variable 'omit' from source: magic vars
+705048 1743668973.36929: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+705048 1743668973.36957: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+705048 1743668973.39085: Loading ModuleDocFragment 'ansible_collections.ansible.netcommon.plugins.doc_fragments.connection_persistent' from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon/plugins/doc_fragments/connection_persistent.py
+705048 1743668973.39198: Loaded config def from plugin (connection/ansible_collections.ansible.netcommon.plugins.connection.network_cli)
+705048 1743668973.39235: Loading Connection 'ansible_collections.ansible.netcommon.plugins.connection.network_cli' from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon/plugins/connection/network_cli.py
+705048 1743668973.39269: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/shell
+705048 1743668973.39319: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+705048 1743668973.39349: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+705048 1743668973.39377: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/connection
+705048 1743668973.39403: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=True, class_only=False)
+705048 1743668973.39421: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+705048 1743668973.39444: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+705048 1743668973.39519: Loading Connection 'ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=True, class_only=True)
+705048 1743668973.39693: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/terminal
+705048 1743668973.39723: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/terminal/__pycache__
+redirecting (type: terminal) ansible.builtin.junos to junipernetworks.junos.junos
+705048 1743668973.39871: done running TaskExecutor() for 10.220.10.59/TASK: Gather Junos Facts [54040adc-1369-52f7-1149-000000000004]
+705048 1743668973.39902: sending task result for task 54040adc-1369-52f7-1149-000000000004
+705048 1743668973.40118: done sending task result for task 54040adc-1369-52f7-1149-000000000004
+705048 1743668973.40141: WORKER PROCESS EXITING
+705048 1743668973.40164: marking 10.220.10.59 as failed
+705048 1743668973.40188: marking host 10.220.10.59 failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=1, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+705048 1743668973.40217: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=5, fail_state=2, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+705048 1743668973.40243: getting the next task for host 10.220.10.59
+705048 1743668973.40258: host 10.220.10.59 is done iterating, returning
+fatal: [10.220.10.59]: FAILED! => {
+    "msg": "network os junos is not supported"
+}
+705048 1743668973.40404: no more pending results, returning what we have
+705048 1743668973.40427: results queue empty
+705048 1743668973.40442: checking for any_errors_fatal
+705048 1743668973.40460: done checking for any_errors_fatal
+705048 1743668973.40473: checking for max_fail_percentage
+705048 1743668973.40485: done checking for max_fail_percentage
+705048 1743668973.40500: checking to see if all hosts have failed and the running result is not ok
+705048 1743668973.40514: done checking to see if all hosts have failed
+705048 1743668973.40526: getting the remaining hosts for this loop
+705048 1743668973.40541: done getting the remaining hosts for this loop
+705048 1743668973.40556: getting the next task for host 10.220.10.59
+705048 1743668973.40573: host 10.220.10.59 is done iterating, returning
+705048 1743668973.40589: done queuing things up, now waiting for results queue to drain
+705048 1743668973.40606: results queue empty
+705048 1743668973.40619: checking for any_errors_fatal
+705048 1743668973.40629: done checking for any_errors_fatal
+705048 1743668973.40642: checking for max_fail_percentage
+705048 1743668973.40656: done checking for max_fail_percentage
+705048 1743668973.40666: checking to see if all hosts have failed and the running result is not ok
+705048 1743668973.40673: done checking to see if all hosts have failed
+705048 1743668973.40685: getting the next task for host 10.220.10.59
+705048 1743668973.40699: host 10.220.10.59 is done iterating, returning
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
