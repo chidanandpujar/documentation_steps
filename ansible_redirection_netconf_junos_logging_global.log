@@ -125,7 +125,7 @@ root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible
 ansible_network_os=junipernetworks.junos.junos
 ansible_ssh_user=root
 #ansible_user=root
-ansible_ssh_pass=Embe1mpls
+ansible_ssh_pass=xyz
 ansible_ssh_port=22
 ansible_connection=ansible.netcommon.netconf
 #ansible_connection=juniper.device.pyez
