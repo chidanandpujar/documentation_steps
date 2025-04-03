@@ -18,6 +18,21 @@ ansible_network_cli_ssh_type=libssh
 ansible_python_interpreter=/usr/bin/python3
 
 
+root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_hostname.yml 
+---
+- name: Test Junos Hostname Module
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos 
+  tasks:
+    - name: Merge provided HOSTNAME configuration into running configuration 
+      junos_hostname:
+        config:
+          hostname: 'test_hostname'
+        state: merged
+
+
 
 root@masterhost:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ANSIBLE_DEBUG=1 ansible-playbook -i inventory junos_hostname.yml -vvvvv
 705150 1743669389.12124: starting run
