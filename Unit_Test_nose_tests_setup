@@ -44,11 +44,11 @@ nose2 -v -c nose2.cfg
 PyEZ unit test execution :
 nose tests:
 
-python -m pip install nose
-python -m pip install mock
-python -m pip install coverage
-python -m pip install ntc_templates==1.4.1
-python -m pip install textfsm==0.4.1
+python3 -m pip install nose
+python3 -m pip install mock
+python3 -m pip install coverage
+python3 -m pip install ntc_templates==1.4.1
+python3 -m pip install textfsm==0.4.1
 
 
 nose2 unit tests:
@@ -88,18 +88,6 @@ UT/FT execution on windows:
 tests\unit
 
 nosetests.exe  -v .\test_check.py
-nosetests.exe  -v .\test_comparison_op.py
-nosetests.exe  -v .\test_init.py
-nosetests.exe  -v .\test_jsnapy.py
-nosetests.exe  -v .\test_notify.py
-nosetests.exe  -v .\test_numeric_op.py
-nosetests.exe  -v .\test_operator.py
-nosetests.exe  -v .\test_snap.py
-nosetests.exe  -v .\test_snap_new.py
-nosetests.exe  -v .\test_sqlite.py
-nosetests.exe  -v .\test_string_op.py
-nosetests.exe  -v .\test_str_numeric_op.py
-
 
  Nosetest debugging:
  
@@ -121,11 +109,11 @@ https://github.com/nose-devs/nose/issues/1099
 nose2:
 
 nose2 tests:
-python -m pip install nose2
+python3 -m pip install nose2
 
 nose2 -v --coverage jnpr.junos --with-coverage
 nose2 -v --coverage jnpr.junos 
-python -m pip install nose2[coverage_plugin]
+python3 -m pip install nose2[coverage_plugin]
 
 
 
@@ -157,8 +145,8 @@ https://github.com/yadage/packtivity/pull/78/files
 Fix for Unit test faliures:
 
 Fix1:
-python -m pip install ntc_templates==1.4.1
-python -m pip install textfsm==0.4.1
+python3 -m pip install ntc_templates==1.4.1
+python3 -m pip install textfsm==0.4.1
 
 Fix2:
 https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html
