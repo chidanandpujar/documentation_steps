@@ -561,7 +561,7 @@ fatal: [10.220.10.59]: FAILED! => {
                 "min"
             ],
             "host": "10.220.10.59",
-            "passwd": "Embe1mpls",
+            "passwd": "xyz",
             "port": 22,
             "timeout": 10,
             "user": "root"
