@@ -22,7 +22,7 @@ pip install LooseVersion
 ansible-test sanity
 
 3) Unit
-
+python3.12 -m pip install pytest
 python3.12 -m  pytest 
 
 4) To run specific target
