@@ -1,4 +1,4 @@
-root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junipernetworks/junos/meta/runtime.yml
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junipernetworks/junos/meta/runtime.yml
 ---
 requires_ansible: ">=2.15.0"
 plugin_routing:
@@ -98,7 +98,7 @@ plugin_routing:
     vrf:
       redirect: juniper.device.junos_vrf
 
-root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml
 requires_ansible: ">=2.15.0"
 plugin_routing:
   action:
@@ -123,7 +123,7 @@ plugin_routing:
       #redirect: juniper.device.junos_command
 
 
-root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory
 [junos]
 10.220.10.59
 
@@ -141,7 +141,7 @@ ansible_network_cli_ssh_type=libssh
 
 [all:vars]
 ansible_python_interpreter=/usr/local/bin/python3.12
-root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat ansible.cfg 
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat ansible.cfg 
 [defaults]
 INVENTORY = ./inventory
 collections_path=/root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/
@@ -154,7 +154,9 @@ connect_timeout = 300
 connect_retry_timeout = 300
 
 
-root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_user.yml 
+1) 
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_user.yml 
 ---
 - name: Gather Operation Playbook
   hosts: junos
@@ -171,8 +173,7 @@ root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib
           - {name: test_user1, full_name: test_user2, role: operator, state: present}
           - {name: test_user2, full_name: test_user2, role: read-only, state: present}
 
-
-root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_user.yml -vv
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_user.yml -vv
 ansible-playbook [core 2.18.4]
   config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
   configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
@@ -203,3 +204,603 @@ ok: [10.220.10.59] => {"changed": false}
 
 PLAY RECAP **************************************************************************************************************************************************
 10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+2)
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_hostname.yml 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+ 
+  tasks:
+ 
+    - name: Gather interfaces running 
+      junipernetworks.junos.junos_hostname:
+        state: gathered
+
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_hostname.yml -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_hostname to juniper.device.junos_hostname
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_hostname: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_hostname.yml ********************************************************************************************************************************
+1 plays in junos_hostname.yml
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [Gather interfaces running] ****************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_hostname.yml:10
+redirecting (type: modules) junipernetworks.junos.junos_hostname to juniper.device.junos_hostname
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_hostname to juniper.device.junos_hostname
+ok: [10.220.10.59] => {"changed": false, "gathered": {"hostname": "junos_test.foo"}}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+3) 
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_facts.yml 
+---
+- name: Test Junos Facts Module
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+      #- juniper.device 
+  tasks:
+    - name: Gather Junos Facts
+      junipernetworks.junos.junos_facts:
+      register: junos_facts_output
+
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_facts.yml -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_facts: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_facts.yml ***********************************************************************************************************************************
+1 plays in junos_facts.yml
+
+PLAY [Test Junos Facts Module] ******************************************************************************************************************************
+
+TASK [Gather Junos Facts] ***********************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_facts.yml:9
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+ok: [10.220.10.59] => {"ansible_facts": {"ansible_net_api": "netconf", "ansible_net_gather_network_resources": [], "ansible_net_gather_subset": ["default"], "ansible_net_hostname": "junos_test.foo", "ansible_net_model": "mx960", "ansible_net_python_version": "3.12.0", "ansible_net_serialnum": "VM67503D988C", "ansible_net_system": "junos", "ansible_net_version": "22.2R3-S6.4", "ansible_network_resources": {}}, "changed": false}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+4)
+
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_command.py 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+    #- juniper.device 
+ 
+  tasks:
+ 
+    - name: run show version on remote devices
+      junipernetworks.junos.junos_command:
+        commands: show version
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_command.py -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_command: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_command.py **********************************************************************************************************************************
+1 plays in junos_command.py
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [run show version on remote devices] *******************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_command.py:11
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+ok: [10.220.10.59] => {"changed": false, "stdout": ["Hostname: junos_test.foo\nModel: mx960\nJunos: 22.2R3-S6.4\nJUNOS OS Kernel 64-bit  [20241015.5586108_builder_stable_12_222]\nJUNOS OS libs [20241015.5586108_builder_stable_12_222]\nJUNOS OS runtime [20241015.5586108_builder_stable_12_222]\nJUNOS OS time zone information [20241015.5586108_builder_stable_12_222]\nJUNOS network stack and utilities [20250206.155520_builder_junos_222_r3_s6]\nJUNOS libs [20250206.155520_builder_junos_222_r3_s6]\nJUNOS OS libs compat32 [20241015.5586108_builder_stable_12_222]\nJUNOS OS 32-bit compatibility [20241015.5586108_builder_stable_12_222]\nJUNOS libs compat32 [20250206.155520_builder_junos_222_r3_s6]\nJUNOS runtime [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Simulation Package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS sflow mx [20250206.155520_builder_junos_222_r3_s6]\nJUNOS py extensions [20250206.155520_builder_junos_222_r3_s6]\nJUNOS py base [20250206.155520_builder_junos_222_r3_s6]\nJUNOS OS vmguest [20241015.5586108_builder_stable_12_222]\nJUNOS OS crypto [20241015.5586108_builder_stable_12_222]\nJUNOS OS boot-ve files [20241015.5586108_builder_stable_12_222]\nJUNOS na telemetry [22.2R3-S6.4]\nJUNOS Security Intelligence [20250206.155520_builder_junos_222_r3_s6]\nJUNOS mx libs compat32 [20250206.155520_builder_junos_222_r3_s6]\nJUNOS mx runtime [20250206.155520_builder_junos_222_r3_s6]\nJUNOS RPD Telemetry Application [22.2R3-S6.4]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing mpls-oam-basic [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing mpls-oam-advanced [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing lsys [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing controller-internal [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing controller-external [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing 32-bit Compatible Version [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Routing aggregated [20250206.155520_builder_junos_222_r3_s6]\nRedis [20250206.155520_builder_junos_222_r3_s6]\nJUNOS probe utility [20250206.155520_builder_junos_222_r3_s6]\nJUNOS common platform support [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Openconfig [22.2R3-S6.4]\nJUNOS mtx network modules [20250206.155520_builder_junos_222_r3_s6]\nJUNOS modules [20250206.155520_builder_junos_222_r3_s6]\nJUNOS mx modules [20250206.155520_builder_junos_222_r3_s6]\nJUNOS mx libs [20250206.155520_builder_junos_222_r3_s6]\nJUNOS L2 RSI Scripts [20250206.155520_builder_junos_222_r3_s6]\nJUNOS SQL Sync Daemon [20250206.155520_builder_junos_222_r3_s6]\nJUNOS mtx Data Plane Crypto Support [20250206.155520_builder_junos_222_r3_s6]\nJUNOS daemons [20250206.155520_builder_junos_222_r3_s6]\nJUNOS mx daemons [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Broadband Edge User Plane Apps [22.2R3-S6.4]\nJUNOS appidd-mx application-identification daemon [20250206.155520_builder_junos_222_r3_s6]\nJUNOS TPM2 [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Simulation Linux Package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Simulation Package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Simulation Package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services URL Filter package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services TLB Service PIC package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Telemetry [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services TCP-LOG [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services SSL [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services SOFTWIRE [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Stateful Firewall [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services RTCOM [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services RPM [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services PCEF package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services NAT [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Mobile Subscriber Service Container package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services MobileNext Software package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Logging Report Framework package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services LL-PDF Container package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Jflow Container package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Deep Packet Inspection package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services IPSec [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services IDS [20250206.155520_builder_junos_222_r3_s6]\nJUNOS IDP Services [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services HTTP Content Management package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services DNS Filter package (i386) [20250206.155520_builder_junos_222_r3_s6] \nJUNOS Services Crypto [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Captive Portal and Content Delivery Container package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services COS [20250206.155520_builder_junos_222_r3_s6]\nJUNOS AppId Services [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services Application Level Gateways [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Services AACL Container package [20250206.155520_builder_junos_222_r3_s6]\nJUNOS SDN Software Suite [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Extension Toolkit [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Phone-home [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Support (wrlinux) [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [22.2R3-S6.4]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Support (M/T Common) [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Support (aft) [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250206.155520_builder_junos_222_r3_s6]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+20250206.155520_builder_junos_222_r3_s6]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+20250206.155520_builder_junos_222_r3_s6]\nJUNOS J-Insight [20250206.155520_builder_junos_222_r3_s6]\nJUNOS jfirmware [20241009.163655_builder_junos_222_r3_s5]\nJUNOS Online Documentation [20250206.155520_builder_junos_222_r3_s6]\nJUNOS jail runtime [20241015.5586108_builder_stable_12_222]\nJUNOS dsa dsa [22.2R3-S6.4]"], "stdout_lines": [["Hostname: junos_test.foo", "Model: mx960", "Junos: 22.2R3-S6.4", "JUNOS OS Kernel 64-bit  [20241015.5586108_builder_stable_12_222]", "JUNOS OS libs [20241015.5586108_builder_stable_12_222]", "JUNOS OS runtime [20241015.5586108_builder_stable_12_222]", "JUNOS OS time zone information [20241015.5586108_builder_stable_12_222]", "JUNOS network stack and utilities [20250206.155520_builder_junos_222_r3_s6]", "JUNOS libs [20250206.155520_builder_junos_222_r3_s6]", "JUNOS OS libs compat32 [20241015.5586108_builder_stable_12_222]", "JUNOS OS 32-bit compatibility [20241015.5586108_builder_stable_12_222]", "JUNOS libs compat32 [20250206.155520_builder_junos_222_r3_s6]", "JUNOS runtime [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Simulation Package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS sflow mx [20250206.155520_builder_junos_222_r3_s6]", "JUNOS py extensions [20250206.155520_builder_junos_222_r3_s6]", "JUNOS py base [20250206.155520_builder_junos_222_r3_s6]", "JUNOS OS vmguest [20241015.5586108_builder_stable_12_222]", "JUNOS OS crypto [20241015.5586108_builder_stable_12_222]", "JUNOS OS boot-ve files [20241015.5586108_builder_stable_12_222]", "JUNOS na telemetry [22.2R3-S6.4]", "JUNOS Security Intelligence [20250206.155520_builder_junos_222_r3_s6]", "JUNOS mx libs compat32 [20250206.155520_builder_junos_222_r3_s6]", "JUNOS mx runtime [20250206.155520_builder_junos_222_r3_s6]", "JUNOS RPD Telemetry Application [22.2R3-S6.4]", "JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing mpls-oam-basic [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing mpls-oam-advanced [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing lsys [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing controller-internal [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing controller-external [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing 32-bit Compatible Version [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Routing aggregated [20250206.155520_builder_junos_222_r3_s6]", "Redis [20250206.155520_builder_junos_222_r3_s6]", "JUNOS probe utility [20250206.155520_builder_junos_222_r3_s6]", "JUNOS common platform support [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Openconfig [22.2R3-S6.4]", "JUNOS mtx network modules [20250206.155520_builder_junos_222_r3_s6]", "JUNOS modules [20250206.155520_builder_junos_222_r3_s6]", "JUNOS mx modules [20250206.155520_builder_junos_222_r3_s6]", "JUNOS mx libs [20250206.155520_builder_junos_222_r3_s6]", "JUNOS L2 RSI Scripts [20250206.155520_builder_junos_222_r3_s6]", "JUNOS SQL Sync Daemon [20250206.155520_builder_junos_222_r3_s6]", "JUNOS mtx Data Plane Crypto Support [20250206.155520_builder_junos_222_r3_s6]", "JUNOS daemons [20250206.155520_builder_junos_222_r3_s6]", "JUNOS mx daemons [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Broadband Edge User Plane Apps [22.2R3-S6.4]", "JUNOS appidd-mx application-identification daemon [20250206.155520_builder_junos_222_r3_s6]", "JUNOS TPM2 [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Simulation Linux Package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Simulation Package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Simulation Package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services URL Filter package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services TLB Service PIC package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Telemetry [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services TCP-LOG [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services SSL [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services SOFTWIRE [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Stateful Firewall [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services RTCOM [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services RPM [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services PCEF package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services NAT [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Mobile Subscriber Service Container package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services MobileNext Software package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Logging Report Framework package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services LL-PDF Container package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Jflow Container package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Deep Packet Inspection package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services IPSec [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services IDS [20250206.155520_builder_junos_222_r3_s6]", "JUNOS IDP Services [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services HTTP Content Management package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services DNS Filter package (i386) [20250206.155520_builder_junos_222_r3_s6] ", "JUNOS Services Crypto [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Captive Portal and Content Delivery Container package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services COS [20250206.155520_builder_junos_222_r3_s6]", "JUNOS AppId Services [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services Application Level Gateways [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Services AACL Container package [20250206.155520_builder_junos_222_r3_s6]", "JUNOS SDN Software Suite [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Extension Toolkit [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Phone-home [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Support (wrlinux9) [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Support (wrlinux) [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Support (MXSPC3) [22.2R3-S6.4]", "JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Support (M/T Common) [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Support (aft) [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Packet Forwarding Engine Support (MX Common) [20250206.155520_builder_junos_222_r3_s6]", "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+20250206.155520_builder_junos_222_r3_s6]", "JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+20250206.155520_builder_junos_222_r3_s6]", "JUNOS J-Insight [20250206.155520_builder_junos_222_r3_s6]", "JUNOS jfirmware [20241009.163655_builder_junos_222_r3_s5]", "JUNOS Online Documentation [20250206.155520_builder_junos_222_r3_s6]", "JUNOS jail runtime [20241015.5586108_builder_stable_12_222]", "JUNOS dsa dsa [22.2R3-S6.4]"]]}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+5)
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_ping.py 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+    #- juniper.device 
+ 
+  tasks:
+ 
+    - name: Test reachability to 10.10.10.10
+      junipernetworks.junos.junos_ping:
+        dest: 127.0.0.1 
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_ping.py -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_ping to juniper.device.junos_ping
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_ping: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_ping.py *************************************************************************************************************************************
+1 plays in junos_ping.py
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [Test reachability to 10.10.10.10] *********************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_ping.py:11
+redirecting (type: modules) junipernetworks.junos.junos_ping to juniper.device.junos_ping
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_ping to juniper.device.junos_ping
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ansible.module_utils.connection.ConnectionError: b"Start tag expected, '<' not found, line 1, column 1 (<string>, line 1)"
+fatal: [10.220.10.59]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/tmp/ansible_junipernetworks.junos.junos_ping_payload_6o4adtb7/ansible_junipernetworks.junos.junos_ping_payload.zip/ansible_collections/ansible/netcommon/plugins/module_utils/network/common/netconf.py\", line 73, in parse_rpc_error\n  File \"src/lxml/etree.pyx\", line 3307, in lxml.etree.fromstring\n  File \"src/lxml/parser.pxi\", line 1989, in lxml.etree._parseMemoryDocument\n  File \"src/lxml/parser.pxi\", line 1876, in lxml.etree._parseDoc\n  File \"src/lxml/parser.pxi\", line 1164, in lxml.etree._BaseParser._parseDoc\n  File \"src/lxml/parser.pxi\", line 633, in lxml.etree._ParserContext._handleParseResultDoc\n  File \"src/lxml/parser.pxi\", line 743, in lxml.etree._handleParseResult\n  File \"src/lxml/parser.pxi\", line 672, in lxml.etree._raiseParseError\n  File \"<string>\", line 1\nlxml.etree.XMLSyntaxError: Start tag expected, '<' not found, line 1, column 1\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/root/.ansible/tmp/ansible-local-32765q2qqhlsw/ansible-tmp-1744883243.4830105-301-4445453555643/AnsiballZ_junos_ping.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/root/.ansible/tmp/ansible-local-32765q2qqhlsw/ansible-tmp-1744883243.4830105-301-4445453555643/AnsiballZ_junos_ping.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/root/.ansible/tmp/ansible-local-32765q2qqhlsw/ansible-tmp-1744883243.4830105-301-4445453555643/AnsiballZ_junos_ping.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.junos_ping', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.junos_ping', _modlib_path=modlib_path),\n  File \"<frozen runpy>\", line 226, in run_module\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/ansible_junipernetworks.junos.junos_ping_payload_6o4adtb7/ansible_junipernetworks.junos.junos_ping_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_ping.py\", line 290, in <module>\n  File \"/tmp/ansible_junipernetworks.junos.junos_ping_payload_6o4adtb7/ansible_junipernetworks.junos.junos_ping_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_ping.py\", line 200, in main\n  File \"/tmp/ansible_junipernetworks.junos.junos_ping_payload_6o4adtb7/ansible_junipernetworks.junos.junos_ping_payload.zip/ansible_collections/ansible/netcommon/plugins/module_utils/network/common/netconf.py\", line 66, in __rpc__\n  File \"/tmp/ansible_junipernetworks.junos.junos_ping_payload_6o4adtb7/ansible_junipernetworks.junos.junos_ping_payload.zip/ansible_collections/ansible/netcommon/plugins/module_utils/network/common/netconf.py\", line 98, in parse_rpc_error\nansible.module_utils.connection.ConnectionError: b\"Start tag expected, '<' not found, line 1, column 1 (<string>, line 1)\"\n", "module_stdout": "", "msg": "MODULE FAILURE: No start of json char found\nSee stdout/stderr for the exact error", "rc": 1}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+6)
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_rpc.py 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+    #- juniper.device 
+ 
+  tasks:
+ 
+    - name: get system information
+      junipernetworks.junos.junos_rpc:
+        rpc: get-system-information
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_rpc.py -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_rpc to juniper.device.junos_rpc
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_rpc: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_rpc.py **************************************************************************************************************************************
+1 plays in junos_rpc.py
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [get system information] *******************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_rpc.py:11
+redirecting (type: modules) junipernetworks.junos.junos_rpc to juniper.device.junos_rpc
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_rpc to juniper.device.junos_rpc
+ok: [10.220.10.59] => {"changed": false, "output": ["<rpc-reply message-id=\"urn:uuid:ca69a7e8-852d-471c-8232-2ec782d6d994\"><system-information><hardware-model>mx960</hardware-model><os-name>junos</os-name><os-version>22.2R3-S6.4</os-version><serial-number>VM67503D988C</serial-number><host-name>junos_test.foo</host-name></system-information></rpc-reply>"], "xml": "<rpc-reply message-id=\"urn:uuid:ca69a7e8-852d-471c-8232-2ec782d6d994\"><system-information><hardware-model>mx960</hardware-model><os-name>junos</os-name><os-version>22.2R3-S6.4</os-version><serial-number>VM67503D988C</serial-number><host-name>junos_test.foo</host-name></system-information></rpc-reply>"}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+7) 
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_config.yml 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+      #- juniper.device 
+ 
+  tasks:
+ 
+    - name: load configure lines into device
+      junipernetworks.junos.junos_config:
+        lines:
+          - set system syslog file test1 any any 
+          - set system syslog file test2 any any 
+        comment: update config
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_config.yml -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_config: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_config.yml **********************************************************************************************************************************
+1 plays in junos_config.yml
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [load configure lines into device] *********************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_config.yml:11
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+ok: [10.220.10.59] => {"changed": false}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+8)
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_banner.yml 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+ 
+  tasks:
+ 
+    - name: Gather interfaces running 
+      junipernetworks.junos.junos_banner:
+        banner: login
+        text: |
+          this is my login banner
+          that contains a multiline
+          string
+        state: present
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_banner.yml -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_banner to juniper.device.junos_banner
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_banner: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_banner.yml **********************************************************************************************************************************
+1 plays in junos_banner.yml
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [Gather interfaces running] ****************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_banner.yml:10
+redirecting (type: modules) junipernetworks.junos.junos_banner to juniper.device.junos_banner
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_banner to juniper.device.junos_banner
+ok: [10.220.10.59] => {"changed": false}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+9)
+
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_acls.yml 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+ 
+  tasks:
+ 
+    - name: Merge JUNOS acl
+      junipernetworks.junos.junos_acls:
+        config:
+          - afi: ipv4
+            acls:
+              - name: allow_ssh_acl
+                aces:
+                  - name: ssh_rule
+                    source:
+                      port_protocol:
+                        eq: ssh
+                    protocol: tcp
+        state: merged
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_acls.yml -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_acls to juniper.device.junos_acls
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_acls: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_acls.yml ************************************************************************************************************************************
+1 plays in junos_acls.yml
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [Merge JUNOS acl] **************************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_acls.yml:10
+redirecting (type: modules) junipernetworks.junos.junos_acls to juniper.device.junos_acls
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_acls to juniper.device.junos_acls
+changed: [10.220.10.59] => {"after": [{"acls": [{"aces": [{"name": "ssh_rule", "protocol": "tcp", "source": {"port_protocol": {"eq": "ssh"}}}], "name": "allow_ssh_acl"}], "afi": "ipv4"}], "before": [], "changed": true, "commands": ["<nc:firewall xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:family><nc:inet><nc:filter><nc:name>allow_ssh_acl</nc:name><nc:term><nc:name>ssh_rule</nc:name><nc:from><nc:source-port>ssh</nc:source-port><nc:protocol>tcp</nc:protocol></nc:from></nc:term></nc:filter></nc:inet></nc:family></nc:firewall>"]}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+10)
+
+:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_logging_global.yml 
+---
+- name: Test Junos Facts Module
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+  tasks:
+    - name: Merge provided logging configuration into running configuration.
+      junipernetworks.junos.junos_logging_global:
+        config:
+          allow_duplicates: true
+          archive:
+            set: true
+            no_binary_data: true
+            files: 10
+            file_size: 65578
+            no_world_readable: true
+          users:
+            - name: "user1"
+              allow_duplicates: true
+            - name: "user2"
+              allow_duplicates: true
+              any:
+                level: "any"
+              user:
+                level: info
+        state: merged
+
+~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_logging_global.yml 
+ -vvv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory inventory source with ini plugin
+redirecting (type: modules) junipernetworks.junos.junos_logging_global to juniper.device.junos_logging_global
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_logging_global: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_logging_global.yml **************************************************************************************************************************
+1 plays in junos_logging_global.yml
+
+PLAY [Test Junos Facts Module] ******************************************************************************************************************************
+
+TASK [Merge provided logging configuration into running configuration.] *************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_logging_global.yml:8
+redirecting (type: modules) junipernetworks.junos.junos_logging_global to juniper.device.junos_logging_global
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.220.10.59> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.220.10.59> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-700iwkub1bc `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527 `" && echo ansible-tmp-1744883498.0479326-704-233988704298527="` echo /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_logging_global to juniper.device.junos_logging_global
+Using module file /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_logging_global.py
+<10.220.10.59> PUT /root/.ansible/tmp/ansible-local-700iwkub1bc/tmp482d3n1k TO /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527/AnsiballZ_junos_logging_global.py
+<10.220.10.59> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527/ /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527/AnsiballZ_junos_logging_global.py && sleep 0'
+<10.220.10.59> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527/AnsiballZ_junos_logging_global.py && sleep 0'
+<10.220.10.59> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-700iwkub1bc/ansible-tmp-1744883498.0479326-704-233988704298527/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.10.59] => {
+    "before": {
+        "allow_duplicates": true,
+        "archive": {
+            "file_size": "65578",
+            "files": 10,
+            "no_binary_data": true,
+            "no_world_readable": true
+        },
+        "files": [
+            {
+                "any": {
+                    "level": "any"
+                },
+                "name": "test1"
+            },
+            {
+                "any": {
+                    "level": "any"
+                },
+                "name": "test2"
+            }
+        ],
+        "users": [
+            {
+                "allow_duplicates": true,
+                "name": "user1"
+            },
+            {
+                "allow_duplicates": true,
+                "any": {
+                    "level": "any"
+                },
+                "name": "user2",
+                "user": {
+                    "level": "info"
+                }
+            }
+        ]
+    },
+    "changed": false,
+    "commands": [
+        "<nc:system xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:syslog><nc:allow-duplicates/><nc:archive><nc:files>10</nc:files><nc:no-binary-data/><nc:size>65578</nc:size><nc:no-world-readable/></nc:archive><nc:user><nc:name>user1</nc:name><nc:allow-duplicates/></nc:user><nc:user><nc:name>user2</nc:name><nc:allow-duplicates/><nc:contents><nc:name>any</nc:name><nc:any/></nc:contents><nc:contents><nc:name>user</nc:name><nc:info/></nc:contents></nc:user></nc:syslog></nc:system>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": {
+                "allow_duplicates": true,
+                "archive": {
+                    "binary_data": null,
+                    "file_size": "65578",
+                    "files": 10,
+                    "no_binary_data": true,
+                    "no_world_readable": true,
+                    "set": true,
+                    "world_readable": null
+                },
+                "console": null,
+                "files": null,
+                "hosts": null,
+                "log_rotate_frequency": null,
+                "routing_instance": null,
+                "server": null,
+                "source_address": null,
+                "time_format": null,
+                "users": [
+                    {
+                        "allow_duplicates": true,
+                        "any": null,
+                        "authorization": null,
+                        "change_log": null,
+                        "conflict_log": null,
+                        "daemon": null,
+                        "dfc": null,
+                        "external": null,
+                        "firewall": null,
+                        "ftp": null,
+                        "interactive_commands": null,
+                        "kernel": null,
+                        "match": null,
+                        "match_strings": null,
+                        "name": "user1",
+                        "ntp": null,
+                        "pfe": null,
+                        "security": null,
+                        "user": null
+                    },
+                    {
+                        "allow_duplicates": true,
+                        "any": {
+                            "level": "any"
+                        },
+                        "authorization": null,
+                        "change_log": null,
+                        "conflict_log": null,
+                        "daemon": null,
+                        "dfc": null,
+                        "external": null,
+                        "firewall": null,
+                        "ftp": null,
+                        "interactive_commands": null,
+                        "kernel": null,
+                        "match": null,
+                        "match_strings": null,
+                        "name": "user2",
+                        "ntp": null,
+                        "pfe": null,
+                        "security": null,
+                        "user": {
+                            "level": "info"
+                        }
+                    }
+                ]
+            },
+            "running_config": null,
+            "state": "merged"
+        }
+    }
+}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
