@@ -1,1 +1,524 @@
 
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory_juniper 
+[junos]
+10.220.10.59
+
+[junos:vars]
+ansible_host=10.220.10.59
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=root
+#ansible_user=root
+ansible_ssh_pass=xyz
+ansible_ssh_port=22
+#ansible_connection=ansible.netcommon.netconf
+#ansible_connection=juniper.device.pyez
+ansible_connection=local
+ansible_network_cli_ssh_type=libssh 
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python3.12
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat device_facts.yml 
+---
+- name: Test juniper.device.facts module
+  hosts: all
+  gather_facts: false
+  collections:
+    - juniper.device 
+  tasks:
+    - name: "TEST 1 - Gather Facts"
+      juniper.device.facts:
+      ignore_errors: true
+      register: test1
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junipernetworks/junos/meta/runtime.yml
+---
+requires_ansible: ">=2.15.0"
+plugin_routing:
+  action:
+          #facts:
+          #redirect: juniper.device.facts
+          #junos_hostname:
+          #redirect: juniper.device.hostname
+          #junos_logging_global:
+          #redirect: juniper.device.junos_logging_global
+          #junos_command:
+          #redirect: juniper.device.junos_command
+  modules:
+    acl_interfaces:
+      redirect: juniper.device.junos_acl_interfaces
+    junos_acls:
+      redirect: juniper.device.junos_acls
+    junos_banner:
+      redirect: juniper.device.junos_banner
+    junos_command:
+      redirect: juniper.device.junos_command
+    junos_config:
+      redirect: juniper.device.junos_config
+    junos_facts:
+      redirect: juniper.device.junos_facts
+    interfaces:
+      redirect: juniper.device.junos_interfaces
+    l2_interfaces:
+      redirect: juniper.device.junos_l2_interfaces
+    l3_interfaces:
+      redirect: juniper.device.junos_l3_interfaces
+    lacp:
+      redirect: juniper.device.junos.junos_lacp
+    lacp_interfaces:
+      redirect: juniper.device.junos_lacp_interfaces
+    lag_interfaces:
+      redirect: juniper.device.junos_lag_interfaces
+    lldp_global:
+      redirect: juniper.device.junos_lldp_global
+    bgp_global:
+      redirect: juniper.device.junos_bgp_global
+    bgp_address_family:
+      redirect: juniper.device.junos_bgp_address_family
+    routing_instances:
+      redirect: juniper.device.junos_routing_instances
+    prefix_lists:
+      redirect: juniper.device.junos_prefix_lists
+    junos_logging_global:
+      redirect: juniper.device.junos_logging_global
+    ntp_global:
+      redirect: juniper.device.junos_ntp_global
+    security_policies:
+      redirect: juniper.device.junos_security_policies
+    security_policies_global:
+      redirect: juniper.device.junos_security_policies_global
+    security_zones:
+      redirect: juniper.device.junos_security_zones
+    snmp_server:
+      redirect: juniper.device.junos_snmp_server
+    junos_hostname:
+      redirect: juniper.device.junos_hostname
+    routing_options:
+      redirect: juniper.device.junos_routing_options
+    lldp_interfaces:
+      redirect: juniper.device.junos_lldp_interfaces
+    netconf:
+      redirect: juniper.device.junos_netconf
+    ospfv2:
+      redirect: juniper.device.junos_ospfv2
+    ospfv3:
+      redirect: juniper.device.junos_ospfv3
+    ospf_interfaces:
+      redirect: juniper.device.junos_ospf_interfaces
+    package:
+      redirect: juniper.device.junos_package
+    junos_ping:
+      redirect: juniper.device.junos_ping
+    junos_rpc:
+      redirect: juniper.device.junos_rpc
+    scp:
+      redirect: juniper.device.junos_scp
+      deprecation:
+        removal_date: "2025-01-01"
+        warning_text: See the plugin documentation for more details
+    junos_scp:
+      deprecation:
+        removal_date: "2025-01-01"
+        warning_text: See the plugin documentation for more details
+    static_routes:
+      redirect: juniper.device.junos_static_routes
+    system:
+      redirect: juniper.device.junos_system
+    junos_user:
+      redirect: juniper.device.junos_user
+    vlans:
+      redirect: juniper.device.junos_vlans
+    vrf:
+      redirect: juniper.device.junos_vrf
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml
+requires_ansible: ">=2.15.0"
+plugin_routing:
+  action:
+          #facts:
+          #redirect: juniper.device.facts
+          #junos_hostname:
+          #redirect: juniper.device.hostname
+          #logging_global:
+          #redirect: juniper.device.logging_global
+          #command:
+          #redirect: juniper.device.command
+  modules:
+          #facts:
+          #redirect: juniper.device.facts 
+    hostname:
+      redirect: juniper.device.junos_hostname
+    ping:
+      redirect: juniper.device.junos_ping
+      #logging_global:
+      #redirect: juniper.device.junos_logging_global
+      #command:
+      #redirect: juniper.device.junos_command
+
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ANSIBLE_DEBUG=1 ansible-playbook -i inventory_juniper device_facts.yml -vvvv
+ 31501 1744881457.43153: starting run
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+ 31501 1744881457.43628: Added group all to inventory
+ 31501 1744881457.43634: Added group ungrouped to inventory
+ 31501 1744881457.43643: Group all now contains ungrouped
+ 31501 1744881457.43651: Examining possible inventory source: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper
+setting up inventory plugins
+Loading collection ansible.builtin from 
+ 31501 1744881457.55823: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/cache
+ 31501 1744881457.55899: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py
+ 31501 1744881457.55933: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory
+ 31501 1744881457.56008: Loading InventoryModule 'host_list' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py
+ 31501 1744881457.56088: Loaded config def from plugin (inventory/script)
+ 31501 1744881457.56094: Loading InventoryModule 'script' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py
+ 31501 1744881457.56146: Loading InventoryModule 'auto' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py
+ 31501 1744881457.56240: Loaded config def from plugin (inventory/yaml)
+ 31501 1744881457.56246: Loading InventoryModule 'yaml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py
+ 31501 1744881457.56343: Loading InventoryModule 'ini' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py
+ 31501 1744881457.56764: Loading InventoryModule 'toml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/toml.py
+ 31501 1744881457.56772: Attempting to use plugin host_list (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py)
+host_list declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper as it did not pass its verify_file() method
+ 31501 1744881457.56786: Attempting to use plugin script (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py)
+script declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper as it did not pass its verify_file() method
+ 31501 1744881457.56810: Attempting to use plugin auto (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py)
+auto declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper as it did not pass its verify_file() method
+ 31501 1744881457.56829: Attempting to use plugin yaml (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py)
+ 31501 1744881457.56874: Loading data from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper
+ 31501 1744881457.56942: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper was not parsable by yaml
+ 31501 1744881457.57027: Attempting to use plugin ini (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py)
+ 31501 1744881457.57098: Added group junos to inventory
+ 31501 1744881457.57118: set inventory_file for 10.220.10.59
+ 31501 1744881457.57126: set inventory_dir for 10.220.10.59
+ 31501 1744881457.57135: Added host 10.220.10.59 to inventory
+ 31501 1744881457.57142: Added host 10.220.10.59 to group junos
+ 31501 1744881457.57166: set ansible_host for junos
+ 31501 1744881457.57184: set ansible_network_os for junos
+ 31501 1744881457.57198: set ansible_ssh_user for junos
+ 31501 1744881457.57209: set ansible_ssh_pass for junos
+ 31501 1744881457.57222: set ansible_ssh_port for junos
+ 31501 1744881457.57238: set ansible_connection for junos
+ 31501 1744881457.57276: set ansible_network_cli_ssh_type for junos
+ 31501 1744881457.57290: set ansible_python_interpreter for all
+Parsed /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper inventory source with ini plugin
+ 31501 1744881457.57310: Reconcile groups and hosts in inventory.
+ 31501 1744881457.57328: Group all now contains junos
+ 31501 1744881457.57434: '/usr/local/lib/python3.12/site-packages/ansible/plugins/vars/__init__' skipped due to reserved name
+ 31501 1744881457.57574: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments
+ 31501 1744881457.57641: Loading ModuleDocFragment 'vars_plugin_staging' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/vars_plugin_staging.py
+ 31501 1744881457.57677: Loaded config def from plugin (vars/host_group_vars)
+ 31501 1744881457.57684: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.57699: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/vars
+ 31501 1744881457.57722: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.57788: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.58146: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+ 31501 1744881457.58253: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py
+ 31501 1744881457.58302: Loaded config def from plugin (connection/local)
+ 31501 1744881457.58309: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.58665: Loaded config def from plugin (connection/paramiko_ssh)
+ 31501 1744881457.58672: Loading Connection 'paramiko_ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/paramiko_ssh.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.59487: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.59532: Loaded config def from plugin (connection/psrp)
+ 31501 1744881457.59539: Loading Connection 'psrp' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/psrp.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.60068: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.60111: Loaded config def from plugin (connection/ssh)
+ 31501 1744881457.60123: Loading Connection 'ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.61791: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.61835: Loaded config def from plugin (connection/winrm)
+ 31501 1744881457.61847: Loading Connection 'winrm' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/winrm.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.61902: '/usr/local/lib/python3.12/site-packages/ansible/plugins/shell/__init__' skipped due to reserved name
+ 31501 1744881457.61976: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py
+ 31501 1744881457.62037: Loaded config def from plugin (shell/cmd)
+ 31501 1744881457.62043: Loading ShellModule 'cmd' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/cmd.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.62071: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.62136: Loaded config def from plugin (shell/powershell)
+ 31501 1744881457.62142: Loading ShellModule 'powershell' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.62214: Loading ModuleDocFragment 'shell_common' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_common.py
+ 31501 1744881457.62365: Loaded config def from plugin (shell/sh)
+ 31501 1744881457.62375: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.62432: '/usr/local/lib/python3.12/site-packages/ansible/plugins/become/__init__' skipped due to reserved name
+ 31501 1744881457.62549: Loaded config def from plugin (become/runas)
+ 31501 1744881457.62555: Loading BecomeModule 'runas' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/runas.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.62733: Loaded config def from plugin (become/su)
+ 31501 1744881457.62740: Loading BecomeModule 'su' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/su.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.62888: Loaded config def from plugin (become/sudo)
+ 31501 1744881457.62895: Loading BecomeModule 'sudo' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/sudo.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.62941: Loading data from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/device_facts.yml
+Loading collection juniper.device from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device
+ 31501 1744881457.63382: plugin lookup for juniper.device.facts failed; errors: 'NoneType' object has no attribute 'get'
+[WARNING]: errors were encountered during the plugin load for juniper.device.facts: ["'NoneType' object has no attribute 'get'"]
+ 31501 1744881457.63489: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/callback
+ 31501 1744881457.63595: Loading ModuleDocFragment 'default_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/default_callback.py
+ 31501 1744881457.63757: Loading ModuleDocFragment 'result_format_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/result_format_callback.py
+ 31501 1744881457.63827: Loaded config def from plugin (callback/default)
+ 31501 1744881457.63833: Loading CallbackModule 'default' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+ 31501 1744881457.63904: '/usr/local/lib/python3.12/site-packages/ansible/plugins/callback/__init__' skipped due to reserved name
+ 31501 1744881457.63911: Loading CallbackModule 'default' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py (found_in_cache=True, class_only=True)
+ 31501 1744881457.64827: Loaded config def from plugin (callback/junit)
+ 31501 1744881457.64833: Loading CallbackModule 'junit' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/junit.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.64886: Loading ModuleDocFragment 'result_format_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/result_format_callback.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.64950: Loaded config def from plugin (callback/minimal)
+ 31501 1744881457.64956: Loading CallbackModule 'minimal' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/minimal.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.65005: Loading CallbackModule 'oneline' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/oneline.py (found_in_cache=False, class_only=True)
+ 31501 1744881457.65075: Loaded config def from plugin (callback/tree)
+ 31501 1744881457.65082: Loading CallbackModule 'tree' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/tree.py (found_in_cache=False, class_only=True)
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: device_facts.yml **********************************************************************************************************************************
+Positional arguments: device_facts.yml
+verbosity: 4
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper',)
+forks: 5
+1 plays in device_facts.yml
+ 31501 1744881457.65170: in VariableManager get_vars()
+ 31501 1744881457.65205: done with get_vars()
+ 31501 1744881457.65223: in VariableManager get_vars()
+ 31501 1744881457.65244: done with get_vars()
+ 31501 1744881457.65257: variable 'omit' from source: magic vars
+ 31501 1744881457.65294: in VariableManager get_vars()
+ 31501 1744881457.65313: done with get_vars()
+ 31501 1744881457.65340: variable 'omit' from source: magic vars
+
+PLAY [Test juniper.device.facts module] *********************************************************************************************************************
+ 31501 1744881457.70208: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/strategy
+ 31501 1744881457.70302: Loading StrategyModule 'linear' from /usr/local/lib/python3.12/site-packages/ansible/plugins/strategy/linear.py
+ 31501 1744881457.70355: getting the remaining hosts for this loop
+ 31501 1744881457.70361: done getting the remaining hosts for this loop
+ 31501 1744881457.70365: getting the next task for host 10.220.10.59
+ 31501 1744881457.70381: done getting next task for host 10.220.10.59
+ 31501 1744881457.70386:  ^ task is: TASK: TEST 1 - Gather Facts
+ 31501 1744881457.70398:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=1, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+ 31501 1744881457.70406: getting variables
+ 31501 1744881457.70412: in VariableManager get_vars()
+ 31501 1744881457.70441: Calling all_inventory to load vars for 10.220.10.59
+ 31501 1744881457.70452: Calling groups_inventory to load vars for 10.220.10.59
+ 31501 1744881457.70459: Calling all_plugins_inventory to load vars for 10.220.10.59
+ 31501 1744881457.70489: Calling all_plugins_play to load vars for 10.220.10.59
+ 31501 1744881457.70501: Calling groups_plugins_inventory to load vars for 10.220.10.59
+ 31501 1744881457.70509: Calling groups_plugins_play to load vars for 10.220.10.59
+ 31501 1744881457.70572: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+ 31501 1744881457.70629: done with get_vars()
+ 31501 1744881457.70640: done getting variables
+ 31501 1744881457.70658: plugin lookup for juniper.device.facts failed; errors: 'NoneType' object has no attribute 'get'
+
+TASK [TEST 1 - Gather Facts] ********************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/device_facts.yml:8
+ 31501 1744881457.70700: entering _queue_task() for 10.220.10.59/juniper.device.facts
+ 31501 1744881457.70704: Creating lock for juniper.device.facts
+ 31501 1744881457.71005: worker is 1 (out of 1 available)
+ 31501 1744881457.71042: exiting _queue_task() for 10.220.10.59/juniper.device.facts
+ 31501 1744881457.71061: done queuing things up, now waiting for results queue to drain
+ 31501 1744881457.71066: waiting for pending results...
+ 31501 1744881457.71290: running TaskExecutor() for 10.220.10.59/TASK: TEST 1 - Gather Facts
+ 31501 1744881457.71438: in run() - task 00505681-e244-5f2a-c9f9-000000000004
+ 31501 1744881457.71480: variable 'ansible_search_path' from source: unknown
+ 31501 1744881457.71554: calling self._execute()
+ 31501 1744881457.71650: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.71680: variable 'ansible_host' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.71712: variable 'ansible_ssh_user' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.71747: variable 'ansible_ssh_pass' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.71775: variable 'ansible_ssh_port' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.71805: variable 'ansible_network_os' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.71843: variable 'omit' from source: magic vars
+ 31501 1744881457.72047: variable 'omit' from source: magic vars
+ 31501 1744881457.72109: variable 'omit' from source: magic vars
+ 31501 1744881457.72174: variable 'omit' from source: magic vars
+ 31501 1744881457.72225: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.72255: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.72324: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/connection
+ 31501 1744881457.72402: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.72458: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/shell
+ 31501 1744881457.72504: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.72545: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+ 31501 1744881457.72685: Set connection var ansible_port to 22
+ 31501 1744881457.72720: Set connection var ansible_module_compression to ZIP_DEFLATED
+ 31501 1744881457.72751: Set connection var ansible_pipelining to False
+ 31501 1744881457.72781: Set connection var ansible_user to root
+ 31501 1744881457.72804: Set connection var ansible_shell_executable to /bin/sh
+ 31501 1744881457.72831: Set connection var ansible_timeout to 10
+ 31501 1744881457.72861: Set connection var ansible_shell_type to sh
+ 31501 1744881457.72895: variable 'ansible_shell_executable' from source: unknown
+ 31501 1744881457.72919: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.72950: variable 'ansible_module_compression' from source: unknown
+ 31501 1744881457.72975: variable 'ansible_shell_type' from source: unknown
+ 31501 1744881457.73006: variable 'ansible_shell_executable' from source: unknown
+ 31501 1744881457.73030: variable 'ansible_host' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.73056: variable 'ansible_ssh_user' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.73079: variable 'ansible_ssh_pass' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.73100: variable 'ansible_ssh_port' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.73130: variable 'ansible_pipelining' from source: unknown
+ 31501 1744881457.73153: variable 'ansible_timeout' from source: unknown
+ 31501 1744881457.73175: variable 'ansible_network_os' from source: group vars, precedence entry 'groups_inventory'
+ 31501 1744881457.73274: plugin lookup for juniper.device.facts failed; errors: 'NoneType' object has no attribute 'get'
+ 31501 1744881457.73344: plugin lookup for juniper.device.facts failed; errors: 'NoneType' object has no attribute 'get'
+ 31501 1744881457.73700: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/action
+ 31501 1744881457.73825: Loading ActionModule 'normal' from /usr/local/lib/python3.12/site-packages/ansible/plugins/action/normal.py
+ 31501 1744881457.73863: variable 'omit' from source: magic vars
+ 31501 1744881457.73894: starting attempt loop
+ 31501 1744881457.73924: running the handler
+ 31501 1744881457.73962: _low_level_execute_command(): starting
+ 31501 1744881457.73999: _low_level_execute_command(): executing: /bin/sh -c 'echo ~root && sleep 0'
+<10.220.10.59> ESTABLISH LOCAL CONNECTION FOR USER: root
+ 31501 1744881457.74065: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c 'echo ~root && sleep 0'
+ 31501 1744881457.74123: opening command with Popen()
+ 31501 1744881457.74454: done running command with Popen()
+ 31501 1744881457.74485: getting output with communicate()
+ 31501 1744881457.74729: done communicating
+ 31501 1744881457.74739: done with local.exec_command()
+ 31501 1744881457.74749: _low_level_execute_command() done: rc=0, stdout=/root
+, stderr=
+ 31501 1744881457.74783: _low_level_execute_command(): starting
+ 31501 1744881457.74819: _low_level_execute_command(): executing: /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826 `" && echo ansible-tmp-1744881457.7475288-31505-18859436718826="` echo /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826 `" ) && sleep 0'
+ 31501 1744881457.74829: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826 `" && echo ansible-tmp-1744881457.7475288-31505-18859436718826="` echo /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826 `" ) && sleep 0'
+ 31501 1744881457.74868: opening command with Popen()
+ 31501 1744881457.75169: done running command with Popen()
+ 31501 1744881457.75177: getting output with communicate()
+ 31501 1744881457.75665: done communicating
+ 31501 1744881457.75673: done with local.exec_command()
+ 31501 1744881457.75706: _low_level_execute_command() done: rc=0, stdout=ansible-tmp-1744881457.7475288-31505-18859436718826=/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826
+, stderr=
+ 31501 1744881457.75821: variable 'ansible_module_compression' from source: unknown
+ 31501 1744881457.75892: ANSIBALLZ: Using lock for juniper.device.facts
+ 31501 1744881457.75899: ANSIBALLZ: Acquiring lock
+ 31501 1744881457.75919: ANSIBALLZ: Lock acquired: 140335866946688
+ 31501 1744881457.75938: ANSIBALLZ: Creating module
+ 31501 1744881457.89700: ANSIBALLZ: Writing module into payload
+ 31501 1744881457.89820: ANSIBALLZ: Writing module
+ 31501 1744881457.89850: ANSIBALLZ: Renaming module
+ 31501 1744881457.89871: ANSIBALLZ: Done creating module
+ 31501 1744881457.89904: variable 'ansible_python_interpreter' from source: group vars, precedence entry 'all_inventory'
+Using module file /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/facts.py
+ 31501 1744881457.89995: transferring module to remote /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py
+<10.220.10.59> PUT /root/.ansible/tmp/ansible-local-315015owzklkt/tmptj7fe0kp TO /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py
+ 31501 1744881457.90134: done transferring module to remote
+ 31501 1744881457.90170: _low_level_execute_command(): starting
+ 31501 1744881457.90177: _low_level_execute_command(): executing: /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/ /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py && sleep 0'
+ 31501 1744881457.90211: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/ /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py && sleep 0'
+ 31501 1744881457.90227: opening command with Popen()
+ 31501 1744881457.90584: done running command with Popen()
+ 31501 1744881457.90593: getting output with communicate()
+ 31501 1744881457.90907: done communicating
+ 31501 1744881457.90915: done with local.exec_command()
+ 31501 1744881457.90941: _low_level_execute_command() done: rc=0, stdout=, stderr=
+ 31501 1744881457.90956: _low_level_execute_command(): starting
+ 31501 1744881457.90988: _low_level_execute_command(): executing: /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py && sleep 0'
+ 31501 1744881457.90998: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py && sleep 0'
+ 31501 1744881457.91039: opening command with Popen()
+ 31501 1744881457.91353: done running command with Popen()
+ 31501 1744881457.91361: getting output with communicate()
+ 31501 1744881458.45631: done communicating
+ 31501 1744881458.45644: done with local.exec_command()
+ 31501 1744881458.45652: _low_level_execute_command() done: rc=1, stdout=, stderr=Traceback (most recent call last):
+  File "/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py", line 107, in <module>
+    _ansiballz_main()
+  File "/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py", line 99, in _ansiballz_main
+    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+  File "/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py", line 47, in invoke_module
+    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.facts', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.facts', _modlib_path=modlib_path),
+  File "<frozen runpy>", line 226, in run_module
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/modules/facts.py", line 373, in <module>
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/modules/facts.py", line 317, in main
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 652, in __init__
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 706, in initialize_params
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 803, in fail_json
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 1287, in close_configuration
+AttributeError: 'JuniperJunosModule' object has no attribute '_pyez_conn'
+ 31501 1744881458.45829: done with _execute_module (juniper.device.facts, {'_ansible_check_mode': False, '_ansible_no_log': False, '_ansible_debug': True, '_ansible_diff': False, '_ansible_verbosity': 4, '_ansible_version': '2.18.4', '_ansible_module_name': 'juniper.device.facts', '_ansible_syslog_facility': 'LOG_USER', '_ansible_selinux_special_fs': ['fuse', 'nfs', 'vboxsf', 'ramfs', '9p', 'vfat'], '_ansible_string_conversion_action': 'warn', '_ansible_socket': None, '_ansible_shell_executable': '/bin/sh', '_ansible_keep_remote_files': False, '_ansible_tmpdir': '/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/', '_ansible_remote_tmp': '~/.ansible/tmp', '_ansible_ignore_unknown_opts': False, '_ansible_target_log_info': None})
+ 31501 1744881458.45858: _low_level_execute_command(): starting
+ 31501 1744881458.45892: _low_level_execute_command(): executing: /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/ > /dev/null 2>&1 && sleep 0'
+ 31501 1744881458.45900: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/ > /dev/null 2>&1 && sleep 0'
+ 31501 1744881458.45941: opening command with Popen()
+ 31501 1744881458.46294: done running command with Popen()
+ 31501 1744881458.46306: getting output with communicate()
+ 31501 1744881458.46642: done communicating
+ 31501 1744881458.46651: done with local.exec_command()
+ 31501 1744881458.46675: _low_level_execute_command() done: rc=0, stdout=, stderr=
+ 31501 1744881458.46706: handler run complete
+ 31501 1744881458.46751: attempt loop complete, returning result
+ 31501 1744881458.46760: _execute() done
+ 31501 1744881458.46779: dumping result to json
+ 31501 1744881458.46785: done dumping result, returning
+ 31501 1744881458.46828: done running TaskExecutor() for 10.220.10.59/TASK: TEST 1 - Gather Facts [00505681-e244-5f2a-c9f9-000000000004]
+ 31501 1744881458.46846: sending task result for task 00505681-e244-5f2a-c9f9-000000000004
+ 31501 1744881458.47026: done sending task result for task 00505681-e244-5f2a-c9f9-000000000004
+ 31501 1744881458.47035: WORKER PROCESS EXITING
+ 31501 1744881458.47057: marking 10.220.10.59 as failed
+ 31501 1744881458.47079: marking host 10.220.10.59 failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=1, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+ 31501 1744881458.47098: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=5, fail_state=2, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+ 31501 1744881458.47121: getting the next task for host 10.220.10.59
+ 31501 1744881458.47135: host 10.220.10.59 is done iterating, returning
+The full traceback is:
+Traceback (most recent call last):
+  File "/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py", line 107, in <module>
+    _ansiballz_main()
+  File "/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py", line 99, in _ansiballz_main
+    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+  File "/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py", line 47, in invoke_module
+    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.facts', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.facts', _modlib_path=modlib_path),
+  File "<frozen runpy>", line 226, in run_module
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/modules/facts.py", line 373, in <module>
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/modules/facts.py", line 317, in main
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 652, in __init__
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 706, in initialize_params
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 803, in fail_json
+  File "/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py", line 1287, in close_configuration
+AttributeError: 'JuniperJunosModule' object has no attribute '_pyez_conn'
+fatal: [10.220.10.59]: FAILED! => {
+    "changed": false,
+    "module_stderr": "Traceback (most recent call last):\n  File \"/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/root/.ansible/tmp/ansible-tmp-1744881457.7475288-31505-18859436718826/AnsiballZ_facts.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.facts', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.facts', _modlib_path=modlib_path),\n  File \"<frozen runpy>\", line 226, in run_module\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/modules/facts.py\", line 373, in <module>\n  File \"/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/modules/facts.py\", line 317, in main\n  File \"/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py\", line 652, in __init__\n  File \"/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py\", line 706, in initialize_params\n  File \"/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py\", line 803, in fail_json\n  File \"/tmp/ansible_juniper.device.facts_payload__35ljy6a/ansible_juniper.device.facts_payload.zip/ansible_collections/juniper/device/plugins/module_utils/juniper_junos_common.py\", line 1287, in close_configuration\nAttributeError: 'JuniperJunosModule' object has no attribute '_pyez_conn'\n",
+    "module_stdout": "",
+    "msg": "MODULE FAILURE: No start of json char found\nSee stdout/stderr for the exact error",
+    "rc": 1
+}
+ 31501 1744881458.47458: no more pending results, returning what we have
+ 31501 1744881458.47480: results queue empty
+ 31501 1744881458.47498: checking for any_errors_fatal
+ 31501 1744881458.47511: done checking for any_errors_fatal
+ 31501 1744881458.47524: checking for max_fail_percentage
+ 31501 1744881458.47528: done checking for max_fail_percentage
+ 31501 1744881458.47541: checking to see if all hosts have failed and the running result is not ok
+ 31501 1744881458.47553: done checking to see if all hosts have failed
+ 31501 1744881458.47557: getting the remaining hosts for this loop
+ 31501 1744881458.47569: done getting the remaining hosts for this loop
+ 31501 1744881458.47581: getting the next task for host 10.220.10.59
+ 31501 1744881458.47592: host 10.220.10.59 is done iterating, returning
+ 31501 1744881458.47596: done queuing things up, now waiting for results queue to drain
+ 31501 1744881458.47608: results queue empty
+ 31501 1744881458.47611: checking for any_errors_fatal
+ 31501 1744881458.47623: done checking for any_errors_fatal
+ 31501 1744881458.47627: checking for max_fail_percentage
+ 31501 1744881458.47638: done checking for max_fail_percentage
+ 31501 1744881458.47642: checking to see if all hosts have failed and the running result is not ok
+ 31501 1744881458.47653: done checking to see if all hosts have failed
+ 31501 1744881458.47658: getting the next task for host 10.220.10.59
+ 31501 1744881458.47669: host 10.220.10.59 is done iterating, returning
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+ 31501 1744881458.47801: RUNNING CLEANUP
+
