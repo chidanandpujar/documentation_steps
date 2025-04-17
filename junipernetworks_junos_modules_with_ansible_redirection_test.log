@@ -1,0 +1,205 @@
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junipernetworks/junos/meta/runtime.yml
+---
+requires_ansible: ">=2.15.0"
+plugin_routing:
+  action:
+          #facts:
+          #redirect: juniper.device.facts
+          #junos_hostname:
+          #redirect: juniper.device.hostname
+          #junos_logging_global:
+          #redirect: juniper.device.junos_logging_global
+          #junos_command:
+          #redirect: juniper.device.junos_command
+  modules:
+    acl_interfaces:
+      redirect: juniper.device.junos_acl_interfaces
+    junos_acls:
+      redirect: juniper.device.junos_acls
+    junos_banner:
+      redirect: juniper.device.junos_banner
+    junos_command:
+      redirect: juniper.device.junos_command
+    junos_config:
+      redirect: juniper.device.junos_config
+    junos_facts:
+      redirect: juniper.device.junos_facts
+    interfaces:
+      redirect: juniper.device.junos_interfaces
+    l2_interfaces:
+      redirect: juniper.device.junos_l2_interfaces
+    l3_interfaces:
+      redirect: juniper.device.junos_l3_interfaces
+    lacp:
+      redirect: juniper.device.junos.junos_lacp
+    lacp_interfaces:
+      redirect: juniper.device.junos_lacp_interfaces
+    lag_interfaces:
+      redirect: juniper.device.junos_lag_interfaces
+    lldp_global:
+      redirect: juniper.device.junos_lldp_global
+    bgp_global:
+      redirect: juniper.device.junos_bgp_global
+    bgp_address_family:
+      redirect: juniper.device.junos_bgp_address_family
+    routing_instances:
+      redirect: juniper.device.junos_routing_instances
+    prefix_lists:
+      redirect: juniper.device.junos_prefix_lists
+    junos_logging_global:
+      redirect: juniper.device.junos_logging_global
+    ntp_global:
+      redirect: juniper.device.junos_ntp_global
+    security_policies:
+      redirect: juniper.device.junos_security_policies
+    security_policies_global:
+      redirect: juniper.device.junos_security_policies_global
+    security_zones:
+      redirect: juniper.device.junos_security_zones
+    snmp_server:
+      redirect: juniper.device.junos_snmp_server
+    junos_hostname:
+      redirect: juniper.device.junos_hostname
+    routing_options:
+      redirect: juniper.device.junos_routing_options
+    lldp_interfaces:
+      redirect: juniper.device.junos_lldp_interfaces
+    netconf:
+      redirect: juniper.device.junos_netconf
+    ospfv2:
+      redirect: juniper.device.junos_ospfv2
+    ospfv3:
+      redirect: juniper.device.junos_ospfv3
+    ospf_interfaces:
+      redirect: juniper.device.junos_ospf_interfaces
+    package:
+      redirect: juniper.device.junos_package
+    junos_ping:
+      redirect: juniper.device.junos_ping
+    junos_rpc:
+      redirect: juniper.device.junos_rpc
+    scp:
+      redirect: juniper.device.junos_scp
+      deprecation:
+        removal_date: "2025-01-01"
+        warning_text: See the plugin documentation for more details
+    junos_scp:
+      deprecation:
+        removal_date: "2025-01-01"
+        warning_text: See the plugin documentation for more details
+    static_routes:
+      redirect: juniper.device.junos_static_routes
+    system:
+      redirect: juniper.device.junos_system
+    junos_user:
+      redirect: juniper.device.junos_user
+    vlans:
+      redirect: juniper.device.junos_vlans
+    vrf:
+      redirect: juniper.device.junos_vrf
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml
+requires_ansible: ">=2.15.0"
+plugin_routing:
+  action:
+          #facts:
+          #redirect: juniper.device.facts
+          #junos_hostname:
+          #redirect: juniper.device.hostname
+          #logging_global:
+          #redirect: juniper.device.logging_global
+          #command:
+          #redirect: juniper.device.command
+  modules:
+          #facts:
+          #redirect: juniper.device.facts 
+    hostname:
+      redirect: juniper.device.junos_hostname
+    ping:
+      redirect: juniper.device.junos_ping
+      #logging_global:
+      #redirect: juniper.device.junos_logging_global
+      #command:
+      #redirect: juniper.device.junos_command
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory
+[junos]
+10.220.10.59
+
+[junos:vars]
+#ansible_host=10.220.10.59
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=root
+#ansible_user=root
+ansible_ssh_pass=xyz
+ansible_ssh_port=22
+ansible_connection=ansible.netcommon.netconf
+#ansible_connection=juniper.device.pyez
+#ansible_connection=local
+ansible_network_cli_ssh_type=libssh 
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python3.12
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat ansible.cfg 
+[defaults]
+INVENTORY = ./inventory
+collections_path=/root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/
+host_key_checking = False
+hash_behaviour=merge
+no_log = False
+
+[persistent_connection]
+connect_timeout = 300
+connect_retry_timeout = 300
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junos_user.yml 
+---
+- name: Gather Operation Playbook
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+      #- juniper.device 
+ 
+  tasks:
+ 
+    - name: Create list of users
+      junipernetworks.junos.junos_user:
+        aggregate:
+          - {name: test_user1, full_name: test_user2, role: operator, state: present}
+          - {name: test_user2, full_name: test_user2, role: read-only, state: present}
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory junos_user.yml -vv
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_user: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_user.yml ************************************************************************************************************************************
+1 plays in junos_user.yml
+
+PLAY [Gather Operation Playbook] ****************************************************************************************************************************
+
+TASK [Create list of users] *********************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/junos_user.yml:11
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+ok: [10.220.10.59] => {"changed": false}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
