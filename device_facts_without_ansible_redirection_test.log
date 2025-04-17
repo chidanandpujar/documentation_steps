@@ -1,1 +1,719 @@
 
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat inventory_juniper 
+[junos]
+10.220.10.59
+
+[junos:vars]
+ansible_host=10.220.10.59
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=root
+#ansible_user=root
+ansible_ssh_pass=xyz
+ansible_ssh_port=22
+#ansible_connection=ansible.netcommon.netconf
+#ansible_connection=juniper.device.pyez
+ansible_connection=local
+ansible_network_cli_ssh_type=libssh 
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python3.12
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat device_facts.yml 
+---
+- name: Test juniper.device.facts module
+  hosts: all
+  gather_facts: false
+  collections:
+    - juniper.device 
+  tasks:
+    - name: "TEST 1 - Gather Facts"
+      juniper.device.facts:
+      ignore_errors: true
+      register: test1
+
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml
+requires_ansible: ">=2.17.0"
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# cat junipernetworks/junos/meta/runtime.yml
+---
+requires_ansible: ">=2.16.0"
+plugin_routing:
+  modules:
+    acl_interfaces:
+      redirect: junipernetworks.junos.junos_acl_interfaces
+    acls:
+      redirect: junipernetworks.junos.junos_acls
+    banner:
+      redirect: junipernetworks.junos.junos_banner
+    command:
+      redirect: junipernetworks.junos.junos_command
+    config:
+      redirect: junipernetworks.junos.junos_config
+    facts:
+      redirect: junipernetworks.junos.junos_facts
+    interfaces:
+      redirect: junipernetworks.junos.junos_interfaces
+    l2_interfaces:
+      redirect: junipernetworks.junos.junos_l2_interfaces
+    l3_interfaces:
+      redirect: junipernetworks.junos.junos_l3_interfaces
+    lacp:
+      redirect: junipernetworks.junos.junos_lacp
+    lacp_interfaces:
+      redirect: junipernetworks.junos.junos_lacp_interfaces
+    lag_interfaces:
+      redirect: junipernetworks.junos.junos_lag_interfaces
+    lldp_global:
+      redirect: junipernetworks.junos.junos_lldp_global
+    bgp_global:
+      redirect: junipernetworks.junos.junos_bgp_global
+    bgp_address_family:
+      redirect: junipernetworks.junos.junos_bgp_address_family
+    routing_instances:
+      redirect: junipernetworks.junos.junos_routing_instances
+    prefix_lists:
+      redirect: junipernetworks.junos.junos_prefix_lists
+    logging_global:
+      redirect: junipernetworks.junos.junos_logging_global
+    ntp_global:
+      redirect: junipernetworks.junos.junos_ntp_global
+    security_policies:
+      redirect: junipernetworks.junos.junos_security_policies
+    security_policies_global:
+      redirect: junipernetworks.junos.junos_security_policies_global
+    security_zones:
+      redirect: junipernetworks.junos.junos_security_zones
+    snmp_server:
+      redirect: junipernetworks.junos.junos_snmp_server
+    hostname:
+      redirect: junipernetworks.junos.junos_hostname
+    routing_options:
+      redirect: junipernetworks.junos.junos_routing_options
+    lldp_interfaces:
+      redirect: junipernetworks.junos.junos_lldp_interfaces
+    netconf:
+      redirect: junipernetworks.junos.junos_netconf
+    ospfv2:
+      redirect: junipernetworks.junos.junos_ospfv2
+    ospfv3:
+      redirect: junipernetworks.junos.junos_ospfv3
+    ospf_interfaces:
+      redirect: junipernetworks.junos.junos_ospf_interfaces
+    package:
+      redirect: junipernetworks.junos.junos_package
+    ping:
+      redirect: junipernetworks.junos.junos_ping
+    rpc:
+      redirect: junipernetworks.junos.junos_rpc
+    static_routes:
+      redirect: junipernetworks.junos.junos_static_routes
+    system:
+      redirect: junipernetworks.junos.junos_system
+    user:
+      redirect: junipernetworks.junos.junos_user
+    vlans:
+      redirect: junipernetworks.junos.junos_vlans
+    vrf:
+      redirect: junipernetworks.junos.junos_vrf
+
+
+root@nms5-salt-master-b:~/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections# ANSIBLE_DEBUG=1 ansible-playbook -i inventory_juniper device_facts.yml -vvvv
+ 31184 1744881146.81344: starting run
+ansible-playbook [core 2.18.4]
+  config file = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Nov  6 2023, 11:52:14) [GCC 7.5.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.4
+  libyaml = True
+Using /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+ 31184 1744881146.81892: Added group all to inventory
+ 31184 1744881146.81899: Added group ungrouped to inventory
+ 31184 1744881146.81909: Group all now contains ungrouped
+ 31184 1744881146.81916: Examining possible inventory source: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper
+setting up inventory plugins
+Loading collection ansible.builtin from 
+ 31184 1744881146.95615: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/cache
+ 31184 1744881146.95685: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py
+ 31184 1744881146.95720: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory
+ 31184 1744881146.95789: Loading InventoryModule 'host_list' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py
+ 31184 1744881146.95869: Loaded config def from plugin (inventory/script)
+ 31184 1744881146.95875: Loading InventoryModule 'script' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py
+ 31184 1744881146.95922: Loading InventoryModule 'auto' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py
+ 31184 1744881146.96007: Loaded config def from plugin (inventory/yaml)
+ 31184 1744881146.96013: Loading InventoryModule 'yaml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py
+ 31184 1744881146.96108: Loading InventoryModule 'ini' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py
+ 31184 1744881146.96536: Loading InventoryModule 'toml' from /usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/toml.py
+ 31184 1744881146.96544: Attempting to use plugin host_list (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/host_list.py)
+host_list declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper as it did not pass its verify_file() method
+ 31184 1744881146.96553: Attempting to use plugin script (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/script.py)
+script declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper as it did not pass its verify_file() method
+ 31184 1744881146.96566: Attempting to use plugin auto (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/auto.py)
+auto declined parsing /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper as it did not pass its verify_file() method
+ 31184 1744881146.96572: Attempting to use plugin yaml (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/yaml.py)
+ 31184 1744881146.96604: Loading data from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper
+ 31184 1744881146.96669: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper was not parsable by yaml
+ 31184 1744881146.96750: Attempting to use plugin ini (/usr/local/lib/python3.12/site-packages/ansible/plugins/inventory/ini.py)
+ 31184 1744881146.96815: Added group junos to inventory
+ 31184 1744881146.96830: set inventory_file for 10.220.10.59
+ 31184 1744881146.96840: set inventory_dir for 10.220.10.59
+ 31184 1744881146.96844: Added host 10.220.10.59 to inventory
+ 31184 1744881146.96849: Added host 10.220.10.59 to group junos
+ 31184 1744881146.96860: set ansible_host for junos
+ 31184 1744881146.96874: set ansible_network_os for junos
+ 31184 1744881146.96883: set ansible_ssh_user for junos
+ 31184 1744881146.96890: set ansible_ssh_pass for junos
+ 31184 1744881146.96897: set ansible_ssh_port for junos
+ 31184 1744881146.96904: set ansible_connection for junos
+ 31184 1744881146.96932: set ansible_network_cli_ssh_type for junos
+ 31184 1744881146.96943: set ansible_python_interpreter for all
+Parsed /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper inventory source with ini plugin
+ 31184 1744881146.96952: Reconcile groups and hosts in inventory.
+ 31184 1744881146.96960: Group all now contains junos
+ 31184 1744881146.97062: '/usr/local/lib/python3.12/site-packages/ansible/plugins/vars/__init__' skipped due to reserved name
+ 31184 1744881146.97199: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments
+ 31184 1744881146.97264: Loading ModuleDocFragment 'vars_plugin_staging' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/vars_plugin_staging.py
+ 31184 1744881146.97293: Loaded config def from plugin (vars/host_group_vars)
+ 31184 1744881146.97300: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=False, class_only=True)
+ 31184 1744881146.97313: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/vars
+ 31184 1744881146.97326: Loading VarsModule 'host_group_vars' from /usr/local/lib/python3.12/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+ 31184 1744881146.97380: Loading CacheModule 'memory' from /usr/local/lib/python3.12/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
+ 31184 1744881146.97744: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+ 31184 1744881146.97853: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py
+ 31184 1744881146.97890: Loaded config def from plugin (connection/local)
+ 31184 1744881146.97897: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=False, class_only=True)
+ 31184 1744881146.98254: Loaded config def from plugin (connection/paramiko_ssh)
+ 31184 1744881146.98262: Loading Connection 'paramiko_ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/paramiko_ssh.py (found_in_cache=False, class_only=True)
+ 31184 1744881146.99082: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+ 31184 1744881146.99120: Loaded config def from plugin (connection/psrp)
+ 31184 1744881146.99127: Loading Connection 'psrp' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/psrp.py (found_in_cache=False, class_only=True)
+ 31184 1744881146.99658: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+ 31184 1744881146.99695: Loaded config def from plugin (connection/ssh)
+ 31184 1744881146.99702: Loading Connection 'ssh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.01437: Loading ModuleDocFragment 'connection_pipelining' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.01474: Loaded config def from plugin (connection/winrm)
+ 31184 1744881147.01481: Loading Connection 'winrm' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/winrm.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.01526: '/usr/local/lib/python3.12/site-packages/ansible/plugins/shell/__init__' skipped due to reserved name
+ 31184 1744881147.01594: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py
+ 31184 1744881147.01652: Loaded config def from plugin (shell/cmd)
+ 31184 1744881147.01658: Loading ShellModule 'cmd' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/cmd.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.01681: Loading ModuleDocFragment 'shell_windows' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_windows.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.01739: Loaded config def from plugin (shell/powershell)
+ 31184 1744881147.01744: Loading ShellModule 'powershell' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.01806: Loading ModuleDocFragment 'shell_common' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/shell_common.py
+ 31184 1744881147.01950: Loaded config def from plugin (shell/sh)
+ 31184 1744881147.01957: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.02004: '/usr/local/lib/python3.12/site-packages/ansible/plugins/become/__init__' skipped due to reserved name
+ 31184 1744881147.02124: Loaded config def from plugin (become/runas)
+ 31184 1744881147.02131: Loading BecomeModule 'runas' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/runas.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.02306: Loaded config def from plugin (become/su)
+ 31184 1744881147.02313: Loading BecomeModule 'su' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/su.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.02462: Loaded config def from plugin (become/sudo)
+ 31184 1744881147.02468: Loading BecomeModule 'sudo' from /usr/local/lib/python3.12/site-packages/ansible/plugins/become/sudo.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.02509: Loading data from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/device_facts.yml
+Loading collection juniper.device from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device
+ 31184 1744881147.03023: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/callback
+ 31184 1744881147.03132: Loading ModuleDocFragment 'default_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/default_callback.py
+ 31184 1744881147.03295: Loading ModuleDocFragment 'result_format_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/result_format_callback.py
+ 31184 1744881147.03357: Loaded config def from plugin (callback/default)
+ 31184 1744881147.03363: Loading CallbackModule 'default' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+ 31184 1744881147.03419: '/usr/local/lib/python3.12/site-packages/ansible/plugins/callback/__init__' skipped due to reserved name
+ 31184 1744881147.03426: Loading CallbackModule 'default' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py (found_in_cache=True, class_only=True)
+ 31184 1744881147.04398: Loaded config def from plugin (callback/junit)
+ 31184 1744881147.04404: Loading CallbackModule 'junit' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/junit.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.04454: Loading ModuleDocFragment 'result_format_callback' from /usr/local/lib/python3.12/site-packages/ansible/plugins/doc_fragments/result_format_callback.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.04514: Loaded config def from plugin (callback/minimal)
+ 31184 1744881147.04521: Loading CallbackModule 'minimal' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/minimal.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.04562: Loading CallbackModule 'oneline' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/oneline.py (found_in_cache=False, class_only=True)
+ 31184 1744881147.04632: Loaded config def from plugin (callback/tree)
+ 31184 1744881147.04639: Loading CallbackModule 'tree' from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/tree.py (found_in_cache=False, class_only=True)
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: device_facts.yml **********************************************************************************************************************************
+Positional arguments: device_facts.yml
+verbosity: 4
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/inventory_juniper',)
+forks: 5
+1 plays in device_facts.yml
+ 31184 1744881147.04687: in VariableManager get_vars()
+ 31184 1744881147.04703: done with get_vars()
+ 31184 1744881147.04715: in VariableManager get_vars()
+ 31184 1744881147.04730: done with get_vars()
+ 31184 1744881147.04739: variable 'omit' from source: magic vars
+ 31184 1744881147.04765: in VariableManager get_vars()
+ 31184 1744881147.04783: done with get_vars()
+ 31184 1744881147.04806: variable 'omit' from source: magic vars
+
+PLAY [Test juniper.device.facts module] *********************************************************************************************************************
+ 31184 1744881147.09926: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/strategy
+ 31184 1744881147.10024: Loading StrategyModule 'linear' from /usr/local/lib/python3.12/site-packages/ansible/plugins/strategy/linear.py
+ 31184 1744881147.10079: getting the remaining hosts for this loop
+ 31184 1744881147.10085: done getting the remaining hosts for this loop
+ 31184 1744881147.10089: getting the next task for host 10.220.10.59
+ 31184 1744881147.10102: done getting next task for host 10.220.10.59
+ 31184 1744881147.10108:  ^ task is: TASK: TEST 1 - Gather Facts
+ 31184 1744881147.10113:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, handlers=0, run_state=1, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+ 31184 1744881147.10118: getting variables
+ 31184 1744881147.10122: in VariableManager get_vars()
+ 31184 1744881147.10135: Calling all_inventory to load vars for 10.220.10.59
+ 31184 1744881147.10142: Calling groups_inventory to load vars for 10.220.10.59
+ 31184 1744881147.10148: Calling all_plugins_inventory to load vars for 10.220.10.59
+ 31184 1744881147.10168: Calling all_plugins_play to load vars for 10.220.10.59
+ 31184 1744881147.10175: Calling groups_plugins_inventory to load vars for 10.220.10.59
+ 31184 1744881147.10182: Calling groups_plugins_play to load vars for 10.220.10.59
+ 31184 1744881147.10236: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+ 31184 1744881147.10279: done with get_vars()
+ 31184 1744881147.10289: done getting variables
+ 31184 1744881147.10658: Loading ActionModule 'ansible_collections.juniper.device.plugins.action.facts' from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/action/facts.py (found_in_cache=False, class_only=True)
+
+TASK [TEST 1 - Gather Facts] ********************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/device_facts.yml:8
+ 31184 1744881147.10683: entering _queue_task() for 10.220.10.59/juniper.device.facts
+ 31184 1744881147.10687: Creating lock for juniper.device.facts
+ 31184 1744881147.11007: worker is 1 (out of 1 available)
+ 31184 1744881147.11048: exiting _queue_task() for 10.220.10.59/juniper.device.facts
+ 31184 1744881147.11073: done queuing things up, now waiting for results queue to drain
+ 31184 1744881147.11079: waiting for pending results...
+ 31184 1744881147.11332: running TaskExecutor() for 10.220.10.59/TASK: TEST 1 - Gather Facts
+ 31184 1744881147.11496: in run() - task 00505681-e244-c106-da8e-000000000004
+ 31184 1744881147.11552: variable 'ansible_search_path' from source: unknown
+ 31184 1744881147.11647: calling self._execute()
+ 31184 1744881147.11772: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.11816: variable 'ansible_host' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.11853: variable 'ansible_ssh_user' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.11892: variable 'ansible_ssh_pass' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.11936: variable 'ansible_ssh_port' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.11974: variable 'ansible_network_os' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.12023: variable 'omit' from source: magic vars
+ 31184 1744881147.12219: variable 'omit' from source: magic vars
+ 31184 1744881147.12288: variable 'omit' from source: magic vars
+ 31184 1744881147.12357: variable 'omit' from source: magic vars
+ 31184 1744881147.12416: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.12458: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.12543: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/connection
+ 31184 1744881147.12642: Loading Connection 'local' from /usr/local/lib/python3.12/site-packages/ansible/plugins/connection/local.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.12712: trying /usr/local/lib/python3.12/site-packages/ansible/plugins/shell
+ 31184 1744881147.12769: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.12823: Loading ShellModule 'sh' from /usr/local/lib/python3.12/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.12998: Set connection var ansible_pipelining to False
+ 31184 1744881147.13040: Set connection var ansible_port to 22
+ 31184 1744881147.13071: Set connection var ansible_timeout to 10
+ 31184 1744881147.13112: Set connection var ansible_module_compression to ZIP_DEFLATED
+ 31184 1744881147.13145: Set connection var ansible_shell_executable to /bin/sh
+ 31184 1744881147.13185: Set connection var ansible_shell_type to sh
+ 31184 1744881147.13222: Set connection var ansible_user to root
+ 31184 1744881147.13276: variable 'ansible_shell_executable' from source: unknown
+ 31184 1744881147.13315: variable 'ansible_connection' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13350: variable 'ansible_module_compression' from source: unknown
+ 31184 1744881147.13382: variable 'ansible_shell_type' from source: unknown
+ 31184 1744881147.13426: variable 'ansible_shell_executable' from source: unknown
+ 31184 1744881147.13455: variable 'ansible_host' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13497: variable 'ansible_ssh_user' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13522: variable 'ansible_ssh_pass' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13544: variable 'ansible_ssh_port' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13564: variable 'ansible_pipelining' from source: unknown
+ 31184 1744881147.13571: variable 'ansible_timeout' from source: unknown
+ 31184 1744881147.13596: variable 'ansible_network_os' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13634: Loading ActionModule 'ansible_collections.juniper.device.plugins.action.facts' from /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/action/facts.py (found_in_cache=True, class_only=False)
+ 31184 1744881147.13656: variable 'omit' from source: magic vars
+ 31184 1744881147.13665: starting attempt loop
+ 31184 1744881147.13684: running the handler
+ 31184 1744881147.13701: variable 'ansible_host' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13720: variable 'ansible_ssh_user' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13737: variable 'ansible_ssh_pass' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13758: variable 'ansible_ssh_port' from source: group vars, precedence entry 'groups_inventory'
+ 31184 1744881147.13779: variable 'ansible_timeout' from source: unknown
+ 31184 1744881147.13799: variable 'inventory_hostname' from source: host vars for '10.220.10.59'
+ 31184 1744881147.13819: _low_level_execute_command(): starting
+ 31184 1744881147.13825: _low_level_execute_command(): executing: /bin/sh -c 'echo ~root && sleep 0'
+<10.220.10.59> ESTABLISH LOCAL CONNECTION FOR USER: root
+ 31184 1744881147.13859: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c 'echo ~root && sleep 0'
+ 31184 1744881147.13882: opening command with Popen()
+ 31184 1744881147.14090: done running command with Popen()
+ 31184 1744881147.14115: getting output with communicate()
+ 31184 1744881147.14425: done communicating
+ 31184 1744881147.14443: done with local.exec_command()
+ 31184 1744881147.14483: _low_level_execute_command() done: rc=0, stdout=/root
+, stderr=
+ 31184 1744881147.14499: _low_level_execute_command(): starting
+ 31184 1744881147.14517: _low_level_execute_command(): executing: /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891 `" && echo ansible-tmp-1744881147.1444252-31188-181013244784891="` echo /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891 `" ) && sleep 0'
+ 31184 1744881147.14536: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891 `" && echo ansible-tmp-1744881147.1444252-31188-181013244784891="` echo /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891 `" ) && sleep 0'
+ 31184 1744881147.14579: opening command with Popen()
+ 31184 1744881147.14797: done running command with Popen()
+ 31184 1744881147.14822: getting output with communicate()
+ 31184 1744881147.15372: done communicating
+ 31184 1744881147.15395: done with local.exec_command()
+ 31184 1744881147.15422: _low_level_execute_command() done: rc=0, stdout=ansible-tmp-1744881147.1444252-31188-181013244784891=/root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891
+, stderr=
+ 31184 1744881147.15509: variable 'ansible_module_compression' from source: unknown
+ 31184 1744881147.15575: ANSIBALLZ: Using lock for juniper.device.facts
+ 31184 1744881147.15582: ANSIBALLZ: Acquiring lock
+ 31184 1744881147.15599: ANSIBALLZ: Lock acquired: 140008394429296
+ 31184 1744881147.15620: ANSIBALLZ: Creating module
+ 31184 1744881147.30162: ANSIBALLZ: Writing module into payload
+ 31184 1744881147.30385: ANSIBALLZ: Writing module
+ 31184 1744881147.30408: ANSIBALLZ: Renaming module
+ 31184 1744881147.30418: ANSIBALLZ: Done creating module
+ 31184 1744881147.30446: variable 'ansible_python_interpreter' from source: group vars, precedence entry 'all_inventory'
+Using module file /root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/facts.py
+ 31184 1744881147.30518: transferring module to remote /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/AnsiballZ_facts.py
+<10.220.10.59> PUT /root/.ansible/tmp/ansible-local-31184ashs6jru/tmpmnkw20oe TO /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/AnsiballZ_facts.py
+ 31184 1744881147.30640: done transferring module to remote
+ 31184 1744881147.30663: _low_level_execute_command(): starting
+ 31184 1744881147.30670: _low_level_execute_command(): executing: /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/ /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/AnsiballZ_facts.py && sleep 0'
+ 31184 1744881147.30691: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/ /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/AnsiballZ_facts.py && sleep 0'
+ 31184 1744881147.30731: opening command with Popen()
+ 31184 1744881147.31007: done running command with Popen()
+ 31184 1744881147.31035: getting output with communicate()
+ 31184 1744881147.31351: done communicating
+ 31184 1744881147.31370: done with local.exec_command()
+ 31184 1744881147.31402: _low_level_execute_command() done: rc=0, stdout=, stderr=
+ 31184 1744881147.31416: _low_level_execute_command(): starting
+ 31184 1744881147.31436: _low_level_execute_command(): executing: /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/AnsiballZ_facts.py && sleep 0'
+ 31184 1744881147.31455: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/AnsiballZ_facts.py && sleep 0'
+ 31184 1744881147.31489: opening command with Popen()
+ 31184 1744881147.31736: done running command with Popen()
+ 31184 1744881147.31765: getting output with communicate()
+ 31184 1744881151.00103: done communicating
+ 31184 1744881151.00140: done with local.exec_command()
+ 31184 1744881151.00176: _low_level_execute_command() done: rc=0, stdout=
+{"changed": false, "failed": false, "ansible_facts": {"junos": {"current_re": ["re0", "master", "node", "fwdd", "member", "pfem"], "domain": "englab.juniper.net", "fqdn": "junos_test.foo.englab.juniper.net", "switch_style": "BRIDGE_DOMAIN", "HOME": "/root", "srx_cluster": null, "srx_cluster_id": null, "srx_cluster_redundancy_group": null, "RE_hw_mi": false, "serialnumber": "VM67503D988C", "master": "RE0", "RE0": {"mastership_state": "master", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown.", "up_time": "2 days, 22 hours, 22 minutes, 28 seconds"}, "RE1": {"mastership_state": "backup", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown.", "up_time": "2 days, 22 hours, 24 minutes, 27 seconds"}, "re_info": {"default": {"0": {"mastership_state": "master", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown."}, "1": {"mastership_state": "backup", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown."}, "default": {"mastership_state": "master", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown."}}}, "re_master": {"default": "0"}, "junos_info": {"re0": {"text": "22.2R3-S6.4", "object": {"major": [22, 2], "type": "R", "minor": "3-S6", "build": 4}}, "re1": {"text": "25.1I20241118_0609_chipujar", "object": {"major": [25, 1], "type": "I", "minor": "20241118_0609_chipujar", "build": null}}}, "hostname": "junos_test.foo", "hostname_info": {"re0": "junos_test.foo", "re1": "local_connection_testcases.foo"}, "model": "MX960", "model_info": {"re0": "MX960", "re1": "MX960"}, "version": "22.2R3-S6.4", "version_info": {"major": [22, 2], "type": "R", "minor": "3-S6", "build": 4}, "version_RE0": "22.2R3-S6.4", "version_RE1": "25.1I20241118_0609_chipujar", "vc_capable": false, "vc_mode": null, "vc_fabric": null, "vc_master": null, "ifd_style": "CLASSIC", "personality": "MX", "virtual": true, "vmhost": false, "vmhost_info": {}, "re_name": "re0", "master_state": true, "has_2RE": true}}, "facts": {"current_re": ["re0", "master", "node", "fwdd", "member", "pfem"], "domain": "englab.juniper.net", "fqdn": "junos_test.foo.englab.juniper.net", "switch_style": "BRIDGE_DOMAIN", "HOME": "/root", "srx_cluster": null, "srx_cluster_id": null, "srx_cluster_redundancy_group": null, "RE_hw_mi": false, "serialnumber": "VM67503D988C", "master": "RE0", "RE0": {"mastership_state": "master", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown.", "up_time": "2 days, 22 hours, 22 minutes, 28 seconds"}, "RE1": {"mastership_state": "backup", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown.", "up_time": "2 days, 22 hours, 24 minutes, 27 seconds"}, "re_info": {"default": {"0": {"mastership_state": "master", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown."}, "1": {"mastership_state": "backup", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown."}, "default": {"mastership_state": "master", "status": "OK", "model": "RE-VMX", "last_reboot_reason": "Router rebooted after a normal shutdown."}}}, "re_master": {"default": "0"}, "junos_info": {"re0": {"text": "22.2R3-S6.4", "object": {"major": [22, 2], "type": "R", "minor": "3-S6", "build": 4}}, "re1": {"text": "25.1I20241118_0609_chipujar", "object": {"major": [25, 1], "type": "I", "minor": "20241118_0609_chipujar", "build": null}}}, "hostname": "junos_test.foo", "hostname_info": {"re0": "junos_test.foo", "re1": "local_connection_testcases.foo"}, "model": "MX960", "model_info": {"re0": "MX960", "re1": "MX960"}, "version": "22.2R3-S6.4", "version_info": {"major": [22, 2], "type": "R", "minor": "3-S6", "build": 4}, "version_RE0": "22.2R3-S6.4", "version_RE1": "25.1I20241118_0609_chipujar", "vc_capable": false, "vc_mode": null, "vc_fabric": null, "vc_master": null, "ifd_style": "CLASSIC", "personality": "MX", "virtual": true, "vmhost": false, "vmhost_info": {}, "re_name": "re0", "master_state": true, "has_2RE": true}, "invocation": {"module_args": {"user": "root", "passwd": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", "host": "10.220.10.59", "port": 22, "timeout": 10, "huge_tree": false, "config_format": null, "savedir": null, "cs_user": null, "cs_passwd": null, "ssh_private_key_file": null, "ssh_config": null, "mode": null, "console": null, "baud": null, "attempts": null, "logfile": null, "logdir": null, "level": null}}}
+, stderr=
+ 31184 1744881151.00306: done with _execute_module (juniper.device.facts, {'_connection': 'local', 'user': 'root', 'passwd': 'xyz', 'host': '10.220.10.59', 'port': 22, 'timeout': 10, '_module_utils_path': '/root/ansible_modules_redirection_test4/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/action', '_module_name': 'juniper.device.facts', '_inventory_hostname': '10.220.10.59', '_ansible_check_mode': False, '_ansible_no_log': False, '_ansible_debug': True, '_ansible_diff': False, '_ansible_verbosity': 4, '_ansible_version': '2.18.4', '_ansible_module_name': 'juniper.device.facts', '_ansible_syslog_facility': 'LOG_USER', '_ansible_selinux_special_fs': ['fuse', 'nfs', 'vboxsf', 'ramfs', '9p', 'vfat'], '_ansible_string_conversion_action': 'warn', '_ansible_socket': None, '_ansible_shell_executable': '/bin/sh', '_ansible_keep_remote_files': False, '_ansible_tmpdir': '/root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/', '_ansible_remote_tmp': '~/.ansible/tmp', '_ansible_ignore_unknown_opts': False, '_ansible_target_log_info': None})
+ 31184 1744881151.00329: _low_level_execute_command(): starting
+ 31184 1744881151.00351: _low_level_execute_command(): executing: /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/ > /dev/null 2>&1 && sleep 0'
+ 31184 1744881151.00363: in local.exec_command()
+<10.220.10.59> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1744881147.1444252-31188-181013244784891/ > /dev/null 2>&1 && sleep 0'
+ 31184 1744881151.00401: opening command with Popen()
+ 31184 1744881151.00716: done running command with Popen()
+ 31184 1744881151.00725: getting output with communicate()
+ 31184 1744881151.01063: done communicating
+ 31184 1744881151.01096: done with local.exec_command()
+ 31184 1744881151.01127: _low_level_execute_command() done: rc=0, stdout=, stderr=
+ 31184 1744881151.01148: handler run complete
+ 31184 1744881151.01160: variable 'ansible_facts' from source: unknown
+ 31184 1744881151.01230: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+ 31184 1744881151.01342: variable 'ansible_facts' from source: unknown
+ 31184 1744881151.01381: '/usr/local/lib/python3.12/site-packages/ansible/plugins/connection/__init__' skipped due to reserved name
+ 31184 1744881151.01415: attempt loop complete, returning result
+ 31184 1744881151.01424: _execute() done
+ 31184 1744881151.01439: dumping result to json
+ 31184 1744881151.01455: done dumping result, returning
+ 31184 1744881151.01482: done running TaskExecutor() for 10.220.10.59/TASK: TEST 1 - Gather Facts [00505681-e244-c106-da8e-000000000004]
+ 31184 1744881151.01503: sending task result for task 00505681-e244-c106-da8e-000000000004
+ok: [10.220.10.59] => {
+    "ansible_facts": {
+        "junos": {
+            "HOME": "/root",
+            "RE0": {
+                "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                "mastership_state": "master",
+                "model": "RE-VMX",
+                "status": "OK",
+                "up_time": "2 days, 22 hours, 22 minutes, 28 seconds"
+            },
+            "RE1": {
+                "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                "mastership_state": "backup",
+                "model": "RE-VMX",
+                "status": "OK",
+                "up_time": "2 days, 22 hours, 24 minutes, 27 seconds"
+            },
+            "RE_hw_mi": false,
+            "current_re": [
+                "re0",
+                "master",
+                "node",
+                "fwdd",
+                "member",
+                "pfem"
+            ],
+            "domain": "englab.juniper.net",
+            "fqdn": "junos_test.foo.englab.juniper.net",
+            "has_2RE": true,
+            "hostname": "junos_test.foo",
+            "hostname_info": {
+                "re0": "junos_test.foo",
+                "re1": "local_connection_testcases.foo"
+            },
+            "ifd_style": "CLASSIC",
+            "junos_info": {
+                "re0": {
+                    "object": {
+                        "build": 4,
+                        "major": [
+                            22,
+                            2
+                        ],
+                        "minor": "3-S6",
+                        "type": "R"
+                    },
+                    "text": "22.2R3-S6.4"
+                },
+                "re1": {
+                    "object": {
+                        "build": null,
+                        "major": [
+                            25,
+                            1
+                        ],
+                        "minor": "20241118_0609_chipujar",
+                        "type": "I"
+                    },
+                    "text": "25.1I20241118_0609_chipujar"
+                }
+            },
+            "master": "RE0",
+            "master_state": true,
+            "model": "MX960",
+            "model_info": {
+                "re0": "MX960",
+                "re1": "MX960"
+            },
+            "personality": "MX",
+            "re_info": {
+                "default": {
+                    "0": {
+                        "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                        "mastership_state": "master",
+                        "model": "RE-VMX",
+                        "status": "OK"
+                    },
+                    "1": {
+                        "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                        "mastership_state": "backup",
+                        "model": "RE-VMX",
+                        "status": "OK"
+                    },
+                    "default": {
+                        "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                        "mastership_state": "master",
+                        "model": "RE-VMX",
+                        "status": "OK"
+                    }
+                }
+            },
+            "re_master": {
+                "default": "0"
+            },
+            "re_name": "re0",
+            "serialnumber": "VM67503D988C",
+            "srx_cluster": null,
+            "srx_cluster_id": null,
+            "srx_cluster_redundancy_group": null,
+            "switch_style": "BRIDGE_DOMAIN",
+            "vc_capable": false,
+            "vc_fabric": null,
+            "vc_master": null,
+            "vc_mode": null,
+            "version": "22.2R3-S6.4",
+            "version_RE0": "22.2R3-S6.4",
+            "version_RE1": "25.1I20241118_0609_chipujar",
+            "version_info": {
+                "build": 4,
+                "major": [
+                    22,
+                    2
+                ],
+                "minor": "3-S6",
+                "type": "R"
+            },
+            "virtual": true,
+            "vmhost": false,
+            "vmhost_info": {}
+        }
+    },
+    "changed": false,
+    "facts": {
+        "HOME": "/root",
+        "RE0": {
+            "last_reboot_reason": "Router rebooted after a normal shutdown.",
+            "mastership_state": "master",
+            "model": "RE-VMX",
+            "status": "OK",
+            "up_time": "2 days, 22 hours, 22 minutes, 28 seconds"
+        },
+        "RE1": {
+            "last_reboot_reason": "Router rebooted after a normal shutdown.",
+            "mastership_state": "backup",
+            "model": "RE-VMX",
+            "status": "OK",
+            "up_time": "2 days, 22 hours, 24 minutes, 27 seconds"
+        },
+        "RE_hw_mi": false,
+        "current_re": [
+            "re0",
+            "master",
+            "node",
+            "fwdd",
+            "member",
+            "pfem"
+        ],
+        "domain": "englab.juniper.net",
+        "fqdn": "junos_test.foo.englab.juniper.net",
+        "has_2RE": true,
+        "hostname": "junos_test.foo",
+        "hostname_info": {
+            "re0": "junos_test.foo",
+            "re1": "local_connection_testcases.foo"
+        },
+        "ifd_style": "CLASSIC",
+        "junos_info": {
+            "re0": {
+                "object": {
+                    "build": 4,
+                    "major": [
+                        22,
+                        2
+                    ],
+                    "minor": "3-S6",
+                    "type": "R"
+                },
+                "text": "22.2R3-S6.4"
+            },
+            "re1": {
+                "object": {
+                    "build": null,
+                    "major": [
+                        25,
+                        1
+                    ],
+                    "minor": "20241118_0609_chipujar",
+                    "type": "I"
+                },
+                "text": "25.1I20241118_0609_chipujar"
+            }
+        },
+        "master": "RE0",
+        "master_state": true,
+        "model": "MX960",
+        "model_info": {
+            "re0": "MX960",
+            "re1": "MX960"
+        },
+        "personality": "MX",
+        "re_info": {
+            "default": {
+                "0": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                    "mastership_state": "master",
+                    "model": "RE-VMX",
+                    "status": "OK"
+                },
+                "1": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                    "mastership_state": "backup",
+                    "model": "RE-VMX",
+                    "status": "OK"
+                },
+                "default": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                    "mastership_state": "master",
+                    "model": "RE-VMX",
+                    "status": "OK"
+                }
+            }
+        },
+        "re_master": {
+            "default": "0"
+        },
+        "re_name": "re0",
+        "serialnumber": "VM67503D988C",
+        "srx_cluster": null,
+        "srx_cluster_id": null,
+        "srx_cluster_redundancy_group": null,
+        "switch_style": "BRIDGE_DOMAIN",
+        "vc_capable": false,
+        "vc_fabric": null,
+        "vc_master": null,
+        "vc_mode": null,
+        "version": "22.2R3-S6.4",
+        "version_RE0": "22.2R3-S6.4",
+        "version_RE1": "25.1I20241118_0609_chipujar",
+        "version_info": {
+            "build": 4,
+            "major": [
+                22,
+                2
+            ],
+            "minor": "3-S6",
+            "type": "R"
+        },
+        "virtual": true,
+        "vmhost": false,
+        "vmhost_info": {}
+    },
+    "invocation": {
+        "module_args": {
+            "attempts": null,
+            "baud": null,
+            "config_format": null,
+            "console": null,
+            "cs_passwd": null,
+            "cs_user": null,
+            "host": "10.220.10.59",
+            "huge_tree": false,
+            "level": null,
+            "logdir": null,
+            "logfile": null,
+            "mode": null,
+            "passwd": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+            "port": 22,
+            "savedir": null,
+            "ssh_config": null,
+            "ssh_private_key_file": null,
+            "timeout": 10,
+            "user": "root"
+        }
+    }
+}
+ 31184 1744881151.02151: no more pending results, returning what we have
+ 31184 1744881151.02186: results queue empty
+ 31184 1744881151.02216: checking for any_errors_fatal
+ 31184 1744881151.02241: done checking for any_errors_fatal
+ 31184 1744881151.02264: checking for max_fail_percentage
+ 31184 1744881151.02281: done checking for max_fail_percentage
+ 31184 1744881151.02297: checking to see if all hosts have failed and the running result is not ok
+ 31184 1744881151.02311: done checking to see if all hosts have failed
+ 31184 1744881151.02315: getting the remaining hosts for this loop
+ 31184 1744881151.02334: done getting the remaining hosts for this loop
+ 31184 1744881151.02347: getting the next task for host 10.220.10.59
+ 31184 1744881151.02376: done getting next task for host 10.220.10.59
+ 31184 1744881151.02401:  ^ task is: None
+ 31184 1744881151.02419:  ^ state is: HOST STATE: block=5, task=0, rescue=0, always=0, handlers=0, run_state=5, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+ 31184 1744881151.02435: done queuing things up, now waiting for results queue to drain
+ 31184 1744881151.02450: results queue empty
+ 31184 1744881151.02455: checking for any_errors_fatal
+ 31184 1744881151.02470: done checking for any_errors_fatal
+ 31184 1744881151.02476: checking for max_fail_percentage
+ 31184 1744881151.02493: done checking for max_fail_percentage
+ 31184 1744881151.02499: checking to see if all hosts have failed and the running result is not ok
+ 31184 1744881151.02503: done checking to see if all hosts have failed
+ 31184 1744881151.02519: getting the next task for host 10.220.10.59
+ 31184 1744881151.02543: done getting next task for host 10.220.10.59
+ 31184 1744881151.02568:  ^ task is: None
+ 31184 1744881151.02576:  ^ state is: HOST STATE: block=5, task=0, rescue=0, always=0, handlers=0, run_state=5, fail_state=0, pre_flushing_run_state=None, update_handlers=True, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+ 31184 1744881151.02170: done sending task result for task 00505681-e244-c106-da8e-000000000004
+ 31184 1744881151.02628: WORKER PROCESS EXITING
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.59               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+ 31184 1744881151.02770: RUNNING CLEANUP
+
+
