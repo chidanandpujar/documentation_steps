@@ -22,3 +22,148 @@ Default image and other options can be changed manually in /root/.config/act/act
 [Ansible lint/Ansible Lint] 🚀  Start image=catthehacker/ubuntu:act-latest
 [Ansible lint/Ansible Lint]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
 [Ansible lint/Ansible Lint] using DockerAuthConfig authentication for docker pull
+
+
+/test_github_workflow/ansible-junos-stdlib# ./bin/act --job 'build'
+INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock' 
+[Ansible lint/Ansible Lint] ⭐ Run Set up job
+[Ansible lint/Ansible Lint] 🚀  Start image=catthehacker/ubuntu:act-latest
+[Ansible lint/Ansible Lint]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
+[Ansible lint/Ansible Lint] using DockerAuthConfig authentication for docker pull
+[Ansible lint/Ansible Lint]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Ansible lint/Ansible Lint]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Ansible lint/Ansible Lint]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Ansible lint/Ansible Lint]   ✅  Success - Set up job
+[Ansible lint/Ansible Lint]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v5
+[Ansible lint/Ansible Lint] ⭐ Run Main actions/checkout@v4
+[Ansible lint/Ansible Lint]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Ansible lint/Ansible Lint]   ✅  Success - Main actions/checkout@v4 [308.588665ms]
+[Ansible lint/Ansible Lint] ⭐ Run Main Process inputs
+[Ansible lint/Ansible Lint]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/inputs.sh] user= workdir=
+[Ansible lint/Ansible Lint]   ✅  Success - Main Process inputs [327.96606ms]
+[Ansible lint/Ansible Lint]   ⚙  ::set-output:: working_directory=/root/test_github_workflow/ansible-junos-stdlib
+[Ansible lint/Ansible Lint] ⭐ Run Main Install ansible-lint from pip
+[Ansible lint/Ansible Lint]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3.sh] user= workdir=
+| Collecting ansible-compat==24.10.0
+|   Downloading ansible_compat-24.10.0-py3-none-any.whl (24 kB)
+| Collecting ansible-lint
+|   Downloading ansible_lint-25.2.1-py3-none-any.whl (314 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 314.5/314.5 KB 7.0 MB/s eta 0:00:00
+| Requirement already satisfied: packaging in /usr/lib/python3/dist-packages (from ansible-compat==24.10.0) (21.3)
+| Collecting subprocess-tee>=0.4.1
+|   Downloading subprocess_tee-0.4.2-py3-none-any.whl (5.2 kB)
+| Collecting PyYAML
+|   Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 KB 10.8 MB/s eta 0:00:00
+| Collecting ansible-core>=2.14
+|   Downloading ansible_core-2.17.10-py3-none-any.whl (2.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 14.1 MB/s eta 0:00:00
+| Collecting jsonschema>=4.6.0
+|   Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.5/88.5 KB 14.0 MB/s eta 0:00:00
+| Collecting filelock>=3.8.2
+|   Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+| Collecting black>=24.3.0
+|   Downloading black-25.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 24.6 MB/s eta 0:00:00
+| Collecting pathspec>=0.10.3
+|   Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+| Collecting ruamel.yaml!=0.18.7,!=0.18.8,>=0.18.5
+|   Downloading ruamel.yaml-0.18.10-py3-none-any.whl (117 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.7/117.7 KB 20.0 MB/s eta 0:00:00
+| Collecting wcmatch>=8.1.2
+|   Downloading wcmatch-10.0-py3-none-any.whl (39 kB)
+| Collecting packaging
+|   Downloading packaging-25.0-py3-none-any.whl (66 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 KB 12.8 MB/s eta 0:00:00
+| Collecting referencing>=0.36.2
+|   Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+| Collecting yamllint>=1.34.0
+|   Downloading yamllint-1.37.0-py3-none-any.whl (68 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.7/68.7 KB 12.6 MB/s eta 0:00:00
+| Requirement already satisfied: importlib-metadata in /usr/lib/python3/dist-packages (from ansible-lint) (4.6.4)
+| Collecting ansible-lint
+|   Downloading ansible_lint-25.2.0-py3-none-any.whl (314 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 314.4/314.4 KB 21.3 MB/s eta 0:00:00
+|   Downloading ansible_lint-25.1.3-py3-none-any.whl (311 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 311.2/311.2 KB 31.3 MB/s eta 0:00:00
+|   Downloading ansible_lint-25.1.2-py3-none-any.whl (311 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 311.2/311.2 KB 32.4 MB/s eta 0:00:00
+|   Downloading ansible_lint-25.1.1-py3-none-any.whl (311 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 311.0/311.0 KB 32.4 MB/s eta 0:00:00
+|   Downloading ansible_lint-25.1.0-py3-none-any.whl (311 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 311.0/311.0 KB 31.7 MB/s eta 0:00:00
+| Requirement already satisfied: cryptography in /usr/lib/python3/dist-packages (from ansible-core>=2.14->ansible-compat==24.10.0) (3.4.8)
+| Collecting resolvelib<1.1.0,>=0.5.3
+|   Downloading resolvelib-1.0.1-py2.py3-none-any.whl (17 kB)
+| Collecting jinja2>=3.0.0
+|   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 KB 23.1 MB/s eta 0:00:00
+| Collecting mypy-extensions>=0.4.3
+|   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+| Collecting tomli>=1.1.0
+|   Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+| Collecting platformdirs>=2
+|   Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+| Requirement already satisfied: click>=8.0.0 in /usr/lib/python3/dist-packages (from black>=24.3.0->ansible-lint) (8.0.3)
+| Collecting typing-extensions>=4.0.1
+|   Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.8/45.8 KB 8.1 MB/s eta 0:00:00
+| Collecting jsonschema-specifications>=2023.03.6
+|   Downloading jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
+| Collecting attrs>=22.2.0
+|   Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 KB 13.0 MB/s eta 0:00:00
+| Collecting rpds-py>=0.7.1
+|   Downloading rpds_py-0.24.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (389 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.5/389.5 KB 23.5 MB/s eta 0:00:00
+| Collecting ruamel.yaml.clib>=0.2.7
+|   Downloading ruamel.yaml.clib-0.2.12-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (722 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 722.2/722.2 KB 28.1 MB/s eta 0:00:00
+| Collecting bracex>=2.1.1
+|   Downloading bracex-2.5.post1-py3-none-any.whl (11 kB)
+| Collecting MarkupSafe>=2.0
+|   Downloading MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+| Installing collected packages: resolvelib, typing-extensions, tomli, subprocess-tee, ruamel.yaml.clib, rpds-py, PyYAML, platformdirs, pathspec, packaging, mypy-extensions, MarkupSafe, filelock, bracex, attrs, yamllint, wcmatch, ruamel.yaml, referencing, jinja2, black, jsonschema-specifications, ansible-core, jsonschema, ansible-compat, ansible-lint
+|   Attempting uninstall: packaging
+|     Found existing installation: packaging 21.3
+|     Not uninstalling packaging at /usr/lib/python3/dist-packages, outside environment /usr
+|     Can't uninstall 'packaging'. No files were found to uninstall.
+| ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+| pipx 1.0.0 requires argcomplete>=1.9.4, but you have argcomplete 1.8.1 which is incompatible.
+| Successfully installed MarkupSafe-3.0.2 PyYAML-6.0.2 ansible-compat-24.10.0 ansible-core-2.17.10 ansible-lint-25.1.0 attrs-25.3.0 black-25.1.0 bracex-2.5.post1 filelock-3.18.0 jinja2-3.1.6 jsonschema-4.23.0 jsonschema-specifications-2024.10.1 mypy-extensions-1.0.0 packaging-25.0 pathspec-0.12.1 platformdirs-4.3.7 referencing-0.36.2 resolvelib-1.0.1 rpds-py-0.24.0 ruamel.yaml-0.18.10 ruamel.yaml.clib-0.2.12 subprocess-tee-0.4.2 tomli-2.2.1 typing-extensions-4.13.2 wcmatch-10.0 yamllint-1.37.0
+| WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+| ansible-lint 25.1.0 using ansible-core:2.17.10 ansible-compat:24.10.0 ruamel-yaml:0.18.10 ruamel-yaml-clib:0.2.12
+[Ansible lint/Ansible Lint]   ✅  Success - Main Install ansible-lint from pip [36.019275642s]
+[Ansible lint/Ansible Lint] ⭐ Run Main Run ansible-lint
+[Ansible lint/Ansible Lint]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4.sh] user= workdir=/root/test_github_workflow/ansible-junos-stdlib
+| ERROR    Computed fully qualified role name of Juniper.juniper.device does not follow current galaxy requirements.
+| Please edit meta/main.yml and assure we can correctly determine full role name:
+| 
+| galaxy_info:
+| role_name: my_name  # if absent directory name hosting role is used instead
+| namespace: my_galaxy_namespace  # if absent, author is used instead
+| 
+| Namespace: https://old-galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespace-limitations
+| Role: https://old-galaxy.ansible.com/docs/contributing/creating_role.html#role-names
+| 
+| As an alternative, you can add 'role-name' to either skip_list or warn_list.
+| 
+| Computed fully qualified role name of Juniper.juniper.device does not follow current galaxy requirements.
+| Please edit meta/main.yml and assure we can correctly determine full role name:
+| 
+| galaxy_info:
+| role_name: my_name  # if absent directory name hosting role is used instead
+| namespace: my_galaxy_namespace  # if absent, author is used instead
+| 
+| Namespace: https://old-galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespace-limitations
+| Role: https://old-galaxy.ansible.com/docs/contributing/creating_role.html#role-names
+| 
+| As an alternative, you can add 'role-name' to either skip_list or warn_list.
+| 
+[Ansible lint/Ansible Lint]   ❌  Failure - Main Run ansible-lint [1.795974437s]
+[Ansible lint/Ansible Lint] exitcode '1': failure
+[Ansible lint/Ansible Lint] ⭐ Run Complete job
+[Ansible lint/Ansible Lint]   ✅  Success - Complete job
+[Ansible lint/Ansible Lint] 🏁  Job failed
+Error: Job 'Ansible Lint' failed
