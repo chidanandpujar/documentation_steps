@@ -1,0 +1,24 @@
+
+https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
+
+
+:~/test_github_workflow/ansible-junos-stdlib# bash
+:~/test_github_workflow/ansible-junos-stdlib# curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10964  100 10964    0     0  39869      0 --:--:-- --:--:-- --:--:-- 39869
+nektos/act info checking GitHub for latest tag
+nektos/act info found version: 0.2.76 for v0.2.76/Linux/x86_64
+nektos/act info installed ./bin/act
+:~/test_github_workflow/ansible-junos-stdlib# ./bin/act 
+INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock' 
+? Please choose the default image you want to use with act:
+  - Large size image: ca. 17GB download + 53.1GB storage, you will need 75GB of free disk space, snapshots of GitHub Hosted Runners without snap and pulled docker images
+  - Medium size image: ~500MB, includes only necessary tools to bootstrap actions and aims to be compatible with most actions
+  - Micro size image: <200MB, contains only NodeJS required to bootstrap actions, doesn't work with all actions
+
+Default image and other options can be changed manually in /root/.config/act/actrc (please refer to https://nektosact.com/usage/index.html?highlight=configur#configuration-file for additional information about file structure) Medium
+[Ansible lint/Ansible Lint] ⭐ Run Set up job
+[Ansible lint/Ansible Lint] 🚀  Start image=catthehacker/ubuntu:act-latest
+[Ansible lint/Ansible Lint]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
+[Ansible lint/Ansible Lint] using DockerAuthConfig authentication for docker pull
