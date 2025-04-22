@@ -1,7 +1,8 @@
 
 https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
 
-https://ansible.readthedocs.io/projects/lint/rules/galaxy/
+Rules:
+https://ansible.readthedocs.io/projects/lint/rules/
 
 :~/test_github_workflow/ansible-junos-stdlib# bash
 :~/test_github_workflow/ansible-junos-stdlib# curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
