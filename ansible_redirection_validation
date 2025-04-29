@@ -5,8 +5,7 @@ rm -rf ~/.ansible/pc
   
 git clone https://github.com/Juniper/ansible-junos-stdlib.git
 
-cp the patch https://patch-diff.githubusercontent.com/raw/Juniper/ansible-junos-stdlib/pull/737.diff 
-/root/ansible_modules_redirection_test5/ansible-junos-stdlib/patch.diff
+copy the patch https://patch-diff.githubusercontent.com/raw/Juniper/ansible-junos-stdlib/pull/737.diff to /root/ansible_modules_redirection_test5/ansible-junos-stdlib/patch.diff
 Apply the patch
 git apply patch.diff
 
