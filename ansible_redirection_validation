@@ -1,0 +1,478 @@
+mkdir ansible_redirection_test5
+
+rm -rf ~/.ansible/collections/ansible_collections
+rm -rf ~/.ansible/pc
+  
+git clone https://github.com/Juniper/ansible-junos-stdlib.git
+
+cp the patch https://patch-diff.githubusercontent.com/raw/Juniper/ansible-junos-stdlib/pull/737.diff 
+/root/ansible_modules_redirection_test5/ansible-junos-stdlib/patch.diff
+Apply the patch
+git apply patch.diff
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# python3 -m pip install junos-eznc
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# python3 -m pip install jxmlease
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# python3 -m pip install xmltodict
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# python3 -m pip install ansible
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ls
+
+update ansible.cfg and inventory files
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# pwd
+/root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat ansible.cfg 
+[defaults]
+INVENTORY = ./inventory
+collections_path=/root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/
+host_key_checking = False
+no_log = False
+
+[persistent_connection]
+command_timeout =300
+connect_timeout = 300
+connect_retry_timeout = 300
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat inventory_junos 
+[junos]
+10.220.10.70
+
+[junos:vars]
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=root
+ansible_ssh_pass=xyz
+ansible_connection=ansible.netcommon.netconf
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat inventory_device 
+[junos]
+10.220.10.70
+
+[junos:vars]
+ansible_network_os=junos
+ansible_connection=local
+ansible_ssh_user=root
+ansible_ssh_pass=xyz
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat junos_facts.yml 
+---
+- name: Test Junos Facts Module
+  hosts: junos
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+  tasks:
+    - name: Gather Junos Facts
+      junos_facts:
+    #  register: junos_facts_output
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat device_facts.yml 
+---
+- name: 'Explicit host argument'
+  hosts: junos
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: "Get facts"
+      juniper.device.facts:
+      register: response
+
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_device device_facts.yml -vvvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+setting up inventory plugins
+Loading collection ansible.builtin from 
+host_list declined parsing /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_device as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_device as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_device as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_device inventory source with ini plugin
+Loading collection juniper.device from /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/juniper/device
+Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: device_facts.yml **********************************************************************************************************************************
+Positional arguments: device_facts.yml
+verbosity: 4
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_device',)
+forks: 5
+1 plays in device_facts.yml
+
+PLAY [Explicit host argument] *******************************************************************************************************************************
+
+TASK [Get facts] ********************************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/device_facts.yml:8
+<10.220.10.70> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.220.10.70> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<10.220.10.70> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260 `" && echo ansible-tmp-1745902483.6310763-1119621-226635011922260="` echo /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260 `" ) && sleep 0'
+Using module file /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/facts.py
+<10.220.10.70> PUT /root/.ansible/tmp/ansible-local-1119617i05mkp_i/tmpiejf5oum TO /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260/AnsiballZ_facts.py
+<10.220.10.70> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260/ /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260/AnsiballZ_facts.py && sleep 0'
+<10.220.10.70> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260/AnsiballZ_facts.py && sleep 0'
+<10.220.10.70> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1745902483.6310763-1119621-226635011922260/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.10.70] => {
+    "ansible_facts": {
+        "junos": {
+            "HOME": "/root",
+            "RE0": {
+                "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                "mastership_state": "master",
+                "model": "RE-VMX",
+                "status": "OK",
+                "up_time": "56 days, 19 hours, 11 minutes, 32 seconds"
+            },
+            "RE1": {
+                "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                "mastership_state": "backup",
+                "model": "RE-VMX",
+                "status": "OK",
+                "up_time": "56 days, 21 hours, 25 minutes, 33 seconds"
+            },
+            "RE_hw_mi": false,
+            "current_re": [
+                "re0",
+                "master",
+                "node",
+                "fwdd",
+                "member",
+                "pfem"
+            ],
+            "domain": "englab.juniper.net",
+            "fqdn": "evoeventtestb.englab.juniper.net",
+            "has_2RE": true,
+            "hostname": "evoeventtestb",
+            "hostname_info": {
+                "re0": "evoeventtestb",
+                "re1": "evoeventtestb1"
+            },
+            "ifd_style": "CLASSIC",
+            "junos_info": {
+                "re0": {
+                    "object": {
+                        "build": null,
+                        "major": [
+                            25,
+                            2
+                        ],
+                        "minor": "20241204_1230_chipujar",
+                        "type": "I"
+                    },
+                    "text": "25.2I20241204_1230_chipujar"
+                },
+                "re1": {
+                    "object": {
+                        "build": null,
+                        "major": [
+                            25,
+                            1
+                        ],
+                        "minor": "20241118_0609_chipujar",
+                        "type": "I"
+                    },
+                    "text": "25.1I20241118_0609_chipujar"
+                }
+            },
+            "master": "RE0",
+            "master_state": true,
+            "model": "MX960",
+            "model_info": {
+                "re0": "MX960",
+                "re1": "MX960"
+            },
+            "personality": "MX",
+            "re_info": {
+                "default": {
+                    "0": {
+                        "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                        "mastership_state": "master",
+                        "model": "RE-VMX",
+                        "status": "OK"
+                    },
+                    "1": {
+                        "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                        "mastership_state": "backup",
+                        "model": "RE-VMX",
+                        "status": "OK"
+                    },
+                    "default": {
+                        "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                        "mastership_state": "master",
+                        "model": "RE-VMX",
+                        "status": "OK"
+                    }
+                }
+            },
+            "re_master": {
+                "default": "0"
+            },
+            "re_name": "re0",
+            "serialnumber": "VM67B5724787",
+            "srx_cluster": null,
+            "srx_cluster_id": null,
+            "srx_cluster_redundancy_group": null,
+            "switch_style": "BRIDGE_DOMAIN",
+            "vc_capable": false,
+            "vc_fabric": null,
+            "vc_master": null,
+            "vc_mode": null,
+            "version": "25.2I20241204_1230_chipujar",
+            "version_RE0": "25.2I20241204_1230_chipujar",
+            "version_RE1": "25.1I20241118_0609_chipujar",
+            "version_info": {
+                "build": null,
+                "major": [
+                    25,
+                    2
+                ],
+                "minor": "20241204_1230_chipujar",
+                "type": "I"
+            },
+            "virtual": true,
+            "vmhost": false,
+            "vmhost_info": {}
+        }
+    },
+    "changed": false,
+    "facts": {
+        "HOME": "/root",
+        "RE0": {
+            "last_reboot_reason": "Router rebooted after a normal shutdown.",
+            "mastership_state": "master",
+            "model": "RE-VMX",
+            "status": "OK",
+            "up_time": "56 days, 19 hours, 11 minutes, 32 seconds"
+        },
+        "RE1": {
+            "last_reboot_reason": "Router rebooted after a normal shutdown.",
+            "mastership_state": "backup",
+            "model": "RE-VMX",
+            "status": "OK",
+            "up_time": "56 days, 21 hours, 25 minutes, 33 seconds"
+        },
+        "RE_hw_mi": false,
+        "current_re": [
+            "re0",
+            "master",
+            "node",
+            "fwdd",
+            "member",
+            "pfem"
+        ],
+        "domain": "englab.juniper.net",
+        "fqdn": "evoeventtestb.englab.juniper.net",
+        "has_2RE": true,
+        "hostname": "evoeventtestb",
+        "hostname_info": {
+            "re0": "evoeventtestb",
+            "re1": "evoeventtestb1"
+        },
+        "ifd_style": "CLASSIC",
+        "junos_info": {
+            "re0": {
+                "object": {
+                    "build": null,
+                    "major": [
+                        25,
+                        2
+                    ],
+                    "minor": "20241204_1230_chipujar",
+                    "type": "I"
+                },
+                "text": "25.2I20241204_1230_chipujar"
+            },
+            "re1": {
+                "object": {
+                    "build": null,
+                    "major": [
+                        25,
+                        1
+                    ],
+                    "minor": "20241118_0609_chipujar",
+                    "type": "I"
+                },
+                "text": "25.1I20241118_0609_chipujar"
+            }
+        },
+        "master": "RE0",
+        "master_state": true,
+        "model": "MX960",
+        "model_info": {
+            "re0": "MX960",
+            "re1": "MX960"
+        },
+        "personality": "MX",
+        "re_info": {
+            "default": {
+                "0": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                    "mastership_state": "master",
+                    "model": "RE-VMX",
+                    "status": "OK"
+                },
+                "1": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                    "mastership_state": "backup",
+                    "model": "RE-VMX",
+                    "status": "OK"
+                },
+                "default": {
+                    "last_reboot_reason": "Router rebooted after a normal shutdown.",
+                    "mastership_state": "master",
+                    "model": "RE-VMX",
+                    "status": "OK"
+                }
+            }
+        },
+        "re_master": {
+            "default": "0"
+        },
+        "re_name": "re0",
+        "serialnumber": "VM67B5724787",
+        "srx_cluster": null,
+        "srx_cluster_id": null,
+        "srx_cluster_redundancy_group": null,
+        "switch_style": "BRIDGE_DOMAIN",
+        "vc_capable": false,
+        "vc_fabric": null,
+        "vc_master": null,
+        "vc_mode": null,
+        "version": "25.2I20241204_1230_chipujar",
+        "version_RE0": "25.2I20241204_1230_chipujar",
+        "version_RE1": "25.1I20241118_0609_chipujar",
+        "version_info": {
+            "build": null,
+            "major": [
+                25,
+                2
+            ],
+            "minor": "20241204_1230_chipujar",
+            "type": "I"
+        },
+        "virtual": true,
+        "vmhost": false,
+        "vmhost_info": {}
+    },
+    "invocation": {
+        "module_args": {
+            "attempts": null,
+            "baud": null,
+            "config_format": null,
+            "console": null,
+            "cs_passwd": null,
+            "cs_user": null,
+            "host": "10.220.10.70",
+            "huge_tree": false,
+            "level": null,
+            "logdir": null,
+            "logfile": null,
+            "mode": null,
+            "passwd": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+            "port": 830,
+            "savedir": null,
+            "ssh_config": null,
+            "ssh_private_key_file": null,
+            "timeout": 10,
+            "user": "root"
+        }
+    }
+}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.70               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_junos junos_facts.yml -vvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/ansible.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_junos as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_junos as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_junos as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/inventory_junos inventory source with ini plugin
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+[WARNING]: errors were encountered during the plugin load for junos_facts: ["'NoneType' object has no attribute 'get'"]
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_facts.yml ***********************************************************************************************************************************
+1 plays in junos_facts.yml
+
+PLAY [Test Junos Facts Module] ******************************************************************************************************************************
+
+TASK [Gather Junos Facts] ***********************************************************************************************************************************
+task path: /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/junos_facts.yml:8
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+redirecting (type: action) ansible.builtin.junos to junipernetworks.junos.junos
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'", "'NoneType' object
+has no attribute 'get'"]
+<10.220.10.70> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.220.10.70> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1119716lwkv9j52 `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028 `" && echo ansible-tmp-1745902609.432198-1119720-280480420160028="` echo /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_facts to juniper.device.junos_facts
+Using module file /root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_facts.py
+<10.220.10.70> PUT /root/.ansible/tmp/ansible-local-1119716lwkv9j52/tmpgtr5hj2c TO /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028/AnsiballZ_junos_facts.py
+<10.220.10.70> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028/ /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028/AnsiballZ_junos_facts.py && sleep 0'
+<10.220.10.70> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028/AnsiballZ_junos_facts.py && sleep 0'
+<10.220.10.70> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1119716lwkv9j52/ansible-tmp-1745902609.432198-1119720-280480420160028/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.10.70] => {
+    "ansible_facts": {
+        "ansible_net_api": "netconf",
+        "ansible_net_gather_network_resources": [],
+        "ansible_net_gather_subset": [
+            "default"
+        ],
+        "ansible_net_hostname": "evoeventtestb",
+        "ansible_net_model": "mx960",
+        "ansible_net_python_version": "3.12.0",
+        "ansible_net_serialnum": "VM67B5724787",
+        "ansible_net_system": "junos",
+        "ansible_net_version": "25.2I20241204_1230_chipujar",
+        "ansible_network_resources": {}
+    },
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "available_network_resources": false,
+            "config_format": "text",
+            "gather_network_resources": null,
+            "gather_subset": [
+                "min"
+            ]
+        }
+    }
+}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.220.10.70               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
