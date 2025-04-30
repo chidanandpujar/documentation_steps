@@ -28,23 +28,9 @@ python3.12 -m  pytest
 4) To run specific target
 ansible-test network-integration --python 3.12 --inventory /root/pyez_ansible_release_validation1/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking --start-at junos_system
 
-
-nose2:
-
-Unit:
-nose2 -v --coverage jnpr.junos  tests.unit
-
-Functional:
-cd tests/functional
-cat nose2.cfg 
-[unittest]
-start-dir=./
-nose2 -v -c nose2.cfg
-
 PyEZ unit test execution :
-nose tests:
 
-python3 -m pip install nose
+python3 -m pip install nose2
 python3 -m pip install mock
 python3 -m pip install coverage
 python3 -m pip install ntc_templates==1.4.1
@@ -52,10 +38,18 @@ python3 -m pip install textfsm==0.4.1
 
 
 nose2 unit tests:
-
+pip install nose2
+nose2 -v --coverage jnpr.junos  tests.unit
 nose2 --with-coverage -vvv tests.unit
 
 nose2 functional tests:
+Functional:
+cd tests/functional
+cat nose2.cfg 
+[unittest]
+start-dir=./
+nose2 -v -c nose2.cfg
+
 
 
 To run the pyez unit tests :
