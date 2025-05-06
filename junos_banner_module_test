@@ -1,0 +1,252 @@
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat junipernetworks/junos/meta/runtime.yml
+---
+requires_ansible: ">=2.15.0"
+plugin_routing:
+  action:
+    # junos_facts:
+    #   redirect: juniper.device.junos_facts
+    # junos_hostname:
+    #   redirect: juniper.device.hostname
+    # junos_acls:
+    #   redirect: juniper.device.acls
+    # junos_interfaces:
+    #   redirect: juniper.device.interfaces
+    # netconf:
+    #   redirect: juniper.device.junos
+  modules:
+    acl_interfaces:
+      redirect: juniper.device.junos_acl_interfaces
+    junos_banner: #debug
+      redirect: juniper.device.junos_banner
+    command:
+      redirect: juniper.device.junos_command
+    config:
+      redirect: juniper.device.junos_config
+    junos_facts:
+      redirect: juniper.device.junos_facts
+    junos_interfaces:
+      redirect: juniper.device.junos_interfaces
+    junos_acls:
+      redirect: juniper.device.junos_acls
+    junos_hostname:
+      redirect: juniper.device.junos_hostname
+    junos_l2_interfaces:
+      redirect: juniper.device.junos_l2_interfaces
+    junos_l3_interfaces:
+      redirect: juniper.device.junos_l3_interfaces
+    lacp:
+      redirect: juniper.device.junos.junos_lacp
+    lacp_interfaces:
+      redirect: juniper.device.junos_lacp_interfaces
+    lag_interfaces:
+      redirect: juniper.device.junos_lag_interfaces
+    lldp_global:
+      redirect: juniper.device.junos_lldp_global
+    bgp_global:
+      redirect: juniper.device.junos_bgp_global
+    bgp_address_family:
+      redirect: juniper.device.junos_bgp_address_family
+    routing_instances:
+      redirect: juniper.device.junos_routing_instances
+    prefix_lists:
+      redirect: juniper.device.junos_prefix_lists
+    logging_global:
+      redirect: juniper.device.junos_logging_global
+    ntp_global:
+      redirect: juniper.device.junos_ntp_global
+    security_policies:
+      redirect: juniper.device.junos_security_policies
+    security_policies_global:
+      redirect: juniper.device.junos_security_policies_global
+    security_zones:
+      redirect: juniper.device.junos_security_zones
+    snmp_server:
+      redirect: juniper.device.junos_snmp_server
+    routing_options:
+      redirect: juniper.device.junos_routing_options
+    lldp_interfaces:
+      redirect: juniper.device.junos_lldp_interfaces
+    netconf:
+      redirect: juniper.device.junos_netconf
+    ospfv2:
+      redirect: juniper.device.junos_ospfv2
+    ospfv3:
+      redirect: juniper.device.junos_ospfv3
+    ospf_interfaces:
+      redirect: juniper.device.junos_ospf_interfaces
+    package:
+      redirect: juniper.device.junos_package
+    ping:
+      redirect: juniper.device.junos_ping
+    rpc:
+      redirect: juniper.device.junos_rpc
+    scp:
+      redirect: juniper.device.junos_scp
+      deprecation:
+        removal_date: "2025-01-01"
+        warning_text: See the plugin documentation for more details
+    junos_scp:
+      deprecation:
+        removal_date: "2025-01-01"
+        warning_text: See the plugin documentation for more details
+    static_routes:
+      redirect: juniper.device.junos_static_routes
+    system:
+      redirect: juniper.device.junos_system
+    user:
+      redirect: juniper.device.junos_user
+    vlans:
+      redirect: juniper.device.junos_vlans
+    vrf:
+      redirect: juniper.device.junos_vrf
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat juniper/device/meta/runtime.yml 
+requires_ansible: ">=2.17.0"
+plugin_routing:
+  plugins:
+  modules:
+    hostname:
+      redirect: juniper.device.junos_hostname
+    interfaces:
+      redirect: juniper.device.junos_interfaces
+    acls:
+      redirect: juniper.device.junos_acls
+    acl_interfaces:
+      redirect: juniper.device.junos_acl_interfaces
+    banner:
+      redirect: juniper.device.junos_banner
+
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# cat pb.juniper_junos_banner.yml 
+- name: Functional Test - junos_banner module
+  hosts: all 
+  gather_facts: false
+  connection: netconf
+  collections:
+    - junipernetworks.junos
+
+  vars:
+    login_banner_text: |
+      this is my login banner
+      used for testing purposes
+
+  tasks:
+    - name: Pre-clean - Remove login banner if exists
+      junipernetworks.junos.junos_banner:
+        banner: login
+        state: absent
+      register: preclean_result
+
+    - name: Assert pre-clean successful
+      assert:
+        that:
+          - preclean_result.changed in [true, false]
+
+    - name: Apply login banner with state present
+      junipernetworks.junos.junos_banner:
+        banner: login
+        text: "{{ login_banner_text }}"
+        state: present
+      register: present_result
+
+    - name: Assert login banner applied
+      assert:
+        that:
+          - present_result.changed == true
+
+    - name: Deactivate the login banner
+      junipernetworks.junos.junos_banner:
+        banner: login
+        text: "{{ login_banner_text }}"
+        state: present
+        active: false
+      register: deactivate_result 
+
+    - name: Assert login banner deactivated
+      assert:
+        that:
+          - deactivate_result.changed == true
+
+    - name: Reactivate the login banner
+      junipernetworks.junos.junos_banner:
+        banner: login
+        state: present
+        active: true
+        text: |
+          this is my login banner
+          used for testing purpose
+      register: reactivate_result
+
+    - name: Assert login banner reactivated
+      assert:
+        that:
+          - reactivate_result.changed == true
+
+    - name: Post-clean - Remove login banner
+      junipernetworks.junos.junos_banner:
+        banner: login
+        state: absent
+      register: postclean_result
+
+    - name: Assert login banner removed
+      assert:
+        that:
+          - postclean_result.changed == true
+
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_junos pb.juniper_junos_banner.yml[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_banner: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_banner module] ****************************************************************************************************************
+
+TASK [Pre-clean - Remove login banner if exists] ************************************************************************************************************
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.53.115.24]
+
+TASK [Assert pre-clean successful] **************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply login banner with state present] ****************************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Assert login banner applied] **************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Deactivate the login banner] **************************************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Assert login banner deactivated] **********************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Reactivate the login banner] **************************************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Assert login banner reactivated] **********************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Remove login banner] *********************************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Assert login banner removed] **************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP **************************************************************************************************************************************************
+10.53.115.24               : ok=10   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
