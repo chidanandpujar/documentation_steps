@@ -1,0 +1,220 @@
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_junos pb.juniper_junos_config.yml 
+[WARNING]: errors were encountered during the plugin load for junos_config: ["'NoneType' object has no attribute 'get'"]
+ERROR! couldn't resolve module/action 'junos_config'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/root/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/pb.juniper_junos_config.yml': line 10, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Pre-clean - Remove existing test interface description
+      ^ here
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# vi juniper/device/meta/runtime.yml 
+
+requires_ansible: ">=2.17.0"
+plugin_routing:
+  plugins:
+  modules:
+    hostname:
+      redirect: juniper.device.junos_hostname
+    interfaces:
+      redirect: juniper.device.junos_interfaces
+    acls:
+      redirect: juniper.device.junos_acls
+    acl_interfaces:
+      redirect: juniper.device.junos_acl_interfaces
+    banner:
+      redirect: juniper.device.junos_banner
+    bgp_address_family:
+      redirect: juniper.device.junos_bgp_address_family
+    bgp_global:
+      redirect: juniper.device.junos_bgp_global
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/action# ls -lr | grep config
+lrwxrwxrwx 1 root root    8 May  5 22:30 junos_config.py -> junos.py
+lrwxrwxrwx 1 root root   30 Apr 28 21:12 config.py -> juniper_junos_common_action.py
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# vi junipernetworks/junos/meta/runtime.yml
+
+---
+requires_ansible: ">=2.15.0"
+plugin_routing:
+  action:
+    # junos_facts:
+    #   redirect: juniper.device.junos_facts
+    # junos_hostname:
+    #   redirect: juniper.device.hostname
+    # junos_acls:
+    #   redirect: juniper.device.acls
+    # junos_interfaces:
+    #   redirect: juniper.device.interfaces
+    # netconf:
+    #   redirect: juniper.device.junos
+  modules:
+    acl_interfaces:
+      redirect: juniper.device.junos_acl_interfaces
+    junos_banner: #debug
+      redirect: juniper.device.junos_banner
+    junos_command: #debug
+      redirect: juniper.device.junos_command
+    junos_config: #debug
+      redirect: juniper.device.junos_config
+
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_junos pb.juniper_junos_config.yml 
+[WARNING]: errors were encountered during the plugin load for junos_config: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_config: ["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_config module] ***************************************************************************************************
+
+TASK [Pre-clean - Remove existing test interface description] **********************************************************************************
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'",
+"'NoneType' object has no attribute 'get'"]
+changed: [10.220.10.59]
+
+TASK [Assert pre-clean successful] *************************************************************************************************************
+ok: [10.220.10.59] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply test config - set interface description] *******************************************************************************************
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.10.59]
+
+TASK [Assert interface config applied] *********************************************************************************************************
+ok: [10.220.10.59] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Confirm commit test with timer] **********************************************************************************************************
+ok: [10.220.10.59]
+
+TASK [Rollback config to rollback 0] ***********************************************************************************************************
+changed: [10.220.10.59]
+
+TASK [Backup config to custom path] ************************************************************************************************************
+ok: [10.220.10.59]
+
+TASK [Assert backup created] *******************************************************************************************************************
+fatal: [10.220.10.59]: FAILED! => {
+    "assertion": "backup_result.backup_path is defined",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Assertion failed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.220.10.59               : ok=7    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+==========================
+juniper.device.config
+==========================
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_device pb.juniper_junos_config_device.yml 
+
+PLAY [Test juniper.device.config module] *******************************************************************************************************
+
+TASK [Retrieve the committed configuration] ****************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 1] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Append .foo to the hostname using private config mode.] **********************************************************************************
+changed: [10.53.115.24]
+
+TASK [Check TEST 2] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Rollback to the previous config.] ********************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Check TEST 3] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Save rescue configuration] ***************************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Configure syslog configuration] **********************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Rollback to the rescue config.] **********************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Check TEST 4] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Clean up TEST 4] *************************************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Configure system services.] **************************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Retrieve [edit system services] of current committed config.] ****************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 5] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Confirm the previous commit with a commit check (but no commit)] *************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 6] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Confirm the commit with a commit sync] ***************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 7] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Confirm the commit with a commit sync force] *********************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 8] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test commit timeout .] *******************************************************************************************************************
+changed: [10.53.115.24]
+
+TASK [Check TEST 2] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.53.115.24               : ok=22   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
