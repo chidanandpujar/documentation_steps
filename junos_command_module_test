@@ -161,3 +161,194 @@ ok: [10.220.10.59] => {
 
 PLAY RECAP *************************************************************************************************************************************
 10.220.10.59               : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+===========================================================================
+juniper.device.command module test:
+===========================================================================
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_device pb.juniper_junos_command_device.yml
+
+PLAY [Test juniper.device.command module] ******************************************************************************************************
+
+TASK [TEST 1 - Execute single "show version" command.] *****************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 1] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Creates directory] ***********************************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [TEST 2 - Execute three commands.] ********************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 2] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Print the command output of each.] *******************************************************************************************************
+ok: [10.53.115.24] => (item={'msg': 'The command executed successfully.', 'command': 'show version', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nHostname: evoeventtesty-RE0-re0\nModel: ptx10008\nJunos: 22.3R3.8-EVO\nYocto: 3.0.2\nLinux Kernel: 5.2.60-yocto-standard-g278f9ad\nJUNOS-EVO OS 64-bit [junos-evo-install-ptx-x86-64-22.3R3.8-EVO]\n', 'stdout_lines': ['', 'Hostname: evoeventtesty-RE0-re0', 'Model: ptx10008', 'Junos: 22.3R3.8-EVO', 'Yocto: 3.0.2', 'Linux Kernel: 5.2.60-yocto-standard-g278f9ad', 'JUNOS-EVO OS 64-bit [junos-evo-install-ptx-x86-64-22.3R3.8-EVO]']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show version",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nHostname: evoeventtesty-RE0-re0\nModel: ptx10008\nJunos: 22.3R3.8-EVO\nYocto: 3.0.2\nLinux Kernel: 5.2.60-yocto-standard-g278f9ad\nJUNOS-EVO OS 64-bit [junos-evo-install-ptx-x86-64-22.3R3.8-EVO]\n",
+        "stdout_lines": [
+            "",
+            "Hostname: evoeventtesty-RE0-re0",
+            "Model: ptx10008",
+            "Junos: 22.3R3.8-EVO",
+            "Yocto: 3.0.2",
+            "Linux Kernel: 5.2.60-yocto-standard-g278f9ad",
+            "JUNOS-EVO OS 64-bit [junos-evo-install-ptx-x86-64-22.3R3.8-EVO]"
+        ]
+    },
+    "item.stdout": "\nHostname: evoeventtesty-RE0-re0\nModel: ptx10008\nJunos: 22.3R3.8-EVO\nYocto: 3.0.2\nLinux Kernel: 5.2.60-yocto-standard-g278f9ad\nJUNOS-EVO OS 64-bit [junos-evo-install-ptx-x86-64-22.3R3.8-EVO]\n"
+}
+ok: [10.53.115.24] => (item={'msg': 'The command executed successfully.', 'command': 'show system uptime', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nCurrent time: 2025-05-06 22:53:27 PDT\nTime Source:  NTP CLOCK \nNode booted: 2025-04-29 23:10:37 PDT (6d 23:42 ago)\nSystem booted: 2025-04-29 23:11:27 PDT (6d 23:42 ago)\nProtocols started: 2025-04-29 23:11:58 PDT (6d 23:41 ago)\nLast configured: 2025-05-06 22:07:04 PDT (00:46:23 ago) by root\n10:53PM  up 6 days, 23:42, 1 user, load averages: 0.16, 0.12, 0.23\n', 'stdout_lines': ['', 'Current time: 2025-05-06 22:53:27 PDT', 'Time Source:  NTP CLOCK ', 'Node booted: 2025-04-29 23:10:37 PDT (6d 23:42 ago)', 'System booted: 2025-04-29 23:11:27 PDT (6d 23:42 ago)', 'Protocols started: 2025-04-29 23:11:58 PDT (6d 23:41 ago)', 'Last configured: 2025-05-06 22:07:04 PDT (00:46:23 ago) by root', '10:53PM  up 6 days, 23:42, 1 user, load averages: 0.16, 0.12, 0.23']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show system uptime",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nCurrent time: 2025-05-06 22:53:27 PDT\nTime Source:  NTP CLOCK \nNode booted: 2025-04-29 23:10:37 PDT (6d 23:42 ago)\nSystem booted: 2025-04-29 23:11:27 PDT (6d 23:42 ago)\nProtocols started: 2025-04-29 23:11:58 PDT (6d 23:41 ago)\nLast configured: 2025-05-06 22:07:04 PDT (00:46:23 ago) by root\n10:53PM  up 6 days, 23:42, 1 user, load averages: 0.16, 0.12, 0.23\n",
+        "stdout_lines": [
+            "",
+            "Current time: 2025-05-06 22:53:27 PDT",
+            "Time Source:  NTP CLOCK ",
+            "Node booted: 2025-04-29 23:10:37 PDT (6d 23:42 ago)",
+            "System booted: 2025-04-29 23:11:27 PDT (6d 23:42 ago)",
+            "Protocols started: 2025-04-29 23:11:58 PDT (6d 23:41 ago)",
+            "Last configured: 2025-05-06 22:07:04 PDT (00:46:23 ago) by root",
+            "10:53PM  up 6 days, 23:42, 1 user, load averages: 0.16, 0.12, 0.23"
+        ]
+    },
+    "item.stdout": "\nCurrent time: 2025-05-06 22:53:27 PDT\nTime Source:  NTP CLOCK \nNode booted: 2025-04-29 23:10:37 PDT (6d 23:42 ago)\nSystem booted: 2025-04-29 23:11:27 PDT (6d 23:42 ago)\nProtocols started: 2025-04-29 23:11:58 PDT (6d 23:41 ago)\nLast configured: 2025-05-06 22:07:04 PDT (00:46:23 ago) by root\n10:53PM  up 6 days, 23:42, 1 user, load averages: 0.16, 0.12, 0.23\n"
+}
+ok: [10.53.115.24] => (item={'msg': 'The command executed successfully.', 'command': 'show interface terse', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nInterface               Admin Link Proto    Local                 Remote\npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \net-0/0/1                up    up\net-0/0/1.16386          up    up   multiservice\net-0/0/3                up    up\net-0/0/3.16386          up    up   multiservice\net-0/0/5                up    up\net-0/0/5.16386          up    up   multiservice\net-0/0/7                up    up\net-0/0/7.16386          up    up   multiservice\net-0/0/9                up    up\net-0/0/9.16386          up    up   multiservice\net-0/0/11               up    up\net-0/0/11.16386         up    up   multiservice\net-0/0/13               up    up\net-0/0/13.16386         up    up   multiservice\net-0/0/15               up    up\net-0/0/15.16386         up    up   multiservice\nre0:mgmt-0              up    up\nre0:mgmt-0.0            up    up   inet     10.53.115.24/19 \nre1:mgmt-0              up    up\nre1:mgmt-0.0            up    up   inet     10.53.99.35/19  \ndsc                     up    up\nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nirb                     up    up\nlo0                     up    up\nlo0.0                   up    up   inet     128.53.115.24       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1280.5311.5024.00\n                                   inet6    abcd::128:53:115:24 -->  \n                                            fe80::5604:af0:35:7318-->  \nlsi                     up    up\npip0                    up    up\nvtep                    up    up\n', 'stdout_lines': ['', 'Interface               Admin Link Proto    Local                 Remote', 'pfh-0/0/0               up    up', 'pfh-0/0/0.16383         up    up   inet    ', 'et-0/0/1                up    up', 'et-0/0/1.16386          up    up   multiservice', 'et-0/0/3                up    up', 'et-0/0/3.16386          up    up   multiservice', 'et-0/0/5                up    up', 'et-0/0/5.16386          up    up   multiservice', 'et-0/0/7                up    up', 'et-0/0/7.16386          up    up   multiservice', 'et-0/0/9                up    up', 'et-0/0/9.16386          up    up   multiservice', 'et-0/0/11               up    up', 'et-0/0/11.16386         up    up   multiservice', 'et-0/0/13               up    up', 'et-0/0/13.16386         up    up   multiservice', 'et-0/0/15               up    up', 'et-0/0/15.16386         up    up   multiservice', 're0:mgmt-0              up    up', 're0:mgmt-0.0            up    up   inet     10.53.115.24/19 ', 're1:mgmt-0              up    up', 're1:mgmt-0.0            up    up   inet     10.53.99.35/19  ', 'dsc                     up    up', 'esi                     up    up', 'fti0                    up    up', 'fti1                    up    up', 'fti2                    up    up', 'fti3                    up    up', 'fti4                    up    up', 'fti5                    up    up', 'fti6                    up    up', 'fti7                    up    up', 'irb                     up    up', 'lo0                     up    up', 'lo0.0                   up    up   inet     128.53.115.24       --> 0/0', '                                   iso      47.0005.80ff.f800.0000.0108.0001.1280.5311.5024.00', '                                   inet6    abcd::128:53:115:24 -->  ', '                                            fe80::5604:af0:35:7318-->  ', 'lsi                     up    up', 'pip0                    up    up', 'vtep                    up    up']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show interface terse",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nInterface               Admin Link Proto    Local                 Remote\npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \net-0/0/1                up    up\net-0/0/1.16386          up    up   multiservice\net-0/0/3                up    up\net-0/0/3.16386          up    up   multiservice\net-0/0/5                up    up\net-0/0/5.16386          up    up   multiservice\net-0/0/7                up    up\net-0/0/7.16386          up    up   multiservice\net-0/0/9                up    up\net-0/0/9.16386          up    up   multiservice\net-0/0/11               up    up\net-0/0/11.16386         up    up   multiservice\net-0/0/13               up    up\net-0/0/13.16386         up    up   multiservice\net-0/0/15               up    up\net-0/0/15.16386         up    up   multiservice\nre0:mgmt-0              up    up\nre0:mgmt-0.0            up    up   inet     10.53.115.24/19 \nre1:mgmt-0              up    up\nre1:mgmt-0.0            up    up   inet     10.53.99.35/19  \ndsc                     up    up\nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nirb                     up    up\nlo0                     up    up\nlo0.0                   up    up   inet     128.53.115.24       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1280.5311.5024.00\n                                   inet6    abcd::128:53:115:24 -->  \n                                            fe80::5604:af0:35:7318-->  \nlsi                     up    up\npip0                    up    up\nvtep                    up    up\n",
+        "stdout_lines": [
+            "",
+            "Interface               Admin Link Proto    Local                 Remote",
+            "pfh-0/0/0               up    up",
+            "pfh-0/0/0.16383         up    up   inet    ",
+            "et-0/0/1                up    up",
+            "et-0/0/1.16386          up    up   multiservice",
+            "et-0/0/3                up    up",
+            "et-0/0/3.16386          up    up   multiservice",
+            "et-0/0/5                up    up",
+            "et-0/0/5.16386          up    up   multiservice",
+            "et-0/0/7                up    up",
+            "et-0/0/7.16386          up    up   multiservice",
+            "et-0/0/9                up    up",
+            "et-0/0/9.16386          up    up   multiservice",
+            "et-0/0/11               up    up",
+            "et-0/0/11.16386         up    up   multiservice",
+            "et-0/0/13               up    up",
+            "et-0/0/13.16386         up    up   multiservice",
+            "et-0/0/15               up    up",
+            "et-0/0/15.16386         up    up   multiservice",
+            "re0:mgmt-0              up    up",
+            "re0:mgmt-0.0            up    up   inet     10.53.115.24/19 ",
+            "re1:mgmt-0              up    up",
+            "re1:mgmt-0.0            up    up   inet     10.53.99.35/19  ",
+            "dsc                     up    up",
+            "esi                     up    up",
+            "fti0                    up    up",
+            "fti1                    up    up",
+            "fti2                    up    up",
+            "fti3                    up    up",
+            "fti4                    up    up",
+            "fti5                    up    up",
+            "fti6                    up    up",
+            "fti7                    up    up",
+            "irb                     up    up",
+            "lo0                     up    up",
+            "lo0.0                   up    up   inet     128.53.115.24       --> 0/0",
+            "                                   iso      47.0005.80ff.f800.0000.0108.0001.1280.5311.5024.00",
+            "                                   inet6    abcd::128:53:115:24 -->  ",
+            "                                            fe80::5604:af0:35:7318-->  ",
+            "lsi                     up    up",
+            "pip0                    up    up",
+            "vtep                    up    up"
+        ]
+    },
+    "item.stdout": "\nInterface               Admin Link Proto    Local                 Remote\npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \net-0/0/1                up    up\net-0/0/1.16386          up    up   multiservice\net-0/0/3                up    up\net-0/0/3.16386          up    up   multiservice\net-0/0/5                up    up\net-0/0/5.16386          up    up   multiservice\net-0/0/7                up    up\net-0/0/7.16386          up    up   multiservice\net-0/0/9                up    up\net-0/0/9.16386          up    up   multiservice\net-0/0/11               up    up\net-0/0/11.16386         up    up   multiservice\net-0/0/13               up    up\net-0/0/13.16386         up    up   multiservice\net-0/0/15               up    up\net-0/0/15.16386         up    up   multiservice\nre0:mgmt-0              up    up\nre0:mgmt-0.0            up    up   inet     10.53.115.24/19 \nre1:mgmt-0              up    up\nre1:mgmt-0.0            up    up   inet     10.53.99.35/19  \ndsc                     up    up\nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nirb                     up    up\nlo0                     up    up\nlo0.0                   up    up   inet     128.53.115.24       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1280.5311.5024.00\n                                   inet6    abcd::128:53:115:24 -->  \n                                            fe80::5604:af0:35:7318-->  \nlsi                     up    up\npip0                    up    up\nvtep                    up    up\n"
+}
+
+TASK [TEST 3 - Two commands with XML output.] **************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 3] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [TEST 4 - show route with XML output - show version with JSON output] *********************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 4] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [TEST 5 - save outputs in dest_dir] *******************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 5] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [TEST 6 - save output to dest] ************************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 6] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [TEST 7 - save output to dest] ************************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 7] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [TEST 8 - Multiple commands, save outputs, but don't return them] *************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 8] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.53.115.24               : ok=18   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
