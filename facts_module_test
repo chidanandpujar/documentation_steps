@@ -475,3 +475,66 @@ PLAY RECAP *********************************************************************
 10.220.10.70               : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_junos pb.juniper_junos_facts.yml 
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_facts: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_facts module] ****************************************************************************************************
+
+TASK [Collect default set of facts (min)] ******************************************************************************************************
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.10.59]
+
+TASK [Assert default facts gathered] ***********************************************************************************************************
+ok: [10.220.10.59] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Collect full facts including config and interfaces] **************************************************************************************
+ok: [10.220.10.59]
+
+TASK [Assert full facts gathered] **************************************************************************************************************
+ok: [10.220.10.59] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Collect hardware and config with text format] ********************************************************************************************
+ok: [10.220.10.59]
+
+TASK [Assert hardware and config facts gathered] ***********************************************************************************************
+ok: [10.220.10.59] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.220.10.59               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+root@masterhost:~/ansible_modules_redirection_test5/ansible-junos-stdlib/ansible_collections# ansible-playbook -i inventory_device pb.juniper_junos_facts_device.yml 
+
+PLAY [Test juniper.device.facts module] ********************************************************************************************************
+
+TASK [TEST 1 - Gather Facts] *******************************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 1] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [TEST 2 - get facts in xml format] ********************************************************************************************************
+ok: [10.53.115.24]
+
+TASK [Check TEST 2] ****************************************************************************************************************************
+ok: [10.53.115.24] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.53.115.24               : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
