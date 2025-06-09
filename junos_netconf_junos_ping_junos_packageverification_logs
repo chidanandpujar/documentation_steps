@@ -6,7 +6,11 @@ Retype new password:
 set system services netconf ssh root-login allow.
 
 
+========================
+junos_netconf
 
+
+=======================
 
 
 root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_network_cli pb.juniper_junos_netconf.yml -vvv 
@@ -1348,3 +1352,961 @@ changed: [10.221.160.25] => {
 
 PLAY RECAP *************************************************************************************************************************************
 10.221.160.25              : ok=10   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+=====================
+
+
+junos_user
+
+=====================
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_junos pb.juniper_junos_user.yml -vvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos inventory source with ini plugin
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_user: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: pb.juniper_junos_user.yml ************************************************************************************************************
+1 plays in pb.juniper_junos_user.yml
+
+PLAY [Functional Test - junos_user module] *****************************************************************************************************
+
+TASK [Ensure test user is absent before test] **************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_user.yml:8
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_ `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765 `" && echo ansible-tmp-1749445246.6671767-1834052-87991619813765="` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_user.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/tmpzsw4vbsl TO /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765/AnsiballZ_junos_user.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765/ /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445246.6671767-1834052-87991619813765/ > /dev/null 2>&1 && sleep 0'
+[WARNING]: statement not found: user ansible_test_user
+ok: [10.221.160.25] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "active": true,
+            "aggregate": null,
+            "encrypted_password": null,
+            "full_name": null,
+            "name": "ansible_test_user",
+            "purge": false,
+            "role": null,
+            "sshkey": null,
+            "state": "absent"
+        }
+    }
+}
+
+TASK [Create a new user account with optional SSH key] *****************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_user.yml:14
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+<10.221.160.25> identified ncclient device handler: junos.
+<10.221.160.25> ESTABLISH NETCONF SSH CONNECTION FOR USER: root on PORT 830 TO 10.221.160.25 WITH SSH_CONFIG = None
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_ `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641 `" && echo ansible-tmp-1749445250.3909385-1834083-228852181602641="` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_user.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/tmpyhz2e40e TO /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641/AnsiballZ_junos_user.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641/ /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445250.3909385-1834083-228852181602641/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "active": true,
+            "aggregate": null,
+            "encrypted_password": null,
+            "full_name": "Ansible Test User",
+            "name": "ansible_test_user",
+            "purge": false,
+            "role": "super-user",
+            "sshkey": null,
+            "state": "present"
+        }
+    }
+}
+
+TASK [Set user password (SHA-512 hashed)] ******************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_user.yml:24
+Using passlib to hash input with 'sha512_crypt'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_ `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014 `" && echo ansible-tmp-1749445254.8944535-1834108-216086713195014="` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_user.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/tmphe93pzfj TO /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014/AnsiballZ_junos_user.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014/ /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445254.8944535-1834108-216086713195014/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "active": true,
+            "aggregate": null,
+            "encrypted_password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+            "full_name": null,
+            "name": "ansible_test_user",
+            "purge": false,
+            "role": "super-user",
+            "sshkey": null,
+            "state": "present"
+        }
+    }
+}
+
+TASK [Create a list of additional users] *******************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_user.yml:31
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_ `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218 `" && echo ansible-tmp-1749445258.8182683-1834134-202331208017218="` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_user.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/tmpq0k337mq TO /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218/AnsiballZ_junos_user.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218/ /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445258.8182683-1834134-202331208017218/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "active": true,
+            "aggregate": [
+                {
+                    "active": true,
+                    "encrypted_password": null,
+                    "full_name": "Operator User",
+                    "name": "test_user1",
+                    "purge": false,
+                    "role": "operator",
+                    "sshkey": null,
+                    "state": "present"
+                },
+                {
+                    "active": true,
+                    "encrypted_password": null,
+                    "full_name": "ReadOnly User",
+                    "name": "test_user2",
+                    "purge": false,
+                    "role": "read-only",
+                    "sshkey": null,
+                    "state": "present"
+                }
+            ],
+            "encrypted_password": null,
+            "full_name": null,
+            "name": null,
+            "purge": false,
+            "role": null,
+            "sshkey": null,
+            "state": "present"
+        }
+    }
+}
+
+TASK [Delete additional users] *****************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_user.yml:37
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_ `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605 `" && echo ansible-tmp-1749445262.7835484-1834168-68551628252605="` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_user.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/tmpidw7nd9z TO /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605/AnsiballZ_junos_user.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605/ /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445262.7835484-1834168-68551628252605/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "active": true,
+            "aggregate": [
+                {
+                    "active": true,
+                    "encrypted_password": null,
+                    "full_name": "Operator User",
+                    "name": "test_user1",
+                    "purge": false,
+                    "role": "operator",
+                    "sshkey": null,
+                    "state": "absent"
+                },
+                {
+                    "active": true,
+                    "encrypted_password": null,
+                    "full_name": "ReadOnly User",
+                    "name": "test_user2",
+                    "purge": false,
+                    "role": "read-only",
+                    "sshkey": null,
+                    "state": "absent"
+                }
+            ],
+            "encrypted_password": null,
+            "full_name": null,
+            "name": null,
+            "purge": false,
+            "role": null,
+            "sshkey": null,
+            "state": "present"
+        }
+    }
+}
+
+TASK [Remove the test user account] ************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_user.yml:43
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_ `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650 `" && echo ansible-tmp-1749445267.026828-1834193-228275940851650="` echo /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_user to juniper.device.junos_user
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_user.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/tmpwbvtbsij TO /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650/AnsiballZ_junos_user.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650/ /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650/AnsiballZ_junos_user.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834048q7mh8mv_/ansible-tmp-1749445267.026828-1834193-228275940851650/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "active": true,
+            "aggregate": null,
+            "encrypted_password": null,
+            "full_name": null,
+            "name": "ansible_test_user",
+            "purge": false,
+            "role": null,
+            "sshkey": null,
+            "state": "absent"
+        }
+    }
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.221.160.25              : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+===================
+
+
+junos_snmp_server
+
+
+===================
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_junos pb.juniper_junos_snmp_server.yml -vvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos inventory source with ini plugin
+redirecting (type: modules) junipernetworks.junos.junos_routing_instances to juniper.device.junos_routing_instances
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_routing_instances: ["'NoneType' object has no
+attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_snmp_server: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: pb.juniper_junos_snmp_server.yml *****************************************************************************************************
+1 plays in pb.juniper_junos_snmp_server.yml
+
+PLAY [Functional Test - junos_snmp_server (all states)] ****************************************************************************************
+
+TASK [Ensure routing instances clv1 and clv2 exist] ********************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:9
+redirecting (type: modules) junipernetworks.junos.junos_routing_instances to juniper.device.junos_routing_instances
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354 `" && echo ansible-tmp-1749445346.6384404-1834242-148141323156354="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_routing_instances to juniper.device.junos_routing_instances
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_routing_instances.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmpwat59y2l TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354/AnsiballZ_junos_routing_instances.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354/AnsiballZ_junos_routing_instances.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354/AnsiballZ_junos_routing_instances.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445346.6384404-1834242-148141323156354/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": [
+        {
+            "name": "clv1",
+            "type": "virtual-router"
+        },
+        {
+            "name": "clv2",
+            "type": "virtual-router"
+        }
+    ],
+    "before": [],
+    "changed": true,
+    "commands": [
+        "<nc:routing-instances xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:instance><nc:name>clv1</nc:name><nc:instance-type>virtual-router</nc:instance-type></nc:instance><nc:instance><nc:name>clv2</nc:name><nc:instance-type>virtual-router</nc:instance-type></nc:instance></nc:routing-instances>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "bridge_domains": null,
+                    "connector_id_advertise": null,
+                    "description": null,
+                    "egress_protection": null,
+                    "instance_role": null,
+                    "interfaces": null,
+                    "l2vpn_id": null,
+                    "name": "clv1",
+                    "no_irb_layer_2_copy": null,
+                    "no_local_switching": null,
+                    "no_normalization": null,
+                    "no_vrf_advertise": null,
+                    "no_vrf_propagate_ttl": null,
+                    "qualified_bum_pruning_mode": null,
+                    "route_distinguisher": null,
+                    "routing_interface": null,
+                    "type": "virtual-router",
+                    "vrf_exports": null,
+                    "vrf_imports": null
+                },
+                {
+                    "bridge_domains": null,
+                    "connector_id_advertise": null,
+                    "description": null,
+                    "egress_protection": null,
+                    "instance_role": null,
+                    "interfaces": null,
+                    "l2vpn_id": null,
+                    "name": "clv2",
+                    "no_irb_layer_2_copy": null,
+                    "no_local_switching": null,
+                    "no_normalization": null,
+                    "no_vrf_advertise": null,
+                    "no_vrf_propagate_ttl": null,
+                    "qualified_bum_pruning_mode": null,
+                    "route_distinguisher": null,
+                    "routing_interface": null,
+                    "type": "virtual-router",
+                    "vrf_exports": null,
+                    "vrf_imports": null
+                }
+            ],
+            "running_config": null,
+            "state": "merged"
+        }
+    }
+}
+
+TASK [Render SNMP server configuration (dry-run XML)] ******************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:18
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> identified ncclient device handler: junos.
+<10.221.160.25> ESTABLISH NETCONF SSH CONNECTION FOR USER: root on PORT 830 TO 10.221.160.25 WITH SSH_CONFIG = None
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222 `" && echo ansible-tmp-1749445356.4609346-1834273-230997034365222="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmp7_j0zjkz TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445356.4609346-1834273-230997034365222/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "config": {
+                "arp": {
+                    "host_name_resolution": true,
+                    "set": true
+                },
+                "client_lists": null,
+                "communities": null,
+                "contact": null,
+                "customization": null,
+                "description": null,
+                "engine_id": null,
+                "filter_duplicates": null,
+                "filter_interfaces": null,
+                "health_monitor": null,
+                "if_count_with_filter_interfaces": null,
+                "interfaces": null,
+                "location": null,
+                "logical_system_trap_filter": null,
+                "name": null,
+                "nonvolatile": null,
+                "proxies": null,
+                "rmon": null,
+                "routing_instance_access": {
+                    "access_lists": [
+                        "clv1",
+                        "clv2"
+                    ],
+                    "set": true
+                },
+                "snmp_v3": null,
+                "subagent": null,
+                "traceoptions": null,
+                "trap_groups": null,
+                "trap_options": null,
+                "views": null
+            },
+            "running_config": null,
+            "state": "rendered"
+        }
+    },
+    "rendered": "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:arp><nc:host-name-resolution/></nc:arp><nc:routing-instance-access><nc:access-list><nc:name>clv1</nc:name></nc:access-list><nc:access-list><nc:name>clv2</nc:name></nc:access-list></nc:routing-instance-access></nc:snmp>"
+}
+
+TASK [Assert rendered SNMP config] *************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:32
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse SNMP server config from XML] *******************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:38
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397 `" && echo ansible-tmp-1749445358.6038785-1834299-164922445240397="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmpx6kqgd5o TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445358.6038785-1834299-164922445240397/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "config": null,
+            "running_config": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rpc-reply>\n  <configuration>\n    <system xmlns=\"http://yang.juniper.net/junos-es/conf/system\">\n      <snmp>\n        <client-list>\n          <name>cl1</name>\n          <client-address-list><name>192.16.1.0/24</name></client-address-list>\n          <client-address-list><name>192.16.2.0/24</name></client-address-list>\n          <client-address-list><name>11.11.11.11/32</name><restrict/></client-address-list>\n        </client-list>\n        <client-list>\n          <name>cl2</name>\n          <client-address-list><name>192.16.4.0/24</name></client-address-list>\n        </client-list>\n        <routing-instance-access>\n          <access-list><name>clv1</name></access-list>\n          <access-list><name>clv2</name></access-list>\n        </routing-instance-access>\n        <arp><host-name-resolution/></arp>\n      </snmp>\n    </system>\n  </configuration>\n</rpc-reply>",
+            "state": "parsed"
+        }
+    },
+    "parsed": {}
+}
+
+TASK [Assert parsed SNMP config] ***************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:44
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Merge SNMP server configuration] *********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:50
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244 `" && echo ansible-tmp-1749445360.2303143-1834325-213981716452244="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmpjl5qo7le TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445360.2303143-1834325-213981716452244/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": {
+        "arp": {
+            "host_name_resolution": true
+        },
+        "client_lists": [
+            {
+                "addresses": [
+                    {
+                        "address": "192.16.1.0/24"
+                    },
+                    {
+                        "address": "192.16.2.0/24"
+                    },
+                    {
+                        "address": "11.11.11.11/32",
+                        "restrict": true
+                    }
+                ],
+                "name": "cl1"
+            },
+            {
+                "addresses": [
+                    {
+                        "address": "192.16.4.0/24"
+                    }
+                ],
+                "name": "cl2"
+            }
+        ],
+        "routing_instance_access": {
+            "access_lists": [
+                "clv1",
+                "clv2"
+            ]
+        }
+    },
+    "before": {},
+    "changed": true,
+    "commands": [
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:arp><nc:host-name-resolution/></nc:arp><nc:client-list><nc:name>cl1</nc:name><nc:client-address-list><nc:name>192.16.1.0/24</nc:name></nc:client-address-list><nc:client-address-list><nc:name>192.16.2.0/24</nc:name></nc:client-address-list><nc:client-address-list><nc:name>11.11.11.11</nc:name><nc:restrict/></nc:client-address-list></nc:client-list><nc:client-list><nc:name>cl2</nc:name><nc:client-address-list><nc:name>192.16.4.0/24</nc:name></nc:client-address-list></nc:client-list><nc:routing-instance-access><nc:access-list><nc:name>clv1</nc:name></nc:access-list><nc:access-list><nc:name>clv2</nc:name></nc:access-list></nc:routing-instance-access></nc:snmp>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": {
+                "arp": {
+                    "host_name_resolution": true,
+                    "set": true
+                },
+                "client_lists": [
+                    {
+                        "addresses": [
+                            {
+                                "address": "192.16.1.0/24",
+                                "restrict": null
+                            },
+                            {
+                                "address": "192.16.2.0/24",
+                                "restrict": null
+                            },
+                            {
+                                "address": "11.11.11.11",
+                                "restrict": true
+                            }
+                        ],
+                        "name": "cl1"
+                    },
+                    {
+                        "addresses": [
+                            {
+                                "address": "192.16.4.0/24",
+                                "restrict": null
+                            }
+                        ],
+                        "name": "cl2"
+                    }
+                ],
+                "communities": null,
+                "contact": null,
+                "customization": null,
+                "description": null,
+                "engine_id": null,
+                "filter_duplicates": null,
+                "filter_interfaces": null,
+                "health_monitor": null,
+                "if_count_with_filter_interfaces": null,
+                "interfaces": null,
+                "location": null,
+                "logical_system_trap_filter": null,
+                "name": null,
+                "nonvolatile": null,
+                "proxies": null,
+                "rmon": null,
+                "routing_instance_access": {
+                    "access_lists": [
+                        "clv1",
+                        "clv2"
+                    ],
+                    "set": true
+                },
+                "snmp_v3": null,
+                "subagent": null,
+                "traceoptions": null,
+                "trap_groups": null,
+                "trap_options": null,
+                "views": null
+            },
+            "running_config": null,
+            "state": "merged"
+        }
+    }
+}
+
+TASK [Assert merged SNMP config] ***************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:74
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace SNMP server configuration] *******************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:79
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067 `" && echo ansible-tmp-1749445366.8990986-1834351-126326081422067="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmpcu4v6pg2 TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445366.8990986-1834351-126326081422067/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": {
+        "contact": "ansiblesupport11@redhat.com",
+        "customization": {
+            "ether_stats_ifd_only": true
+        },
+        "description": "Local SNMP Server",
+        "engine_id": {
+            "use_mac_address": true
+        },
+        "filter_duplicates": true,
+        "filter_interfaces": {
+            "all_internal_interfaces": true,
+            "interfaces": [
+                "eth1",
+                "eth2"
+            ]
+        }
+    },
+    "before": {
+        "arp": {
+            "host_name_resolution": true
+        },
+        "client_lists": [
+            {
+                "addresses": [
+                    {
+                        "address": "192.16.1.0/24"
+                    },
+                    {
+                        "address": "192.16.2.0/24"
+                    },
+                    {
+                        "address": "11.11.11.11/32",
+                        "restrict": true
+                    }
+                ],
+                "name": "cl1"
+            },
+            {
+                "addresses": [
+                    {
+                        "address": "192.16.4.0/24"
+                    }
+                ],
+                "name": "cl2"
+            }
+        ],
+        "routing_instance_access": {
+            "access_lists": [
+                "clv1",
+                "clv2"
+            ]
+        }
+    },
+    "changed": true,
+    "commands": [
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"/>",
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\" delete=\"delete\"/>",
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:contact>ansiblesupport11@redhat.com</nc:contact><nc:customization><nc:ether-stats-ifd-only/></nc:customization><nc:description>Local SNMP Server</nc:description><nc:engine-id><nc:local>local1</nc:local><nc:use-default-ip-address/><nc:use-mac-address/></nc:engine-id><nc:filter-duplicates/><nc:filter-interfaces><nc:all-internal-interfaces/><nc:interfaces><nc:name>eth1</nc:name></nc:interfaces><nc:interfaces><nc:name>eth2</nc:name></nc:interfaces></nc:filter-interfaces></nc:snmp>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": {
+                "arp": null,
+                "client_lists": null,
+                "communities": null,
+                "contact": "ansiblesupport11@redhat.com",
+                "customization": {
+                    "ether_stats_ifd_only": true
+                },
+                "description": "Local SNMP Server",
+                "engine_id": {
+                    "local": "local1",
+                    "use_default_ip_address": true,
+                    "use_mac_address": true
+                },
+                "filter_duplicates": true,
+                "filter_interfaces": {
+                    "all_internal_interfaces": true,
+                    "interfaces": [
+                        "eth1",
+                        "eth2"
+                    ],
+                    "set": true
+                },
+                "health_monitor": null,
+                "if_count_with_filter_interfaces": null,
+                "interfaces": null,
+                "location": null,
+                "logical_system_trap_filter": null,
+                "name": null,
+                "nonvolatile": null,
+                "proxies": null,
+                "rmon": null,
+                "routing_instance_access": null,
+                "snmp_v3": null,
+                "subagent": null,
+                "traceoptions": null,
+                "trap_groups": null,
+                "trap_options": null,
+                "views": null
+            },
+            "running_config": null,
+            "state": "replaced"
+        }
+    }
+}
+
+TASK [Assert replaced SNMP config] *************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:100
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Override SNMP server configuration] ******************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:105
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546 `" && echo ansible-tmp-1749445376.390375-1834378-8522880288546="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmpcpqp15em TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445376.390375-1834378-8522880288546/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "before": {
+        "contact": "ansiblesupport11@redhat.com",
+        "customization": {
+            "ether_stats_ifd_only": true
+        },
+        "description": "Local SNMP Server",
+        "engine_id": {
+            "use_mac_address": true
+        },
+        "filter_duplicates": true,
+        "filter_interfaces": {
+            "all_internal_interfaces": true,
+            "interfaces": [
+                "eth1",
+                "eth2"
+            ]
+        }
+    },
+    "changed": false,
+    "commands": [
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"/>",
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\" delete=\"delete\"/>",
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:contact>ansiblesupport11@redhat.com</nc:contact><nc:customization><nc:ether-stats-ifd-only/></nc:customization><nc:description>Local SNMP Server</nc:description><nc:engine-id><nc:local>local1</nc:local><nc:use-default-ip-address/><nc:use-mac-address/></nc:engine-id><nc:filter-duplicates/><nc:filter-interfaces><nc:all-internal-interfaces/><nc:interfaces><nc:name>eth1</nc:name></nc:interfaces><nc:interfaces><nc:name>eth2</nc:name></nc:interfaces></nc:filter-interfaces></nc:snmp>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": {
+                "arp": null,
+                "client_lists": null,
+                "communities": null,
+                "contact": "ansiblesupport11@redhat.com",
+                "customization": {
+                    "ether_stats_ifd_only": true
+                },
+                "description": "Local SNMP Server",
+                "engine_id": {
+                    "local": "local1",
+                    "use_default_ip_address": true,
+                    "use_mac_address": true
+                },
+                "filter_duplicates": true,
+                "filter_interfaces": {
+                    "all_internal_interfaces": true,
+                    "interfaces": [
+                        "eth1",
+                        "eth2"
+                    ],
+                    "set": true
+                },
+                "health_monitor": null,
+                "if_count_with_filter_interfaces": null,
+                "interfaces": null,
+                "location": null,
+                "logical_system_trap_filter": null,
+                "name": null,
+                "nonvolatile": null,
+                "proxies": null,
+                "rmon": null,
+                "routing_instance_access": null,
+                "snmp_v3": null,
+                "subagent": null,
+                "traceoptions": null,
+                "trap_groups": null,
+                "trap_options": null,
+                "views": null
+            },
+            "running_config": null,
+            "state": "overridden"
+        }
+    }
+}
+
+TASK [Assert overridden SNMP config] ***********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:126
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather SNMP server configuration from device] ********************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:131
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993 `" && echo ansible-tmp-1749445383.7733054-1834413-2516452717993="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmpfo6b7225 TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445383.7733054-1834413-2516452717993/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "gathered": {
+        "contact": "ansiblesupport11@redhat.com",
+        "customization": {
+            "ether_stats_ifd_only": true
+        },
+        "description": "Local SNMP Server",
+        "engine_id": {
+            "use_mac_address": true
+        },
+        "filter_duplicates": true,
+        "filter_interfaces": {
+            "all_internal_interfaces": true,
+            "interfaces": [
+                "eth1",
+                "eth2"
+            ]
+        }
+    },
+    "invocation": {
+        "module_args": {
+            "config": null,
+            "running_config": null,
+            "state": "gathered"
+        }
+    }
+}
+
+TASK [Assert gathered SNMP config] *************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:136
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete SNMP server configuration] ********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:142
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841 `" && echo ansible-tmp-1749445385.8192365-1834439-13235811213841="` echo /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_snmp_server to juniper.device.junos_snmp_server
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_snmp_server.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/tmp77dmjzmx TO /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841/AnsiballZ_junos_snmp_server.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841/ /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841/AnsiballZ_junos_snmp_server.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1834238kd3xbvnf/ansible-tmp-1749445385.8192365-1834439-13235811213841/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "before": {
+        "contact": "ansiblesupport11@redhat.com",
+        "customization": {
+            "ether_stats_ifd_only": true
+        },
+        "description": "Local SNMP Server",
+        "engine_id": {
+            "use_mac_address": true
+        },
+        "filter_duplicates": true,
+        "filter_interfaces": {
+            "all_internal_interfaces": true,
+            "interfaces": [
+                "eth1",
+                "eth2"
+            ]
+        }
+    },
+    "changed": false,
+    "commands": [
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"/>",
+        "<nc:snmp xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\" delete=\"delete\"/>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": {
+                "arp": null,
+                "client_lists": null,
+                "communities": null,
+                "contact": null,
+                "customization": null,
+                "description": null,
+                "engine_id": null,
+                "filter_duplicates": null,
+                "filter_interfaces": null,
+                "health_monitor": null,
+                "if_count_with_filter_interfaces": null,
+                "interfaces": null,
+                "location": null,
+                "logical_system_trap_filter": null,
+                "name": null,
+                "nonvolatile": null,
+                "proxies": null,
+                "rmon": null,
+                "routing_instance_access": null,
+                "snmp_v3": null,
+                "subagent": null,
+                "traceoptions": null,
+                "trap_groups": null,
+                "trap_options": null,
+                "views": null
+            },
+            "running_config": null,
+            "state": "deleted"
+        }
+    }
+}
+
+TASK [Assert deleted SNMP config] **************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_snmp_server.yml:148
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.221.160.25              : ok=15   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
