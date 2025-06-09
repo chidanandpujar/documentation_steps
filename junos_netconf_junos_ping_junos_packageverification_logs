@@ -1,0 +1,405 @@
+config:
+set system login user ansible_user1 class super-user authentication plain-text-password 
+New password:
+Retype new password:
+
+set system services netconf ssh root-login allow.
+
+
+
+
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_network_cli pb.juniper_junos_netconf.yml -vvv 
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli inventory source with ini plugin
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_netconf: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: pb.juniper_junos_netconf.yml ***********************************************************************************************************************************************************************************************************************
+1 plays in pb.juniper_junos_netconf.yml
+
+PLAY [Functional Test - junos_netconf module] ****************************************************************************************************************************************************************************************************************
+
+TASK [Enable NETCONF service on port 830] ********************************************************************************************************************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_netconf.yml:9
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1787539m3iza3xa `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308 `" && echo ansible-tmp-1749188252.784234-1787543-40548259530308="` echo /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_netconf.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1787539m3iza3xa/tmp9e0667yx TO /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308/AnsiballZ_junos_netconf.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308/ /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308/AnsiballZ_junos_netconf.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308/AnsiballZ_junos_netconf.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188252.784234-1787543-40548259530308/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "commands": [
+        "set system services netconf ssh port 830"
+    ],
+    "invocation": {
+        "module_args": {
+            "netconf_port": 830,
+            "state": "present"
+        }
+    }
+}
+
+TASK [Assert NETCONF service was enabled] ********************************************************************************************************************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_netconf.yml:15
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Disable NETCONF service] *******************************************************************************************************************************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_netconf.yml:21
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1787539m3iza3xa `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118 `" && echo ansible-tmp-1749188257.5077388-1787572-234496017057118="` echo /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_netconf.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1787539m3iza3xa/tmphoc9xf0d TO /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118/AnsiballZ_junos_netconf.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118/ /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118/AnsiballZ_junos_netconf.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118/AnsiballZ_junos_netconf.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1787539m3iza3xa/ansible-tmp-1749188257.5077388-1787572-234496017057118/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "commands": [
+        "delete system services netconf"
+    ],
+    "invocation": {
+        "module_args": {
+            "netconf_port": 830,
+            "state": "absent"
+        }
+    }
+}
+
+TASK [Assert NETCONF service was disabled] *******************************************************************************************************************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_netconf.yml:26
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP ***************************************************************************************************************************************************************************************************************************************************
+10.221.160.25              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# 
+
+==========================================================================================================================================================
+
+
+
+junos_ping
+============================================================================================================================================================
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_network_cli pb.juniper_junos_ping.yml
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_ping: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_ping module] *******************************************************************************************************************************************************************************************************************
+
+TASK [Test reachability to target] ***************************************************************************************************************************************************************************************************************************
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.221.160.25]
+
+TASK [Assert default ping worked] ****************************************************************************************************************************************************************************************************************************
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test reachability to target using source and size set] *************************************************************************************************************************************************************************************************
+ok: [10.221.160.25]
+
+TASK [Assert source TTL ping worked] *************************************************************************************************************************************************************************************************************************
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test unreachability to target using interval] **********************************************************************************************************************************************************************************************************
+ok: [10.221.160.25]
+
+TASK [Assert unreachable ping shows 100% loss] ***************************************************************************************************************************************************************************************************************
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test reachability to target setting count and interface] ***********************************************************************************************************************************************************************************************
+ok: [10.221.160.25]
+
+TASK [Assert ping with count/interface worked] ***************************************************************************************************************************************************************************************************************
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test reachability to target using do-not-fragment and rapid] *******************************************************************************************************************************************************************************************
+ok: [10.221.160.25]
+
+TASK [Assert ping with DF bit and rapid worked] **************************************************************************************************************************************************************************************************************
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP ***************************************************************************************************************************************************************************************************************************************************
+10.221.160.25              : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+==========================
+
+junos_package:
+
+=========================
+
+
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_network_cli pb.juniper_junos_package_debug.yml -vvvvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg as config file
+setting up inventory plugins
+Loading collection ansible.builtin from 
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli inventory source with ini plugin
+Loading collection junipernetworks.junos from /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+redirecting (type: modules) junipernetworks.junos.junos_package to juniper.device.junos_package
+Loading collection juniper.device from /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_package: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for wait_for: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Attempting to use 'default' callback.
+Skipping callback 'default', as we already have a stdout callback.
+Attempting to use 'junit' callback.
+Attempting to use 'minimal' callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Attempting to use 'oneline' callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Attempting to use 'tree' callback.
+
+PLAYBOOK: pb.juniper_junos_package_debug.yml ***************************************************************************************************
+Positional arguments: pb.juniper_junos_package_debug.yml
+verbosity: 5
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_network_cli',)
+forks: 5
+1 plays in pb.juniper_junos_package_debug.yml
+
+PLAY [Functional Test - junos_package module] **************************************************************************************************
+
+TASK [Install Junos package with reboot (forced downgrade)] ************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_package_debug.yml:9
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_package to juniper.device.junos_package
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.network_cli
+<10.221.160.25> local domain socket does not exist, starting it
+<10.221.160.25> control socket path is /root/.ansible/pc/6a5aa13690
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+<10.221.160.25> Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+<10.221.160.25> Loading collection juniper.device from /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device
+<10.221.160.25> local domain socket listeners started successfully
+<10.221.160.25> loaded cliconf plugin ansible_collections.juniper.device.plugins.cliconf.junos from path /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/cliconf/junos.py for network_os juniper.device.junos
+<10.221.160.25> ssh type is set to auto
+<10.221.160.25> autodetecting ssh_type
+<10.221.160.25> ssh type is now set to libssh
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/6a5aa13690
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833205wdoucubl `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302 `" && echo ansible-tmp-1749443413.150922-1833210-13099680292302="` echo /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_package to juniper.device.junos_package
+Including module_utils file ansible/__init__.py
+Including module_utils file ansible/module_utils/__init__.py
+Including module_utils file ansible/module_utils/basic.py
+Including module_utils file ansible/module_utils/_text.py
+Including module_utils file ansible/module_utils/common/_utils.py
+Including module_utils file ansible/module_utils/common/__init__.py
+Including module_utils file ansible/module_utils/common/arg_spec.py
+Including module_utils file ansible/module_utils/common/file.py
+Including module_utils file ansible/module_utils/common/locale.py
+Including module_utils file ansible/module_utils/common/parameters.py
+Including module_utils file ansible/module_utils/common/collections.py
+Including module_utils file ansible/module_utils/common/process.py
+Including module_utils file ansible/module_utils/common/sys_info.py
+Including module_utils file ansible/module_utils/common/text/converters.py
+Including module_utils file ansible/module_utils/common/text/__init__.py
+Including module_utils file ansible/module_utils/common/text/formatters.py
+Including module_utils file ansible/module_utils/common/validation.py
+Including module_utils file ansible/module_utils/common/warnings.py
+Including module_utils file ansible/module_utils/compat/selinux.py
+Including module_utils file ansible/module_utils/compat/__init__.py
+Including module_utils file ansible/module_utils/distro/__init__.py
+Including module_utils file ansible/module_utils/distro/_distro.py
+Including module_utils file ansible/module_utils/errors.py
+Including module_utils file ansible/module_utils/parsing/convert_bool.py
+Including module_utils file ansible/module_utils/parsing/__init__.py
+Including module_utils file ansible/module_utils/pycompat24.py
+Including module_utils file ansible/module_utils/six/__init__.py
+Including module_utils file ansible_collections/juniper/device/plugins/module_utils/network/junos/junos.py
+Including module_utils file ansible/module_utils/connection.py
+Including module_utils file ansible/module_utils/common/json.py
+Including module_utils file ansible_collections/__init__.py
+Including module_utils file ansible_collections/ansible/netcommon/plugins/module_utils/network/common/netconf.py
+Including module_utils file ansible_collections/ansible/__init__.py
+Including module_utils file ansible_collections/ansible/netcommon/__init__.py
+Including module_utils file ansible_collections/ansible/netcommon/plugins/__init__.py
+Including module_utils file ansible_collections/ansible/netcommon/plugins/module_utils/__init__.py
+Including module_utils file ansible_collections/ansible/netcommon/plugins/module_utils/network/__init__.py
+Including module_utils file ansible_collections/ansible/netcommon/plugins/module_utils/network/common/__init__.py
+Including module_utils file ansible_collections/juniper/__init__.py
+Including module_utils file ansible_collections/juniper/device/__init__.py
+Including module_utils file ansible_collections/juniper/device/plugins/__init__.py
+Including module_utils file ansible_collections/juniper/device/plugins/module_utils/__init__.py
+Including module_utils file ansible_collections/juniper/device/plugins/module_utils/network/__init__.py
+Including module_utils file ansible_collections/juniper/device/plugins/module_utils/network/junos/__init__.py
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_package.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833205wdoucubl/tmpum_mxns3 TO /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302/AnsiballZ_junos_package.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302/ /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302/AnsiballZ_junos_package.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302/AnsiballZ_junos_package.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443413.150922-1833210-13099680292302/ > /dev/null 2>&1 && sleep 0'
+[DEPRECATION WARNING]: Param 'provider' is deprecated. See the module docs for more information. This feature will be removed from 
+junipernetworks.junos in a release after 2022-06-01. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "force": true,
+            "force_host": false,
+            "issu": false,
+            "no_copy": true,
+            "provider": {
+                "host": "10.221.160.25",
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+                "port": 830,
+                "ssh_keyfile": null,
+                "timeout": null,
+                "transport": "netconf",
+                "username": "root"
+            },
+            "reboot": true,
+            "src": "/var/tmp/junos-install-vsrx3-x86-64-23.1I-20221116_dev_common.0.0409.tgz",
+            "ssh_config": null,
+            "ssh_private_key_file": null,
+            "unlink": false,
+            "validate": false,
+            "version": null
+        }
+    }
+}
+
+TASK [Wait for device to come back online after reboot] ****************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_package_debug.yml:24
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+[WARNING]: errors were encountered during the plugin load for wait: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.network_cli
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> updating play_context for connection
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/6a5aa13690
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833205wdoucubl `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667 `" && echo ansible-tmp-1749443510.1202593-1833252-262101884473667="` echo /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667 `" ) && sleep 0'
+Including module_utils file ansible/__init__.py
+Including module_utils file ansible/module_utils/__init__.py
+Including module_utils file ansible/module_utils/basic.py
+Including module_utils file ansible/module_utils/_text.py
+Including module_utils file ansible/module_utils/common/_utils.py
+Including module_utils file ansible/module_utils/common/__init__.py
+Including module_utils file ansible/module_utils/common/arg_spec.py
+Including module_utils file ansible/module_utils/common/file.py
+Including module_utils file ansible/module_utils/common/locale.py
+Including module_utils file ansible/module_utils/common/parameters.py
+Including module_utils file ansible/module_utils/common/collections.py
+Including module_utils file ansible/module_utils/common/process.py
+Including module_utils file ansible/module_utils/common/sys_info.py
+Including module_utils file ansible/module_utils/common/text/converters.py
+Including module_utils file ansible/module_utils/common/text/__init__.py
+Including module_utils file ansible/module_utils/common/text/formatters.py
+Including module_utils file ansible/module_utils/common/validation.py
+Including module_utils file ansible/module_utils/common/warnings.py
+Including module_utils file ansible/module_utils/compat/datetime.py
+Including module_utils file ansible/module_utils/compat/__init__.py
+Including module_utils file ansible/module_utils/compat/selinux.py
+Including module_utils file ansible/module_utils/distro/__init__.py
+Including module_utils file ansible/module_utils/distro/_distro.py
+Including module_utils file ansible/module_utils/errors.py
+Including module_utils file ansible/module_utils/parsing/convert_bool.py
+Including module_utils file ansible/module_utils/parsing/__init__.py
+Including module_utils file ansible/module_utils/pycompat24.py
+Including module_utils file ansible/module_utils/six/__init__.py
+Using module file /usr/local/lib/python3.12/site-packages/ansible/modules/wait_for.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833205wdoucubl/tmpdcmtz1dd TO /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667/AnsiballZ_wait_for.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667/ /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667/AnsiballZ_wait_for.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667/AnsiballZ_wait_for.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833205wdoucubl/ansible-tmp-1749443510.1202593-1833252-262101884473667/ > /dev/null 2>&1 && sleep 0'
+fatal: [10.221.160.25]: FAILED! => {
+    "changed": false,
+    "elapsed": 300,
+    "invocation": {
+        "module_args": {
+            "active_connection_states": [
+                "ESTABLISHED",
+                "FIN_WAIT1",
+                "FIN_WAIT2",
+                "SYN_RECV",
+                "SYN_SENT",
+                "TIME_WAIT"
+            ],
+            "connect_timeout": 5,
+            "delay": 30,
+            "exclude_hosts": null,
+            "host": "10.221.160.25",
+            "msg": null,
+            "path": null,
+            "port": 830,
+            "search_regex": null,
+            "sleep": 1,
+            "state": "started",
+            "timeout": 300
+        }
+    },
+    "msg": "Timeout when waiting for 10.221.160.25:830"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.221.160.25              : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
