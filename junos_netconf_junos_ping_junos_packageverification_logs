@@ -403,3 +403,662 @@ PLAY RECAP *********************************************************************
 10.221.160.25              : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 
 
+
+
+===============================
+
+
+junos_l2_interface
+
+===============================
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_junos pb.juniper_junos_l2_interfaces.yml -vvvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg as config file
+setting up inventory plugins
+Loading collection ansible.builtin from 
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos inventory source with ini plugin
+Loading collection junipernetworks.junos from /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Loading collection juniper.device from /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_l2_interfaces: ["'NoneType' object has no attribute
+'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Loading callback plugin default of type stdout, v2.0 from /usr/local/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: pb.juniper_junos_l2_interfaces.yml ***************************************************************************************************
+Positional arguments: pb.juniper_junos_l2_interfaces.yml
+verbosity: 4
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos',)
+forks: 5
+1 plays in pb.juniper_junos_l2_interfaces.yml
+
+PLAY [Functional Test - junos_l2_interfaces module] ********************************************************************************************
+
+TASK [Pre-clean - delete any existing L2 config] ***********************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:14
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> local domain socket does not exist, starting it
+<10.221.160.25> control socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+<10.221.160.25> Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+<10.221.160.25> Loading collection juniper.device from /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device
+<10.221.160.25> local domain socket listeners started successfully
+<10.221.160.25> loaded netconf plugin ansible_collections.juniper.device.plugins.netconf.junos from path /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/netconf/junos.py for network_os juniper.device.junos
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457 `" && echo ansible-tmp-1749444911.3583388-1833602-124338853883457="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmpetiz362u TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444911.3583388-1833602-124338853883457/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "before": [
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/4",
+            "unit": 0
+        }
+    ],
+    "changed": false,
+    "commands": [
+        "<nc:interfaces xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"/>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/3",
+                    "trunk": null,
+                    "unit": null
+                },
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/4",
+                    "trunk": null,
+                    "unit": null
+                }
+            ],
+            "running_config": null,
+            "state": "deleted"
+        }
+    }
+}
+
+TASK [Apply L2 interface configuration using merged] *******************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:22
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> identified ncclient device handler: junos.
+<10.221.160.25> ESTABLISH NETCONF SSH CONNECTION FOR USER: root on PORT 830 TO 10.221.160.25 WITH SSH_CONFIG = None
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050 `" && echo ansible-tmp-1749444916.4849505-1833633-114486663442050="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmp950njcry TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444916.4849505-1833633-114486663442050/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": [
+        {
+            "access": {
+                "vlan": "101"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": true,
+            "name": "ge-0/0/4",
+            "trunk": {
+                "allowed_vlans": [
+                    "30"
+                ],
+                "native_vlan": "50"
+            },
+            "unit": 0
+        }
+    ],
+    "before": [
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/4",
+            "unit": 0
+        }
+    ],
+    "changed": true,
+    "commands": [
+        "<nc:interfaces xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>access</nc:interface-mode><nc:vlan><nc:members>101</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit></nc:interface><nc:interface><nc:name>ge-0/0/4</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>trunk</nc:interface-mode><nc:vlan><nc:members>30</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id>50</nc:native-vlan-id></nc:interface></nc:interfaces>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "access": {
+                        "vlan": "101"
+                    },
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/3",
+                    "trunk": null,
+                    "unit": null
+                },
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/4",
+                    "trunk": {
+                        "allowed_vlans": [
+                            "30"
+                        ],
+                        "native_vlan": "50"
+                    },
+                    "unit": null
+                }
+            ],
+            "running_config": null,
+            "state": "merged"
+        }
+    }
+}
+
+TASK [Assert merged L2 config applied] *********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:35
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply L2 interface configuration using replaced] *****************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:41
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876 `" && echo ansible-tmp-1749444924.8825636-1833659-176018826632876="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmpb_10m6wd TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444924.8825636-1833659-176018826632876/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": [
+        {
+            "access": {
+                "vlan": "102"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": true,
+            "name": "ge-0/0/4",
+            "trunk": {
+                "allowed_vlans": [
+                    "31"
+                ],
+                "native_vlan": "51"
+            },
+            "unit": 0
+        }
+    ],
+    "before": [
+        {
+            "access": {
+                "vlan": "101"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": true,
+            "name": "ge-0/0/4",
+            "trunk": {
+                "allowed_vlans": [
+                    "30"
+                ],
+                "native_vlan": "50"
+            },
+            "unit": 0
+        }
+    ],
+    "changed": true,
+    "commands": [
+        "<nc:interfaces xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode delete=\"delete\"/><nc:vlan delete=\"delete\"/></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id delete=\"delete\"/></nc:interface><nc:interface><nc:name>ge-0/0/4</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode delete=\"delete\"/><nc:vlan delete=\"delete\"/></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id delete=\"delete\"/></nc:interface><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>access</nc:interface-mode><nc:vlan><nc:members>102</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit></nc:interface><nc:interface><nc:name>ge-0/0/4</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>trunk</nc:interface-mode><nc:vlan><nc:members>31</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id>51</nc:native-vlan-id></nc:interface></nc:interfaces>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "access": {
+                        "vlan": "102"
+                    },
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/3",
+                    "trunk": null,
+                    "unit": null
+                },
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/4",
+                    "trunk": {
+                        "allowed_vlans": [
+                            "31"
+                        ],
+                        "native_vlan": "51"
+                    },
+                    "unit": null
+                }
+            ],
+            "running_config": null,
+            "state": "replaced"
+        }
+    }
+}
+
+TASK [Assert replaced L2 config applied] *******************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:54
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply L2 interface configuration using overridden] ***************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:60
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529 `" && echo ansible-tmp-1749444931.9596584-1833685-20536207726529="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmpwafkomal TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444931.9596584-1833685-20536207726529/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": [
+        {
+            "access": {
+                "vlan": "103"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/4",
+            "unit": 0
+        }
+    ],
+    "before": [
+        {
+            "access": {
+                "vlan": "102"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": true,
+            "name": "ge-0/0/4",
+            "trunk": {
+                "allowed_vlans": [
+                    "31"
+                ],
+                "native_vlan": "51"
+            },
+            "unit": 0
+        }
+    ],
+    "changed": true,
+    "commands": [
+        "<nc:interfaces xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode delete=\"delete\"/><nc:vlan delete=\"delete\"/></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id delete=\"delete\"/></nc:interface><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>access</nc:interface-mode><nc:vlan><nc:members>103</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit></nc:interface><nc:interface><nc:name>ge-0/0/4</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode delete=\"delete\"/><nc:vlan delete=\"delete\"/></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id delete=\"delete\"/></nc:interface></nc:interfaces>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "access": {
+                        "vlan": "103"
+                    },
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/3",
+                    "trunk": null,
+                    "unit": null
+                }
+            ],
+            "running_config": null,
+            "state": "overridden"
+        }
+    }
+}
+
+TASK [Assert overridden L2 config applied] *****************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:69
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete L2 config from interfaces] ********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:75
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899 `" && echo ansible-tmp-1749444938.7348287-1833711-184848517843899="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmpjkt5ebdi TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444938.7348287-1833711-184848517843899/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "after": [
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/4",
+            "unit": 0
+        }
+    ],
+    "before": [
+        {
+            "access": {
+                "vlan": "103"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/4",
+            "unit": 0
+        }
+    ],
+    "changed": true,
+    "commands": [
+        "<nc:interfaces xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode delete=\"delete\"/><nc:vlan delete=\"delete\"/></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id delete=\"delete\"/></nc:interface></nc:interfaces>"
+    ],
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/3",
+                    "trunk": null,
+                    "unit": null
+                },
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/4",
+                    "trunk": null,
+                    "unit": null
+                }
+            ],
+            "running_config": null,
+            "state": "deleted"
+        }
+    }
+}
+
+TASK [Assert L2 config deleted] ****************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:83
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply rendered L2 config] ****************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:89
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048 `" && echo ansible-tmp-1749444945.4957297-1833737-258573608570048="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmpcpjfmuoj TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444945.4957297-1833737-258573608570048/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "config": [
+                {
+                    "access": {
+                        "vlan": "104"
+                    },
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/3",
+                    "trunk": null,
+                    "unit": null
+                },
+                {
+                    "access": null,
+                    "enhanced_layer": null,
+                    "name": "ge-0/0/4",
+                    "trunk": {
+                        "allowed_vlans": [
+                            "32",
+                            "33"
+                        ],
+                        "native_vlan": "52"
+                    },
+                    "unit": null
+                }
+            ],
+            "running_config": null,
+            "state": "rendered"
+        }
+    },
+    "rendered": "<nc:interfaces xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"><nc:interface><nc:name>ge-0/0/3</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>access</nc:interface-mode><nc:vlan><nc:members>104</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit></nc:interface><nc:interface><nc:name>ge-0/0/4</nc:name><nc:unit><nc:name>0</nc:name><nc:family><nc:ethernet-switching><nc:interface-mode>trunk</nc:interface-mode><nc:vlan><nc:members>32</nc:members><nc:members>33</nc:members></nc:vlan></nc:ethernet-switching></nc:family></nc:unit><nc:native-vlan-id>52</nc:native-vlan-id></nc:interface></nc:interfaces>"
+}
+
+TASK [Assert rendered output is valid] *********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:102
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse L2 config from XML] ****************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:108
+File lookup using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/./parsed_configs/parsed_l2_interfaces.cfg as file
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081 `" && echo ansible-tmp-1749444947.3928983-1833763-202593942880081="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmp69tl4652 TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444947.3928983-1833763-202593942880081/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "config": null,
+            "running_config": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rpc-reply>\n  <configuration>\n    <interfaces>\n      <interface>\n        <name>ge-0/0/3</name>\n        <unit>\n          <name>0</name>\n          <family>\n            <ethernet-switching>\n              <interface-mode>access</interface-mode>\n              <vlan>\n                <members>104</members>\n              </vlan>\n            </ethernet-switching>\n          </family>\n        </unit>\n      </interface>\n    </interfaces>\n  </configuration>\n</rpc-reply>",
+            "state": "parsed"
+        }
+    },
+    "parsed": [
+        {
+            "access": {
+                "vlan": "104"
+            },
+            "enhanced_layer": true,
+            "name": "ge-0/0/3",
+            "unit": 0
+        }
+    ]
+}
+
+TASK [Assert parsed output is valid] ***********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:114
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather current L2 interfaces config] *****************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:120
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+<10.221.160.25> attempting to start connection
+<10.221.160.25> using connection plugin ansible.netcommon.netconf
+<10.221.160.25> found existing local domain socket, using it!
+<10.221.160.25> Loading collection ansible.builtin from 
+<10.221.160.25> local domain socket path is /root/.ansible/pc/4d55826394
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050 `" && echo ansible-tmp-1749444949.0930717-1833789-33377315935050="` echo /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_l2_interfaces to juniper.device.junos_l2_interfaces
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_l2_interfaces.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833598_jx8iscs/tmpdddv40ho TO /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050/AnsiballZ_junos_l2_interfaces.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050/ /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050/AnsiballZ_junos_l2_interfaces.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833598_jx8iscs/ansible-tmp-1749444949.0930717-1833789-33377315935050/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "gathered": [
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/3",
+            "unit": 0
+        },
+        {
+            "enhanced_layer": false,
+            "name": "ge-0/0/4",
+            "unit": 0
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "config": null,
+            "running_config": null,
+            "state": "gathered"
+        }
+    }
+}
+
+TASK [Assert gathered output is valid] *********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_l2_interfaces.yml:125
+Loading collection ansible.netcommon from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /usr/local/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.221.160.25              : ok=15   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
