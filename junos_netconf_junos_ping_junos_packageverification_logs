@@ -1062,3 +1062,289 @@ ok: [10.221.160.25] => {
 
 PLAY RECAP *************************************************************************************************************************************
 10.221.160.25              : ok=15   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+============================
+
+
+junos_config
+
+============================
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos# ansible-playbook -i inventory_junos pb.juniper_junos_config.yml -vvv
+ansible-playbook [core 2.18.3]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.12.0 (main, Mar  5 2025, 22:49:30) [GCC 9.3.0] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/ansible.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/inventory_junos inventory source with ini plugin
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_config: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+[WARNING]: errors were encountered during the plugin load for debug: ["'NoneType' object has no attribute 'get'"]
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: pb.juniper_junos_config.yml **********************************************************************************************************
+1 plays in pb.juniper_junos_config.yml
+
+PLAY [Functional Test - junos_config module] ***************************************************************************************************
+
+TASK [Pre-clean - Remove existing test interface description] **********************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:10
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412 `" && echo ansible-tmp-1749445071.490752-1833845-121056284171412="` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_config.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833841liov5qze/tmp4nw4jwtl TO /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412/AnsiballZ_junos_config.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412/ /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445071.490752-1833845-121056284171412/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "Clean up test interface config",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": [
+                "delete interfaces ge-0/0/1 unit 0 description"
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [Assert pre-clean successful] *************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:17
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply test config - set interface description] *******************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:22
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+<10.221.160.25> identified ncclient device handler: junos.
+<10.221.160.25> ESTABLISH NETCONF SSH CONNECTION FOR USER: root on PORT 830 TO 10.221.160.25 WITH SSH_CONFIG = None
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683 `" && echo ansible-tmp-1749445074.3426414-1833877-275154001739683="` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_config.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833841liov5qze/tmpp9qt7ys1 TO /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683/AnsiballZ_junos_config.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683/ /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445074.3426414-1833877-275154001739683/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "Apply test config",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": [
+                "set interfaces ge-0/0/1 unit 0 description \"FT Test interface\""
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [Assert interface config applied] *********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:29
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Confirm commit test with timer] **********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:34
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803 `" && echo ansible-tmp-1749445080.0908828-1833903-29296001582803="` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_config.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833841liov5qze/tmpc1a0cmgg TO /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803/AnsiballZ_junos_config.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803/ /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445080.0908828-1833903-29296001582803/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "Test commit confirmation",
+            "confirm": 3,
+            "confirm_commit": false,
+            "lines": [
+                "set system host-name ft-test-host"
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [Rollback config to rollback 0] ***********************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:42
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186 `" && echo ansible-tmp-1749445089.0556564-1833937-223664645917186="` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_config.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833841liov5qze/tmp6fayndlw TO /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186/AnsiballZ_junos_config.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186/ /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445089.0556564-1833937-223664645917186/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "configured by junos_config",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": null,
+            "replace": null,
+            "rollback": 0,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [Backup config to custom path] ************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:46
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205 `" && echo ansible-tmp-1749445092.1025572-1833964-79859334513205="` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_config.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833841liov5qze/tmpxvkuza_9 TO /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205/AnsiballZ_junos_config.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205/ /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445092.1025572-1833964-79859334513205/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.160.25] => {
+    "__backup__": "set version 23.4I-20240419.0.0358\nset groups member0 system host-name srxeventa\nset groups member0 system backup-router 10.221.191.254\nset groups member0 interfaces fxp0 unit 0 family inet address 10.221.160.25/18\nset groups global system root-authentication encrypted-password \"$1$ZUlES4dp$OUwWo1g7cLoV/aMWpHUnC/\"\nset groups global system login class wheel permissions snmp\nset groups global system login user regress uid 928\nset groups global system login user regress class superuser\nset groups global system login user regress shell csh\nset groups global system login user regress authentication encrypted-password \"$1$kPU..$w.4FGRAGanJ8U4Yq6sbj7.\"\nset groups global system login user remote uid 2000\nset groups global system login user remote class super-user\nset groups global system services netconf ssh\nset groups global system services ssh root-login allow\nset groups global system services finger\nset groups global system services ftp\nset groups global system services rlogin\nset groups global system services telnet\nset groups global system services xnm-clear-text\nset groups global system domain-name englab.juniper.net\nset groups global system domain-search englab.juniper.net\nset groups global system domain-search juniper.net\nset groups global system domain-search jnpr.net\nset groups global system time-zone Asia/Calcutta\nset groups global system debugger-on-break\nset groups global system dump-on-panic\nset groups global system authentication-order password\nset groups global system authentication-order radius\nset groups global system name-server 10.221.192.40\nset groups global system name-server 10.221.192.41\nset groups global system name-server 10.221.192.42\nset groups global system name-server 10.49.32.95\nset groups global system name-server 10.49.32.97\nset groups global system name-server 10.48.144.9\nset groups global system name-server 10.48.144.10\nset groups global system radius-server 10.48.144.16 secret \"$9$TQ/t1IcSrKAt0IRheK8X7VYgaZDm5zNdiqmTn6\"\nset groups global system radius-server 10.48.144.17 secret \"$9$GqUqf3nCApOPfQn690ORhSeWL7-boZDylsgoGHk\"\nset groups global system syslog host log kernel info\nset groups global system syslog host log any notice\nset groups global system syslog host log pfe info\nset groups global system syslog host log interactive-commands any\nset groups global system syslog file messages kernel info\nset groups global system syslog file messages any notice\nset groups global system syslog file messages authorization info\nset groups global system syslog file messages pfe info\nset groups global system syslog file messages archive world-readable\nset groups global system syslog file security interactive-commands any\nset groups global system syslog file security archive world-readable\nset groups global system processes routing enable\nset groups global system processes ntp enable\nset groups global system processes management enable\nset groups global system processes watchdog enable\nset groups global system processes snmp enable\nset groups global system processes inet-process enable\nset groups global system processes mib-process enable\nset groups global system ntp boot-server 66.129.255.75\nset groups global system ntp server 66.129.255.75\nset groups global system ntp server 172.29.131.60\nset groups global system ntp server 172.29.135.60\nset groups global chassis dump-on-panic\nset groups global interfaces lo0 unit 0 family inet address 128.221.160.25/32 primary\nset groups global interfaces lo0 unit 0 family iso address 47.0005.80ff.f800.0000.0108.0001.1282.2116.0025.00\nset groups global interfaces lo0 unit 0 family inet6 address abcd::128:221:160:25/128 primary\nset groups global snmp location \"Systest lab\"\nset groups global snmp contact \"Jay Lloyd\"\nset groups global snmp interface fxp0.0\nset groups global snmp community public authorization read-only\nset groups global snmp community private authorization read-write\nset groups global routing-options router-id 128.221.160.25\nset groups global routing-options static route 172.16.0.0/12 next-hop 10.221.191.254\nset groups global routing-options static route 172.16.0.0/12 retain\nset groups global routing-options static route 172.16.0.0/12 no-readvertise\nset groups global routing-options static route 192.168.0.0/16 next-hop 10.221.191.254\nset groups global routing-options static route 192.168.0.0/16 retain\nset groups global routing-options static route 192.168.0.0/16 no-readvertise\nset groups global routing-options static route 10.0.0.0/8 next-hop 10.221.191.254\nset groups global routing-options static route 10.0.0.0/8 retain\nset groups global routing-options static route 10.0.0.0/8 no-readvertise\nset groups global routing-options static route 66.129.0.0/16 next-hop 10.221.191.254\nset groups global routing-options static route 66.129.0.0/16 retain\nset groups global routing-options static route 66.129.0.0/16 no-readvertise\nset apply-groups global\nset apply-groups member0\nset system host-name ft-test-host\nset system login user ansible_user1 uid 2001\nset system login user ansible_user1 class super-user\nset system login user ansible_user1 authentication encrypted-password \"$6$kyR9WACV$Lx9E/qmnOE5Bnm/CUXjaIkrinEJJoT1cUYwdOULlShT9A9kpvxLpuErsmkB1dVPszgPvV/3KSWvlRV6.rZEST1\"\nset system services netconf ssh\nset system services netconf traceoptions file netconf_trace.log\nset system services netconf traceoptions file size 1g\nset system services netconf traceoptions flag all\nset system services ssh root-login allow\nset system ports console log-out-on-disconnect\nset interfaces ge-0/0/1 unit 0 description \"FT Test interface\"\nset interfaces ge-0/0/3 unit 0 family ethernet-switching\nset interfaces ge-0/0/4 unit 0 family ethernet-switching",
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "backup": true,
+            "backup_options": {
+                "backup_format": "set",
+                "dir_path": "./backup",
+                "filename": "ssh_backup.cfg"
+            },
+            "check_commit": false,
+            "comment": "configured by junos_config",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": [
+                "set system services ssh"
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [Debug backup_result] *********************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:56
+ok: [10.221.160.25] => {
+    "backup_result": {
+        "__backup__": "set version 23.4I-20240419.0.0358\nset groups member0 system host-name srxeventa\nset groups member0 system backup-router 10.221.191.254\nset groups member0 interfaces fxp0 unit 0 family inet address 10.221.160.25/18\nset groups global system root-authentication encrypted-password \"$1$ZUlES4dp$OUwWo1g7cLoV/aMWpHUnC/\"\nset groups global system login class wheel permissions snmp\nset groups global system login user regress uid 928\nset groups global system login user regress class superuser\nset groups global system login user regress shell csh\nset groups global system login user regress authentication encrypted-password \"$1$kPU..$w.4FGRAGanJ8U4Yq6sbj7.\"\nset groups global system login user remote uid 2000\nset groups global system login user remote class super-user\nset groups global system services netconf ssh\nset groups global system services ssh root-login allow\nset groups global system services finger\nset groups global system services ftp\nset groups global system services rlogin\nset groups global system services telnet\nset groups global system services xnm-clear-text\nset groups global system domain-name englab.juniper.net\nset groups global system domain-search englab.juniper.net\nset groups global system domain-search juniper.net\nset groups global system domain-search jnpr.net\nset groups global system time-zone Asia/Calcutta\nset groups global system debugger-on-break\nset groups global system dump-on-panic\nset groups global system authentication-order password\nset groups global system authentication-order radius\nset groups global system name-server 10.221.192.40\nset groups global system name-server 10.221.192.41\nset groups global system name-server 10.221.192.42\nset groups global system name-server 10.49.32.95\nset groups global system name-server 10.49.32.97\nset groups global system name-server 10.48.144.9\nset groups global system name-server 10.48.144.10\nset groups global system radius-server 10.48.144.16 secret \"$9$TQ/t1IcSrKAt0IRheK8X7VYgaZDm5zNdiqmTn6\"\nset groups global system radius-server 10.48.144.17 secret \"$9$GqUqf3nCApOPfQn690ORhSeWL7-boZDylsgoGHk\"\nset groups global system syslog host log kernel info\nset groups global system syslog host log any notice\nset groups global system syslog host log pfe info\nset groups global system syslog host log interactive-commands any\nset groups global system syslog file messages kernel info\nset groups global system syslog file messages any notice\nset groups global system syslog file messages authorization info\nset groups global system syslog file messages pfe info\nset groups global system syslog file messages archive world-readable\nset groups global system syslog file security interactive-commands any\nset groups global system syslog file security archive world-readable\nset groups global system processes routing enable\nset groups global system processes ntp enable\nset groups global system processes management enable\nset groups global system processes watchdog enable\nset groups global system processes snmp enable\nset groups global system processes inet-process enable\nset groups global system processes mib-process enable\nset groups global system ntp boot-server 66.129.255.75\nset groups global system ntp server 66.129.255.75\nset groups global system ntp server 172.29.131.60\nset groups global system ntp server 172.29.135.60\nset groups global chassis dump-on-panic\nset groups global interfaces lo0 unit 0 family inet address 128.221.160.25/32 primary\nset groups global interfaces lo0 unit 0 family iso address 47.0005.80ff.f800.0000.0108.0001.1282.2116.0025.00\nset groups global interfaces lo0 unit 0 family inet6 address abcd::128:221:160:25/128 primary\nset groups global snmp location \"Systest lab\"\nset groups global snmp contact \"Jay Lloyd\"\nset groups global snmp interface fxp0.0\nset groups global snmp community public authorization read-only\nset groups global snmp community private authorization read-write\nset groups global routing-options router-id 128.221.160.25\nset groups global routing-options static route 172.16.0.0/12 next-hop 10.221.191.254\nset groups global routing-options static route 172.16.0.0/12 retain\nset groups global routing-options static route 172.16.0.0/12 no-readvertise\nset groups global routing-options static route 192.168.0.0/16 next-hop 10.221.191.254\nset groups global routing-options static route 192.168.0.0/16 retain\nset groups global routing-options static route 192.168.0.0/16 no-readvertise\nset groups global routing-options static route 10.0.0.0/8 next-hop 10.221.191.254\nset groups global routing-options static route 10.0.0.0/8 retain\nset groups global routing-options static route 10.0.0.0/8 no-readvertise\nset groups global routing-options static route 66.129.0.0/16 next-hop 10.221.191.254\nset groups global routing-options static route 66.129.0.0/16 retain\nset groups global routing-options static route 66.129.0.0/16 no-readvertise\nset apply-groups global\nset apply-groups member0\nset system host-name ft-test-host\nset system login user ansible_user1 uid 2001\nset system login user ansible_user1 class super-user\nset system login user ansible_user1 authentication encrypted-password \"$6$kyR9WACV$Lx9E/qmnOE5Bnm/CUXjaIkrinEJJoT1cUYwdOULlShT9A9kpvxLpuErsmkB1dVPszgPvV/3KSWvlRV6.rZEST1\"\nset system services netconf ssh\nset system services netconf traceoptions file netconf_trace.log\nset system services netconf traceoptions file size 1g\nset system services netconf traceoptions flag all\nset system services ssh root-login allow\nset system ports console log-out-on-disconnect\nset interfaces ge-0/0/1 unit 0 description \"FT Test interface\"\nset interfaces ge-0/0/3 unit 0 family ethernet-switching\nset interfaces ge-0/0/4 unit 0 family ethernet-switching",
+        "changed": false,
+        "failed": false
+    }
+}
+
+TASK [Assert backup created] *******************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:61
+ok: [10.221.160.25] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - delete test configuration] **************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_config.yml:66
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+<10.221.160.25> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.160.25> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278 `" && echo ansible-tmp-1749445095.306422-1833991-138091167198278="` echo /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+Using module file /root/ansible_modules_redirection_ansible_merger_branch/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/modules/junos_config.py
+<10.221.160.25> PUT /root/.ansible/tmp/ansible-local-1833841liov5qze/tmpitmsvbow TO /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278/AnsiballZ_junos_config.py
+<10.221.160.25> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278/ /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278/AnsiballZ_junos_config.py && sleep 0'
+<10.221.160.25> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1833841liov5qze/ansible-tmp-1749445095.306422-1833991-138091167198278/ > /dev/null 2>&1 && sleep 0'
+changed: [10.221.160.25] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "Post-clean",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": [
+                "delete interfaces ge-0/0/1 unit 0 description",
+                "delete system host-name",
+                "delete system services ssh"
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.221.160.25              : ok=10   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
