@@ -441,3 +441,36 @@ To delete the Ansible cache:
 
 $ ansible-config dump | grep COLLECTIONS
 
+=================================================================================
+
+ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device,jnpr-ansible-merger
+
+inventory_junos:
+
+[junos]
+#xx.xx.xx.xx
+
+[junos:vars]
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=
+ansible_ssh_pass=
+ansible_connection=ansible.netcommon.netconf
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+
+
+inventory_network_cli:
+
+[junos]
+xx.xx.xx.xx
+ 
+# WORKING SETUP
+[junos:vars]
+ 
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=ansible
+ansible_ssh_pass=ansible123
+ansible_connection=ansible.netcommon.network_cli
+
