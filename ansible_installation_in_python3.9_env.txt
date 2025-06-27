@@ -451,6 +451,12 @@ ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-s
 
 ansible-galaxy collection install junipernetworks.junos
 
+(venv) root@masterhost:~/.ansible/collections/ansible_collections/junipernetworks/junos# pwd
+/root/.ansible/collections/ansible_collections/junipernetworks/junos
+(venv) root@masterhost:~/.ansible/collections/ansible_collections/junipernetworks/junos# mv plugins /var/tmp/
+(venv) root@masterhost:~/.ansible/collections/ansible_collections/junipernetworks/junos# 
+
+
 inventory_junos:
 
 [junos]
