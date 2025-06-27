@@ -1,2 +1,5 @@
 sudo apt install python3-pip
 sudo apt install python3-flask
+
+pip install flask_wtf --upgrade
+pip install flask_login --upgrade
