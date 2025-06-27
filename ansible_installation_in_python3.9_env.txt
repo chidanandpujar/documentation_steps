@@ -456,6 +456,12 @@ ansible-galaxy collection install junipernetworks.junos
 (venv) root@masterhost:~/.ansible/collections/ansible_collections/junipernetworks/junos# mv plugins /var/tmp/
 (venv) root@masterhost:~/.ansible/collections/ansible_collections/junipernetworks/junos# 
 
+Apply meta/runtime.yml changes - https://raw.githubusercontent.com/chidanandpujar/documentation_steps/refs/heads/main/meta_junipernetworks_junos
+(venv) root@masterhost:~/.ansible/collections/ansible_collections/junipernetworks/junos/meta# vi runtime.yml
+
+Apply the meta/runtime.yml changes - https://raw.githubusercontent.com/chidanandpujar/documentation_steps/refs/heads/main/meta_juiper_device
+(venv) root@masterhost:~/.ansible/collections/ansible_collections/juniper/device/meta# vi runtime.yml
+
 
 inventory_junos:
 
