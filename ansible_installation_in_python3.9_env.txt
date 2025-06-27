@@ -443,6 +443,10 @@ $ ansible-config dump | grep COLLECTIONS
 
 =================================================================================
 
+mkdir ansible_modules_redirection_ansible_merger_branch_venv
+
+git clone https://github.com/Juniper/ansible-junos-stdlib.git -b jnpr-ansible-merger
+
 ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device,jnpr-ansible-merger
 
 inventory_junos:
