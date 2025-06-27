@@ -449,6 +449,8 @@ git clone https://github.com/Juniper/ansible-junos-stdlib.git -b jnpr-ansible-me
 
 ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device,jnpr-ansible-merger
 
+ansible-galaxy collection install junipernetworks.junos
+
 inventory_junos:
 
 [junos]
