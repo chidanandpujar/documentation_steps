@@ -1,3 +1,11 @@
+# /root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_collections
+Collection                               Version
+---------------------------------------- -------
+amazon.aws                               9.5.0  
+ansible.netcommon                        7.2.0  
+
+
+
 (venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# ansible-test sanity --test import -vvvv
 Configured locale: en_US.UTF-8
 RLIMIT_NOFILE: (1024, 1048576)
