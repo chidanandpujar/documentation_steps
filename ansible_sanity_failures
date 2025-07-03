@@ -1,0 +1,229 @@
+(venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# ansible-test sanity --test import -vvvv
+Configured locale: en_US.UTF-8
+RLIMIT_NOFILE: (1024, 1048576)
+Loaded configuration: tests/config.yml
+Creating container database.
+>>> Container Database
+{}
+Read 168 sanity test ignore line(s) for Ansible 2.18 from: tests/sanity/ignore-2.18.txt
+Running sanity test "import" on Python 3.8
+No tests applicable.
+Running sanity test "import" on Python 3.9
+No tests applicable.
+WARNING: Skipping sanity test "import" on Python 3.10 because it could not be found.
+WARNING: Skipping sanity test "import" on Python 3.11 because it could not be found.
+Running sanity test "import" on Python 3.12
+module: plugins/module_utils/__init__.py
+plugins/module_utils/configuration.py
+plugins/module_utils/juniper_junos_common.py
+plugins/module_utils/netconf_tbr/__init__.py
+plugins/module_utils/network/__init__.py
+plugins/module_utils/network/junos/__init__.py
+plugins/module_utils/network/junos/argspec/__init__.py
+plugins/module_utils/network/junos/argspec/acl_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/acl_interfaces/acl_interfaces.py
+plugins/module_utils/network/junos/argspec/acls/__init__.py
+plugins/module_utils/network/junos/argspec/acls/acls.py
+plugins/module_utils/network/junos/argspec/bgp_address_family/__init__.py
+plugins/module_utils/network/junos/argspec/bgp_address_family/bgp_address_family.py
+plugins/module_utils/network/junos/argspec/bgp_global/__init__.py
+plugins/module_utils/network/junos/argspec/bgp_global/bgp_global.py
+plugins/module_utils/network/junos/argspec/facts/__init__.py
+plugins/module_utils/network/junos/argspec/facts/facts.py
+plugins/module_utils/network/junos/argspec/hostname/__init__.py
+plugins/module_utils/network/junos/argspec/hostname/hostname.py
+plugins/module_utils/network/junos/argspec/interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/interfaces/interfaces.py
+plugins/module_utils/network/junos/argspec/l2_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/l2_interfaces/l2_interfaces.py
+plugins/module_utils/network/junos/argspec/l3_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/l3_interfaces/l3_interfaces.py
+plugins/module_utils/network/junos/argspec/lacp/__init__.py
+plugins/module_utils/network/junos/argspec/lacp/lacp.py
+plugins/module_utils/network/junos/argspec/lacp_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/lacp_interfaces/lacp_interfaces.py
+plugins/module_utils/network/junos/argspec/lag_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/lag_interfaces/lag_interfaces.py
+plugins/module_utils/network/junos/argspec/lldp_global/__init__.py
+plugins/module_utils/network/junos/argspec/lldp_global/lldp_global.py
+plugins/module_utils/network/junos/argspec/lldp_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/lldp_interfaces/lldp_interfaces.py
+plugins/module_utils/network/junos/argspec/logging_global/__init__.py
+plugins/module_utils/network/junos/argspec/logging_global/logging_global.py
+plugins/module_utils/network/junos/argspec/ntp_global/__init__.py
+plugins/module_utils/network/junos/argspec/ntp_global/ntp_global.py
+plugins/module_utils/network/junos/argspec/ospf_interfaces/__init__.py
+plugins/module_utils/network/junos/argspec/ospf_interfaces/ospf_interfaces.py
+plugins/module_utils/network/junos/argspec/ospfv2/__init__.py
+plugins/module_utils/network/junos/argspec/ospfv2/ospfv2.py
+plugins/module_utils/network/junos/argspec/ospfv3/__init__.py
+plugins/module_utils/network/junos/argspec/ospfv3/ospfv3.py
+plugins/module_utils/network/junos/argspec/prefix_lists/__init__.py
+plugins/module_utils/network/junos/argspec/prefix_lists/prefix_lists.py
+plugins/module_utils/network/junos/argspec/routing_instances/__init__.py
+plugins/module_utils/network/junos/argspec/routing_instances/routing_instances.py
+plugins/module_utils/network/junos/argspec/routing_options/__init__.py
+plugins/module_utils/network/junos/argspec/routing_options/routing_options.py
+plugins/module_utils/network/junos/argspec/security_policies/__init__.py
+plugins/module_utils/network/junos/argspec/security_policies/security_policies.py
+plugins/module_utils/network/junos/argspec/security_policies_global/__init__.py
+plugins/module_utils/network/junos/argspec/security_policies_global/security_policies_global.py
+plugins/module_utils/network/junos/argspec/security_zones/__init__.py
+plugins/module_utils/network/junos/argspec/security_zones/security_zones.py
+plugins/module_utils/network/junos/argspec/snmp_server/__init__.py
+plugins/module_utils/network/junos/argspec/snmp_server/snmp_server.py
+plugins/module_utils/network/junos/argspec/static_routes/__init__.py
+plugins/module_utils/network/junos/argspec/static_routes/static_routes.py
+plugins/module_utils/network/junos/argspec/vlans/__init__.py
+plugins/module_utils/network/junos/argspec/vlans/vlans.py
+plugins/module_utils/network/junos/config/__init__.py
+plugins/module_utils/network/junos/config/acl_interfaces/__init__.py
+plugins/module_utils/network/junos/config/acls/__init__.py
+plugins/module_utils/network/junos/config/bgp_address_family/__init__.py
+plugins/module_utils/network/junos/config/bgp_global/__init__.py
+plugins/module_utils/network/junos/config/hostname/__init__.py
+plugins/module_utils/network/junos/config/interfaces/__init__.py
+plugins/module_utils/network/junos/config/l2_interfaces/__init__.py
+plugins/module_utils/network/junos/config/l3_interfaces/__init__.py
+plugins/module_utils/network/junos/config/lacp/__init__.py
+plugins/module_utils/network/junos/config/lacp_interfaces/__init__.py
+plugins/module_utils/network/junos/config/lag_interfaces/__init__.py
+plugins/module_utils/network/junos/config/lldp_global/__init__.py
+plugins/module_utils/network/junos/config/lldp_interfaces/__init__.py
+plugins/module_utils/network/junos/config/logging_global/__init__.py
+plugins/module_utils/network/junos/config/ntp_global/__init__.py
+plugins/module_utils/network/junos/config/ospf_interfaces/__init__.py
+plugins/module_utils/network/junos/config/ospfv2/__init__.py
+plugins/module_utils/network/junos/config/ospfv3/__init__.py
+plugins/module_utils/network/junos/config/prefix_lists/__init__.py
+plugins/module_utils/network/junos/config/routing_instances/__init__.py
+plugins/module_utils/network/junos/config/routing_options/__init__.py
+plugins/module_utils/network/junos/config/security_policies/__init__.py
+plugins/module_utils/network/junos/config/security_policies_global/__init__.py
+plugins/module_utils/network/junos/config/security_zones/__init__.py
+plugins/module_utils/network/junos/config/snmp_server/__init__.py
+plugins/module_utils/network/junos/config/static_routes/__init__.py
+plugins/module_utils/network/junos/config/vlans/__init__.py
+plugins/module_utils/network/junos/facts/__init__.py
+plugins/module_utils/network/junos/facts/acl_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/acls/__init__.py
+plugins/module_utils/network/junos/facts/bgp_address_family/__init__.py
+plugins/module_utils/network/junos/facts/bgp_global/__init__.py
+plugins/module_utils/network/junos/facts/hostname/__init__.py
+plugins/module_utils/network/junos/facts/interfaces/__init__.py
+plugins/module_utils/network/junos/facts/l2_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/l3_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/lacp/__init__.py
+plugins/module_utils/network/junos/facts/lacp_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/lag_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/legacy/__init__.py
+plugins/module_utils/network/junos/facts/lldp_global/__init__.py
+plugins/module_utils/network/junos/facts/lldp_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/logging_global/__init__.py
+plugins/module_utils/network/junos/facts/ntp_global/__init__.py
+plugins/module_utils/network/junos/facts/ospf_interfaces/__init__.py
+plugins/module_utils/network/junos/facts/ospfv2/__init__.py
+plugins/module_utils/network/junos/facts/ospfv3/__init__.py
+plugins/module_utils/network/junos/facts/prefix_lists/__init__.py
+plugins/module_utils/network/junos/facts/routing_instances/__init__.py
+plugins/module_utils/network/junos/facts/routing_options/__init__.py
+plugins/module_utils/network/junos/facts/security_policies/__init__.py
+plugins/module_utils/network/junos/facts/security_policies_global/__init__.py
+plugins/module_utils/network/junos/facts/security_zones/__init__.py
+plugins/module_utils/network/junos/facts/snmp_server/__init__.py
+plugins/module_utils/network/junos/facts/static_routes/__init__.py
+plugins/module_utils/network/junos/facts/vlans/__init__.py
+plugins/module_utils/network/junos/utils/__init__.py
+plugins/modules/command.py
+plugins/modules/config.py
+plugins/modules/facts.py
+plugins/modules/file_copy.py
+plugins/modules/jsnapy.py
+plugins/modules/junos_vrf.py
+plugins/modules/ping.py
+plugins/modules/pmtud.py
+plugins/modules/rpc.py
+plugins/modules/software.py
+plugins/modules/srx_cluster.py
+plugins/modules/system.py
+plugins/modules/table.py
+Initializing "/tmp/ansible-test-pza9guah-injector" as the temporary injector directory.
+Run command with data: importer.py
+Working directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device
+Program found: /tmp/ansible-test-pza9guah-injector/importer.py
+ANSIBLE_COLLECTIONS_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib
+ANSIBLE_CONFIG=/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_test/_data/ansible.cfg
+ANSIBLE_CONTROLLER_MIN_PYTHON_VERSION=3.11
+ANSIBLE_DEPRECATION_WARNINGS=false
+ANSIBLE_DEVEL_WARNING=false
+ANSIBLE_FORCE_COLOR=false
+ANSIBLE_FORCE_HANDLERS=true
+ANSIBLE_HOST_KEY_CHECKING=false
+ANSIBLE_HOST_PATTERN_MISMATCH=error
+ANSIBLE_INVENTORY=/dev/null
+ANSIBLE_LIBRARY=/dev/null
+ANSIBLE_PYTHON_MODULE_RLIMIT_NOFILE=1024
+ANSIBLE_RETRY_FILES_ENABLED=false
+ANSIBLE_TEST_ANSIBLE_LIB_ROOT=/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible
+ANSIBLE_TEST_PYTHON_INTERPRETER=/root/.ansible/test/venv/sanity/3.12/4f53cda1/bin/python
+ANSIBLE_TEST_PYTHON_VERSION=3.12
+ANSIBLE_WORKER_SHUTDOWN_POLL_COUNT=100
+ANSIBLE_WORKER_SHUTDOWN_POLL_DELAY=0.1
+HOME=/root
+LC_ALL=en_US.UTF-8
+PAGER=/bin/cat
+PATH=/tmp/ansible-test-pza9guah-injector:/root/.ansible/test/venv/sanity/3.12/4f53cda1/bin:/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_test/_util/target/sanity/import:/tmp/ansible-test-x2a1jrdt-bin:/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+PYTHONPATH=/tmp/ansible-test-jzrjp8rq:/tmp/ansible-test-cbqhncdc
+SANITY_COLLECTION_FULL_NAME=juniper.device
+SANITY_EXTERNAL_PYTHON=/root/.ansible/test/venv/sanity.import/3.12/edd61b15/bin/python
+SANITY_IMPORTER_TYPE=module
+SANITY_TEMP_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp
+SANITY_YAML_TO_JSON=/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_test/_util/controller/tools/yaml_to_json.py
+Command exited with status 10 after 1.232271671295166 seconds.
+plugin: plugins/action/extract_data.py
+plugins/action/juniper_junos_common_action.py
+plugins/callback/jsnapy.py
+plugins/cliconf/__init__.py
+plugins/connection/pyez.py
+plugins/doc_fragments/juniper_junos_doc.py
+plugins/doc_fragments/junos.py
+plugins/netconf/__init__.py
+plugins/terminal/__init__.py
+Run command with data: importer.py
+Working directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device
+Program found: /tmp/ansible-test-pza9guah-injector/importer.py
+ANSIBLE_COLLECTIONS_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib
+ANSIBLE_CONFIG=/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_test/_data/ansible.cfg
+ANSIBLE_CONTROLLER_MIN_PYTHON_VERSION=3.11
+ANSIBLE_DEPRECATION_WARNINGS=false
+ANSIBLE_DEVEL_WARNING=false
+ANSIBLE_FORCE_COLOR=false
+ANSIBLE_FORCE_HANDLERS=true
+ANSIBLE_HOST_KEY_CHECKING=false
+ANSIBLE_HOST_PATTERN_MISMATCH=error
+ANSIBLE_INVENTORY=/dev/null
+ANSIBLE_LIBRARY=/dev/null
+ANSIBLE_PYTHON_MODULE_RLIMIT_NOFILE=1024
+ANSIBLE_RETRY_FILES_ENABLED=false
+ANSIBLE_TEST_ANSIBLE_LIB_ROOT=/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible
+ANSIBLE_TEST_PYTHON_INTERPRETER=/root/.ansible/test/venv/sanity.import.plugin/3.12/b9186c33/bin/python
+ANSIBLE_TEST_PYTHON_VERSION=3.12
+ANSIBLE_WORKER_SHUTDOWN_POLL_COUNT=100
+ANSIBLE_WORKER_SHUTDOWN_POLL_DELAY=0.1
+HOME=/root
+LC_ALL=en_US.UTF-8
+PAGER=/bin/cat
+PATH=/tmp/ansible-test-pza9guah-injector:/root/.ansible/test/venv/sanity.import.plugin/3.12/b9186c33/bin:/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_test/_util/target/sanity/import:/tmp/ansible-test-x2a1jrdt-bin:/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+PYTHONPATH=/tmp/ansible-test-jzrjp8rq:/tmp/ansible-test-cbqhncdc
+SANITY_COLLECTION_FULL_NAME=juniper.device
+SANITY_EXTERNAL_PYTHON=/root/.ansible/test/venv/sanity.import/3.12/edd61b15/bin/python
+SANITY_IMPORTER_TYPE=plugin
+SANITY_TEMP_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp
+SANITY_YAML_TO_JSON=/root/ansible_modules_redirection_ansible_merger_branch_venv/venv/lib/python3.12/site-packages/ansible_test/_util/controller/tools/yaml_to_json.py
+Command exited with status 0 after 0.7658886909484863 seconds.
+ERROR: Found 1 import issue(s) on python 3.12 which need to be resolved:
+ERROR: plugins/modules/junos_vrf.py:234:0: traceback: ModuleNotFoundError: No module named 'ansible_collections.ansible.netcommon'
+See documentation for help: https://docs.ansible.com/ansible-core/2.18/dev_guide/testing/sanity/import.html
+WARNING: Skipping sanity test "import" on Python 3.13 because it could not be found.
+FATAL: The 1 sanity test(s) listed below (out of 6) failed. See error output above for details.
+import --python 3.12
