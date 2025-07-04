@@ -3,3 +3,13 @@ sudo apt install python3-flask
 
 pip install flask_wtf --upgrade
 pip install flask_login --upgrade
+
+
+
+pip install --upgrade flask_login
+
+pip install Werkzeug~=2.0.0
+pip install jinja2~=3.0.3
+https://github.com/IE-482-582/spring2025/issues/16
+https://stackoverflow.com/questions/71189819/importerror-cannot-import-name-json-from-itsdangerous
+
