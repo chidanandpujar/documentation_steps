@@ -1,0 +1,148 @@
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device,jnpr-ansible-merger
+Cloning into '/root/.ansible/tmp/ansible-local-605651dg5hxows/tmprbt6t04r/ansible-junos-stdlibdtckitmu'...
+remote: Enumerating objects: 5595, done.
+remote: Counting objects: 100% (936/936), done.
+remote: Compressing objects: 100% (295/295), done.
+remote: Total 5595 (delta 756), reused 666 (delta 607), pack-reused 4659 (from 1)
+Receiving objects: 100% (5595/5595), 2.05 MiB | 708.00 KiB/s, done.
+Resolving deltas: 100% (3224/3224), done.
+Branch 'jnpr-ansible-merger' set up to track remote branch 'jnpr-ansible-merger' from 'origin'.
+Switched to a new branch 'jnpr-ansible-merger'
+Starting galaxy collection install process
+Process install dependency map
+Starting collection install process
+Installing 'juniper.device:1.0.8' to '/root/.ansible/collections/ansible_collections/juniper/device'
+Created collection for juniper.device:1.0.8 at /root/.ansible/collections/ansible_collections/juniper/device
+juniper.device:1.0.8 was installed successfully
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# ansible-galaxy collection install ansible.netcommon -p ./ansible_collections
+Starting galaxy collection install process
+[WARNING]: The specified collections path '/root/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-
+stdlib/ansible_collections' is not part of the configured Ansible collections paths
+'/root/.ansible/collections:/usr/share/ansible/collections'. The installed collection will not be picked up in an Ansible run, unless within a
+playbook-adjacent collections directory.
+Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# ansible-galaxy collection install ansible.netcommon -p ./ansible_collections --force
+Starting galaxy collection install process
+[WARNING]: The specified collections path '/root/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-
+stdlib/ansible_collections' is not part of the configured Ansible collections paths
+'/root/.ansible/collections:/usr/share/ansible/collections'. The installed collection will not be picked up in an Ansible run, unless within a
+playbook-adjacent collections directory.
+Process install dependency map
+Starting collection install process
+Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/ansible-netcommon-8.0.1.tar.gz to /root/.ansible/tmp/ansible-local-605669rpxjjgt4/tmpasb9k_5a/ansible-netcommon-8.0.1-humxqq44
+Installing 'ansible.netcommon:8.0.1' to '/root/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib/ansible_collections/ansible/netcommon'
+ansible.netcommon:8.0.1 was installed successfully
+'ansible.utils:5.1.2' is already installed, skipping.
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# ansible-galaxy collection install ansible.utils  -p ./ansible_collections --force
+Starting galaxy collection install process
+[WARNING]: The specified collections path '/root/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-
+stdlib/ansible_collections' is not part of the configured Ansible collections paths
+'/root/.ansible/collections:/usr/share/ansible/collections'. The installed collection will not be picked up in an Ansible run, unless within a
+playbook-adjacent collections directory.
+Process install dependency map
+Starting collection install process
+Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/ansible-utils-6.0.0.tar.gz to /root/.ansible/tmp/ansible-local-605684rrayx_2u/tmpoey2agal/ansible-utils-6.0.0-w0l_gxmj
+Installing 'ansible.utils:6.0.0' to '/root/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib/ansible_collections/ansible/utils'
+ansible.utils:6.0.0 was installed successfully
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# 
+
+
+
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# git apply test1.patch
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# git status
+On branch jnpr-ansible-merger
+Your branch is up to date with 'origin/jnpr-ansible-merger'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+	modified:   ansible_collections/juniper/device/meta/runtime.yml
+	modified:   ansible_collections/juniper/device/plugins/action/hostname.py
+	modified:   ansible_collections/juniper/device/plugins/action/junos.py
+	modified:   ansible_collections/juniper/device/plugins/action/junos_facts.py
+	modified:   ansible_collections/juniper/device/plugins/action/netconf.py
+	modified:   ansible_collections/juniper/device/plugins/module_utils/netconf_tbr/junos.py
+	modified:   ansible_collections/juniper/device/plugins/module_utils/network/junos/argspec/facts/facts.py
+	modified:   ansible_collections/juniper/device/plugins/module_utils/network/junos/facts/facts.py
+	modified:   ansible_collections/juniper/device/plugins/module_utils/network/junos/junos.py
+	modified:   ansible_collections/juniper/device/plugins/modules/_tbrdevice_hostname.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_banner.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_command.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_config.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_netconf.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_package.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_ping.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_rpc.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_scp.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_system.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_user.py
+	modified:   ansible_collections/juniper/device/plugins/modules/junos_vrf.py
+	modified:   ansible_collections/juniper/device/plugins/modules/tbrdevice_facts.py
+	modified:   ansible_collections/juniper/device/tests/unit/test_file_copy.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ansible_collections/juniper/device/plugins/doc_fragments/junos.py
+	ansible_collections/juniper/device/plugins/module_utils/netconf_tbr/exceptions.py
+	ansible_collections/juniper/device/plugins/modules/hostname.py
+	ansible_collections/juniper/device/plugins/modules/junos.py
+	ansible_collections/juniper/device/plugins/modules/netconf.py
+	ansible_collections/juniper/device/tests/output/
+	test1.patch
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib# 
+
+
+
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# ansible-test sanity --python 3.12 --venv
+Running sanity test "action-plugin-docs"
+Running sanity test "ansible-doc"
+Running sanity test "changelog"
+Running sanity test "compile" on Python 3.12
+Running sanity test "empty-init"
+Running sanity test "ignores"
+Running sanity test "import" on Python 3.12
+Running sanity test "line-endings"
+Running sanity test "no-assert"
+Running sanity test "no-get-exception"
+Running sanity test "no-illegal-filenames"
+Running sanity test "no-smart-quotes"
+Running sanity test "pep8"
+Running sanity test "pslint"
+Running sanity test "pylint"
+Running sanity test "replace-urlopen"
+Running sanity test "runtime-metadata"
+Running sanity test "shebang"
+Running sanity test "shellcheck"
+Running sanity test "symlinks"
+Running sanity test "use-argspec-type-path"
+Running sanity test "use-compat-six"
+Running sanity test "validate-modules"
+Running sanity test "yamllint"
+Installing requirements for Python 3.12 [venv]
+Using cached pip 24.2 bootstrap script: /root/.ansible/test/cache/get_pip_24_2.py
+Collecting pip==24.2
+  Using cached pip-24.2-py3-none-any.whl.metadata (3.6 kB)
+Using cached pip-24.2-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+Successfully installed pip-24.2
+Collecting pathspec==0.12.1 (from -r requirements/sanity.yamllint.txt (line 2))
+  Using cached pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+Collecting PyYAML==6.0.2 (from -r requirements/sanity.yamllint.txt (line 3))
+  Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting yamllint==1.35.1 (from -r requirements/sanity.yamllint.txt (line 4))
+  Using cached yamllint-1.35.1-py3-none-any.whl.metadata (4.2 kB)
+Using cached pathspec-0.12.1-py3-none-any.whl (31 kB)
+Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+Using cached yamllint-1.35.1-py3-none-any.whl (66 kB)
+Installing collected packages: PyYAML, pathspec, yamllint
+Successfully installed PyYAML-6.0.2 pathspec-0.12.1 yamllint-1.35.1
+(fixenv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix1_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# 
+
+
+
+
+
+
