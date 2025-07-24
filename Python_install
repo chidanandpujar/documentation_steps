@@ -115,3 +115,9 @@ ok: [local_connection_testcases] => {
 PLAY RECAP ****************************************************************************************************************************************************************
 local_connection_testcases : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+
+
+
+directory tree structure:
+
+https://pypi.org/project/directory-tree/
