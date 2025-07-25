@@ -140,3 +140,1910 @@ Running sanity test "yamllint"
 (fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# 
 
 
+Running junos_command integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_command : Invoke netconf tasks] ************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tasks/local.yml for junos_test
+
+TASK [junos_command : Collect netconf test cases] ******************************
+ok: [junos_test]
+
+TASK [junos_command : Set test_items] ******************************************
+ok: [junos_test]
+
+TASK [junos_command : Run test case (connection=local)] ************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tests/common/command.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tests/common/command.yml)
+
+TASK [junos_command : TEST 1 - Execute single "show version" command.] *********
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 1] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : Creates directory] ***************************************
+changed: [junos_test]
+
+TASK [junos_command : TEST 2 - Execute three commands.] ************************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 2] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : Print the command output of each.] ***********************
+ok: [junos_test] => (item={'msg': 'The command executed successfully.', 'command': 'show version', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nHostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\n', 'stdout_lines': ['', 'Hostname: evoeventtestb', 'Model: mx960', 'Family: junos', 'Junos: 25.4I-20250615_dev_common.0.1157', 'JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS modules [20250615.195302__cd-builder_dev_common]', 'JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]', 'JUNOS libs [20250615.195302__cd-builder_dev_common]', 'JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]', 'JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS py extensions [20250615.195302__cd-builder_dev_common]', 'JUNOS py base [20250615.195302__cd-builder_dev_common]', 'JUNOS OS package [20250528.203454__ci_fbsd_builder_main]', 'JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS mx libs [20250615.195302__cd-builder_dev_common]', 'JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]', 'JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS mx daemons [20250615.195302__cd-builder_dev_common]', 'JUNOS daemons [20250615.195302__cd-builder_dev_common]', 'JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]', 'JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]', 'JUNOS vmguest  [20250615.195302__cd-builder_dev_common]', 'JUNOS runtime [20250615.195302__cd-builder_dev_common]', 'JUNOS mx runtime [20250616.004512__cd-builder_dev_common]', 'JUNOS mx modules [20250615.195302__cd-builder_dev_common]', 'JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]', 'JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]', 'JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]', 'JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]', 'JUNOS Phone-home [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]', 'JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]', 'JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]', 'JUNOS J-Insight [20250615.195302__cd-builder_dev_common]', 'JUNOS jfirmware [20250605.173053__devpublish_dev_common]', 'JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]', 'JUNOS dsa [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]', 'JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]', 'JUNOS sflow mx [20250615.195302__cd-builder_dev_common]', 'JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]', 'JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]', 'JUNOS support scripts [20250615.195302__cd-builder_dev_common]', 'JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]', 'Junos scheduler tracing [20250615.195302__cd-builder_dev_common]', 'JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]', 'JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]', 'JUNOS probe utility [20250615.195302__cd-builder_dev_common]', 'JUNOS common platform support [20250615.195302__cd-builder_dev_common]', 'JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]', 'JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]', 'JUNOS Key Manager [20250615.195302__cd-builder_dev_common]', 'JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]', 'JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]', 'JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]', 'JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]', 'JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]', 'JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show version",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nHostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\n",
+        "stdout_lines": [
+            "",
+            "Hostname: evoeventtestb",
+            "Model: mx960",
+            "Family: junos",
+            "Junos: 25.4I-20250615_dev_common.0.1157",
+            "JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS py extensions [20250615.195302__cd-builder_dev_common]",
+            "JUNOS py base [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS package [20250528.203454__ci_fbsd_builder_main]",
+            "JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS vmguest  [20250615.195302__cd-builder_dev_common]",
+            "JUNOS runtime [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx runtime [20250616.004512__cd-builder_dev_common]",
+            "JUNOS mx modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]",
+            "JUNOS Phone-home [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]",
+            "JUNOS J-Insight [20250615.195302__cd-builder_dev_common]",
+            "JUNOS jfirmware [20250605.173053__devpublish_dev_common]",
+            "JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]",
+            "JUNOS dsa [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]",
+            "JUNOS sflow mx [20250615.195302__cd-builder_dev_common]",
+            "JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]",
+            "JUNOS support scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]",
+            "Junos scheduler tracing [20250615.195302__cd-builder_dev_common]",
+            "JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]",
+            "JUNOS probe utility [20250615.195302__cd-builder_dev_common]",
+            "JUNOS common platform support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Key Manager [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+        ]
+    },
+    "item.stdout": "\nHostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\n"
+}
+ok: [junos_test] => (item={'msg': 'The command executed successfully.', 'command': 'show system uptime', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nCurrent time: 2025-07-25 16:35:37 IST\nTime Source:  NTP CLOCK \nSystem booted: 2025-07-25 14:56:07 IST (01:39:30 ago)\nProtocols started: 2025-07-25 14:57:21 IST (01:38:16 ago)\nLast configured: 2025-07-25 15:43:33 IST (00:52:04 ago) by ansible_user1\n 4:35PM  up 1:40, 0 users, load averages: 0.26, 0.29, 0.32\n', 'stdout_lines': ['', 'Current time: 2025-07-25 16:35:37 IST', 'Time Source:  NTP CLOCK ', 'System booted: 2025-07-25 14:56:07 IST (01:39:30 ago)', 'Protocols started: 2025-07-25 14:57:21 IST (01:38:16 ago)', 'Last configured: 2025-07-25 15:43:33 IST (00:52:04 ago) by ansible_user1', ' 4:35PM  up 1:40, 0 users, load averages: 0.26, 0.29, 0.32']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show system uptime",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nCurrent time: 2025-07-25 16:35:37 IST\nTime Source:  NTP CLOCK \nSystem booted: 2025-07-25 14:56:07 IST (01:39:30 ago)\nProtocols started: 2025-07-25 14:57:21 IST (01:38:16 ago)\nLast configured: 2025-07-25 15:43:33 IST (00:52:04 ago) by ansible_user1\n 4:35PM  up 1:40, 0 users, load averages: 0.26, 0.29, 0.32\n",
+        "stdout_lines": [
+            "",
+            "Current time: 2025-07-25 16:35:37 IST",
+            "Time Source:  NTP CLOCK ",
+            "System booted: 2025-07-25 14:56:07 IST (01:39:30 ago)",
+            "Protocols started: 2025-07-25 14:57:21 IST (01:38:16 ago)",
+            "Last configured: 2025-07-25 15:43:33 IST (00:52:04 ago) by ansible_user1",
+            " 4:35PM  up 1:40, 0 users, load averages: 0.26, 0.29, 0.32"
+        ]
+    },
+    "item.stdout": "\nCurrent time: 2025-07-25 16:35:37 IST\nTime Source:  NTP CLOCK \nSystem booted: 2025-07-25 14:56:07 IST (01:39:30 ago)\nProtocols started: 2025-07-25 14:57:21 IST (01:38:16 ago)\nLast configured: 2025-07-25 15:43:33 IST (00:52:04 ago) by ansible_user1\n 4:35PM  up 1:40, 0 users, load averages: 0.26, 0.29, 0.32\n"
+}
+ok: [junos_test] => (item={'msg': 'The command executed successfully.', 'command': 'show interface terse', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nInterface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up\n', 'stdout_lines': ['', 'Interface               Admin Link Proto    Local                 Remote', 'ge-0/0/0                up    up', 'ge-0/0/0.16386          up    up  ', 'lc-0/0/0                up    up', 'lc-0/0/0.32769          up    up   vpls    ', 'pfe-0/0/0               up    up', 'pfe-0/0/0.16383         up    up   inet    ', '                                   inet6   ', 'pfh-0/0/0               up    up', 'pfh-0/0/0.16383         up    up   inet    ', 'pfh-0/0/0.16384         up    up   inet    ', 'ge-0/0/1                up    up', 'ge-0/0/1.0              up    up   inet    ', '                                   inet6    fe80::5603:2ff:fe00:6526/64', '                                   multiservice', 'ge-0/0/2                up    down', 'ge-0/0/2.0              up    down inet     192.0.2.2/24    ', '                                   multiservice', 'ge-0/0/3                up    down', 'ge-0/0/3.0              up    down inet     192.0.2.3/24    ', '                                   multiservice', 'ge-0/0/4                up    down', 'ge-0/0/4.0              up    down inet     192.0.2.4/24    ', '                                   multiservice', 'ge-0/0/5                up    down', 'ge-0/0/5.0              up    down inet     192.0.2.5/24    ', '                                   multiservice', 'ge-0/0/6                up    down', 'ge-0/0/6.16386          up    down', 'ge-0/0/7                up    down', 'ge-0/0/7.16386          up    down', 'ge-0/0/8                up    down', 'ge-0/0/8.16386          up    down', 'ge-0/0/9                up    down', 'ge-0/0/9.16386          up    down', 'ge-0/1/0                up    down', 'ge-0/1/0.16386          up    down', 'ge-0/1/1                up    down', 'ge-0/1/1.16386          up    down', 'ge-0/1/2                up    down', 'ge-0/1/2.16386          up    down', 'ge-0/1/3                up    down', 'ge-0/1/3.16386          up    down', 'ge-0/1/4                up    down', 'ge-0/1/4.16386          up    down', 'ge-0/1/5                up    down', 'ge-0/1/5.16386          up    down', 'ge-0/1/6                up    down', 'ge-0/1/6.16386          up    down', 'ge-0/1/7                up    down', 'ge-0/1/7.16386          up    down', 'ge-0/1/8                up    down', 'ge-0/1/8.16386          up    down', 'ge-0/1/9                up    down', 'ge-0/1/9.16386          up    down', 'xe-0/2/0                up    down', 'xe-0/2/0.16386          up    down', 'xe-0/2/1                up    down', 'xe-0/2/1.16386          up    down', 'xe-0/3/0                up    down', 'xe-0/3/0.16386          up    down', 'xe-0/3/1                up    down', 'xe-0/3/1.16386          up    down', 'cbp0                    up    up', 'demux0                  up    up', 'demux1                  up    up', 'dsc                     up    up', 'em1                     up    up', 'em1.0                   up    up   inet     10.0.0.4/8      ', '                                            128.0.0.1/2     ', '                                            128.0.0.4/2     ', '                                   inet6    fe80::5603:2ff:fe00:6801/64', '                                            fec0::a:0:0:4/64', '                                   tnp      0x4             ', 'em2                     up    up', 'em2.32768               up    up   inet     192.168.1.2/24  ', 'esi                     up    up', 'fti0                    up    up', 'fti1                    up    up', 'fti2                    up    up', 'fti3                    up    up', 'fti4                    up    up', 'fti5                    up    up', 'fti6                    up    up', 'fti7                    up    up', 'fxp0                    up    up', 'fxp0.0                  up    up   inet     10.220.17.17/17 ', 'gre                     up    up', 'ipip                    up    up', 'irb                     up    up', 'jsrv                    up    up', 'jsrv.1                  up    up   inet     128.0.0.127/2   ', 'lo0                     up    up', 'lo0.0                   up    up   inet     128.220.17.17       --> 0/0', '                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017', '                                   inet6    abcd::128:220:17:17', '                                            fe80::5604:a0f:fcdc:1111', 'lo0.16384               up    up   inet     127.0.0.1           --> 0/0', 'lo0.16385               up    up   inet    ', 'lsi                     up    up', 'mif                     up    up', 'mtun                    up    up', 'pimd                    up    up', 'pime                    up    up', 'pip0                    up    up', 'pp0                     up    up', 'rbeb                    up    up', 'tap                     up    up', 'vtep                    up    up']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show interface terse",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nInterface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up\n",
+        "stdout_lines": [
+            "",
+            "Interface               Admin Link Proto    Local                 Remote",
+            "ge-0/0/0                up    up",
+            "ge-0/0/0.16386          up    up  ",
+            "lc-0/0/0                up    up",
+            "lc-0/0/0.32769          up    up   vpls    ",
+            "pfe-0/0/0               up    up",
+            "pfe-0/0/0.16383         up    up   inet    ",
+            "                                   inet6   ",
+            "pfh-0/0/0               up    up",
+            "pfh-0/0/0.16383         up    up   inet    ",
+            "pfh-0/0/0.16384         up    up   inet    ",
+            "ge-0/0/1                up    up",
+            "ge-0/0/1.0              up    up   inet    ",
+            "                                   inet6    fe80::5603:2ff:fe00:6526/64",
+            "                                   multiservice",
+            "ge-0/0/2                up    down",
+            "ge-0/0/2.0              up    down inet     192.0.2.2/24    ",
+            "                                   multiservice",
+            "ge-0/0/3                up    down",
+            "ge-0/0/3.0              up    down inet     192.0.2.3/24    ",
+            "                                   multiservice",
+            "ge-0/0/4                up    down",
+            "ge-0/0/4.0              up    down inet     192.0.2.4/24    ",
+            "                                   multiservice",
+            "ge-0/0/5                up    down",
+            "ge-0/0/5.0              up    down inet     192.0.2.5/24    ",
+            "                                   multiservice",
+            "ge-0/0/6                up    down",
+            "ge-0/0/6.16386          up    down",
+            "ge-0/0/7                up    down",
+            "ge-0/0/7.16386          up    down",
+            "ge-0/0/8                up    down",
+            "ge-0/0/8.16386          up    down",
+            "ge-0/0/9                up    down",
+            "ge-0/0/9.16386          up    down",
+            "ge-0/1/0                up    down",
+            "ge-0/1/0.16386          up    down",
+            "ge-0/1/1                up    down",
+            "ge-0/1/1.16386          up    down",
+            "ge-0/1/2                up    down",
+            "ge-0/1/2.16386          up    down",
+            "ge-0/1/3                up    down",
+            "ge-0/1/3.16386          up    down",
+            "ge-0/1/4                up    down",
+            "ge-0/1/4.16386          up    down",
+            "ge-0/1/5                up    down",
+            "ge-0/1/5.16386          up    down",
+            "ge-0/1/6                up    down",
+            "ge-0/1/6.16386          up    down",
+            "ge-0/1/7                up    down",
+            "ge-0/1/7.16386          up    down",
+            "ge-0/1/8                up    down",
+            "ge-0/1/8.16386          up    down",
+            "ge-0/1/9                up    down",
+            "ge-0/1/9.16386          up    down",
+            "xe-0/2/0                up    down",
+            "xe-0/2/0.16386          up    down",
+            "xe-0/2/1                up    down",
+            "xe-0/2/1.16386          up    down",
+            "xe-0/3/0                up    down",
+            "xe-0/3/0.16386          up    down",
+            "xe-0/3/1                up    down",
+            "xe-0/3/1.16386          up    down",
+            "cbp0                    up    up",
+            "demux0                  up    up",
+            "demux1                  up    up",
+            "dsc                     up    up",
+            "em1                     up    up",
+            "em1.0                   up    up   inet     10.0.0.4/8      ",
+            "                                            128.0.0.1/2     ",
+            "                                            128.0.0.4/2     ",
+            "                                   inet6    fe80::5603:2ff:fe00:6801/64",
+            "                                            fec0::a:0:0:4/64",
+            "                                   tnp      0x4             ",
+            "em2                     up    up",
+            "em2.32768               up    up   inet     192.168.1.2/24  ",
+            "esi                     up    up",
+            "fti0                    up    up",
+            "fti1                    up    up",
+            "fti2                    up    up",
+            "fti3                    up    up",
+            "fti4                    up    up",
+            "fti5                    up    up",
+            "fti6                    up    up",
+            "fti7                    up    up",
+            "fxp0                    up    up",
+            "fxp0.0                  up    up   inet     10.220.17.17/17 ",
+            "gre                     up    up",
+            "ipip                    up    up",
+            "irb                     up    up",
+            "jsrv                    up    up",
+            "jsrv.1                  up    up   inet     128.0.0.127/2   ",
+            "lo0                     up    up",
+            "lo0.0                   up    up   inet     128.220.17.17       --> 0/0",
+            "                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017",
+            "                                   inet6    abcd::128:220:17:17",
+            "                                            fe80::5604:a0f:fcdc:1111",
+            "lo0.16384               up    up   inet     127.0.0.1           --> 0/0",
+            "lo0.16385               up    up   inet    ",
+            "lsi                     up    up",
+            "mif                     up    up",
+            "mtun                    up    up",
+            "pimd                    up    up",
+            "pime                    up    up",
+            "pip0                    up    up",
+            "pp0                     up    up",
+            "rbeb                    up    up",
+            "tap                     up    up",
+            "vtep                    up    up"
+        ]
+    },
+    "item.stdout": "\nInterface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up\n"
+}
+
+TASK [junos_command : TEST 3 - Two commands with XML output.] ******************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 3] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 4 - show route with XML output - show version with JSON output] ***
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 4] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 5 - save outputs in dest_dir] ***********************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 5] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 6 - save output to dest] ****************************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 6] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 7 - save output to dest] ****************************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 7] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 8 - Multiple commands, save outputs, but don't return them] ***
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 8] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : Invoke netconf tasks] ************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tasks/pyez.yml for junos_test
+
+TASK [junos_command : Collect netconf test cases] ******************************
+ok: [junos_test]
+
+TASK [junos_command : Set test_items] ******************************************
+ok: [junos_test]
+
+TASK [junos_command : Run test case (connection=juniper.device.pyez)] **********
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tests/common/command.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_command-94clan2_-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tests/common/command.yml)
+
+TASK [junos_command : TEST 1 - Execute single "show version" command.] *********
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 1] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : Creates directory] ***************************************
+ok: [junos_test]
+
+TASK [junos_command : TEST 2 - Execute three commands.] ************************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 2] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : Print the command output of each.] ***********************
+ok: [junos_test] => (item={'msg': 'The command executed successfully.', 'command': 'show version', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nHostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\n', 'stdout_lines': ['', 'Hostname: evoeventtestb', 'Model: mx960', 'Family: junos', 'Junos: 25.4I-20250615_dev_common.0.1157', 'JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS modules [20250615.195302__cd-builder_dev_common]', 'JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]', 'JUNOS libs [20250615.195302__cd-builder_dev_common]', 'JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]', 'JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS py extensions [20250615.195302__cd-builder_dev_common]', 'JUNOS py base [20250615.195302__cd-builder_dev_common]', 'JUNOS OS package [20250528.203454__ci_fbsd_builder_main]', 'JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS mx libs [20250615.195302__cd-builder_dev_common]', 'JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]', 'JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]', 'JUNOS mx daemons [20250615.195302__cd-builder_dev_common]', 'JUNOS daemons [20250615.195302__cd-builder_dev_common]', 'JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]', 'JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]', 'JUNOS vmguest  [20250615.195302__cd-builder_dev_common]', 'JUNOS runtime [20250615.195302__cd-builder_dev_common]', 'JUNOS mx runtime [20250616.004512__cd-builder_dev_common]', 'JUNOS mx modules [20250615.195302__cd-builder_dev_common]', 'JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]', 'JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]', 'JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]', 'JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]', 'JUNOS Phone-home [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]', 'JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]', 'JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]', 'JUNOS J-Insight [20250615.195302__cd-builder_dev_common]', 'JUNOS jfirmware [20250605.173053__devpublish_dev_common]', 'JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]', 'JUNOS dsa [20250615.195302__cd-builder_dev_common]', 'JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]', 'JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]', 'JUNOS sflow mx [20250615.195302__cd-builder_dev_common]', 'JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]', 'JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]', 'JUNOS support scripts [20250615.195302__cd-builder_dev_common]', 'JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]', 'Junos scheduler tracing [20250615.195302__cd-builder_dev_common]', 'JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]', 'JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]', 'JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]', 'JUNOS probe utility [20250615.195302__cd-builder_dev_common]', 'JUNOS common platform support [20250615.195302__cd-builder_dev_common]', 'JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]', 'JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]', 'JUNOS Key Manager [20250615.195302__cd-builder_dev_common]', 'JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]', 'JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]', 'JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]', 'JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]', 'JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]', 'JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show version",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nHostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\n",
+        "stdout_lines": [
+            "",
+            "Hostname: evoeventtestb",
+            "Model: mx960",
+            "Family: junos",
+            "Junos: 25.4I-20250615_dev_common.0.1157",
+            "JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS py extensions [20250615.195302__cd-builder_dev_common]",
+            "JUNOS py base [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS package [20250528.203454__ci_fbsd_builder_main]",
+            "JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS vmguest  [20250615.195302__cd-builder_dev_common]",
+            "JUNOS runtime [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx runtime [20250616.004512__cd-builder_dev_common]",
+            "JUNOS mx modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]",
+            "JUNOS Phone-home [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]",
+            "JUNOS J-Insight [20250615.195302__cd-builder_dev_common]",
+            "JUNOS jfirmware [20250605.173053__devpublish_dev_common]",
+            "JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]",
+            "JUNOS dsa [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]",
+            "JUNOS sflow mx [20250615.195302__cd-builder_dev_common]",
+            "JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]",
+            "JUNOS support scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]",
+            "Junos scheduler tracing [20250615.195302__cd-builder_dev_common]",
+            "JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]",
+            "JUNOS probe utility [20250615.195302__cd-builder_dev_common]",
+            "JUNOS common platform support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Key Manager [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+        ]
+    },
+    "item.stdout": "\nHostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\n"
+}
+ok: [junos_test] => (item={'msg': 'The command executed successfully.', 'command': 'show system uptime', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nCurrent time: 2025-07-25 16:35:56 IST\nTime Source:  NTP CLOCK \nSystem booted: 2025-07-25 14:56:07 IST (01:39:49 ago)\nProtocols started: 2025-07-25 14:57:21 IST (01:38:35 ago)\nLast configured: 2025-07-25 15:43:33 IST (00:52:23 ago) by ansible_user1\n 4:35PM  up 1:40, 0 users, load averages: 0.40, 0.32, 0.33\n', 'stdout_lines': ['', 'Current time: 2025-07-25 16:35:56 IST', 'Time Source:  NTP CLOCK ', 'System booted: 2025-07-25 14:56:07 IST (01:39:49 ago)', 'Protocols started: 2025-07-25 14:57:21 IST (01:38:35 ago)', 'Last configured: 2025-07-25 15:43:33 IST (00:52:23 ago) by ansible_user1', ' 4:35PM  up 1:40, 0 users, load averages: 0.40, 0.32, 0.33']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show system uptime",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nCurrent time: 2025-07-25 16:35:56 IST\nTime Source:  NTP CLOCK \nSystem booted: 2025-07-25 14:56:07 IST (01:39:49 ago)\nProtocols started: 2025-07-25 14:57:21 IST (01:38:35 ago)\nLast configured: 2025-07-25 15:43:33 IST (00:52:23 ago) by ansible_user1\n 4:35PM  up 1:40, 0 users, load averages: 0.40, 0.32, 0.33\n",
+        "stdout_lines": [
+            "",
+            "Current time: 2025-07-25 16:35:56 IST",
+            "Time Source:  NTP CLOCK ",
+            "System booted: 2025-07-25 14:56:07 IST (01:39:49 ago)",
+            "Protocols started: 2025-07-25 14:57:21 IST (01:38:35 ago)",
+            "Last configured: 2025-07-25 15:43:33 IST (00:52:23 ago) by ansible_user1",
+            " 4:35PM  up 1:40, 0 users, load averages: 0.40, 0.32, 0.33"
+        ]
+    },
+    "item.stdout": "\nCurrent time: 2025-07-25 16:35:56 IST\nTime Source:  NTP CLOCK \nSystem booted: 2025-07-25 14:56:07 IST (01:39:49 ago)\nProtocols started: 2025-07-25 14:57:21 IST (01:38:35 ago)\nLast configured: 2025-07-25 15:43:33 IST (00:52:23 ago) by ansible_user1\n 4:35PM  up 1:40, 0 users, load averages: 0.40, 0.32, 0.33\n"
+}
+ok: [junos_test] => (item={'msg': 'The command executed successfully.', 'command': 'show interface terse', 'format': 'text', 'changed': False, 'failed': False, 'stdout': '\nInterface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up\n', 'stdout_lines': ['', 'Interface               Admin Link Proto    Local                 Remote', 'ge-0/0/0                up    up', 'ge-0/0/0.16386          up    up  ', 'lc-0/0/0                up    up', 'lc-0/0/0.32769          up    up   vpls    ', 'pfe-0/0/0               up    up', 'pfe-0/0/0.16383         up    up   inet    ', '                                   inet6   ', 'pfh-0/0/0               up    up', 'pfh-0/0/0.16383         up    up   inet    ', 'pfh-0/0/0.16384         up    up   inet    ', 'ge-0/0/1                up    up', 'ge-0/0/1.0              up    up   inet    ', '                                   inet6    fe80::5603:2ff:fe00:6526/64', '                                   multiservice', 'ge-0/0/2                up    down', 'ge-0/0/2.0              up    down inet     192.0.2.2/24    ', '                                   multiservice', 'ge-0/0/3                up    down', 'ge-0/0/3.0              up    down inet     192.0.2.3/24    ', '                                   multiservice', 'ge-0/0/4                up    down', 'ge-0/0/4.0              up    down inet     192.0.2.4/24    ', '                                   multiservice', 'ge-0/0/5                up    down', 'ge-0/0/5.0              up    down inet     192.0.2.5/24    ', '                                   multiservice', 'ge-0/0/6                up    down', 'ge-0/0/6.16386          up    down', 'ge-0/0/7                up    down', 'ge-0/0/7.16386          up    down', 'ge-0/0/8                up    down', 'ge-0/0/8.16386          up    down', 'ge-0/0/9                up    down', 'ge-0/0/9.16386          up    down', 'ge-0/1/0                up    down', 'ge-0/1/0.16386          up    down', 'ge-0/1/1                up    down', 'ge-0/1/1.16386          up    down', 'ge-0/1/2                up    down', 'ge-0/1/2.16386          up    down', 'ge-0/1/3                up    down', 'ge-0/1/3.16386          up    down', 'ge-0/1/4                up    down', 'ge-0/1/4.16386          up    down', 'ge-0/1/5                up    down', 'ge-0/1/5.16386          up    down', 'ge-0/1/6                up    down', 'ge-0/1/6.16386          up    down', 'ge-0/1/7                up    down', 'ge-0/1/7.16386          up    down', 'ge-0/1/8                up    down', 'ge-0/1/8.16386          up    down', 'ge-0/1/9                up    down', 'ge-0/1/9.16386          up    down', 'xe-0/2/0                up    down', 'xe-0/2/0.16386          up    down', 'xe-0/2/1                up    down', 'xe-0/2/1.16386          up    down', 'xe-0/3/0                up    down', 'xe-0/3/0.16386          up    down', 'xe-0/3/1                up    down', 'xe-0/3/1.16386          up    down', 'cbp0                    up    up', 'demux0                  up    up', 'demux1                  up    up', 'dsc                     up    up', 'em1                     up    up', 'em1.0                   up    up   inet     10.0.0.4/8      ', '                                            128.0.0.1/2     ', '                                            128.0.0.4/2     ', '                                   inet6    fe80::5603:2ff:fe00:6801/64', '                                            fec0::a:0:0:4/64', '                                   tnp      0x4             ', 'em2                     up    up', 'em2.32768               up    up   inet     192.168.1.2/24  ', 'esi                     up    up', 'fti0                    up    up', 'fti1                    up    up', 'fti2                    up    up', 'fti3                    up    up', 'fti4                    up    up', 'fti5                    up    up', 'fti6                    up    up', 'fti7                    up    up', 'fxp0                    up    up', 'fxp0.0                  up    up   inet     10.220.17.17/17 ', 'gre                     up    up', 'ipip                    up    up', 'irb                     up    up', 'jsrv                    up    up', 'jsrv.1                  up    up   inet     128.0.0.127/2   ', 'lo0                     up    up', 'lo0.0                   up    up   inet     128.220.17.17       --> 0/0', '                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017', '                                   inet6    abcd::128:220:17:17', '                                            fe80::5604:a0f:fcdc:1111', 'lo0.16384               up    up   inet     127.0.0.1           --> 0/0', 'lo0.16385               up    up   inet    ', 'lsi                     up    up', 'mif                     up    up', 'mtun                    up    up', 'pimd                    up    up', 'pime                    up    up', 'pip0                    up    up', 'pp0                     up    up', 'rbeb                    up    up', 'tap                     up    up', 'vtep                    up    up']}) => {
+    "ansible_loop_var": "item",
+    "item": {
+        "changed": false,
+        "command": "show interface terse",
+        "failed": false,
+        "format": "text",
+        "msg": "The command executed successfully.",
+        "stdout": "\nInterface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up\n",
+        "stdout_lines": [
+            "",
+            "Interface               Admin Link Proto    Local                 Remote",
+            "ge-0/0/0                up    up",
+            "ge-0/0/0.16386          up    up  ",
+            "lc-0/0/0                up    up",
+            "lc-0/0/0.32769          up    up   vpls    ",
+            "pfe-0/0/0               up    up",
+            "pfe-0/0/0.16383         up    up   inet    ",
+            "                                   inet6   ",
+            "pfh-0/0/0               up    up",
+            "pfh-0/0/0.16383         up    up   inet    ",
+            "pfh-0/0/0.16384         up    up   inet    ",
+            "ge-0/0/1                up    up",
+            "ge-0/0/1.0              up    up   inet    ",
+            "                                   inet6    fe80::5603:2ff:fe00:6526/64",
+            "                                   multiservice",
+            "ge-0/0/2                up    down",
+            "ge-0/0/2.0              up    down inet     192.0.2.2/24    ",
+            "                                   multiservice",
+            "ge-0/0/3                up    down",
+            "ge-0/0/3.0              up    down inet     192.0.2.3/24    ",
+            "                                   multiservice",
+            "ge-0/0/4                up    down",
+            "ge-0/0/4.0              up    down inet     192.0.2.4/24    ",
+            "                                   multiservice",
+            "ge-0/0/5                up    down",
+            "ge-0/0/5.0              up    down inet     192.0.2.5/24    ",
+            "                                   multiservice",
+            "ge-0/0/6                up    down",
+            "ge-0/0/6.16386          up    down",
+            "ge-0/0/7                up    down",
+            "ge-0/0/7.16386          up    down",
+            "ge-0/0/8                up    down",
+            "ge-0/0/8.16386          up    down",
+            "ge-0/0/9                up    down",
+            "ge-0/0/9.16386          up    down",
+            "ge-0/1/0                up    down",
+            "ge-0/1/0.16386          up    down",
+            "ge-0/1/1                up    down",
+            "ge-0/1/1.16386          up    down",
+            "ge-0/1/2                up    down",
+            "ge-0/1/2.16386          up    down",
+            "ge-0/1/3                up    down",
+            "ge-0/1/3.16386          up    down",
+            "ge-0/1/4                up    down",
+            "ge-0/1/4.16386          up    down",
+            "ge-0/1/5                up    down",
+            "ge-0/1/5.16386          up    down",
+            "ge-0/1/6                up    down",
+            "ge-0/1/6.16386          up    down",
+            "ge-0/1/7                up    down",
+            "ge-0/1/7.16386          up    down",
+            "ge-0/1/8                up    down",
+            "ge-0/1/8.16386          up    down",
+            "ge-0/1/9                up    down",
+            "ge-0/1/9.16386          up    down",
+            "xe-0/2/0                up    down",
+            "xe-0/2/0.16386          up    down",
+            "xe-0/2/1                up    down",
+            "xe-0/2/1.16386          up    down",
+            "xe-0/3/0                up    down",
+            "xe-0/3/0.16386          up    down",
+            "xe-0/3/1                up    down",
+            "xe-0/3/1.16386          up    down",
+            "cbp0                    up    up",
+            "demux0                  up    up",
+            "demux1                  up    up",
+            "dsc                     up    up",
+            "em1                     up    up",
+            "em1.0                   up    up   inet     10.0.0.4/8      ",
+            "                                            128.0.0.1/2     ",
+            "                                            128.0.0.4/2     ",
+            "                                   inet6    fe80::5603:2ff:fe00:6801/64",
+            "                                            fec0::a:0:0:4/64",
+            "                                   tnp      0x4             ",
+            "em2                     up    up",
+            "em2.32768               up    up   inet     192.168.1.2/24  ",
+            "esi                     up    up",
+            "fti0                    up    up",
+            "fti1                    up    up",
+            "fti2                    up    up",
+            "fti3                    up    up",
+            "fti4                    up    up",
+            "fti5                    up    up",
+            "fti6                    up    up",
+            "fti7                    up    up",
+            "fxp0                    up    up",
+            "fxp0.0                  up    up   inet     10.220.17.17/17 ",
+            "gre                     up    up",
+            "ipip                    up    up",
+            "irb                     up    up",
+            "jsrv                    up    up",
+            "jsrv.1                  up    up   inet     128.0.0.127/2   ",
+            "lo0                     up    up",
+            "lo0.0                   up    up   inet     128.220.17.17       --> 0/0",
+            "                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017",
+            "                                   inet6    abcd::128:220:17:17",
+            "                                            fe80::5604:a0f:fcdc:1111",
+            "lo0.16384               up    up   inet     127.0.0.1           --> 0/0",
+            "lo0.16385               up    up   inet    ",
+            "lsi                     up    up",
+            "mif                     up    up",
+            "mtun                    up    up",
+            "pimd                    up    up",
+            "pime                    up    up",
+            "pip0                    up    up",
+            "pp0                     up    up",
+            "rbeb                    up    up",
+            "tap                     up    up",
+            "vtep                    up    up"
+        ]
+    },
+    "item.stdout": "\nInterface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up\n"
+}
+
+TASK [junos_command : TEST 3 - Two commands with XML output.] ******************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 3] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 4 - show route with XML output - show version with JSON output] ***
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 4] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 5 - save outputs in dest_dir] ***********************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 5] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 6 - save output to dest] ****************************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 6] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 7 - save output to dest] ****************************
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 7] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_command : TEST 8 - Multiple commands, save outputs, but don't return them] ***
+ok: [junos_test]
+
+TASK [junos_command : Check TEST 8] ********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=47   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Running junos_config integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_config : Invoke netconf tasks] *************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/local.yml for junos_test
+
+TASK [junos_config : Collect netconf test cases] *******************************
+ok: [junos_test]
+
+TASK [junos_config : Set test_items] *******************************************
+ok: [junos_test]
+
+TASK [junos_config : Run test case (connection=local)] *************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/common/config.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/common/config.yml)
+
+TASK [junos_config : Retrieve the committed configuration] *********************
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 1] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Append .foo to the hostname using private config mode.] ***
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 2] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Rollback to the previous config.] *************************
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 3] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Save rescue configuration] ********************************
+ok: [junos_test]
+
+TASK [junos_config : Configure syslog configuration] ***************************
+changed: [junos_test]
+
+TASK [junos_config : Rollback to the rescue config.] ***************************
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 4] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Clean up TEST 4] ******************************************
+ok: [junos_test]
+
+TASK [junos_config : Configure system services.] *******************************
+changed: [junos_test]
+
+TASK [junos_config : Retrieve [edit system services] of current committed config.] ***
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 5] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Confirm the previous commit with a commit check (but no commit)] ***
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 6] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Confirm the commit with a commit sync] ********************
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 7] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Confirm the commit with a commit sync force] **************
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 8] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Test commit timeout] **************************************
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 9] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Invoke netconf tasks] *************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/pyez.yml for junos_test
+
+TASK [junos_config : Collect netconf test cases] *******************************
+ok: [junos_test]
+
+TASK [junos_config : Set test_items] *******************************************
+ok: [junos_test]
+
+TASK [junos_config : Run test case (connection=juniper.device.pyez)] ***********
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/common/config.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_config-_208ib17-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/common/config.yml)
+
+TASK [junos_config : Retrieve the committed configuration] *********************
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 1] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Append .foo to the hostname using private config mode.] ***
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 2] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Rollback to the previous config.] *************************
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 3] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Save rescue configuration] ********************************
+ok: [junos_test]
+
+TASK [junos_config : Configure syslog configuration] ***************************
+changed: [junos_test]
+
+TASK [junos_config : Rollback to the rescue config.] ***************************
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 4] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Clean up TEST 4] ******************************************
+ok: [junos_test]
+
+TASK [junos_config : Configure system services.] *******************************
+ok: [junos_test]
+
+TASK [junos_config : Retrieve [edit system services] of current committed config.] ***
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 5] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Confirm the previous commit with a commit check (but no commit)] ***
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 6] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Confirm the commit with a commit sync] ********************
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 7] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Confirm the commit with a commit sync force] **************
+ok: [junos_test]
+
+TASK [junos_config : Check TEST 8] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_config : Test commit timeout] **************************************
+changed: [junos_test]
+
+TASK [junos_config : Check TEST 9] *********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=55   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Running junos_facts integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_facts : Invoke netconf tasks] **************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/junos_facts/tasks/local.yml for junos_test
+
+TASK [junos_facts : Collect netconf test cases] ********************************
+ok: [junos_test]
+
+TASK [junos_facts : Set test_items] ********************************************
+ok: [junos_test]
+
+TASK [junos_facts : Run test case (connection=local)] **************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/junos_facts/tests/common/facts.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/junos_facts/tests/common/facts.yml)
+
+TASK [junos_facts : TEST 1 - Gather Facts] *************************************
+ok: [junos_test]
+
+TASK [junos_facts : Check TEST 1] **********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_facts : TEST 2 - get facts in xml format] **************************
+ok: [junos_test]
+
+TASK [junos_facts : Check TEST 2] **********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_facts : Invoke netconf tasks] **************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/junos_facts/tasks/pyez.yml for junos_test
+
+TASK [junos_facts : Collect netconf test cases] ********************************
+ok: [junos_test]
+
+TASK [junos_facts : Set test_items] ********************************************
+ok: [junos_test]
+
+TASK [junos_facts : Run test case (connection=juniper.device.pyez)] ************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/junos_facts/tests/common/facts.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_facts-hza_dx67-ÅÑŚÌβŁÈ/tests/integration/targets/junos_facts/tests/common/facts.yml)
+
+TASK [junos_facts : TEST 1 - Gather Facts] *************************************
+ok: [junos_test]
+
+TASK [junos_facts : Check TEST 1] **********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_facts : TEST 2 - get facts in xml format] **************************
+ok: [junos_test]
+
+TASK [junos_facts : Check TEST 2] **********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=19   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Running junos_file integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_file-_gcj5ecj-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_file : Invoke netconf tasks] ***************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_file-_gcj5ecj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_file/tasks/local.yml for junos_test
+
+TASK [junos_file : Collect netconf test cases] *********************************
+ok: [junos_test]
+
+TASK [junos_file : Set test_items] *********************************************
+ok: [junos_test]
+
+TASK [junos_file : Run test case (connection=local)] ***************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_file-_gcj5ecj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_file/tests/common/file.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_file-_gcj5ecj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_file/tests/common/file.yml)
+
+TASK [junos_file : Creates file scp_log.txt] ***********************************
+changed: [junos_test]
+
+TASK [junos_file : Creates file ftp_log.txt] ***********************************
+changed: [junos_test]
+
+TASK [junos_file : Creates file default_log.txt] *******************************
+changed: [junos_test]
+
+TASK [junos_file : Creates file transfer_log.txt] ******************************
+changed: [junos_test]
+
+TASK [junos_file : Creates file checksum_log.txt] ******************************
+changed: [junos_test]
+
+TASK [junos_file : Delete local file scp_log.txt] ******************************
+changed: [junos_test]
+
+TASK [junos_file : Delete local file ftp_log.txt] ******************************
+changed: [junos_test]
+
+TASK [junos_file : Delete local file default_log.txt] **************************
+changed: [junos_test]
+
+TASK [junos_file : Delete local file local_log.txt] ****************************
+changed: [junos_test]
+
+TASK [junos_file : Delete local file checksum_log.txt] *************************
+changed: [junos_test]
+
+TASK [junos_file : Remove /var/log/*log* files] ********************************
+ok: [junos_test]
+
+TASK [junos_file : Remove /var/log/*log* files] ********************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy ftp put] ******************************************
+changed: [junos_test]
+
+TASK [junos_file : Check ftp file copy put] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy ftp get] ******************************************
+changed: [junos_test]
+
+TASK [junos_file : Check ftp file copy get] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy scp put] ******************************************
+changed: [junos_test]
+
+TASK [junos_file : Check scp file copy put] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy get by scp] ***************************************
+changed: [junos_test]
+
+TASK [junos_file : Check scp file copy get] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy put by default scp] *******************************
+changed: [junos_test]
+
+TASK [junos_file : Check ftp file copy put] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy get by default scp] *******************************
+changed: [junos_test]
+
+TASK [junos_file : Check scp file copy get] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy put by default scp with checksum false option] ****
+changed: [junos_test]
+
+TASK [junos_file : Check ftp file copy put] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy get by default scp with checksum false option] ****
+changed: [junos_test]
+
+TASK [junos_file : Check default file copy get] ********************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy put by scp with transfer filename parameter] ******
+changed: [junos_test]
+
+TASK [junos_file : Check scp file copy put] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy get by scp with transfer filename parameter] ******
+changed: [junos_test]
+
+TASK [junos_file : Check scp file copy get] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy put by ftp with transfer filename parameter] ******
+changed: [junos_test]
+
+TASK [junos_file : Check ftp file copy put] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : File copy get by ftp with transfer filename parameter] ******
+changed: [junos_test]
+
+TASK [junos_file : Check ftp file copy get] ************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_file : Remove /var/log/*log* files] ********************************
+ok: [junos_test]
+
+TASK [junos_file : Remove /var/log/*log* files] ********************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=45   changed=22   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Running junos_ping integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_ping : Invoke netconf tasks] ***************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ping/tasks/local.yml for junos_test
+
+TASK [junos_ping : Collect netconf test cases] *********************************
+ok: [junos_test]
+
+TASK [junos_ping : Set test_items] *********************************************
+ok: [junos_test]
+
+TASK [junos_ping : Run test case (connection=local)] ***************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ping/tests/common/ping.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ping/tests/common/ping.yml)
+
+TASK [junos_ping : TEST 1 - Ping Host DNS] *************************************
+ok: [junos_test]
+
+TASK [junos_ping : Check TEST 1] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : TEST 2 - Ping Wrong IP] *************************************
+fatal: [junos_test]: FAILED! => {"acceptable_percent_loss": "0", "changed": false, "count": "5", "dest": "8.8.1.1", "dest_ip": "8.8.1.1", "do_not_fragment": false, "host": "8.8.1.1", "interface": null, "msg": "Loss 100%, (Sent 5 | Received 0)", "packet_loss": "100", "packets_received": "0", "packets_sent": "5", "rapid": true, "routing_instance": null, "rtt_average": null, "rtt_maximum": null, "rtt_minimum": null, "rtt_stddev": null, "size": null, "source": null, "source_ip": null, "timeout": "10", "ttl": null}
+...ignoring
+
+TASK [junos_ping : Check TEST 2] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : TEST 3 - Ping with 3 packets] *******************************
+ok: [junos_test]
+
+TASK [junos_ping : Check TEST 3] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : TEST 4 - Ping with DF-bit set] ******************************
+ok: [junos_test]
+
+TASK [junos_ping : Check TEST 4] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : Invoke netconf tasks] ***************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ping/tasks/pyez.yml for junos_test
+
+TASK [junos_ping : Collect netconf test cases] *********************************
+ok: [junos_test]
+
+TASK [junos_ping : Set test_items] *********************************************
+ok: [junos_test]
+
+TASK [junos_ping : Run test case (connection=juniper.device.pyez)] *************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ping/tests/common/ping.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_ping-fhgrz349-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ping/tests/common/ping.yml)
+
+TASK [junos_ping : TEST 1 - Ping Host DNS] *************************************
+ok: [junos_test]
+
+TASK [junos_ping : Check TEST 1] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : TEST 2 - Ping Wrong IP] *************************************
+fatal: [junos_test]: FAILED! => {"acceptable_percent_loss": "0", "changed": false, "count": "5", "dest": "8.8.1.1", "dest_ip": "8.8.1.1", "do_not_fragment": false, "host": "8.8.1.1", "interface": null, "msg": "Loss 100%, (Sent 5 | Received 0)", "packet_loss": "100", "packets_received": "0", "packets_sent": "5", "rapid": true, "routing_instance": null, "rtt_average": null, "rtt_maximum": null, "rtt_minimum": null, "rtt_stddev": null, "size": null, "source": null, "source_ip": null, "timeout": "10", "ttl": null}
+...ignoring
+
+TASK [junos_ping : Check TEST 2] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : TEST 3 - Ping with 3 packets] *******************************
+ok: [junos_test]
+
+TASK [junos_ping : Check TEST 3] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ping : TEST 4 - Ping with DF-bit set] ******************************
+ok: [junos_test]
+
+TASK [junos_ping : Check TEST 4] ***********************************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=27   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+
+Running junos_pmtud integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_pmtud : Invoke netconf tasks] **************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/junos_pmtud/tasks/local.yml for junos_test
+
+TASK [junos_pmtud : Collect netconf test cases] ********************************
+ok: [junos_test]
+
+TASK [junos_pmtud : Set test_items] ********************************************
+ok: [junos_test]
+
+TASK [junos_pmtud : Run test case (connection=local)] **************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/junos_pmtud/tests/common/pmtud.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/junos_pmtud/tests/common/pmtud.yml)
+
+TASK [junos_pmtud : TEST 1 - Check path MTU to host DNS] ***********************
+ok: [junos_test]
+
+TASK [junos_pmtud : Assert TEST 1 - MTU is in valid range] *********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_pmtud : TEST 2 - Configure and check inet.mtu to host DNS] *********
+ok: [junos_test]
+
+TASK [junos_pmtud : Assert TEST 2 - MTU respects max_size] *********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_pmtud : Invoke netconf tasks] **************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/junos_pmtud/tasks/pyez.yml for junos_test
+
+TASK [junos_pmtud : Collect netconf test cases] ********************************
+ok: [junos_test]
+
+TASK [junos_pmtud : Set test_items] ********************************************
+ok: [junos_test]
+
+TASK [junos_pmtud : Run test case (connection=juniper.device.pyez)] ************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/junos_pmtud/tests/common/pmtud.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_pmtud-2avxnpp4-ÅÑŚÌβŁÈ/tests/integration/targets/junos_pmtud/tests/common/pmtud.yml)
+
+TASK [junos_pmtud : TEST 1 - Check path MTU to host DNS] ***********************
+ok: [junos_test]
+
+TASK [junos_pmtud : Assert TEST 1 - MTU is in valid range] *********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_pmtud : TEST 2 - Configure and check inet.mtu to host DNS] *********
+ok: [junos_test]
+
+TASK [junos_pmtud : Assert TEST 2 - MTU respects max_size] *********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=19   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Running junos_rpc integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_rpc : Invoke netconf tasks] ****************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/junos_rpc/tasks/local.yml for junos_test
+
+TASK [junos_rpc : Collect netconf test cases] **********************************
+ok: [junos_test]
+
+TASK [junos_rpc : Set test_items] **********************************************
+ok: [junos_test]
+
+TASK [junos_rpc : Run test case (connection=local)] ****************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/junos_rpc/tests/common/rpc.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/junos_rpc/tests/common/rpc.yml)
+
+TASK [junos_rpc : TEST 1 - Execute single RPC get-software-information without any kwargs] ***
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 1 - RPC Execution Status] *************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 2 - Get Device Configuration with dest] *****************
+ok: [junos_test]
+
+TASK [junos_rpc : Check that the get_config.conf exists] ***********************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 2 - Validate Config Retrieval] ********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Clean up TEST 2 - Remove Config File] ************************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 3 - Get Device Configuration in text format] ************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 3 - Validate RPC Execution] ***********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 4 - Execute multiple RPCs without any kwargs] ***********
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 4 - Validate RPC Execution for Multiple RPCs] *****
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Clean up TEST 4 - Remove Config File] ************************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 5 - Execute multiple RPCs with multiple kwargs] *********
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 5 - Validate RPC Execution for Multiple RPCs with Kwargs] ***
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 6 - Create directory for output] ************************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 6 - Execute multiple RPCs with kwargs and dest-dir] *****
+ok: [junos_test]
+
+TASK [junos_rpc : Check get-interface-information.xml exists] ******************
+ok: [junos_test]
+
+TASK [junos_rpc : Check get-software-information.xml exists] *******************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 6 - Validate Output Files] ************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Clean up TEST 6 - Remove Output Directory] *******************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 7 - Get Device Configuration for interface] *************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 7 - Validate Config Retrieval for Interface] ******
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 8 - Execute wrong RPC to generate RPC error] ************
+fatal: [junos_test]: FAILED! => {"attrs": null, "changed": false, "format": "xml", "kwargs": null, "msg": "Unable to execute the RPC: b'<wrong-rpc xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\" format=\"xml\"/>\\n'. Error: RpcError(severity: error, bad_element: wrong-rpc, message: syntax error)", "rpc": "wrong-rpc"}
+...ignoring
+
+TASK [junos_rpc : Check TEST 8 - Handle RPC Error] *****************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 9 - Check configuration for errors] *********************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 9 - Validate RPC Execution for Config Load] *******
+ok: [junos_test] => {
+    "test9": {
+        "attrs": {
+            "action": "set",
+            "format": "text"
+        },
+        "changed": false,
+        "deprecations": [
+            {
+                "collection_name": null,
+                "msg": "The safe_eval function should not be used.",
+                "version": "2.21"
+            },
+            {
+                "collection_name": null,
+                "msg": "The safe_eval function should not be used.",
+                "version": "2.21"
+            }
+        ],
+        "failed": false,
+        "format": "xml",
+        "kwargs": {
+            "configuration_set": "set system syslog file test1 any any"
+        },
+        "msg": "The RPC executed successfully.",
+        "parsed_output": {
+            "load-configuration-results": {
+                "ok": ""
+            }
+        },
+        "rpc": "load-configuration",
+        "stdout": "<load-configuration-results>\n  <ok/>\n</load-configuration-results>\n",
+        "stdout_lines": [
+            "<load-configuration-results>",
+            "  <ok/>",
+            "</load-configuration-results>"
+        ]
+    }
+}
+
+TASK [junos_rpc : Check TEST 9 - Validate Config Load RPC Success] *************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Check rollback info for TEST 11] *****************************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 11 - Validate Rollback Information] ***************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Check rollback info with boolean values for TEST 12] *********
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 12 - Validate Rollback Info with Boolean] *********
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 13 - Execute single RPC get-software-information with format JSON] ***
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 13 - Validate JSON RPC Execution] *****************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Invoke netconf tasks] ****************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/junos_rpc/tasks/pyez.yml for junos_test
+
+TASK [junos_rpc : Collect netconf test cases] **********************************
+ok: [junos_test]
+
+TASK [junos_rpc : Set test_items] **********************************************
+ok: [junos_test]
+
+TASK [junos_rpc : Run test case (connection=juniper.device.pyez)] **************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/junos_rpc/tests/common/rpc.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_rpc-epzv2i1v-ÅÑŚÌβŁÈ/tests/integration/targets/junos_rpc/tests/common/rpc.yml)
+
+TASK [junos_rpc : TEST 1 - Execute single RPC get-software-information without any kwargs] ***
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 1 - RPC Execution Status] *************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 2 - Get Device Configuration with dest] *****************
+ok: [junos_test]
+
+TASK [junos_rpc : Check that the get_config.conf exists] ***********************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 2 - Validate Config Retrieval] ********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Clean up TEST 2 - Remove Config File] ************************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 3 - Get Device Configuration in text format] ************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 3 - Validate RPC Execution] ***********************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 4 - Execute multiple RPCs without any kwargs] ***********
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 4 - Validate RPC Execution for Multiple RPCs] *****
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Clean up TEST 4 - Remove Config File] ************************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 5 - Execute multiple RPCs with multiple kwargs] *********
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 5 - Validate RPC Execution for Multiple RPCs with Kwargs] ***
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 6 - Create directory for output] ************************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 6 - Execute multiple RPCs with kwargs and dest-dir] *****
+ok: [junos_test]
+
+TASK [junos_rpc : Check get-interface-information.xml exists] ******************
+ok: [junos_test]
+
+TASK [junos_rpc : Check get-software-information.xml exists] *******************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 6 - Validate Output Files] ************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Clean up TEST 6 - Remove Output Directory] *******************
+changed: [junos_test]
+
+TASK [junos_rpc : TEST 7 - Get Device Configuration for interface] *************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 7 - Validate Config Retrieval for Interface] ******
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 8 - Execute wrong RPC to generate RPC error] ************
+fatal: [junos_test]: FAILED! => {"attrs": null, "changed": false, "format": "xml", "kwargs": null, "msg": "Unable to execute the RPC: b'<wrong-rpc format=\"xml\"/>\\n'. Error: RpcError", "rpc": "wrong-rpc"}
+...ignoring
+
+TASK [junos_rpc : Check TEST 8 - Handle RPC Error] *****************************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 9 - Check configuration for errors] *********************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 9 - Validate RPC Execution for Config Load] *******
+ok: [junos_test] => {
+    "test9": {
+        "attrs": {
+            "action": "set",
+            "format": "text"
+        },
+        "changed": false,
+        "deprecations": [
+            {
+                "collection_name": null,
+                "msg": "The safe_eval function should not be used.",
+                "version": "2.21"
+            },
+            {
+                "collection_name": null,
+                "msg": "The safe_eval function should not be used.",
+                "version": "2.21"
+            }
+        ],
+        "failed": false,
+        "format": "xml",
+        "kwargs": {
+            "configuration_set": "set system syslog file test1 any any"
+        },
+        "msg": "The RPC executed successfully.",
+        "parsed_output": {
+            "load-configuration-results": {
+                "ok": ""
+            }
+        },
+        "rpc": "load-configuration",
+        "stdout": "<load-configuration-results>\n  <ok/>\n</load-configuration-results>\n",
+        "stdout_lines": [
+            "<load-configuration-results>",
+            "  <ok/>",
+            "</load-configuration-results>"
+        ]
+    }
+}
+
+TASK [junos_rpc : Check TEST 9 - Validate Config Load RPC Success] *************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Check rollback info for TEST 11] *****************************
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 11 - Validate Rollback Information] ***************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : Check rollback info with boolean values for TEST 12] *********
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 12 - Validate Rollback Info with Boolean] *********
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_rpc : TEST 13 - Execute single RPC get-software-information with format JSON] ***
+ok: [junos_test]
+
+TASK [junos_rpc : Check TEST 13 - Validate JSON RPC Execution] *****************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=75   changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+
+Running junos_table integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_table : Invoke netconf tasks] **************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_table/tasks/local.yml for junos_test
+
+TASK [junos_table : Collect netconf test cases] ********************************
+ok: [junos_test]
+
+TASK [junos_table : Set test_items] ********************************************
+ok: [junos_test]
+
+TASK [junos_table : Run test case (connection=local)] **************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_table/tests/common/table.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_table/tests/common/table.yml)
+
+TASK [junos_table : Retrieve LLDP Neighbor Information Using PyEZ-included Table] ***
+ok: [junos_test]
+
+TASK [junos_table : Check TEST 1 - Validate LLDP Neighbor Information Retrieval] ***
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_table : Retrieve routes within 192.68.1/8] *************************
+ok: [junos_test]
+
+TASK [junos_table : Check TEST 2 - Validate Route Table Retrieval] *************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_table : Retrieve ethernet devices] *********************************
+ok: [junos_test]
+
+TASK [junos_table : Check TEST 3 - Validate Ethernet Port Table Retrieval] *****
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_table : Invoke netconf tasks] **************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_table/tasks/pyez.yml for junos_test
+
+TASK [junos_table : Collect netconf test cases] ********************************
+ok: [junos_test]
+
+TASK [junos_table : Set test_items] ********************************************
+ok: [junos_test]
+
+TASK [junos_table : Run test case (connection=juniper.device.pyez)] ************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_table/tests/common/table.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_table-bv8dpau9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_table/tests/common/table.yml)
+
+TASK [junos_table : Retrieve LLDP Neighbor Information Using PyEZ-included Table] ***
+ok: [junos_test]
+
+TASK [junos_table : Check TEST 1 - Validate LLDP Neighbor Information Retrieval] ***
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_table : Retrieve routes within 192.68.1/8] *************************
+ok: [junos_test]
+
+TASK [junos_table : Check TEST 2 - Validate Route Table Retrieval] *************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_table : Retrieve ethernet devices] *********************************
+ok: [junos_test]
+
+TASK [junos_table : Check TEST 3 - Validate Ethernet Port Table Retrieval] *****
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=23   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Running junos_z_system integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for junos_test
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [junos_test] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [prepare_junos_tests : Wait for netconf server to come up] ****************
+ok: [junos_test -> localhost] => (item=junos_test)
+
+TASK [junos_z_system : Invoke netconf tasks] ***********************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/junos_z_system/tasks/local.yml for junos_test
+
+TASK [junos_z_system : Collect netconf test cases] *****************************
+ok: [junos_test]
+
+TASK [junos_z_system : Set test_items] *****************************************
+ok: [junos_test]
+
+TASK [junos_z_system : Run test case (connection=local)] ***********************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/junos_z_system/tests/common/system.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/junos_z_system/tests/common/system.yml)
+
+TASK [junos_z_system : Checking NETCONF connectivity] **************************
+ok: [junos_test]
+
+TASK [junos_z_system : Reboot all REs of the device] ***************************
+changed: [junos_test]
+
+TASK [junos_z_system : Check TEST 1 - Validate Reboot Success] *****************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_z_system : Checking NETCONF connectivity] **************************
+ok: [junos_test]
+
+TASK [junos_z_system : Invoke netconf tasks] ***********************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/junos_z_system/tasks/pyez.yml for junos_test
+
+TASK [junos_z_system : Collect netconf test cases] *****************************
+ok: [junos_test]
+
+TASK [junos_z_system : Set test_items] *****************************************
+ok: [junos_test]
+
+TASK [junos_z_system : Run test case (connection=juniper.device.pyez)] *********
+included: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/junos_z_system/tests/common/system.yml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/output/.tmp/integration/junos_z_system-lrzyat8c-ÅÑŚÌβŁÈ/tests/integration/targets/junos_z_system/tests/common/system.yml)
+
+TASK [junos_z_system : Checking NETCONF connectivity] **************************
+ok: [junos_test]
+
+TASK [junos_z_system : Reboot all REs of the device] ***************************
+changed: [junos_test]
+
+TASK [junos_z_system : Check TEST 1 - Validate Reboot Success] *****************
+ok: [junos_test] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_z_system : Checking NETCONF connectivity] **************************
+ok: [junos_test]
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=19   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
