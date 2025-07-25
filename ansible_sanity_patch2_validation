@@ -2063,3 +2063,2059 @@ test_system.py ...                                                              
 (fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/unit# 
 
 
+
+
+Starting execution of all Ansible Junos playbooks...
+-----------------------------------------------------
+Running pb.juniper_junos_acl_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junos_acl_interfaces: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_config: ["'NoneType' object has no attribute
+'get'"]
+
+PLAY [Functional Test - junos_acl_interfaces module] ***************************
+
+TASK [Setup - Ensure initial ACL config is absent (clean slate)] ***************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'",
+"'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert cleanup before test] **********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Pre-config - Create inbound and outbound ACL filters] ********************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Test - Merge ACL config into interface] **********************************
+changed: [10.220.17.17]
+
+TASK [Assert merge operation] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test - Replace ACL config with only input filter] ************************
+changed: [10.220.17.17]
+
+TASK [Assert override operation] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test - Override ACL config with both directions] *************************
+changed: [10.220.17.17]
+
+TASK [Assert override operation] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test - Delete ACL config] ************************************************
+changed: [10.220.17.17]
+
+TASK [Assert delete operation] *************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=11   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_acl_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_acls.yml
+[WARNING]: errors were encountered during the plugin load for junos_acls:
+["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_acls module] *************************************
+
+TASK [Pre-clean - Delete test ACL if it exists] ********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'",
+"'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert pre-clean success] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply ACL with state merged] *********************************************
+changed: [10.220.17.17]
+
+TASK [Assert merged config applied] ********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Remove ACL] *************************************************
+changed: [10.220.17.17]
+
+TASK [Assert ACL was cleaned up] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=6    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_acls.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_banner.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_banner: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_banner module] ***********************************
+
+TASK [Pre-clean - Remove login banner if exists] *******************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert pre-clean successful] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply login banner with state present] ***********************************
+changed: [10.220.17.17]
+
+TASK [Assert login banner applied] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Deactivate the login banner] *********************************************
+changed: [10.220.17.17]
+
+TASK [Assert login banner deactivated] *****************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Reactivate the login banner] *********************************************
+changed: [10.220.17.17]
+
+TASK [Assert login banner reactivated] *****************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Remove login banner] ****************************************
+changed: [10.220.17.17]
+
+TASK [Assert login banner removed] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=10   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_banner.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_bgp_address_family.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_bgp_address_family: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_bgp_address_family] ******************************
+
+TASK [MERGED - Full BGP address family config] *********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [REPLACED - Replace BGP config with simplified evpn] **********************
+changed: [10.220.17.17]
+
+TASK [OVERRIDDEN - Override with same evpn config] *****************************
+changed: [10.220.17.17]
+
+TASK [DELETED - Delete AFI inet only] ******************************************
+ok: [10.220.17.17]
+
+TASK [DELETED - Delete all address-family configuration] ***********************
+changed: [10.220.17.17]
+
+TASK [GATHERED - Gather current BGP AF config] *********************************
+ok: [10.220.17.17]
+
+TASK [Assert BGP config gathered] **********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [RENDERED - Render BGP config] ********************************************
+ok: [10.220.17.17]
+
+TASK [PARSED - Parse provided BGP config] **************************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_bgp_address_family.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_bgp_global.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_bgp_global: ["'NoneType' object has no attribute
+'get'"]
+
+PLAY [Functional Test - junos_bgp_global] **************************************
+
+TASK [MERGED - Merge provided bgp config] **************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [REPLACED - Replace bgp config] *******************************************
+changed: [10.220.17.17]
+
+TASK [OVERRIDDEN - Override running config] ************************************
+ok: [10.220.17.17]
+
+TASK [GATHERED - Gather bgp global facts] **************************************
+ok: [10.220.17.17]
+
+TASK [RENDERED - Render configuration into XML] ********************************
+ok: [10.220.17.17]
+
+TASK [PARSED - Parse the device config into facts] *****************************
+ok: [10.220.17.17]
+
+TASK [DELETED - Delete the bgp config] *****************************************
+changed: [10.220.17.17]
+
+TASK [PURGED - Purge the bgp config] *******************************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_bgp_global.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_command.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_command: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_command module] **********************************
+
+TASK [Run show version] ********************************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert show version output is returned] **********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with wait_for condition (positive match)] ***************
+ok: [10.220.17.17]
+
+TASK [Assert wait_for with positive match passed] ******************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run multiple commands] ***************************************************
+ok: [10.220.17.17]
+
+TASK [Assert multiple commands worked] *****************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with json output] ***************************************
+ok: [10.220.17.17]
+
+TASK [Assert json output is returned] ******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run RPC get-software-information] ****************************************
+ok: [10.220.17.17]
+
+TASK [Assert RPC output] *******************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_command.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_config.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_config: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for debug:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_config module] ***********************************
+
+TASK [Pre-clean - Remove existing test interface description] ******************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert pre-clean successful] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply test config - set interface description] ***************************
+changed: [10.220.17.17]
+
+TASK [Assert interface config applied] *****************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Confirm commit test with timer] ******************************************
+changed: [10.220.17.17]
+
+TASK [Rollback config to rollback 0] *******************************************
+changed: [10.220.17.17]
+
+TASK [Backup config to custom path] ********************************************
+changed: [10.220.17.17]
+
+TASK [Debug backup_result] *****************************************************
+ok: [10.220.17.17] => {
+    "backup_result": {
+        "__backup__": "set version 25.4I-20250615_dev_common.0.1157\nset groups re0 system host-name evoeventtestb\nset groups re0 system backup-router 10.220.127.254\nset groups re0 interfaces fxp0 unit 0 family inet address 10.220.17.17/17\nset groups re1 system host-name evoeventtestb1\nset groups re1 system backup-router 10.220.127.254\nset groups re1 interfaces fxp0 unit 0 family inet address 10.220.8.115/17\nset groups global system root-authentication encrypted-password \"$1$ZUlES4dp$OUwWo1g7cLoV/aMWpHUnC/\"\nset groups global system login class wheel permissions snmp\nset groups global system login user regress uid 928\nset groups global system login user regress class superuser\nset groups global system login user regress shell csh\nset groups global system login user regress authentication encrypted-password \"$1$kPU..$w.4FGRAGanJ8U4Yq6sbj7.\"\nset groups global system login user remote uid 2000\nset groups global system login user remote class super-user\nset groups global system services netconf ssh\nset groups global system services ssh root-login allow\nset groups global system services finger\nset groups global system services ftp\nset groups global system services rlogin\nset groups global system services telnet\nset groups global system services xnm-clear-text\nset groups global system domain-name englab.juniper.net\nset groups global system domain-search englab.juniper.net\nset groups global system domain-search juniper.net\nset groups global system domain-search jnpr.net\nset groups global system time-zone Asia/Calcutta\nset groups global system debugger-on-break\nset groups global system dump-on-panic\nset groups global system authentication-order password\nset groups global system authentication-order radius\nset groups global system authentication-order tacplus\nset groups global system name-server 10.221.192.40\nset groups global system name-server 10.221.192.41\nset groups global system name-server 10.221.192.42\nset groups global system name-server 10.49.32.95\nset groups global system name-server 10.49.32.97\nset groups global system name-server 10.48.144.9\nset groups global system name-server 10.48.144.10\nset groups global system radius-server 10.48.144.16 secret \"$9$iHfz9Cu0BRQznCApIRSreWxNVw2GjkKM4JGimP\"\nset groups global system radius-server 10.48.144.17 secret \"$9$iHfz9Cu0BRQznCApIRSreWxNVw2GjkKM4JGimP\"\nset groups global system syslog host log kernel info\nset groups global system syslog host log any notice\nset groups global system syslog host log pfe info\nset groups global system syslog host log interactive-commands any\nset groups global system syslog file messages kernel info\nset groups global system syslog file messages any notice\nset groups global system syslog file messages authorization info\nset groups global system syslog file messages pfe info\nset groups global system syslog file messages archive world-readable\nset groups global system syslog file security interactive-commands any\nset groups global system syslog file security archive world-readable\nset groups global system processes routing enable\nset groups global system processes ntp enable\nset groups global system processes management enable\nset groups global system processes watchdog enable\nset groups global system processes snmp enable\nset groups global system processes inet-process enable\nset groups global system processes mib-process enable\nset groups global system ntp boot-server 66.129.255.75\nset groups global system ntp server 66.129.255.75\nset groups global system ntp server 172.29.131.60\nset groups global system ntp server 172.29.135.60\nset groups global chassis dump-on-panic\nset groups global interfaces lo0 unit 0 family inet address 128.220.17.17/32 primary\nset groups global interfaces lo0 unit 0 family iso address 47.0005.80ff.f800.0000.0108.0001.1282.2001.7017.00\nset groups global interfaces lo0 unit 0 family inet6 address abcd::128:220:17:17/128 primary\nset groups global snmp location \"Quincy lab\"\nset groups global snmp interface fxp0.0\nset groups global snmp community public authorization read-only\nset groups global snmp community private authorization read-write\nset groups global routing-options router-id 128.220.17.17\nset groups global routing-options static route 172.16.0.0/12 next-hop 10.220.127.254\nset groups global routing-options static route 172.16.0.0/12 retain\nset groups global routing-options static route 172.16.0.0/12 no-readvertise\nset groups global routing-options static route 192.168.0.0/16 next-hop 10.220.127.254\nset groups global routing-options static route 192.168.0.0/16 retain\nset groups global routing-options static route 192.168.0.0/16 no-readvertise\nset groups global routing-options static route 10.0.0.0/8 next-hop 10.220.127.254\nset groups global routing-options static route 10.0.0.0/8 retain\nset groups global routing-options static route 10.0.0.0/8 no-readvertise\nset groups global routing-options static route 66.129.0.0/16 next-hop 10.220.127.254\nset groups global routing-options static route 66.129.0.0/16 retain\nset groups global routing-options static route 66.129.0.0/16 no-readvertise\nset apply-groups global\nset apply-groups re0\nset apply-groups re1\nset system host-name ft-test-host\nset system login user ansible_test_user full-name \"Ansible Test User\"\nset system login user ansible_test_user uid 2003\nset system login user ansible_test_user class super-user\nset system login user ansible_user1 uid 2001\nset system login user ansible_user1 class super-user\nset system login user ansible_user1 authentication encrypted-password \"$6$4qsKJNNe$OAwSWhcG3chTCJR88h7edOnFm61bUeaC3VM8AzGMV10865EZQajcLnf3Ew1yoxXZ0I07WS3AZq2Wa3C.5uXLe1\"\nset system services\nset system ports console log-out-on-disconnect\nset interfaces ge-0/0/1 enable\nset interfaces ge-0/0/1 unit 0 description \"FT Test interface\"\nset interfaces ge-0/0/1 unit 0 family inet\nset interfaces ge-0/0/1 unit 0 family inet6\nset interfaces ge-0/0/2 unit 0 family inet address 192.0.2.2/24\nset interfaces ge-0/0/3 unit 0 family inet address 192.0.2.3/24\nset interfaces ge-0/0/4 unit 0 family inet address 192.0.2.4/24\nset interfaces ge-0/0/5 unit 0 family inet address 192.0.2.5/24\nset interfaces ge-1/0/0 unit 0 family inet\nset interfaces ae0 aggregated-ether-options lacp system-priority 300\nset interfaces ae0 aggregated-ether-options lacp system-id 00:00:00:00:00:03\nset policy-options policy-statement test-policy term t1 then reject\nset policy-options policy-statement test-policy-1 term t1 then reject\nset firewall family inet filter inbound_acl term 1 from source-address 10.0.0.0/8\nset firewall family inet filter inbound_acl term 1 then accept\nset firewall family inet filter outbound_acl term 1 from destination-address 192.168.0.0/16\nset firewall family inet filter outbound_acl term 1 then accept\nset routing-instances clv1 instance-type virtual-router\nset routing-instances clv2 instance-type virtual-router\nset routing-instances inst11 instance-type virtual-router\nset routing-instances rt1 instance-type virtual-router\nset routing-instances rt2 instance-type virtual-router\nset protocols ospf area 0.0.0.110 stub default-metric 200\nset protocols ospf area 0.0.0.110 area-range 20.200.17.0/24 restrict\nset protocols ospf area 0.0.0.110 area-range 20.200.17.0/24 exact\nset protocols ospf area 0.0.0.110 area-range 20.200.17.0/24 override-metric 2000\nset protocols ospf area 0.0.0.110 area-range 20.200.15.0/24 restrict\nset protocols ospf area 0.0.0.110 area-range 20.200.15.0/24 exact\nset protocols ospf area 0.0.0.110 area-range 20.200.15.0/24 override-metric 2000\nset protocols ospf area 0.0.0.110 interface so-0/0/0.0 passive\nset protocols ospf area 0.0.0.110 interface so-0/0/0.0 bandwidth-based-metrics bandwidth 1g metric 5\nset protocols ospf area 0.0.0.110 interface so-0/0/0.0 bandwidth-based-metrics bandwidth 10g metric 40\nset protocols ospf area 0.0.0.110 interface so-0/0/0.0 metric 5\nset protocols ospf area 0.0.0.110 interface so-0/0/0.0 priority 3\nset protocols ospf reference-bandwidth 10g\nset protocols ospf3 area 0.0.0.100 stub default-metric 200\nset protocols ospf3 area 0.0.0.100 interface so-0/0/0.0 passive\nset protocols ospf3 area 0.0.0.100 interface so-0/0/0.0 metric 5\nset protocols ospf3 area 0.0.0.100 interface so-0/0/0.0 priority 3\nset protocols ospf3 area 0.0.0.100 interface so-0/0/0.0 flood-reduction\nset protocols ospf3 area 0.0.0.200 interface ge-1/1/0.0\nset protocols ospf3 area 0.0.0.200 interface ge-2/2/0.0\nset protocols lldp interface ge-0/0/3 disable",
+        "changed": true,
+        "failed": false
+    }
+}
+
+TASK [Assert backup created] ***************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - delete test configuration] **********************************
+changed: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=10   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_config.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_facts.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_facts: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_facts module] ************************************
+
+TASK [Collect default set of facts (min)] **************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert default facts gathered] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Collect full facts including config and interfaces] **********************
+ok: [10.220.17.17]
+
+TASK [Assert full facts gathered] **********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Collect hardware and config with text format] ****************************
+ok: [10.220.17.17]
+
+TASK [Assert hardware and config facts gathered] *******************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_facts.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_hostname.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_hostname: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_hostname module] *********************************
+
+TASK [Pre-clean - Delete existing hostname] ************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert pre-clean success] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply hostname config with state merged] *********************************
+changed: [10.220.17.17]
+
+TASK [Assert hostname was set] *************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather hostname config] **************************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered hostname is correct] *************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete test hostname (post-clean)] ***************************************
+changed: [10.220.17.17]
+
+TASK [Assert hostname deleted] *************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_hostname.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_interfaces: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_interfaces module] *******************************
+
+TASK [Pre-clean - Delete test configuration if present] ************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Apply test config with state merged] *************************************
+changed: [10.220.17.17]
+
+TASK [Gather current interface config] *****************************************
+ok: [10.220.17.17]
+
+TASK [Assert merged interface config applied] **********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render config offline (no connection to device)] *************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered config returned] *****************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Delete test configuration] **********************************
+changed: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=7    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_l2_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_vlans: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_l2_interfaces: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_l2_interfaces module] ****************************
+
+TASK [Pre-define required VLANs] ***********************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+fatal: [10.220.17.17]: FAILED! => {"changed": false, "msg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><rpc-reply xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\" xmlns:junos=\"http://xml.juniper.net/junos/25.4I-20250615_dev_common.0.1157/junos\" xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\" message-id=\"urn:uuid:dcd0d71c-9331-4106-bda2-e97fae411880\">\n<load-configuration-results>\n<rpc-error>\n<error-type>protocol</error-type>\n<error-tag>operation-failed</error-tag>\n<error-severity>error</error-severity>\n<error-message>syntax error, expecting &lt;/configuration&gt;</error-message>\n<error-info>\n<bad-element>vlans</bad-element>\n</error-info>\n</rpc-error>\n<rpc-error>\n<error-type>protocol</error-type>\n<error-tag>operation-failed</error-tag>\n<error-severity>error</error-severity>\n<error-message>syntax error, expecting &lt;/configuration&gt;</error-message>\n<error-info>\n<bad-element>vlans</bad-element>\n</error-info>\n</rpc-error>\n<load-error-count>2</load-error-count>\n</load-configuration-results>\n</rpc-reply>"}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+❌ pb.juniper_junos_l2_interfaces.yml failed with status 2
+-----------------------------------------------------
+Running pb.juniper_junos_l3_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junos_l3_interfaces: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_l3_interfaces module] ****************************
+
+TASK [Pre-clean - Delete L3 logical interfaces if present] *********************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'",
+"'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [Apply L3 configuration (merge)] ******************************************
+changed: [10.220.17.17]
+
+TASK [Assert L3 config applied] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather L3 interfaces] ****************************************************
+ok: [10.220.17.17]
+
+TASK [Assert L3 interfaces gathered] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render L3 config (offline)] **********************************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered config is present] ***************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Delete test L3 configuration] *******************************
+changed: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_l3_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_lacp.yml
+[WARNING]: errors were encountered during the plugin load for junos_lacp:
+["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_lacp module] *************************************
+
+TASK [Pre-clean - Delete existing global LACP config] **************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'",
+"'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Merge global LACP attributes] ********************************************
+changed: [10.220.17.17]
+
+TASK [Assert LACP config merged] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather global LACP config] ***********************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered global LACP config] **************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render LACP config (offline)] ********************************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered config is returned] **************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Delete global LACP config] **********************************
+changed: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_lacp.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_lacp_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_lacp_interfaces: ["'NoneType' object has no
+attribute 'get'"]
+
+PLAY [Functional Test - junos_lacp_interfaces module] **************************
+
+TASK [Pre-clean - Delete LACP attributes on ae0] *******************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [Merge LACP configuration onto ae0] ***************************************
+changed: [10.220.17.17]
+
+TASK [Replace LACP configuration on ae0] ***************************************
+changed: [10.220.17.17]
+
+TASK [Override all LACP configuration on ae0] **********************************
+changed: [10.220.17.17]
+
+TASK [Gather LACP interfaces] **************************************************
+ok: [10.220.17.17]
+
+TASK [Extract gathered interface names] ****************************************
+ok: [10.220.17.17]
+
+TASK [Assert ae0 is present in gathered result] ********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "Successfully found ae0 in gathered result"
+}
+
+TASK [Render platform-specific XML from input config] **************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_lacp_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_lag_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_lag_interfaces: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_lag_interfaces] **********************************
+
+TASK [GATHERED - Retrieve existing LAG configuration] **************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert gathered LAG config is returned] **********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [RENDERED - Generate platform-specific XML config] ************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered LAG config is valid] *************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_lag_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_lldp_global.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_lldp_global: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_lldp_global module] ******************************
+
+TASK [Merge LLDP global configuration] *****************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [Assert LLDP global merge applied] ****************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace LLDP global configuration] ***************************************
+changed: [10.220.17.17]
+
+TASK [Assert LLDP global replace applied] **************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather LLDP global configuration] ****************************************
+ok: [10.220.17.17]
+
+TASK [Assert LLDP address is correctly configured] *****************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render LLDP global configuration to XML] *********************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered LLDP config is valid] ************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete LLDP global configuration] ****************************************
+changed: [10.220.17.17]
+
+TASK [Assert LLDP global config deleted] ***************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=10   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_lldp_global.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_lldp_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_lldp_interfaces: ["'NoneType' object has no
+attribute 'get'"]
+
+PLAY [Functional Test - junos_lldp_interfaces module] **************************
+
+TASK [Pre-clean LLDP interface config] *****************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [Merge LLDP interface configuration] **************************************
+changed: [10.220.17.17]
+
+TASK [Replace LLDP interface configuration] ************************************
+changed: [10.220.17.17]
+
+TASK [Override LLDP interface configuration] ***********************************
+changed: [10.220.17.17]
+
+TASK [Gather current LLDP interface configuration] *****************************
+ok: [10.220.17.17]
+
+TASK [Assert ge-0/0/3 is in gathered LLDP interfaces and disabled] *************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "ge-0/0/3 is correctly disabled in LLDP interfaces"
+}
+
+TASK [Render LLDP interface configuration for offline validation] **************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_lldp_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_logging_global.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_config: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_logging_global: ["'NoneType' object has no
+attribute 'get'"]
+
+PLAY [Functional Test - junos_logging_global] **********************************
+
+TASK [Ensure routing instance exists] ******************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [MERGED - Full logging configuration] *************************************
+changed: [10.220.17.17]
+
+TASK [REPLACED - Replace logging configuration] ********************************
+changed: [10.220.17.17]
+
+TASK [OVERRIDDEN - Override entire logging config] *****************************
+ok: [10.220.17.17]
+
+TASK [GATHERED - Gather current logging config] ********************************
+ok: [10.220.17.17]
+
+TASK [RENDERED - Render config into XML] ***************************************
+ok: [10.220.17.17]
+
+TASK [PARSED - Load from parsed.cfg] *******************************************
+ok: [10.220.17.17]
+
+TASK [DELETED - Delete all logging config] *************************************
+changed: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_logging_global.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_netconf.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_netconf: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_netconf module] **********************************
+
+TASK [Enable NETCONF service on port 830] **************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: ansible-pylibssh not installed, falling back to paramiko
+changed: [10.220.17.17]
+
+TASK [Assert NETCONF service was enabled] **************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Disable NETCONF service] *************************************************
+changed: [10.220.17.17]
+
+TASK [Assert NETCONF service was disabled] *************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_netconf.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_ntp_global.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_ntp_global: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_routing_instances: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_ntp_global module] *******************************
+
+TASK [Pre-clean - Delete existing NTP global config] ***************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Pre-create required routing instances] ***********************************
+ok: [10.220.17.17]
+
+TASK [Apply NTP global config using merged] ************************************
+changed: [10.220.17.17]
+
+TASK [Assert merged result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather NTP global config] ************************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace running NTP global config] ***************************************
+changed: [10.220.17.17]
+
+TASK [Assert replaced result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Override running NTP global config] **************************************
+changed: [10.220.17.17]
+
+TASK [Assert overridden result] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete NTP global configuration] *****************************************
+changed: [10.220.17.17]
+
+TASK [Assert deleted result] ***************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render NTP global configuration] *****************************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse NTP global config] *************************************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=16   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_ntp_global.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_ospf_interfaces.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_ospf_interfaces: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_ospf_interfaces module] **************************
+
+TASK [Pre-clean - Delete existing OSPF interface config] ***********************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert deleted result] ***************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Apply OSPF interface config using merged] ********************************
+changed: [10.220.17.17]
+
+TASK [Assert merged result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace OSPF interface config] *******************************************
+changed: [10.220.17.17]
+
+TASK [Assert replaced result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Override OSPF interface config] ******************************************
+changed: [10.220.17.17]
+
+TASK [Assert overridden result] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete specific OSPF interface config] ***********************************
+ok: [10.220.17.17]
+
+TASK [Gather OSPF interfaces config] *******************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render OSPF interfaces config] *******************************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered output] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse OSPF interfaces running config] ************************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed output] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=15   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_ospf_interfaces.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_ospfv2.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_ospfv2: ["'NoneType' object has no attribute
+'get'"]
+
+PLAY [Functional Test - junos_ospfv2 module] ***********************************
+
+TASK [DELETE - Reset before MERGED] ********************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [MERGED - Configure OSPFv2 instance] **************************************
+changed: [10.220.17.17]
+
+TASK [DELETE - Reset before REPLACED] ******************************************
+changed: [10.220.17.17]
+
+TASK [REPLACED - Replace OSPFv2 instance] **************************************
+changed: [10.220.17.17]
+
+TASK [DELETE - Reset before OVERRIDDEN] ****************************************
+changed: [10.220.17.17]
+
+TASK [OVERRIDDEN - Override OSPFv2 instance] ***********************************
+changed: [10.220.17.17]
+
+TASK [RENDERED - Render OSPFv2 config] *****************************************
+ok: [10.220.17.17]
+
+TASK [GATHERED - Get current OSPFv2 config] ************************************
+ok: [10.220.17.17]
+
+TASK [Show GATHERED] ***********************************************************
+ok: [10.220.17.17] => {
+    "ospf_gather.gathered": [
+        {
+            "areas": [
+                {
+                    "area_id": "0.0.0.110",
+                    "area_range": "['20.200.17.0/24', '20.200.15.0/24']",
+                    "area_ranges": [
+                        {
+                            "address": "20.200.17.0/24",
+                            "exact": true,
+                            "override_metric": 2000,
+                            "restrict": true
+                        },
+                        {
+                            "address": "20.200.15.0/24",
+                            "exact": true,
+                            "override_metric": 2000,
+                            "restrict": true
+                        }
+                    ],
+                    "interfaces": [
+                        {
+                            "bandwidth_based_metrics": [
+                                {
+                                    "bandwidth": "1g",
+                                    "metric": 5
+                                },
+                                {
+                                    "bandwidth": "10g",
+                                    "metric": 40
+                                }
+                            ],
+                            "metric": 5,
+                            "name": "so-0/0/0.0",
+                            "passive": true,
+                            "priority": 3
+                        }
+                    ],
+                    "stub": {
+                        "default_metric": 200,
+                        "set": true
+                    }
+                }
+            ],
+            "reference_bandwidth": "10g",
+            "router_id": "10.200.16.75"
+        }
+    ]
+}
+
+TASK [PARSED - Parsed ospfv2 config from XML] **********************************
+ok: [10.220.17.17]
+
+TASK [Show PARSED] *************************************************************
+ok: [10.220.17.17] => {
+    "ospf_parsed.parsed": [
+        {
+            "areas": [
+                {
+                    "area_id": "0.0.0.100",
+                    "area_range": "['10.200.16.0/24', '10.200.11.0/24']",
+                    "area_ranges": [
+                        {
+                            "address": "10.200.16.0/24",
+                            "exact": true,
+                            "override_metric": 10000
+                        },
+                        {
+                            "address": "10.200.11.0/24",
+                            "exact": true,
+                            "restrict": true
+                        }
+                    ],
+                    "interfaces": [
+                        {
+                            "bandwidth_based_metrics": [
+                                {
+                                    "bandwidth": "1g",
+                                    "metric": 5
+                                },
+                                {
+                                    "bandwidth": "10g",
+                                    "metric": 40
+                                }
+                            ],
+                            "metric": 5,
+                            "name": "so-0/0/0.0",
+                            "passive": true,
+                            "priority": 3,
+                            "timers": {
+                                "dead_interval": 4,
+                                "hello_interval": 2,
+                                "poll_interval": 2,
+                                "retransmit_interval": 2
+                            }
+                        }
+                    ],
+                    "stub": {
+                        "default_metric": 100,
+                        "set": true
+                    }
+                }
+            ],
+            "reference_bandwidth": "10g",
+            "rfc1583compatibility": false,
+            "router_id": "10.200.16.75"
+        }
+    ]
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=11   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_ospfv2.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_ospfv3.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_ospfv3: ["'NoneType' object has no attribute
+'get'"]
+
+PLAY [Functional Test - junos_ospfv3 module] ***********************************
+
+TASK [DELETE - Reset before test] **********************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [MERGED - Merge Junos OSPFv3 config] **************************************
+changed: [10.220.17.17]
+
+TASK [REPLACED - Replace Junos OSPFv3 config] **********************************
+changed: [10.220.17.17]
+
+TASK [OVERRIDDEN - Override Junos OSPFv3 config] *******************************
+changed: [10.220.17.17]
+
+TASK [GATHERED - Get current OSPFv3 configuration] *****************************
+ok: [10.220.17.17]
+
+TASK [PARSED - Parse structured config from XML file] **************************
+ok: [10.220.17.17]
+
+TASK [RENDERED - Render OSPFv3 config into XML] ********************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_ospfv3.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_package.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_package: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for wait_for:
+["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_package module] **********************************
+
+TASK [Install local package on remote device] **********************************
+fatal: [10.220.17.17]: FAILED! => {"msg": "The task includes an option with an undefined variable.. 'package_src' is undefined\n\nThe error appears to be in '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_package.yml': line 9, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: Install local package on remote device\n      ^ here\n"}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+❌ pb.juniper_junos_package.yml failed with status 2
+-----------------------------------------------------
+Running pb.juniper_junos_ping.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_ping: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_ping module] *************************************
+
+TASK [Test reachability to target] *********************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: ansible-pylibssh not installed, falling back to paramiko
+ok: [10.220.17.17]
+
+TASK [Assert default ping worked] **********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test reachability to target using source and size set] *******************
+ok: [10.220.17.17]
+
+TASK [Assert source TTL ping worked] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test unreachability to target using interval] ****************************
+ok: [10.220.17.17]
+
+TASK [Assert unreachable ping worked (state: absent)] **************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test reachability to target setting count and interface] *****************
+ok: [10.220.17.17]
+
+TASK [Assert ping with count/interface worked] *********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Test reachability to target using do-not-fragment and rapid] *************
+ok: [10.220.17.17]
+
+TASK [Assert ping with DF bit and rapid worked] ********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_ping.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_prefix_lists.yml
+[WARNING]: errors were encountered during the plugin load for
+junos_prefix_lists: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_prefix_lists module] *****************************
+
+TASK [Pre-clean - Delete all prefix-lists if present] **************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'",
+"'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Apply prefix-lists using merged] *****************************************
+changed: [10.220.17.17]
+
+TASK [Assert merged result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather prefix-lists] *****************************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered prefix-lists] ********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace prefix-list Test2 with new prefixes] *****************************
+changed: [10.220.17.17]
+
+TASK [Assert replaced result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Override prefix-lists with only Test2 entries] ***************************
+changed: [10.220.17.17]
+
+TASK [Assert overridden result] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render prefix-lists offline] *********************************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered output] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Post-clean - Delete specific prefix-lists] *******************************
+changed: [10.220.17.17]
+
+TASK [Assert deleted specific prefix-lists] ************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Final clean - Delete all prefix-lists] ***********************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=14   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_prefix_lists.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_routing_instances.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_config: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_routing_instances: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_routing_instances module] ************************
+
+TASK [Pre-clean - Create required policy statements] ***************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Pre-clean - Delete test routing instances] *******************************
+ok: [10.220.17.17]
+
+TASK [Apply routing instances using merged] ************************************
+changed: [10.220.17.17]
+
+TASK [Assert merged result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather routing instances] ************************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace routing instance configuration] **********************************
+changed: [10.220.17.17]
+
+TASK [Assert replaced result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete specific routing instance] ****************************************
+changed: [10.220.17.17]
+
+TASK [Assert specific routing instance deleted] ********************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Final clean - Delete test routing instances only] ************************
+changed: [10.220.17.17]
+
+TASK [Assert all routing instances deleted] ************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render routing instances configuration] **********************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered configuration] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse routing instance running configuration] ****************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=16   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_routing_instances.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_routing_options.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_routing_options: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_routing_options module] **************************
+
+TASK [Pre-clean - Delete existing routing options] *****************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [Apply routing options using merged] **************************************
+changed: [10.220.17.17]
+
+TASK [Assert merged result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather routing options] **************************************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace routing options configuration] ***********************************
+changed: [10.220.17.17]
+
+TASK [Assert replaced result] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Override routing options configuration] **********************************
+changed: [10.220.17.17]
+
+TASK [Assert overridden result] ************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Render routing options configuration] ************************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered configuration] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse routing options running configuration] *****************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed result] ****************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Final clean - Delete all routing options] ********************************
+changed: [10.220.17.17]
+
+TASK [Assert routing options deleted] ******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=15   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_routing_options.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_rpc.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_rpc: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_rpc module] **************************************
+
+TASK [Collect interface information using RPC] *********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert interface information RPC returned XML] ***************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Get system information using RPC] ****************************************
+ok: [10.220.17.17]
+
+TASK [Assert system information RPC returned XML] ******************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Load configuration using RPC (requires file on device)] ******************
+skipping: [10.220.17.17]
+
+TASK [Assert load configuration RPC executed] **********************************
+skipping: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_rpc.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_scp.yml
+[DEPRECATION WARNING]: junipernetworks.junos.junos_scp has been deprecated. See
+ the plugin documentation for more details. This feature will be removed from 
+junipernetworks.junos in a release after 2025-01-01. Deprecation warnings can 
+be disabled by setting deprecation_warnings=False in ansible.cfg.
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_scp: ["'NoneType' object has no attribute 'get'"]
+ERROR! couldn't resolve module/action 'junipernetworks.junos.junos_scp'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/tests/junipernetworks.junos/pb.juniper_junos_scp.yml': line 25, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: "TEST 1 - Upload local file to home directory on remote device"
+      ^ here
+❌ pb.juniper_junos_scp.yml failed with status 4
+-----------------------------------------------------
+Running pb.juniper_junos_security_policies.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_security_policies: ["'NoneType' object has no
+attribute 'get'"]
+
+PLAY [Functional Test - junos_security_policies (parsed and rendered only)] ****
+
+TASK [Render security policy config] *******************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Parse from saved running config] *****************************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_security_policies.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_security_policies_global.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_security_policies_global: ["'NoneType' object has
+no attribute 'get'"]
+
+PLAY [Functional Test - junos_security_policies_global (parsed, rendered, gathered)] ***
+
+TASK [PARSED - Parse running config from local file] ***************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [RENDERED - Render the provided config] ***********************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_security_policies_global.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_security_zones.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_security_zones: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_security_zones module] ***************************
+
+TASK [Render Security Zone config to XML] **************************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert rendered output] **************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse Security Zone config from file] ************************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed zone config] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_security_zones.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_snmp_server.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_routing_instances: ["'NoneType' object has no
+attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_snmp_server: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_snmp_server (all states)] ************************
+
+TASK [Ensure routing instances clv1 and clv2 exist] ****************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Render SNMP server configuration (dry-run XML)] **************************
+ok: [10.220.17.17]
+
+TASK [Assert rendered SNMP config] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse SNMP server config from XML] ***************************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed SNMP config] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Merge SNMP server configuration] *****************************************
+changed: [10.220.17.17]
+
+TASK [Assert merged SNMP config] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Replace SNMP server configuration] ***************************************
+changed: [10.220.17.17]
+
+TASK [Assert replaced SNMP config] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Override SNMP server configuration] **************************************
+ok: [10.220.17.17]
+
+TASK [Assert overridden SNMP config] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather SNMP server configuration from device] ****************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered SNMP config] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Delete SNMP server configuration] ****************************************
+changed: [10.220.17.17]
+
+TASK [Assert deleted SNMP config] **********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=15   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_snmp_server.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_static_routes.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_static_routes: ["'NoneType' object has no attribute
+'get'"]
+
+PLAY [Functional Test - junos_static_routes (safe states only)] ****************
+
+TASK [1. Render static route config for 192.168.16.0/24 → 172.16.1.2] **********
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Debug rendered config] ***************************************************
+ok: [10.220.17.17] => {
+    "rendered_output.rendered": "<nc:routing-options xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\"/>"
+}
+
+TASK [2. Parse running config from parsed_static_routes.cfg] *******************
+ok: [10.220.17.17]
+
+TASK [Debug parsed output] *****************************************************
+ok: [10.220.17.17] => {
+    "parsed_output.parsed": [
+        {
+            "address_families": [
+                {
+                    "afi": "ipv4",
+                    "routes": [
+                        {
+                            "dest": "192.168.16.0/24",
+                            "next_hop": [
+                                {
+                                    "forward_router_address": "['172.16.1.2', '172.16.1.3']"
+                                }
+                            ]
+                        },
+                        {
+                            "dest": "192.168.47.0/24",
+                            "next_hop": [
+                                {
+                                    "forward_router_address": "10.200.16.2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_static_routes.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_system.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_system: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_system module] ***********************************
+
+TASK [Pre-clean - Remove system configuration] *********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert pre-clean result] *************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Configure hostname, domain name, and domain search] **********************
+changed: [10.220.17.17]
+
+TASK [Assert hostname and domain name configured] ******************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Configure name servers] **************************************************
+changed: [10.220.17.17]
+
+TASK [Assert name servers configured] ******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Cleanup - Remove system configuration] ***********************************
+changed: [10.220.17.17]
+
+TASK [Assert final clean-up] ***************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_system.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_user.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_user: ["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_user module] *************************************
+
+TASK [Ensure test user is absent before test] **********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+changed: [10.220.17.17]
+
+TASK [Create a new user account with optional SSH key] *************************
+changed: [10.220.17.17]
+
+TASK [Set user password (SHA-512 hashed)] **************************************
+changed: [10.220.17.17]
+
+TASK [Create a list of additional users] ***************************************
+changed: [10.220.17.17]
+
+TASK [Delete additional users] *************************************************
+changed: [10.220.17.17]
+
+TASK [Remove the test user account] ********************************************
+changed: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=6    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_user.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_vlans.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_vlans: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_vlans (read-only states)] ************************
+
+TASK [Render VLAN configuration (dry-run XML)] *********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Assert rendered VLAN config] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Gather VLAN configuration from device] ***********************************
+ok: [10.220.17.17]
+
+TASK [Assert gathered VLAN config] *********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Parse VLAN config from XML file] *****************************************
+ok: [10.220.17.17]
+
+TASK [Assert parsed VLAN config] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_vlans.yml completed successfully
+-----------------------------------------------------
+Running pb.juniper_junos_vrf.yml
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_config: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_vrf: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_vrf module] **************************************
+
+TASK [Pre-clean conflicting routing-instances] *********************************
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+ok: [10.220.17.17]
+
+TASK [Preconfigure required interfaces] ****************************************
+changed: [10.220.17.17]
+
+TASK [Deactivate VRF test-1] ***************************************************
+changed: [10.220.17.17]
+
+TASK [Assert VRF test-1 deactivated] *******************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Remove VRF test-1] *******************************************************
+changed: [10.220.17.17]
+
+TASK [Assert VRF test-1 removed] ***********************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Remove VRF test-2] *******************************************************
+ok: [10.220.17.17]
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+✅ pb.juniper_junos_vrf.yml completed successfully
+-----------------------------------------------------
+All playbooks processed.
+Passed test results saved to junos_passed_tests.log
+
+
+
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/tests/junipernetworks.junos# cat junos_passed_tests.log 
+pb.juniper_junos_acl_interfaces.yml PASSED at Fri 25 Jul 2025 04:45:47 AM PDT
+pb.juniper_junos_acls.yml PASSED at Fri 25 Jul 2025 04:46:02 AM PDT
+pb.juniper_junos_banner.yml PASSED at Fri 25 Jul 2025 04:46:20 AM PDT
+pb.juniper_junos_bgp_address_family.yml PASSED at Fri 25 Jul 2025 04:46:58 AM PDT
+pb.juniper_junos_bgp_global.yml PASSED at Fri 25 Jul 2025 04:47:36 AM PDT
+pb.juniper_junos_command.yml PASSED at Fri 25 Jul 2025 04:47:47 AM PDT
+pb.juniper_junos_config.yml PASSED at Fri 25 Jul 2025 04:48:13 AM PDT
+pb.juniper_junos_facts.yml PASSED at Fri 25 Jul 2025 04:48:23 AM PDT
+pb.juniper_junos_hostname.yml PASSED at Fri 25 Jul 2025 04:48:40 AM PDT
+pb.juniper_junos_interfaces.yml PASSED at Fri 25 Jul 2025 04:49:02 AM PDT
+pb.juniper_junos_l3_interfaces.yml PASSED at Fri 25 Jul 2025 04:49:30 AM PDT
+pb.juniper_junos_lacp.yml PASSED at Fri 25 Jul 2025 04:49:48 AM PDT
+pb.juniper_junos_lacp_interfaces.yml PASSED at Fri 25 Jul 2025 04:50:17 AM PDT
+pb.juniper_junos_lag_interfaces.yml PASSED at Fri 25 Jul 2025 04:50:22 AM PDT
+pb.juniper_junos_lldp_global.yml PASSED at Fri 25 Jul 2025 04:50:43 AM PDT
+pb.juniper_junos_lldp_interfaces.yml PASSED at Fri 25 Jul 2025 04:51:08 AM PDT
+pb.juniper_junos_logging_global.yml PASSED at Fri 25 Jul 2025 04:51:34 AM PDT
+pb.juniper_junos_netconf.yml PASSED at Fri 25 Jul 2025 04:51:41 AM PDT
+pb.juniper_junos_ntp_global.yml PASSED at Fri 25 Jul 2025 04:52:12 AM PDT
+pb.juniper_junos_ospf_interfaces.yml PASSED at Fri 25 Jul 2025 04:52:50 AM PDT
+pb.juniper_junos_ospfv2.yml PASSED at Fri 25 Jul 2025 04:53:27 AM PDT
+pb.juniper_junos_ospfv3.yml PASSED at Fri 25 Jul 2025 04:54:00 AM PDT
+pb.juniper_junos_ping.yml PASSED at Fri 25 Jul 2025 04:54:49 AM PDT
+pb.juniper_junos_prefix_lists.yml PASSED at Fri 25 Jul 2025 04:55:23 AM PDT
+pb.juniper_junos_routing_instances.yml PASSED at Fri 25 Jul 2025 04:55:59 AM PDT
+pb.juniper_junos_routing_options.yml PASSED at Fri 25 Jul 2025 04:56:32 AM PDT
+pb.juniper_junos_rpc.yml PASSED at Fri 25 Jul 2025 04:56:36 AM PDT
+pb.juniper_junos_security_policies.yml PASSED at Fri 25 Jul 2025 04:56:41 AM PDT
+pb.juniper_junos_security_policies_global.yml PASSED at Fri 25 Jul 2025 04:56:44 AM PDT
+pb.juniper_junos_security_zones.yml PASSED at Fri 25 Jul 2025 04:56:48 AM PDT
+pb.juniper_junos_snmp_server.yml PASSED at Fri 25 Jul 2025 04:57:24 AM PDT
+pb.juniper_junos_static_routes.yml PASSED at Fri 25 Jul 2025 04:57:28 AM PDT
+pb.juniper_junos_system.yml PASSED at Fri 25 Jul 2025 04:57:45 AM PDT
+pb.juniper_junos_user.yml PASSED at Fri 25 Jul 2025 04:58:08 AM PDT
+pb.juniper_junos_vlans.yml PASSED at Fri 25 Jul 2025 04:58:15 AM PDT
+pb.juniper_junos_vrf.yml PASSED at Fri 25 Jul 2025 04:58:36 AM PDT
+
