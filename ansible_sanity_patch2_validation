@@ -1,0 +1,142 @@
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# git clone https://github.com/Juniper/ansible-junos-stdlib.git -b jnpr-ansible-merger
+Cloning into 'ansible-junos-stdlib'...
+remote: Enumerating objects: 5666, done.
+remote: Counting objects: 100% (775/775), done.
+remote: Compressing objects: 100% (237/237), done.
+remote: Total 5666 (delta 679), reused 540 (delta 537), pack-reused 4891 (from 2)
+Receiving objects: 100% (5666/5666), 2.15 MiB | 1.42 MiB/s, done.
+Resolving deltas: 100% (3236/3236), done.
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# ls
+ansible-junos-stdlib  fix5venv
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# cd ansible-junos-stdlib/
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib# ls
+ansible_collections  COPYRIGHT           Dockerfile     env-setup          LICENSE  README.md         setup.py  tools
+ansible-junos-awx    DOCKER-EXAMPLES.md  entrypoint.sh  ISSUE_TEMPLATE.md  meta     requirements.txt  tests     version.py
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib# ls -l ansible_collections/juniper/device/plugins/action/hostname.py
+lrwxrwxrwx 1 root root 8 Jul 25 03:26 ansible_collections/juniper/device/plugins/action/hostname.py -> junos.py
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib# cd ..
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# ls
+ansible-junos-stdlib  fix5venv
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# pip install ansible
+Collecting ansible
+  Obtaining dependency information for ansible from https://files.pythonhosted.org/packages/47/47/23fe9f6d9cd533ce4d54f4925cb0b7fdcfd3500b226421aad6166d9aa11c/ansible-11.8.0-py3-none-any.whl.metadata
+  Using cached ansible-11.8.0-py3-none-any.whl.metadata (8.1 kB)
+Collecting ansible-core~=2.18.7 (from ansible)
+  Obtaining dependency information for ansible-core~=2.18.7 from https://files.pythonhosted.org/packages/7e/a7/568e51c20f49c9e76a555a876ed641ecc59df29e93868f24cdf8c3289f6a/ansible_core-2.18.7-py3-none-any.whl.metadata
+  Using cached ansible_core-2.18.7-py3-none-any.whl.metadata (7.7 kB)
+Collecting jinja2>=3.0.0 (from ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for jinja2>=3.0.0 from https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting PyYAML>=5.1 (from ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for PyYAML>=5.1 from https://files.pythonhosted.org/packages/b9/2b/614b4752f2e127db5cc206abc23a8c19678e92b23c3db30fc86ab731d3bd/PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+  Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting cryptography (from ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for cryptography from https://files.pythonhosted.org/packages/ec/ef/3333295ed58d900a13c92806b67e62f27876845a9a908c939f040887cca9/cryptography-45.0.5-cp311-abi3-manylinux_2_28_x86_64.whl.metadata
+  Using cached cryptography-45.0.5-cp311-abi3-manylinux_2_28_x86_64.whl.metadata (5.7 kB)
+Collecting packaging (from ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for packaging from https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl.metadata
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting resolvelib<1.1.0,>=0.5.3 (from ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for resolvelib<1.1.0,>=0.5.3 from https://files.pythonhosted.org/packages/d2/fc/e9ccf0521607bcd244aa0b3fbd574f71b65e9ce6a112c83af988bbbe2e23/resolvelib-1.0.1-py2.py3-none-any.whl.metadata
+  Using cached resolvelib-1.0.1-py2.py3-none-any.whl.metadata (4.0 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=3.0.0->ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for MarkupSafe>=2.0 from https://files.pythonhosted.org/packages/f3/f0/89e7aadfb3749d0f52234a0c8c7867877876e0a20b60e2188e9850794c17/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+  Using cached MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting cffi>=1.14 (from cryptography->ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for cffi>=1.14 from https://files.pythonhosted.org/packages/b2/d5/da47df7004cb17e4955df6a43d14b3b4ae77737dff8bf7f8f333196717bf/cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+  Using cached cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting pycparser (from cffi>=1.14->cryptography->ansible-core~=2.18.7->ansible)
+  Obtaining dependency information for pycparser from https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl.metadata
+  Using cached pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Using cached ansible-11.8.0-py3-none-any.whl (56.0 MB)
+Using cached ansible_core-2.18.7-py3-none-any.whl (2.2 MB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+Using cached resolvelib-1.0.1-py2.py3-none-any.whl (17 kB)
+Using cached cryptography-45.0.5-cp311-abi3-manylinux_2_28_x86_64.whl (4.5 MB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (479 kB)
+Using cached MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Using cached pycparser-2.22-py3-none-any.whl (117 kB)
+Installing collected packages: resolvelib, PyYAML, pycparser, packaging, MarkupSafe, jinja2, cffi, cryptography, ansible-core, ansible
+Successfully installed MarkupSafe-3.0.2 PyYAML-6.0.2 ansible-11.8.0 ansible-core-2.18.7 cffi-1.17.1 cryptography-45.0.5 jinja2-3.1.6 packaging-25.0 pycparser-2.22 resolvelib-1.0.1
+
+[notice] A new release of pip is available: 23.2.1 -> 25.1.1
+[notice] To update, run: pip install --upgrade pip
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device,jnpr-ansible-merger
+Cloning into '/root/.ansible/tmp/ansible-local-694154dgz3ppvz/tmpw9acsk6j/ansible-junos-stdlib89k57iri'...
+remote: Enumerating objects: 5666, done.
+remote: Counting objects: 100% (794/794), done.
+remote: Compressing objects: 100% (233/233), done.
+remote: Total 5666 (delta 701), reused 563 (delta 560), pack-reused 4872 (from 2)
+Receiving objects: 100% (5666/5666), 2.16 MiB | 1.93 MiB/s, done.
+Resolving deltas: 100% (3241/3241), done.
+Branch 'jnpr-ansible-merger' set up to track remote branch 'jnpr-ansible-merger' from 'origin'.
+Switched to a new branch 'jnpr-ansible-merger'
+Starting galaxy collection install process
+Process install dependency map
+Starting collection install process
+Installing 'juniper.device:1.0.8' to '/root/.ansible/collections/ansible_collections/juniper/device'
+Created collection for juniper.device:1.0.8 at /root/.ansible/collections/ansible_collections/juniper/device
+juniper.device:1.0.8 was installed successfully
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# ansible-galaxy collection install ansible.netcommon -p ./ansible_collections
+Starting galaxy collection install process
+[WARNING]: The specified collections path '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible_collections' is not part
+of the configured Ansible collections paths '/root/.ansible/collections:/usr/share/ansible/collections'. The installed collection will not be
+picked up in an Ansible run, unless within a playbook-adjacent collections directory.
+Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# ansible-galaxy collection install ansible.netcommon -p ./ansible_collections --force
+Starting galaxy collection install process
+[WARNING]: The specified collections path '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible_collections' is not part
+of the configured Ansible collections paths '/root/.ansible/collections:/usr/share/ansible/collections'. The installed collection will not be
+picked up in an Ansible run, unless within a playbook-adjacent collections directory.
+Process install dependency map
+Starting collection install process
+Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/ansible-netcommon-8.0.1.tar.gz to /root/.ansible/tmp/ansible-local-694182xgb73vhx/tmpxjqbq14i/ansible-netcommon-8.0.1-jt8yf65x
+Installing 'ansible.netcommon:8.0.1' to '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible_collections/ansible/netcommon'
+ansible.netcommon:8.0.1 was installed successfully
+'ansible.utils:5.1.2' is already installed, skipping.
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# ansible-galaxy collection install ansible.utils -p ./ansible_collections --force
+Starting galaxy collection install process
+[WARNING]: The specified collections path '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible_collections' is not part
+of the configured Ansible collections paths '/root/.ansible/collections:/usr/share/ansible/collections'. The installed collection will not be
+picked up in an Ansible run, unless within a playbook-adjacent collections directory.
+Process install dependency map
+Starting collection install process
+Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/ansible-utils-6.0.0.tar.gz to /root/.ansible/tmp/ansible-local-694187tb7c0s29/tmplxmbdtlx/ansible-utils-6.0.0-casfmub0
+Installing 'ansible.utils:6.0.0' to '/root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible_collections/ansible/utils'
+ansible.utils:6.0.0 was installed successfully
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv# 
+
+
+fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib# ls ansible_collections/
+ansible  ansible.netcommon-8.0.1.info  ansible.utils-6.0.0.info  juniper  junipernetworks
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib# cd ansible_collections/juniper/device/tests/
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# ansible-test sanity --python 3.12 --venv --requirements
+Running sanity test "action-plugin-docs"
+Running sanity test "ansible-doc"
+Running sanity test "changelog"
+Running sanity test "compile" on Python 3.12
+Running sanity test "empty-init"
+Running sanity test "ignores"
+Running sanity test "import" on Python 3.12
+Running sanity test "line-endings"
+Running sanity test "no-assert"
+Running sanity test "no-get-exception"
+Running sanity test "no-illegal-filenames"
+Running sanity test "no-smart-quotes"
+Running sanity test "pep8"
+Running sanity test "pslint"
+Running sanity test "pylint"
+Running sanity test "replace-urlopen"
+Running sanity test "runtime-metadata"
+Running sanity test "shebang"
+Running sanity test "shellcheck"
+Running sanity test "symlinks"
+Running sanity test "use-argspec-type-path"
+Running sanity test "use-compat-six"
+Running sanity test "validate-modules"
+Running sanity test "yamllint"
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests# 
+
+
