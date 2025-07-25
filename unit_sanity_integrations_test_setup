@@ -181,3 +181,6 @@ ansible_connection=ansible.netcommon.network_cli
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
+
+
+find ./ -type f -exec sed -i 's/junos_device/all/gI' {} \;
