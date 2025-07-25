@@ -2047,3 +2047,19 @@ PLAY RECAP *********************************************************************
 junos_test                 : ok=19   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/unit# python -m pytest
+============================================================= test session starts ==============================================================
+platform linux -- Python 3.12.0, pytest-8.4.1, pluggy-1.6.0
+rootdir: /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib
+collected 23 items                                                                                                                             
+
+test_command.py .....                                                                                                                    [ 21%]
+test_facts.py ..                                                                                                                         [ 30%]
+test_file_copy.py ..........                                                                                                             [ 73%]
+test_ping.py ...                                                                                                                         [ 86%]
+test_system.py ...                                                                                                                       [100%]
+
+============================================================== 23 passed in 0.39s ==============================================================
+(fix5venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix5_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/unit# 
+
+
