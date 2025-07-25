@@ -184,3 +184,6 @@ ansible_python_interpreter=/usr/bin/python3
 
 
 find ./ -type f -exec sed -i 's/junos_device/all/gI' {} \;
+
+
+modules junos_netconf, juons_ping and junos_package with “ansible_connection=ansible.netcommon.network_cli”
