@@ -497,3 +497,170 @@ git clone https://github.com/Juniper/ansible-junos-stdlib.git -b jnpr-ansible-me
 cd ansible-junos-stdlib
 ansible-galaxy collection install \
   git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device,jnpr-ansible-merger
+
+
+callbacks:
+==========================================================================
+cat junos_jsnapy/test_loopback.yml 
+tests_include:
+  - test_command_version
+
+test_command_version:
+  - command: show interfaces terse lo*
+  - iterate:
+      xpath: //logical-interface
+      id: './name'
+      tests:
+        - no-diff: admin-status
+          err: "Test Failed!! admin-status did not change for name <{{id_0}}> — value remains <{{pre['admin-status']}}>"
+          info: "Test successful!! admin-status changed for name <{{id_0}}> from <{{pre['admin-status']}}> to <{{post['admin-status']}}>"
+
+cat pb.juniper_junos_jsnapy_fail.yml 
+---
+- name: Test juniper.device.jsnapy module
+  hosts: all
+  gather_facts: false
+
+  vars:
+    backup_dir: "{{ playbook_dir }}/backup_dir"
+
+
+  tasks:
+##################################################
+    - name: "TEST 7 - Cleanup"
+      juniper.device.config:
+        load: 'merge'
+        lines:
+          - "delete interfaces lo0 unit 10"
+      register: test7_3
+      ignore_errors: True
+      tags: [test7]
+
+    - name: "TEST 4 - SNAP_PRE"
+      juniper.device.jsnapy:
+        test_files: junos_jsnapy/test_loopback.yml
+        action: snap_pre
+      register: test4
+      ignore_errors: true
+      tags: [test4]
+
+    - name: Check TEST 4
+      ansible.builtin.assert:
+        that:
+          - test4.msg == "The snap_pre action successfully executed."
+      tags: [test4]
+
+##################################################
+####    TEST 7 PREREQUSITE                      ##
+##################################################
+    - name: "PRE-TEST 7 - Add loopback address"
+      juniper.device.config:
+        load: 'merge'
+        lines:
+          - "set routing-instances LO10 interface lo0.10"
+          - "set routing-instances LO10 instance-type virtual-router"
+          - "set interfaces lo0 unit 10 family inet"
+      register: test7_0
+      ignore_errors: true
+      tags: [test7]
+
+##################################################
+####    TEST 7                                  ##
+##################################################
+    - name: "PRE-TEST 7 - Add loopback address"
+      juniper.device.config:
+        load: 'merge'
+        lines:
+          - "set routing-instances LO10 interface lo0.10"
+          - "set routing-instances LO10 instance-type virtual-router"
+          - "set interfaces lo0 unit 10 family inet"
+      register: test7_1
+      ignore_errors: true
+      tags: [test7]
+
+    - name: Sleep for 15 seconds for loopback to come up
+      ansible.builtin.wait_for:
+        timeout: 15
+      delegate_to: localhost
+
+    - name: "TEST 7 - SNAP_POST with additional loopback"
+      juniper.device.jsnapy:
+        test_files: junos_jsnapy/test_loopback.yml
+        action: snap_post
+      register: test7_2
+      ignore_errors: true
+      tags: [test7]
+
+    - name: "TEST 7 - CHECK"
+      juniper.device.jsnapy:
+        test_files: junos_jsnapy/test_loopback.yml
+        action: check
+      register: test7
+      ignore_errors: false 
+      tags: [test7]
+
+
+
+ cat ansible.cfg 
+[defaults]
+hash_behaviour=merge
+roles_path = ~/.ansible/roles
+callbacks_enabled = juniper.device.jsnapy
+
+[persistent_connection]
+command_timeout = 4100 
+
+Loading collection juniper.device from /root/.ansible/collections/ansible_collections/juniper/device
+Loading callback plugin default of type stdout, v2.0 from /root/ansible_modules_redirection_ansible_merger_branch_fix5_venv/fix5venv/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Attempting to use 'default' callback.
+Skipping callback 'default', as we already have a stdout callback.
+Attempting to use 'junit' callback.
+Attempting to use 'minimal' callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Attempting to use 'oneline' callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Attempting to use 'tree' callback.
+Attempting to use 'juniper.device.jsnapy' callback.
+Loading callback plugin jsnapy of type aggregate, v2.0 from /root/.ansible/collections/ansible_collections/juniper/device/plugins/callback/jsnapy.py
+
+
+ansible-playbook -i inventory pb.juniper_junos_jsnapy_fail.yml
+
+PLAY [Test juniper.device.jsnapy module] *******************************************************************************************************
+
+TASK [TEST 7 - Cleanup] ************************************************************************************************************************
+changed: [local_connection_testcases]
+
+TASK [TEST 4 - SNAP_PRE] ***********************************************************************************************************************
+ok: [local_connection_testcases]
+
+TASK [Check TEST 4] ****************************************************************************************************************************
+ok: [local_connection_testcases] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [PRE-TEST 7 - Add loopback address] *******************************************************************************************************
+changed: [local_connection_testcases]
+
+TASK [PRE-TEST 7 - Add loopback address] *******************************************************************************************************
+ok: [local_connection_testcases]
+
+TASK [Sleep for 15 seconds for loopback to come up] ********************************************************************************************
+ok: [local_connection_testcases -> localhost]
+
+TASK [TEST 7 - SNAP_POST with additional loopback] *********************************************************************************************
+ok: [local_connection_testcases]
+
+TASK [TEST 7 - CHECK] **************************************************************************************************************************
+ok: [local_connection_testcases]
+
+PLAY RECAP *************************************************************************************************************************************
+local_connection_testcases : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+JSNAPy Results for: local_connection_testcases *************************************************************************************************
+Value of 'admin-status' not 'no-diff' at '//logical-interface' with {"id_missing_pre": {"./name": "lo0.10"}}
+
+
+
