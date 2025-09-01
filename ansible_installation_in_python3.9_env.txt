@@ -718,3 +718,32 @@ To https://github.com/chidanandpujar/ansible-junos-stdlib.git
  * [new branch]      ansible_review -> ansible_review
 Branch 'ansible_review' set up to track remote branch 'ansible_review' from 'origin'.
 
+===========================================
+To update files from existing branch:
+===========================================
+
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git status
+On branch ansible_review
+Your branch is up to date with 'origin/ansible_review'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   tests/unit/test_file_copy.py
+
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git add tests/unit/test_file_copy.py 
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git status
+On branch ansible_review
+Your branch is up to date with 'origin/ansible_review'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   tests/unit/test_file_copy.py
+
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git commit -m "fix review comments"
+[ansible_review a035357] fix review comments
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git config --global user.email ""
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git config --global user.name ""
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git push
+
