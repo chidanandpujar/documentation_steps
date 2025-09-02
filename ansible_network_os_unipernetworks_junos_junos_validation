@@ -1,0 +1,172 @@
+1) inventory file
+(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# cat inventory_network_junos 
+[junos]
+x.x.x.x
+
+[junos:vars]
+ansible_network_os=junipernetworks.junos.junos
+ansible_ssh_user=xyz
+ansible_ssh_pass=xyz
+ansible_connection=ansible.netcommon.network_cli
+
+[all:vars]
+ansible_python_interpreter=/root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/bin/python
+
+
+2)
+
+(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# cat ansible.cfg 
+[defaults]
+hash_behaviour=merge
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+
+
+[persistent_connection]
+command_timeout = 300
+
+
+3) ansilbe playbook
+
+(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# cat pb.juniper_junos_command.yml 
+
+
+- name: Functional Test - junos_command module
+  hosts: all
+  gather_facts: false
+  collections:
+    - junipernetworks.junos
+
+  tasks:
+    - name: Run show version
+      junipernetworks.junos.junos_command:
+        commands: show version
+      register: version_output
+
+    - name: Assert show version output is returned
+      assert:
+        that:
+          - version_output.stdout is defined
+          - "'Junos' in version_output.stdout[0]"
+
+    - name: Run show version with wait_for condition (positive match)
+      junipernetworks.junos.junos_command:
+        commands: show version
+        wait_for:
+          - result[0] contains Hostname
+      register: show_version_wait_positive
+
+    - name: Assert wait_for with positive match passed
+      assert:
+        that:
+          - show_version_wait_positive.stdout is defined
+          - show_version_wait_positive.failed_conditions is not defined
+
+    - name: Run multiple commands
+      junipernetworks.junos.junos_command:
+        commands:
+          - show version
+          - show interfaces terse
+      register: multi_output
+
+    - name: Assert multiple commands worked
+      assert:
+        that:
+          - multi_output.stdout | length == 2
+          - "'Interface' in multi_output.stdout[1]"
+
+    - name: Run show version with json output
+      junipernetworks.junos.junos_command:
+        commands: show version
+        display: json
+      register: json_output
+
+    - name: Assert json output is returned
+      assert:
+        that:
+          - json_output.stdout is defined
+          
+    - name: Run RPC get-software-information
+      junipernetworks.junos.junos_command:
+        rpcs: get-software-information
+      register: rpc_output
+
+    - name: Assert RPC output
+      assert:
+        that:
+          - rpc_output.stdout is defined
+          - rpc_output.stdout[0] is string
+
+
+
+4)
+
+(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# ansible-playbook -i inventory_network_junos pb.juniper_junos_command.yml 
+
+PLAY [Functional Test - junos_command module] **************************************************************************************************
+
+TASK [Run show version] ************************************************************************************************************************
+fatal: [10.220.17.17]: FAILED! => {"msg": "network os junipernetworks.junos.junos is not supported"}
+
+PLAY RECAP *************************************************************************************************************************************
+10.220.17.17               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# ansible-playbook -i inventory_network_junos pb.juniper_junos_command.yml -vvvv
+ansible-playbook [core 2.18.8]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/lib/python3.12/site-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/bin/ansible-playbook
+  python version = 3.12.0 (main, Jun 26 2025, 22:36:00) [GCC 9.3.0] (/root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/bin/python3.12)
+  jinja version = 3.1.6
+  libyaml = True
+Using /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/ansible.cfg as config file
+setting up inventory plugins
+Loading collection ansible.builtin from 
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos inventory source with ini plugin
+Loading collection junipernetworks.junos from /root/.ansible/collections/ansible_collections/junipernetworks/junos
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+Loading collection juniper.device from /root/.ansible/collections/ansible_collections/juniper/device
+redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+Loading callback plugin default of type stdout, v2.0 from /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: pb.juniper_junos_command.yml *********************************************************************************************************
+Positional arguments: pb.juniper_junos_command.yml
+verbosity: 4
+connection: ssh
+become_method: sudo
+tags: ('all',)
+inventory: ('/root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos',)
+forks: 5
+1 plays in pb.juniper_junos_command.yml
+
+PLAY [Functional Test - junos_command module] **************************************************************************************************
+redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+Loading collection ansible.netcommon from /root/.ansible/collections/ansible_collections/ansible/netcommon
+
+TASK [Run show version] ************************************************************************************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:11
+Loading collection ansible.utils from /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+fatal: [10.220.17.17]: FAILED! => {
+    "msg": "network os junipernetworks.junos.junos is not supported"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.220.17.17               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
