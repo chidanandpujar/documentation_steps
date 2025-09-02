@@ -52,6 +52,11 @@ pip install ansible-core==2.12.7
 ansible==5.4.0
 ansible-core==2.12.7
 
+Note:
+
+https://github.com/Juniper/ansible-junos-stdlib/issues/606 is fixed in ansible-core 2.16.6 or later
+https://github.com/Juniper/ansible-junos-stdlib/issues/709Vmhosts - vmhost facts supported from PyEZ 2.7.3
+
 OR
 
 To install collection :
@@ -98,6 +103,7 @@ host_key_checking = False
 log_path = ./ansible.log
 timeout=120
 
+7)
 Update inventory file with following details .
 which python3.9
 
@@ -109,7 +115,7 @@ test      ansible_host=xx.xx.xx.xx  ansible_user=xyz  ansible_pass=xyz ansible_s
 [all:vars]
 ansible_python_interpreter=/root/ansbile_debug/venv/bin/python3.9
 
-
+8)
 create ansible playbook 
 
 ---
