@@ -469,6 +469,21 @@ Apply the meta/runtime.yml changes - https://raw.githubusercontent.com/chidanand
 (venv) root@masterhost:~/.ansible/collections/ansible_collections/juniper/device/meta# vi runtime.yml
 
 
+
+=============================================
+Workaround: For local collection installtion
+
+ansible-galaxy collection install ansible.netcommon -p /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/ansible_collections --force
+ansible-galaxy collection install ansible.utils -p /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/ansible_collections --force
+
+(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests# ansible-config dump | grep COLLECTIONS
+COLLECTIONS_ON_ANSIBLE_VERSION_MISMATCH(default) = warning
+COLLECTIONS_PATHS(default) = ['/root/.ansible/collections', '/usr/share/ansible/collections']
+COLLECTIONS_SCAN_SYS_PATH(default) = True
+GALAXY_COLLECTIONS_PATH_WARNING(default) = True
+
+
+==============================================
 inventory_junos:
 
 [junos]
