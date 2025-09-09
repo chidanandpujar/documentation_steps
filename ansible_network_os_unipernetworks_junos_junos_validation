@@ -1,40 +1,21 @@
-1) inventory file
-(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# cat inventory_network_junos 
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ cat inventory_network_junos 
 [junos]
 x.x.x.x
 
 [junos:vars]
 ansible_network_os=junipernetworks.junos.junos
-ansible_ssh_user=xyz
-ansible_ssh_pass=xyz
+ansible_ssh_user=ansible_user1
+ansible_ssh_pass=ansible123
 ansible_connection=ansible.netcommon.network_cli
 
-[all:vars]
-ansible_python_interpreter=/root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/bin/python
 
-
-2)
-
-(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# cat ansible.cfg 
-[defaults]
-hash_behaviour=merge
-inventory = inventory
-host_key_checking = False
-log_path = ./ansible.log
-
-
-[persistent_connection]
-command_timeout = 300
-
-
-3) ansilbe playbook
-
-(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# cat pb.juniper_junos_command.yml 
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ cat pb.juniper_junos_command.yml 
 
 
 - name: Functional Test - junos_command module
   hosts: all
   gather_facts: false
+  connection: netconf
   collections:
     - junipernetworks.junos
 
@@ -97,76 +78,2115 @@ command_timeout = 300
         that:
           - rpc_output.stdout is defined
           - rpc_output.stdout[0] is string
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ ansible-galaxy collection list
+
+# /home/regress/.ansible/collections/ansible_collections
+Collection                               Version
+---------------------------------------- -------
+ansible.netcommon                        8.1.0  
+juniper.device                           1.0.8  
+junipernetworks.junos                    11.0.0 
+
+# /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections
+Collection                               Version
+---------------------------------------- -------
+amazon.aws                               9.5.1  
+ansible.netcommon                        7.2.0  
+ansible.posix                            1.6.2  
+ansible.utils                            5.1.2  
+ansible.windows                          2.8.0  
+arista.eos                               10.1.1 
+awx.awx                                  24.6.1 
+azure.azcollection                       3.7.0  
+check_point.mgmt                         6.4.1  
+chocolatey.chocolatey                    1.5.3  
+cisco.aci                                2.12.0 
+cisco.asa                                6.1.0  
+cisco.dnac                               6.31.3 
+cisco.intersight                         2.2.0  
+cisco.ios                                9.2.0  
+cisco.iosxr                              10.3.1 
+cisco.ise                                2.10.0 
+cisco.meraki                             2.21.4 
+cisco.mso                                2.11.0 
+cisco.nxos                               9.4.0  
+cisco.ucs                                1.16.0 
+cloud.common                             4.2.0  
+cloudscale_ch.cloud                      2.5.2  
+community.aws                            9.3.0  
+community.ciscosmb                       1.0.11 
+community.crypto                         2.26.5 
+community.digitalocean                   1.27.0 
+community.dns                            3.3.0  
+community.docker                         4.7.0  
+community.general                        10.7.3 
+community.grafana                        2.3.0  
+community.hashi_vault                    6.2.1  
+community.hrobot                         2.5.0  
+community.library_inventory_filtering_v1 1.1.1  
+community.libvirt                        1.4.0  
+community.mongodb                        1.7.10 
+community.mysql                          3.15.0 
+community.network                        5.1.0  
+community.okd                            4.0.2  
+community.postgresql                     3.14.2 
+community.proxmox                        1.3.0  
+community.proxysql                       1.6.0  
+community.rabbitmq                       1.6.0  
+community.routeros                       3.9.0  
+community.sap_libs                       1.4.2  
+community.sops                           2.2.1  
+community.vmware                         5.7.2  
+community.windows                        2.4.0  
+community.zabbix                         3.3.0  
+containers.podman                        1.17.0 
+cyberark.conjur                          1.3.6  
+cyberark.pas                             1.0.35 
+dellemc.enterprise_sonic                 2.5.1  
+dellemc.openmanage                       9.12.3 
+dellemc.powerflex                        2.6.1  
+dellemc.unity                            2.1.0  
+f5networks.f5_modules                    1.37.1 
+fortinet.fortimanager                    2.10.0 
+fortinet.fortios                         2.4.0  
+google.cloud                             1.7.0  
+grafana.grafana                          5.7.0  
+hetzner.hcloud                           4.3.0  
+hitachivantara.vspone_block              3.5.1  
+ibm.qradar                               4.0.0  
+ibm.spectrum_virtualize                  2.0.0  
+ibm.storage_virtualize                   2.7.4  
+ieisystem.inmanage                       3.0.0  
+infinidat.infinibox                      1.6.3  
+infoblox.nios_modules                    1.8.0  
+inspur.ispim                             2.2.3  
+junipernetworks.junos                    9.1.0  
+kaytus.ksmanage                          2.0.0  
+kubernetes.core                          5.3.0  
+kubevirt.core                            2.2.3  
+lowlydba.sqlserver                       2.6.1  
+microsoft.ad                             1.9.2  
+microsoft.iis                            1.0.3  
+netapp.cloudmanager                      21.24.0
+netapp.ontap                             22.14.0
+netapp.storagegrid                       21.14.0
+netapp_eseries.santricity                1.4.1  
+netbox.netbox                            3.21.0 
+ngine_io.cloudstack                      2.5.0  
+openstack.cloud                          2.4.1  
+ovirt.ovirt                              3.2.1  
+purestorage.flasharray                   1.36.0 
+purestorage.flashblade                   1.20.0 
+sensu.sensu_go                           1.14.0 
+splunk.es                                4.0.0  
+telekom_mms.icinga_director              2.4.0  
+theforeman.foreman                       4.2.0  
+vmware.vmware                            1.11.0 
+vmware.vmware_rest                       4.8.1  
+vultr.cloud                              1.13.0 
+vyos.vyos                                5.0.0  
+wti.remote                               1.0.10 
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ ansible-config dump | grep COLLECTIONS
+COLLECTIONS_ON_ANSIBLE_VERSION_MISMATCH(default) = warning
+COLLECTIONS_PATHS(default) = ['/home/regress/.ansible/collections', '/usr/share/ansible/collections']
+COLLECTIONS_SCAN_SYS_PATH(default) = True
+GALAXY_COLLECTIONS_PATH_WARNING(default) = True
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ cat ansible.cfg 
+[defaults]
+hash_behaviour=merge
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+
+
+[persistent_connection]
+command_timeout = 300
 
 
 
-4)
-
-(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# ansible-playbook -i inventory_network_junos pb.juniper_junos_command.yml 
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ ansible-playbook -i inventory_network_junos pb.juniper_junos_command.yml 
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_command: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
 
 PLAY [Functional Test - junos_command module] **************************************************************************************************
 
 TASK [Run show version] ************************************************************************************************************************
-fatal: [10.220.17.17]: FAILED! => {"msg": "network os junipernetworks.junos.junos is not supported"}
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: ansible-pylibssh not installed, falling back to paramiko
+[WARNING]: arguments wait_for, match, rpcs are not supported when using transport=cli
+ok: [10.220.17.17]
+
+TASK [Assert show version output is returned] **************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with wait_for condition (positive match)] *******************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert wait_for with positive match passed] **********************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run multiple commands] *******************************************************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert multiple commands worked] *********************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with json output] *******************************************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert json output is returned] **********************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run RPC get-software-information] ********************************************************************************************************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: 'NoneType' object is not iterable
+fatal: [10.220.17.17]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/home/regress/.ansible/tmp/ansible-local-436920l0by60wt/ansible-tmp-1757397378.144679-437033-83035222993285/AnsiballZ_junos_command.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/home/regress/.ansible/tmp/ansible-local-436920l0by60wt/ansible-tmp-1757397378.144679-437033-83035222993285/AnsiballZ_junos_command.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/home/regress/.ansible/tmp/ansible-local-436920l0by60wt/ansible-tmp-1757397378.144679-437033-83035222993285/AnsiballZ_junos_command.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.junos_command', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.junos_command', _modlib_path=modlib_path),\n  File \"<frozen runpy>\", line 226, in run_module\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/ansible_junipernetworks.junos.junos_command_payload_z9165wcs/ansible_junipernetworks.junos.junos_command_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_command.py\", line 480, in <module>\n  File \"/tmp/ansible_junipernetworks.junos.junos_command_payload_z9165wcs/ansible_junipernetworks.junos.junos_command_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_command.py\", line 397, in main\nTypeError: 'NoneType' object is not iterable\n", "module_stdout": "", "msg": "MODULE FAILURE: No start of json char found\nSee stdout/stderr for the exact error", "rc": 1}
 
 PLAY RECAP *************************************************************************************************************************************
-10.220.17.17               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+10.220.17.17               : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 
-(fix9venv) root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos# ansible-playbook -i inventory_network_junos pb.juniper_junos_command.yml -vvvv
+
+
+
+verbose logs
+
+
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos_command: ["'NoneType' object has no attribute
+'get'"]
+[WARNING]: errors were encountered during the plugin load for assert:
+["'NoneType' object has no attribute 'get'"]
 ansible-playbook [core 2.18.8]
-  config file = /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/ansible.cfg
-  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/lib/python3.12/site-packages/ansible
-  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
-  executable location = /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/bin/ansible-playbook
-  python version = 3.12.0 (main, Jun 26 2025, 22:36:00) [GCC 9.3.0] (/root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/bin/python3.12)
+  config file = /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/ansible.cfg
+  configured module search path = ['/home/regress/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible
+  ansible collection location = /home/regress/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/ansible-playbook
+  python version = 3.12.0 (main, Jun 16 2025, 22:41:42) [GCC 9.3.0] (/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/python3.12)
   jinja version = 3.1.6
   libyaml = True
-Using /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/ansible.cfg as config file
+Using /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/ansible.cfg as config file
 setting up inventory plugins
 Loading collection ansible.builtin from 
-host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
-script declined parsing /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
-auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
-Parsed /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos inventory source with ini plugin
-Loading collection junipernetworks.junos from /root/.ansible/collections/ansible_collections/junipernetworks/junos
+host_list declined parsing /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
+script declined parsing /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
+auto declined parsing /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos as it did not pass its verify_file() method
+Parsed /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos inventory source with ini plugin
+Loading collection junipernetworks.junos from /home/regress/.ansible/collections/ansible_collections/junipernetworks/junos
 redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
-Loading collection juniper.device from /root/.ansible/collections/ansible_collections/juniper/device
-redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
+Loading collection juniper.device from /home/regress/.ansible/collections/ansible_collections/juniper/device
 redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
-redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
 redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
-redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
 redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
-redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
 redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
-redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
-Loading callback plugin default of type stdout, v2.0 from /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/lib/python3.12/site-packages/ansible/plugins/callback/default.py
+Loading callback plugin default of type stdout, v2.0 from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible/plugins/callback/default.py
 Skipping callback 'default', as we already have a stdout callback.
 Skipping callback 'minimal', as we already have a stdout callback.
 Skipping callback 'oneline', as we already have a stdout callback.
 
-PLAYBOOK: pb.juniper_junos_command.yml *********************************************************************************************************
+PLAYBOOK: pb.juniper_junos_command.yml *****************************************
 Positional arguments: pb.juniper_junos_command.yml
 verbosity: 4
 connection: ssh
 become_method: sudo
 tags: ('all',)
-inventory: ('/root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos',)
+inventory: ('/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/inventory_network_junos',)
 forks: 5
 1 plays in pb.juniper_junos_command.yml
 
-PLAY [Functional Test - junos_command module] **************************************************************************************************
-redirecting (type: action) junipernetworks.junos.junos_command to juniper.device.junos_command
-Loading collection ansible.netcommon from /root/.ansible/collections/ansible_collections/ansible/netcommon
+PLAY [Functional Test - junos_command module] **********************************
 
-TASK [Run show version] ************************************************************************************************************************
-task path: /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:11
-Loading collection ansible.utils from /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/fix9venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
-fatal: [10.220.17.17]: FAILED! => {
-    "msg": "network os junipernetworks.junos.junos is not supported"
+TASK [Run show version] ********************************************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:11
+[WARNING]: errors were encountered during the plugin load for
+junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: ansible-pylibssh not installed, falling back to paramiko
+[WARNING]: arguments wait_for, match, rpcs are not supported when using
+transport=cli
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+<10.220.17.17> attempting to start connection
+<10.220.17.17> using connection plugin ansible.netcommon.network_cli
+<10.220.17.17> local domain socket does not exist, starting it
+<10.220.17.17> control socket path is /home/regress/.ansible/pc/e0a14e22e8
+<10.220.17.17> Loading collection ansible.builtin from 
+<10.220.17.17> Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+<10.220.17.17> Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+<10.220.17.17> Loading collection junipernetworks.junos from /home/regress/.ansible/collections/ansible_collections/junipernetworks/junos
+<10.220.17.17> local domain socket listeners started successfully
+<10.220.17.17> loaded cliconf plugin ansible_collections.junipernetworks.junos.plugins.cliconf.junos from path /home/regress/.ansible/collections/ansible_collections/junipernetworks/junos/plugins/cliconf/junos.py for network_os junipernetworks.junos.junos
+<10.220.17.17> ssh type is set to auto
+<10.220.17.17> autodetecting ssh_type
+<10.220.17.17> ssh type is now set to paramiko
+<10.220.17.17> Loading collection ansible.builtin from 
+<10.220.17.17> local domain socket path is /home/regress/.ansible/pc/e0a14e22e8
+<10.220.17.17> ESTABLISH LOCAL CONNECTION FOR USER: regress
+<10.220.17.17> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d `"&& mkdir "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304 `" && echo ansible-tmp-1757397414.9568582-437062-523973815304="` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+Using module file /home/regress/.ansible/collections/ansible_collections/juniper/device/plugins/modules/junos_command.py
+<10.220.17.17> PUT /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/tmp34zclr_5 TO /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304/AnsiballZ_junos_command.py
+<10.220.17.17> EXEC /bin/sh -c 'chmod u+rwx /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304/ /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c '/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/python3.12 /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c 'rm -f -r /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397414.9568582-437062-523973815304/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.17.17] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "commands": [
+                "show version"
+            ],
+            "display": null,
+            "interval": 1,
+            "match": "all",
+            "retries": 10,
+            "rpcs": null,
+            "wait_for": null
+        }
+    },
+    "stdout": [
+        "Hostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+    ],
+    "stdout_lines": [
+        [
+            "Hostname: evoeventtestb",
+            "Model: mx960",
+            "Family: junos",
+            "Junos: 25.4I-20250615_dev_common.0.1157",
+            "JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS py extensions [20250615.195302__cd-builder_dev_common]",
+            "JUNOS py base [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS package [20250528.203454__ci_fbsd_builder_main]",
+            "JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS vmguest  [20250615.195302__cd-builder_dev_common]",
+            "JUNOS runtime [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx runtime [20250616.004512__cd-builder_dev_common]",
+            "JUNOS mx modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]",
+            "JUNOS Phone-home [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]",
+            "JUNOS J-Insight [20250615.195302__cd-builder_dev_common]",
+            "JUNOS jfirmware [20250605.173053__devpublish_dev_common]",
+            "JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]",
+            "JUNOS dsa [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]",
+            "JUNOS sflow mx [20250615.195302__cd-builder_dev_common]",
+            "JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]",
+            "JUNOS support scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]",
+            "Junos scheduler tracing [20250615.195302__cd-builder_dev_common]",
+            "JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]",
+            "JUNOS probe utility [20250615.195302__cd-builder_dev_common]",
+            "JUNOS common platform support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Key Manager [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+        ]
+    ]
 }
 
-PLAY RECAP *************************************************************************************************************************************
-10.220.17.17               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+TASK [Assert show version output is returned] **********************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:16
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with wait_for condition (positive match)] ***************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:22
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+<10.220.17.17> attempting to start connection
+<10.220.17.17> using connection plugin ansible.netcommon.network_cli
+<10.220.17.17> found existing local domain socket, using it!
+<10.220.17.17> invoked shell using ssh_type: paramiko
+<10.220.17.17> ssh connection done, setting terminal
+<10.220.17.17> loaded terminal plugin for network_os junipernetworks.junos.junos
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> firing event: on_open_shell()
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> ssh connection has completed successfully
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> updating play_context for connection
+<10.220.17.17> Loading collection ansible.builtin from 
+<10.220.17.17> local domain socket path is /home/regress/.ansible/pc/e0a14e22e8
+<10.220.17.17> ESTABLISH LOCAL CONNECTION FOR USER: regress
+<10.220.17.17> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d `"&& mkdir "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775 `" && echo ansible-tmp-1757397418.3478773-437093-173905289714775="` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+Using module file /home/regress/.ansible/collections/ansible_collections/juniper/device/plugins/modules/junos_command.py
+<10.220.17.17> PUT /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/tmpd6k19agb TO /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775/AnsiballZ_junos_command.py
+<10.220.17.17> EXEC /bin/sh -c 'chmod u+rwx /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775/ /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c '/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/python3.12 /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c 'rm -f -r /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397418.3478773-437093-173905289714775/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.17.17] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "commands": [
+                "show version"
+            ],
+            "display": null,
+            "interval": 1,
+            "match": "all",
+            "retries": 10,
+            "rpcs": null,
+            "wait_for": [
+                "result[0] contains Hostname"
+            ]
+        }
+    },
+    "stdout": [
+        "Hostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+    ],
+    "stdout_lines": [
+        [
+            "Hostname: evoeventtestb",
+            "Model: mx960",
+            "Family: junos",
+            "Junos: 25.4I-20250615_dev_common.0.1157",
+            "JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS py extensions [20250615.195302__cd-builder_dev_common]",
+            "JUNOS py base [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS package [20250528.203454__ci_fbsd_builder_main]",
+            "JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS vmguest  [20250615.195302__cd-builder_dev_common]",
+            "JUNOS runtime [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx runtime [20250616.004512__cd-builder_dev_common]",
+            "JUNOS mx modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]",
+            "JUNOS Phone-home [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]",
+            "JUNOS J-Insight [20250615.195302__cd-builder_dev_common]",
+            "JUNOS jfirmware [20250605.173053__devpublish_dev_common]",
+            "JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]",
+            "JUNOS dsa [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]",
+            "JUNOS sflow mx [20250615.195302__cd-builder_dev_common]",
+            "JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]",
+            "JUNOS support scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]",
+            "Junos scheduler tracing [20250615.195302__cd-builder_dev_common]",
+            "JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]",
+            "JUNOS probe utility [20250615.195302__cd-builder_dev_common]",
+            "JUNOS common platform support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Key Manager [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+        ]
+    ]
+}
+
+TASK [Assert wait_for with positive match passed] ******************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:29
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run multiple commands] ***************************************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:35
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+<10.220.17.17> attempting to start connection
+<10.220.17.17> using connection plugin ansible.netcommon.network_cli
+<10.220.17.17> found existing local domain socket, using it!
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> updating play_context for connection
+<10.220.17.17> Loading collection ansible.builtin from 
+<10.220.17.17> local domain socket path is /home/regress/.ansible/pc/e0a14e22e8
+<10.220.17.17> ESTABLISH LOCAL CONNECTION FOR USER: regress
+<10.220.17.17> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d `"&& mkdir "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386 `" && echo ansible-tmp-1757397420.0625327-437119-78368697678386="` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+Using module file /home/regress/.ansible/collections/ansible_collections/juniper/device/plugins/modules/junos_command.py
+<10.220.17.17> PUT /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/tmpc8enj7_9 TO /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386/AnsiballZ_junos_command.py
+<10.220.17.17> EXEC /bin/sh -c 'chmod u+rwx /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386/ /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c '/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/python3.12 /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c 'rm -f -r /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397420.0625327-437119-78368697678386/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.17.17] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "commands": [
+                "show version",
+                "show interfaces terse"
+            ],
+            "display": null,
+            "interval": 1,
+            "match": "all",
+            "retries": 10,
+            "rpcs": null,
+            "wait_for": null
+        }
+    },
+    "stdout": [
+        "Hostname: evoeventtestb\nModel: mx960\nFamily: junos\nJunos: 25.4I-20250615_dev_common.0.1157\nJUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS modules [20250615.195302__cd-builder_dev_common]\nJUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\nJUNOS libs [20250615.195302__cd-builder_dev_common]\nJUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\nJUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS py extensions [20250615.195302__cd-builder_dev_common]\nJUNOS py base [20250615.195302__cd-builder_dev_common]\nJUNOS OS package [20250528.203454__ci_fbsd_builder_main]\nJUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx libs [20250615.195302__cd-builder_dev_common]\nJUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\nJUNOS mx daemons [20250615.195302__cd-builder_dev_common]\nJUNOS daemons [20250615.195302__cd-builder_dev_common]\nJUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\nJUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\nJUNOS vmguest  [20250615.195302__cd-builder_dev_common]\nJUNOS runtime [20250615.195302__cd-builder_dev_common]\nJUNOS mx runtime [20250616.004512__cd-builder_dev_common]\nJUNOS mx modules [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\nJUNOS Phone-home [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\nJUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\nJUNOS J-Insight [20250615.195302__cd-builder_dev_common]\nJUNOS jfirmware [20250605.173053__devpublish_dev_common]\nJUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\nJUNOS dsa [20250615.195302__cd-builder_dev_common]\nJUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\nJUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\nJUNOS sflow mx [20250615.195302__cd-builder_dev_common]\nJUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\nJUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\nJUNOS support scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\nJunos scheduler tracing [20250615.195302__cd-builder_dev_common]\nJUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\nJUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\nJUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\nJUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\nJUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\nJUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\nJUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\nJUNOS probe utility [20250615.195302__cd-builder_dev_common]\nJUNOS common platform support [20250615.195302__cd-builder_dev_common]\nJUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\nJUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\nJUNOS Key Manager [20250615.195302__cd-builder_dev_common]\nJUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\nJUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\nJUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\nJUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\nJUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\nJUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]",
+        "Interface               Admin Link Proto    Local                 Remote\nge-0/0/0                up    up\nge-0/0/0.16386          up    up  \nlc-0/0/0                up    up\nlc-0/0/0.32769          up    up   vpls    \npfe-0/0/0               up    up\npfe-0/0/0.16383         up    up   inet    \n                                   inet6   \npfh-0/0/0               up    up\npfh-0/0/0.16383         up    up   inet    \npfh-0/0/0.16384         up    up   inet    \nge-0/0/1                up    up\nge-0/0/1.0              up    up   inet    \n                                   inet6    fe80::5603:2ff:fe00:6526/64\n                                   multiservice\nge-0/0/2                up    down\nge-0/0/2.0              up    down inet     192.0.2.2/24    \n                                   multiservice\nge-0/0/3                up    down\nge-0/0/3.0              up    down inet     192.0.2.3/24    \n                                   multiservice\nge-0/0/4                up    down\nge-0/0/4.0              up    down inet     192.0.2.4/24    \n                                   multiservice\nge-0/0/5                up    down\nge-0/0/5.0              up    down inet     192.0.2.5/24    \n                                   multiservice\nge-0/0/6                up    down\nge-0/0/6.16386          up    down\nge-0/0/7                up    down\nge-0/0/7.16386          up    down\nge-0/0/8                up    down\nge-0/0/8.16386          up    down\nge-0/0/9                up    down\nge-0/0/9.16386          up    down\nge-0/1/0                up    down\nge-0/1/0.16386          up    down\nge-0/1/1                up    down\nge-0/1/1.16386          up    down\nge-0/1/2                up    down\nge-0/1/2.16386          up    down\nge-0/1/3                up    down\nge-0/1/3.16386          up    down\nge-0/1/4                up    down\nge-0/1/4.16386          up    down\nge-0/1/5                up    down\nge-0/1/5.16386          up    down\nge-0/1/6                up    down\nge-0/1/6.16386          up    down\nge-0/1/7                up    down\nge-0/1/7.16386          up    down\nge-0/1/8                up    down\nge-0/1/8.16386          up    down\nge-0/1/9                up    down\nge-0/1/9.16386          up    down\nxe-0/2/0                up    down\nxe-0/2/0.16386          up    down\nxe-0/2/1                up    down\nxe-0/2/1.16386          up    down\nxe-0/3/0                up    down\nxe-0/3/0.16386          up    down\nxe-0/3/1                up    down\nxe-0/3/1.16386          up    down\ncbp0                    up    up\ndemux0                  up    up\ndemux1                  up    up\ndsc                     up    up\nem1                     up    up\nem1.0                   up    up   inet     10.0.0.4/8      \n                                            128.0.0.1/2     \n                                            128.0.0.4/2     \n                                   inet6    fe80::5603:2ff:fe00:6801/64\n                                            fec0::a:0:0:4/64\n                                   tnp      0x4             \nem2                     up    up\nem2.32768               up    up   inet     192.168.1.2/24  \nesi                     up    up\nfti0                    up    up\nfti1                    up    up\nfti2                    up    up\nfti3                    up    up\nfti4                    up    up\nfti5                    up    up\nfti6                    up    up\nfti7                    up    up\nfxp0                    up    up\nfxp0.0                  up    up   inet     10.220.17.17/17 \ngre                     up    up\nipip                    up    up\nirb                     up    up\njsrv                    up    up\njsrv.1                  up    up   inet     128.0.0.127/2   \nlo0                     up    up\nlo0.0                   up    up   inet     128.220.17.17       --> 0/0\n                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017\n                                   inet6    abcd::128:220:17:17\n                                            fe80::5604:a0f:fcdc:1111\nlo0.10                  up    up   inet    \nlo0.16384               up    up   inet     127.0.0.1           --> 0/0\nlo0.16385               up    up   inet    \nlsi                     up    up\nmif                     up    up\nmtun                    up    up\npimd                    up    up\npime                    up    up\npip0                    up    up\npp0                     up    up\nrbeb                    up    up\ntap                     up    up\nvtep                    up    up"
+    ],
+    "stdout_lines": [
+        [
+            "Hostname: evoeventtestb",
+            "Model: mx960",
+            "Family: junos",
+            "Junos: 25.4I-20250615_dev_common.0.1157",
+            "JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS py extensions [20250615.195302__cd-builder_dev_common]",
+            "JUNOS py base [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS package [20250528.203454__ci_fbsd_builder_main]",
+            "JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx libs [20250615.195302__cd-builder_dev_common]",
+            "JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]",
+            "JUNOS mx daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS daemons [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]",
+            "JUNOS vmguest  [20250615.195302__cd-builder_dev_common]",
+            "JUNOS runtime [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mx runtime [20250616.004512__cd-builder_dev_common]",
+            "JUNOS mx modules [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]",
+            "JUNOS Phone-home [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]",
+            "JUNOS J-Insight [20250615.195302__cd-builder_dev_common]",
+            "JUNOS jfirmware [20250605.173053__devpublish_dev_common]",
+            "JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]",
+            "JUNOS dsa [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]",
+            "JUNOS sflow mx [20250615.195302__cd-builder_dev_common]",
+            "JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]",
+            "JUNOS support scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]",
+            "Junos scheduler tracing [20250615.195302__cd-builder_dev_common]",
+            "JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]",
+            "JUNOS probe utility [20250615.195302__cd-builder_dev_common]",
+            "JUNOS common platform support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Key Manager [20250615.195302__cd-builder_dev_common]",
+            "JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]",
+            "JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]",
+            "JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]"
+        ],
+        [
+            "Interface               Admin Link Proto    Local                 Remote",
+            "ge-0/0/0                up    up",
+            "ge-0/0/0.16386          up    up  ",
+            "lc-0/0/0                up    up",
+            "lc-0/0/0.32769          up    up   vpls    ",
+            "pfe-0/0/0               up    up",
+            "pfe-0/0/0.16383         up    up   inet    ",
+            "                                   inet6   ",
+            "pfh-0/0/0               up    up",
+            "pfh-0/0/0.16383         up    up   inet    ",
+            "pfh-0/0/0.16384         up    up   inet    ",
+            "ge-0/0/1                up    up",
+            "ge-0/0/1.0              up    up   inet    ",
+            "                                   inet6    fe80::5603:2ff:fe00:6526/64",
+            "                                   multiservice",
+            "ge-0/0/2                up    down",
+            "ge-0/0/2.0              up    down inet     192.0.2.2/24    ",
+            "                                   multiservice",
+            "ge-0/0/3                up    down",
+            "ge-0/0/3.0              up    down inet     192.0.2.3/24    ",
+            "                                   multiservice",
+            "ge-0/0/4                up    down",
+            "ge-0/0/4.0              up    down inet     192.0.2.4/24    ",
+            "                                   multiservice",
+            "ge-0/0/5                up    down",
+            "ge-0/0/5.0              up    down inet     192.0.2.5/24    ",
+            "                                   multiservice",
+            "ge-0/0/6                up    down",
+            "ge-0/0/6.16386          up    down",
+            "ge-0/0/7                up    down",
+            "ge-0/0/7.16386          up    down",
+            "ge-0/0/8                up    down",
+            "ge-0/0/8.16386          up    down",
+            "ge-0/0/9                up    down",
+            "ge-0/0/9.16386          up    down",
+            "ge-0/1/0                up    down",
+            "ge-0/1/0.16386          up    down",
+            "ge-0/1/1                up    down",
+            "ge-0/1/1.16386          up    down",
+            "ge-0/1/2                up    down",
+            "ge-0/1/2.16386          up    down",
+            "ge-0/1/3                up    down",
+            "ge-0/1/3.16386          up    down",
+            "ge-0/1/4                up    down",
+            "ge-0/1/4.16386          up    down",
+            "ge-0/1/5                up    down",
+            "ge-0/1/5.16386          up    down",
+            "ge-0/1/6                up    down",
+            "ge-0/1/6.16386          up    down",
+            "ge-0/1/7                up    down",
+            "ge-0/1/7.16386          up    down",
+            "ge-0/1/8                up    down",
+            "ge-0/1/8.16386          up    down",
+            "ge-0/1/9                up    down",
+            "ge-0/1/9.16386          up    down",
+            "xe-0/2/0                up    down",
+            "xe-0/2/0.16386          up    down",
+            "xe-0/2/1                up    down",
+            "xe-0/2/1.16386          up    down",
+            "xe-0/3/0                up    down",
+            "xe-0/3/0.16386          up    down",
+            "xe-0/3/1                up    down",
+            "xe-0/3/1.16386          up    down",
+            "cbp0                    up    up",
+            "demux0                  up    up",
+            "demux1                  up    up",
+            "dsc                     up    up",
+            "em1                     up    up",
+            "em1.0                   up    up   inet     10.0.0.4/8      ",
+            "                                            128.0.0.1/2     ",
+            "                                            128.0.0.4/2     ",
+            "                                   inet6    fe80::5603:2ff:fe00:6801/64",
+            "                                            fec0::a:0:0:4/64",
+            "                                   tnp      0x4             ",
+            "em2                     up    up",
+            "em2.32768               up    up   inet     192.168.1.2/24  ",
+            "esi                     up    up",
+            "fti0                    up    up",
+            "fti1                    up    up",
+            "fti2                    up    up",
+            "fti3                    up    up",
+            "fti4                    up    up",
+            "fti5                    up    up",
+            "fti6                    up    up",
+            "fti7                    up    up",
+            "fxp0                    up    up",
+            "fxp0.0                  up    up   inet     10.220.17.17/17 ",
+            "gre                     up    up",
+            "ipip                    up    up",
+            "irb                     up    up",
+            "jsrv                    up    up",
+            "jsrv.1                  up    up   inet     128.0.0.127/2   ",
+            "lo0                     up    up",
+            "lo0.0                   up    up   inet     128.220.17.17       --> 0/0",
+            "                                   iso      47.0005.80ff.f800.0000.0108.0001.1282.2001.7017",
+            "                                   inet6    abcd::128:220:17:17",
+            "                                            fe80::5604:a0f:fcdc:1111",
+            "lo0.10                  up    up   inet    ",
+            "lo0.16384               up    up   inet     127.0.0.1           --> 0/0",
+            "lo0.16385               up    up   inet    ",
+            "lsi                     up    up",
+            "mif                     up    up",
+            "mtun                    up    up",
+            "pimd                    up    up",
+            "pime                    up    up",
+            "pip0                    up    up",
+            "pp0                     up    up",
+            "rbeb                    up    up",
+            "tap                     up    up",
+            "vtep                    up    up"
+        ]
+    ]
+}
+
+TASK [Assert multiple commands worked] *****************************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:42
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with json output] ***************************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:48
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+<10.220.17.17> attempting to start connection
+<10.220.17.17> using connection plugin ansible.netcommon.network_cli
+<10.220.17.17> found existing local domain socket, using it!
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> updating play_context for connection
+<10.220.17.17> Loading collection ansible.builtin from 
+<10.220.17.17> local domain socket path is /home/regress/.ansible/pc/e0a14e22e8
+<10.220.17.17> ESTABLISH LOCAL CONNECTION FOR USER: regress
+<10.220.17.17> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d `"&& mkdir "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679 `" && echo ansible-tmp-1757397422.2441714-437145-40311204765679="` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+Using module file /home/regress/.ansible/collections/ansible_collections/juniper/device/plugins/modules/junos_command.py
+<10.220.17.17> PUT /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/tmp9fwurw8f TO /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679/AnsiballZ_junos_command.py
+<10.220.17.17> EXEC /bin/sh -c 'chmod u+rwx /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679/ /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c '/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/python3.12 /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c 'rm -f -r /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397422.2441714-437145-40311204765679/ > /dev/null 2>&1 && sleep 0'
+ok: [10.220.17.17] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "commands": [
+                "show version"
+            ],
+            "display": "json",
+            "interval": 1,
+            "match": "all",
+            "retries": 10,
+            "rpcs": null,
+            "wait_for": null
+        }
+    },
+    "stdout": [
+        "{\n    \"software-information\" : [\n    {\n        \"host-name\" : [\n        {\n            \"data\" : \"evoeventtestb\"\n        }\n        ], \n        \"product-model\" : [\n        {\n            \"data\" : \"mx960\"\n        }\n        ], \n        \"product-name\" : [\n        {\n            \"data\" : \"mx960\"\n        }\n        ], \n        \"os-name\" : [\n        {\n            \"data\" : \"junos\"\n        }\n        ], \n        \"junos-version\" : [\n        {\n            \"data\" : \"25.4I-20250615_dev_common.0.1157\"\n        }\n        ], \n        \"package-information\" : [\n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-kernel\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-kernel-prd-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-libs-compat32\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-libs-compat32-15-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-vmguest\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-vmguest-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-modules\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-modules-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS modules [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-libs\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-libs-15-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-compat32\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-compat32-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-runtime\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-runtime-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jail-runtime\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jail-runtime-x86-32-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"netstack\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-net-prd-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-libs\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-libs-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS libs [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jsdn\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jsdn-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"zoneinfo\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-zoneinfo-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"py-extensions\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"py-extensions-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS py extensions [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"py-base\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"py-base-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS py base [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-package\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-package-20250528.203454__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS package [20250528.203454__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-crypto\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-crypto-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-boot-junos\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-boot-junos-ve-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-libs-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-libs-mx-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mx libs [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-libs-compat32\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-libs-compat32-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"os-modules-net\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"os-modules-net-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-daemons-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-daemons-mx-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mx daemons [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-daemons\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-daemons-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS daemons [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-net-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-net-mtx-prd-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-libs-compat32-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-libs-compat32-mx-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-vmguest\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-vmguest-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS vmguest  [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-runtime\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-runtime-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS runtime [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-runtime-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-runtime-mx-x86-32-20250616.004512__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mx runtime [20250616.004512__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-modules-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-modules-mx-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mx modules [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jsim-wrlinux\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jsim-wrlinux-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jsim-pfe-vmx\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jsim-pfe-vmx-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jsim-pfe-internal\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jsim-pfe-internal-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jsd-jet-1\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jsd-x86-32-20250616.004512__cd-builder_dev_common-jet-1\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jphone-home\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jphone-home-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Phone-home [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jpfe-wrlinuxltsx-pmb\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jpfe-wrlinuxltsx-pmb-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jpfe-wrlinux9\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jpfe-wrlinux9-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jpfe-spc3-mx\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jpfe-spc3-mx-x86-32-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jpfe-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jpfe-X960-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jpfe-aft\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jpfe-aft-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jpfe-X\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jpfe-X-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jmrt-base\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jmrt-base-x86-64-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jinsight\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jinsight-x86-32-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS J-Insight [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jfirmware\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jfirmware-x86-32-25.4I20250605_1030__devpublish\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS jfirmware [20250605.173053__devpublish_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jdocs\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jdocs-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"dsa\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"dsa-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS dsa [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"vmguest\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jsim-pfe-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"ssh-tunneld\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"ssh-tunneld-x86-32-20250616.004512__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"sflow-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"sflow-mx-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS sflow mx [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"na-telemetry\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"na-telemetry-x86-32-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-sysmond\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-sysmond-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-support\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-support-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS support scripts [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-secintel\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-secintel-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-schedtrace\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-schedtrace-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"Junos scheduler tracing [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-rpd-telemetry-application\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-rpd-telemetry-application-x86-64-25.4I-20250615_dev_common.0.1157-bsd15\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-scripts\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-scripts-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-mpls-oam-basic\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-mpls-oam-basic-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-mpls-oam-advanced\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-mpls-oam-advanced-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-lsys\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-lsys-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-controller-internal\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-controller-internal-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-controller-external\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-controller-external-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-compat32\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-compat32-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-routing-aggregated\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-routing-aggregated-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-probe\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-probe-x86-64-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS probe utility [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-platform-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS common platform support [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-openconfig\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-openconfig-x86-32-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-l2-rsi\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-l2-rsi-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-km\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-km-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Key Manager [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-jsqlsync\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-jsqlsync-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-dp-crypto-support-platform\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-dp-crypto-support-mtx-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-bbe-up\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-bbe-up-x86-64-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"junos-appidd\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"junos-appidd-mx-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jtpm2\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jtpm2-x86-32-20250615.195302__cd-builder_dev_common\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\"\n            }\n            ]\n        }, \n        {\n            \"name\" : [\n            {\n                \"data\" : \"jmrt-test\"\n            }\n            ], \n            \"package-name\" : [\n            {\n                \"data\" : \"jmrt-test-x86-64-25.4I-20250615_dev_common.0.1157\"\n            }\n            ], \n            \"comment\" : [\n            {\n                \"data\" : \"JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\"\n            }\n            ]\n        }\n        ]\n    }\n    ]\n}"
+    ],
+    "stdout_lines": [
+        [
+            "{",
+            "    \"software-information\" : [",
+            "    {",
+            "        \"host-name\" : [",
+            "        {",
+            "            \"data\" : \"evoeventtestb\"",
+            "        }",
+            "        ], ",
+            "        \"product-model\" : [",
+            "        {",
+            "            \"data\" : \"mx960\"",
+            "        }",
+            "        ], ",
+            "        \"product-name\" : [",
+            "        {",
+            "            \"data\" : \"mx960\"",
+            "        }",
+            "        ], ",
+            "        \"os-name\" : [",
+            "        {",
+            "            \"data\" : \"junos\"",
+            "        }",
+            "        ], ",
+            "        \"junos-version\" : [",
+            "        {",
+            "            \"data\" : \"25.4I-20250615_dev_common.0.1157\"",
+            "        }",
+            "        ], ",
+            "        \"package-information\" : [",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-kernel\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-kernel-prd-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS Kernel 64-bit  [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-libs-compat32\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-libs-compat32-15-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS libs compat32 [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-vmguest\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-vmguest-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS vmguest [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-modules\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-modules-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS modules [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-libs\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-libs-15-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS libs [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-compat32\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-compat32-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS 32-bit compatibility [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-runtime\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-runtime-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jail-runtime\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jail-runtime-x86-32-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS jail runtime [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"netstack\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-net-prd-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS network stack and utilities [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS libs [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jsdn\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jsdn-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS SDN Software Suite [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"zoneinfo\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-zoneinfo-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS time zone information [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"py-extensions\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"py-extensions-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS py extensions [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"py-base\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"py-base-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS py base [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-package\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-package-20250528.203454__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS package [20250528.203454__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-crypto\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-crypto-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS crypto [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-boot-junos\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-boot-junos-ve-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS boot-ve files [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-mx-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mx libs [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-compat32\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-compat32-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS libs compat32 [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"os-modules-net\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"os-modules-net-x86-64-20250606.32ed862a0f7__ci_fbsd_builder_main\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS OS network modules [20250606.32ed862a0f7__ci_fbsd_builder_main]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-daemons-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-daemons-mx-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mx daemons [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-daemons\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-daemons-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS daemons [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-net-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-net-mtx-prd-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mtx network modules [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-compat32-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-libs-compat32-mx-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mx libs compat32 [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-vmguest\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-vmguest-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS vmguest  [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-runtime\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-runtime-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS runtime [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-runtime-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-runtime-mx-x86-32-20250616.004512__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mx runtime [20250616.004512__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-modules-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-modules-mx-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mx modules [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-wrlinux\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-wrlinux-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Simulation Linux Package [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-pfe-vmx\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-pfe-vmx-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-pfe-internal\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-pfe-internal-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Simulation Package [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jsd-jet-1\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jsd-x86-32-20250616.004512__cd-builder_dev_common-jet-1\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Extension Toolkit [20250616.004512__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jphone-home\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jphone-home-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Phone-home [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-wrlinuxltsx-pmb\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-wrlinuxltsx-pmb-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Support (wrlinuxltsx-pmb) [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-wrlinux9\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-wrlinux9-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Support (wrlinux9) [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-spc3-mx\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-spc3-mx-x86-32-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Support (MXSPC3) [25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-X960-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-aft\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-aft-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Support (aft) [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-X\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jpfe-X-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Support (MX Common) [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jmrt-base\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jmrt-base-x86-64-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jinsight\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jinsight-x86-32-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS J-Insight [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jfirmware\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jfirmware-x86-32-25.4I20250605_1030__devpublish\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS jfirmware [20250605.173053__devpublish_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jdocs\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jdocs-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Online Documentation [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"dsa\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"dsa-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS dsa [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"vmguest\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jsim-pfe-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Packet Forwarding Engine Simulation Package [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"ssh-tunneld\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"ssh-tunneld-x86-32-20250616.004512__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS SSH Tunnel Daemon [20250616.004512__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"sflow-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"sflow-mx-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS sflow mx [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"na-telemetry\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"na-telemetry-x86-32-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS na telemetry [25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-sysmond\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-sysmond-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS System Monitoring [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-support\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-support-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS support scripts [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-secintel\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-secintel-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Security Intelligence [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-schedtrace\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-schedtrace-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"Junos scheduler tracing [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-rpd-telemetry-application\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-rpd-telemetry-application-x86-64-25.4I-20250615_dev_common.0.1157-bsd15\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS RPD Telemetry Application [25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-scripts\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-scripts-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS python routing scripts for consistency check in RIB/FIB/PFE [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-mpls-oam-basic\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-mpls-oam-basic-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing mpls-oam-basic [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-mpls-oam-advanced\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-mpls-oam-advanced-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing mpls-oam-advanced [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-lsys\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-lsys-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing lsys [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-controller-internal\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-controller-internal-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing controller-internal [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-controller-external\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-controller-external-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing controller-external [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-compat32\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-compat32-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing 32-bit Compatible Version [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-aggregated\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-routing-aggregated-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Routing aggregated [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-probe\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-probe-x86-64-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS probe utility [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-platform-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS common platform support [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-openconfig\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-openconfig-x86-32-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Openconfig [25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-l2-rsi\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-l2-rsi-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS L2 RSI Scripts [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-km\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-km-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Key Manager [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-jsqlsync\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-jsqlsync-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS SQL Sync Daemon [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-dp-crypto-support-platform\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-dp-crypto-support-mtx-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS mtx Data Plane Crypto Support [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-bbe-up\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-bbe-up-x86-64-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Broadband Edge User Plane Apps [25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"junos-appidd\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"junos-appidd-mx-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS appidd-mx application-identification daemon [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jtpm2\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jtpm2-x86-32-20250615.195302__cd-builder_dev_common\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Common BIOS [20250615.195302__cd-builder_dev_common]\"",
+            "            }",
+            "            ]",
+            "        }, ",
+            "        {",
+            "            \"name\" : [",
+            "            {",
+            "                \"data\" : \"jmrt-test\"",
+            "            }",
+            "            ], ",
+            "            \"package-name\" : [",
+            "            {",
+            "                \"data\" : \"jmrt-test-x86-64-25.4I-20250615_dev_common.0.1157\"",
+            "            }",
+            "            ], ",
+            "            \"comment\" : [",
+            "            {",
+            "                \"data\" : \"JUNOS Juniper Malware Removal Tool (JMRT) Test [1.0.0+25.4I-20250615_dev_common.0.1157]\"",
+            "            }",
+            "            ]",
+            "        }",
+            "        ]",
+            "    }",
+            "    ]",
+            "}"
+        ]
+    ]
+}
+
+TASK [Assert json output is returned] ******************************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:54
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run RPC get-software-information] ****************************************
+task path: /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos/pb.juniper_junos_command.yml:59
+Loading collection ansible.netcommon from /home/regress/.ansible/collections/ansible_collections/ansible/netcommon
+Loading collection ansible.utils from /home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/lib/python3.12/site-packages/ansible_collections/ansible/utils
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+<10.220.17.17> attempting to start connection
+<10.220.17.17> using connection plugin ansible.netcommon.network_cli
+<10.220.17.17> found existing local domain socket, using it!
+<10.220.17.17> Response received, triggered 'persistent_buffer_read_timeout' timer of 0.1 seconds
+<10.220.17.17> updating play_context for connection
+<10.220.17.17> Loading collection ansible.builtin from 
+<10.220.17.17> local domain socket path is /home/regress/.ansible/pc/e0a14e22e8
+<10.220.17.17> ESTABLISH LOCAL CONNECTION FOR USER: regress
+<10.220.17.17> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d `"&& mkdir "` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877 `" && echo ansible-tmp-1757397423.9633029-437180-166855756418877="` echo /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877 `" ) && sleep 0'
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+Using module file /home/regress/.ansible/collections/ansible_collections/juniper/device/plugins/modules/junos_command.py
+<10.220.17.17> PUT /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/tmpsi680ze3 TO /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py
+<10.220.17.17> EXEC /bin/sh -c 'chmod u+rwx /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/ /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c '/home/regress/ansible_modules_redirection_ansible_merger_branch_fix10venv/fix10venv/bin/python3.12 /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py && sleep 0'
+<10.220.17.17> EXEC /bin/sh -c 'rm -f -r /home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/ > /dev/null 2>&1 && sleep 0'
+The full traceback is:
+Traceback (most recent call last):
+  File "/home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py", line 107, in <module>
+    _ansiballz_main()
+  File "/home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py", line 99, in _ansiballz_main
+    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+  File "/home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py", line 47, in invoke_module
+    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.junos_command', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.junos_command', _modlib_path=modlib_path),
+  File "<frozen runpy>", line 226, in run_module
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/ansible_junipernetworks.junos.junos_command_payload_5ejzlfoz/ansible_junipernetworks.junos.junos_command_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_command.py", line 480, in <module>
+  File "/tmp/ansible_junipernetworks.junos.junos_command_payload_5ejzlfoz/ansible_junipernetworks.junos.junos_command_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_command.py", line 397, in main
+TypeError: 'NoneType' object is not iterable
+fatal: [10.220.17.17]: FAILED! => {
+    "changed": false,
+    "module_stderr": "Traceback (most recent call last):\n  File \"/home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/home/regress/.ansible/tmp/ansible-local-4370583h249f_d/ansible-tmp-1757397423.9633029-437180-166855756418877/AnsiballZ_junos_command.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible_collections.juniper.device.plugins.modules.junos_command', init_globals=dict(_module_fqn='ansible_collections.juniper.device.plugins.modules.junos_command', _modlib_path=modlib_path),\n  File \"<frozen runpy>\", line 226, in run_module\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/ansible_junipernetworks.junos.junos_command_payload_5ejzlfoz/ansible_junipernetworks.junos.junos_command_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_command.py\", line 480, in <module>\n  File \"/tmp/ansible_junipernetworks.junos.junos_command_payload_5ejzlfoz/ansible_junipernetworks.junos.junos_command_payload.zip/ansible_collections/juniper/device/plugins/modules/junos_command.py\", line 397, in main\nTypeError: 'NoneType' object is not iterable\n",
+    "module_stdout": "",
+    "msg": "MODULE FAILURE: No start of json char found\nSee stdout/stderr for the exact error",
+    "rc": 1
+}
+
+PLAY RECAP *********************************************************************
+10.220.17.17               : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
 
