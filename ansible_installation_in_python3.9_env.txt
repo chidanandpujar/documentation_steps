@@ -780,3 +780,11 @@ Changes to be committed:
 (reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git config --global user.name ""
 (reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git push
 
+
+
+
+work aroud 1:
+=============
+
+ansible-galaxy collection install ansible.netcommon -p /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/ansible_collections --force
+ansible-galaxy collection install ansible.utils -p /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/ansible_collections --force
