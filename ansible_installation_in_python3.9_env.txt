@@ -91,11 +91,7 @@ sudo ansible-galaxy collection list
 find ./ -name ansible.cfg
 ./ansible-junos-stdlib/tests/ansible.cfg
 
-cat ansible.cfg 
-[defaults]
-inventory = inventory
-host_key_checking = False
-
+cat ansible.cfg
 [defaults]
 hash_behaviour=merge
 #roles_path = ~/.ansible/roles
