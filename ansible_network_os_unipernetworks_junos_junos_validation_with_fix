@@ -1,0 +1,149 @@
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ cat inventory_network_junos 
+[junos]
+x.x.x.x
+
+[junos:vars]
+ansible_network_os=junipernetworks.junos.junos
+ansible_ssh_user=ansible_user1
+ansible_ssh_pass=ansible123
+ansible_connection=ansible.netcommon.network_cli
+
+
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ cat ansible.cfg 
+[defaults]
+hash_behaviour=merge
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+
+
+[persistent_connection]
+command_timeout = 300
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ cat pb.juniper_junos_command_network_junos.yml 
+
+
+- name: Functional Test - junos_command module
+  hosts: all
+  gather_facts: false
+  connection: netconf
+  collections:
+    - junipernetworks.junos
+
+  tasks:
+    - name: Run show version
+      junipernetworks.junos.junos_command:
+        commands: show version
+      register: version_output
+
+    - name: Assert show version output is returned
+      assert:
+        that:
+          - version_output.stdout is defined
+          - "'Junos' in version_output.stdout[0]"
+
+    - name: Run show version with wait_for condition (positive match)
+      junipernetworks.junos.junos_command:
+        commands: show version
+        wait_for:
+          - result[0] contains Hostname
+      register: show_version_wait_positive
+
+    - name: Assert wait_for with positive match passed
+      assert:
+        that:
+          - show_version_wait_positive.stdout is defined
+          - show_version_wait_positive.failed_conditions is not defined
+
+    - name: Run multiple commands
+      junipernetworks.junos.junos_command:
+        commands:
+          - show version
+          - show interfaces terse
+      register: multi_output
+
+    - name: Assert multiple commands worked
+      assert:
+        that:
+          - multi_output.stdout | length == 2
+          - "'Interface' in multi_output.stdout[1]"
+
+    - name: Run show version with json output
+      junipernetworks.junos.junos_command:
+        commands: show version
+        display: json
+      register: json_output
+
+    - name: Assert json output is returned
+      assert:
+        that:
+          - json_output.stdout is defined
+          
+    - name: Run RPC get-software-information
+      junipernetworks.junos.junos_command:
+        commands: show version | display json 
+      register: rpc_output
+
+    - name: Assert RPC output
+      assert:
+        that:
+          - rpc_output.stdout is defined
+          - rpc_output.stdout[0] is string
+
+
+(fix10venv) regress@hevoeventa:~/ansible_modules_redirection_ansible_merger_branch_fix10venv/ansible-junos-stdlib/tests/junipernetworks_junos$ ansible-playbook -i inventory_network_junos pb.juniper_junos_command_network_junos.yml 
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos_command: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: errors were encountered during the plugin load for assert: ["'NoneType' object has no attribute 'get'"]
+
+PLAY [Functional Test - junos_command module] **************************************************************************************************
+
+TASK [Run show version] ************************************************************************************************************************
+[WARNING]: errors were encountered during the plugin load for junipernetworks.junos.junos: ["'NoneType' object has no attribute 'get'"]
+[WARNING]: ansible-pylibssh not installed, falling back to paramiko
+[WARNING]: arguments wait_for, match, rpcs are not supported when using transport=cli
+ok: [10.220.17.17]
+
+TASK [Assert show version output is returned] **************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with wait_for condition (positive match)] *******************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert wait_for with positive match passed] **********************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run multiple commands] *******************************************************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert multiple commands worked] *********************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run show version with json output] *******************************************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert json output is returned] **********************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Run RPC get-software-information] ********************************************************************************************************
+ok: [10.220.17.17]
+
+TASK [Assert RPC output] ***********************************************************************************************************************
+ok: [10.220.17.17] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+10.220.17.17               : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
