@@ -785,3 +785,68 @@ work aroud 1:
 
 ansible-galaxy collection install ansible.netcommon -p /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/ansible_collections --force
 ansible-galaxy collection install ansible.utils -p /root/ansible_modules_redirection_ansible_merger_branch_fix9_venv/ansible-junos-stdlib/ansible_collections --force
+
+
+
+
+=====================================================================
+
+ansible galaxy-importer validation:
+
+======================================================================
+
+1) Insall the galaxy-importer:
+python -m pip install galaxy-importer
+or
+pip install galaxy-importer
+
+2) Build the collection tar file
+cd /root/ansible_autohub_review1/ansible-junos-stdlib/ansible_collections/juniper/device
+ansible-galaxy collection build
+
+3) Run the galaxy-importer for validation
+(ansiahrev1) root@masterhost:~/ansible_autohub_review1/ansible-junos-stdlib/ansible_collections/juniper/device# python -m galaxy_importer.main  juniper-device-1.0.9.tar.gz 
+Importing with galaxy-importer 0.4.33
+Getting doc strings via ansible-doc
+Finding content inside collection
+Loading action command
+Loading action config
+Loading action extract_data
+Loading action facts
+Loading action file_copy
+Loading action jsnapy
+Loading action juniper_junos_common_action
+Loading action ping
+Loading action pmtud
+Loading action rpc
+Loading action software
+Loading action srx_cluster
+Loading action system
+Loading action table
+Loading callback jsnapy
+Loading connection pyez
+Loading doc_fragments juniper_junos_doc
+Loading module command
+Loading module config
+Loading module facts
+Loading module file_copy
+Loading module jsnapy
+Loading module ping
+Loading module pmtud
+Loading module rpc
+Loading module software
+Loading module srx_cluster
+Loading module system
+Loading module table
+Loading module_utils configuration
+Loading module_utils juniper_junos_common
+Linting collection via ansible-lint 25.8.2...
+...ansible-lint run complete
+WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.16.txt with 17 statement(s)
+WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.17.txt with 17 statement(s)
+WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.18.txt with 17 statement(s)
+WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.19.txt with 17 statement(s)
+Collection loading complete
+Importer processing completed successfully
+
+
