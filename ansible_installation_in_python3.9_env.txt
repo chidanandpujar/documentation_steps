@@ -850,3 +850,43 @@ Collection loading complete
 Importer processing completed successfully
 
 
+
+
+
+#!/bin/bash
+
+echo "Starting execution of all Ansible Junos playbooks..."
+echo "-----------------------------------------------------"
+
+# File to store passed test logs
+PASS_LOG="junos_passed_tests.log"
+> "$PASS_LOG"  # Clear previous contents
+
+# Loop through all *.yml playbooks
+for file in pb.juniper_junos_*.yml; do
+  echo "Running $file"
+  if [ "$file" = "pb.juniper_junos_command_network_junos.yml" ]; then
+      ansible-playbook -i inventory_network_junos "$file"
+  elif [ "$file" = "pb.juniper_junos_ping.yml" ]; then
+      ansible-playbook -i inventory_network_cli "$file"
+  elif [ "$file" = "pb.juniper_junos_netconf.yml" ]; then
+      ansible-playbook -i inventory_network_cli "$file"
+  else
+      ansible-playbook -i inventory "$file"
+  fi
+  status=$?
+
+  if [ $status -ne 0 ]; then
+    echo "❌ $file failed with status $status"
+  else
+    echo "✅ $file completed successfully"
+    echo "$file PASSED at $(date)" >> "$PASS_LOG"
+  fi
+
+  echo "-----------------------------------------------------"
+  sleep 2
+done
+
+echo "All playbooks processed."
+echo "Passed test results saved to $PASS_LOG"
+
