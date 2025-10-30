@@ -936,3 +936,7 @@ echo "Passed test results saved to $PASS_LOG"
 doc for fix validation :
 
 https://gist.github.com/Ruchip16/ebb8ae43d14699de86f1245ad858764d
+ansible-galaxy collection install ansible.netcommon -p ./ansible_collections
+ansible-galaxy collection install ansible.utils -p ./ansible_collections
+
+
