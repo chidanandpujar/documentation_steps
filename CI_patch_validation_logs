@@ -1,0 +1,41 @@
+root@nms5-salt-master-b:~/test_github_workflow# git clone https://github.com/Juniper/ansible-junos-stdlib.git
+Cloning into 'ansible-junos-stdlib'...
+remote: Enumerating objects: 5910, done.
+remote: Counting objects: 100% (911/911), done.
+remote: Compressing objects: 100% (304/304), done.
+remote: Total 5910 (delta 757), reused 612 (delta 602), pack-reused 4999 (from 2)
+Receiving objects: 100% (5910/5910), 2.24 MiB | 12.22 MiB/s, done.
+Resolving deltas: 100% (3329/3329), done.
+root@nms5-salt-master-b:~/test_github_workflow# ls
+ansible-junos-stdlib
+root@nms5-salt-master-b:~/test_github_workflow# cd ansible-junos-stdlib/
+root@nms5-salt-master-b:~/test_github_workflow/ansible-junos-stdlib# bash
+root@nms5-salt-master-b:~/test_github_workflow/ansible-junos-stdlib# curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10964  100 10964    0     0  19790      0 --:--:-- --:--:-- --:--:-- 20493
+nektos/act info checking GitHub for latest tag
+nektos/act info found version: 0.2.82 for v0.2.82/Linux/x86_64
+nektos/act info installed ./bin/act
+root@nms5-salt-master-b:~/test_github_workflow/ansible-junos-stdlib# ls
+ansible_collections  bin        DOCKER-EXAMPLES.md  entrypoint.sh  ISSUE_TEMPLATE.md  meta       requirements.txt  tests  version.py
+ansible-junos-awx    COPYRIGHT  Dockerfile          env-setup      LICENSE            README.md  setup.py          tools
+
+
+root@nms5-salt-master-b:~/test_github_workflow/ansible-junos-stdlib# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .github/workflows/tests.yml
+	modified:   ansible_collections/juniper/device/plugins/action/junos.py
+	modified:   ansible_collections/juniper/device/plugins/action/junos_facts.py
+	modified:   ansible_collections/juniper/device/plugins/modules/file_copy.py
+	deleted:    ansible_collections/juniper/device/plugins/modules/junos_scp.py
+	modified:   ansible_collections/juniper/device/tests/integration/targets/junos_file/tasks/main.yml
+	modified:   ansible_collections/juniper/device/tests/integration/targets/junos_file/tests/common/file.yml
+
+
