@@ -39,11 +39,7 @@ Changes not staged for commit:
 	modified:   ansible_collections/juniper/device/tests/integration/targets/junos_file/tests/common/file.yml
 
 
-# Run a specific job by name
-./bin/act -j ansible-lint
+root@nms5-salt-master-b:~/test_github_workflow/ansible-junos-stdlib# ./bin/act pull_request --rm
+INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock' 
+Error: workflow is not valid. 'tests.yml': yaml: invalid Unicode character
 
-# Run multiple specific jobs
-./bin/act -j sanity -j unit-galaxy
-
-# Run all jobs from a specific workflow
-./bin/act -W .github/workflows/tests.yml pull_request
