@@ -39,3 +39,11 @@ Changes not staged for commit:
 	modified:   ansible_collections/juniper/device/tests/integration/targets/junos_file/tests/common/file.yml
 
 
+# Run a specific job by name
+./bin/act -j ansible-lint
+
+# Run multiple specific jobs
+./bin/act -j sanity -j unit-galaxy
+
+# Run all jobs from a specific workflow
+./bin/act -W .github/workflows/tests.yml pull_request
