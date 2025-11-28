@@ -1,0 +1,1210 @@
+[Collection Tests/Unit Tests (Galaxy)-1  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-1  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Galaxy)-2  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-2  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Galaxy)-3  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-3  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Galaxy)-4  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-4  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-2  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-2  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-3  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-3  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-4  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-4  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-1  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-1  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-2  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-3  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-1  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-2  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-3  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-4  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-1  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-4  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-3  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-3  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-2  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-2  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-3  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-3  ] 🧪  Matrix: map[ansible_version:stable-2.18 python_version:3.11]
+[Collection Tests/Unit Tests (Source)-4  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-4  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-3  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-1  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-1  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Source)-3  ]   ✅  Success - Main actions/checkout@v5 [1.002096479s]
+[Collection Tests/Unit Tests (Galaxy)-2  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-3  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Galaxy)-2  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Source)-3  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-3  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-3  ]   ❌  Failure - Main Set up Python [786.516938ms]
+[Collection Tests/Unit Tests (Source)-2  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-2  ] 🧪  Matrix: map[ansible_version:stable-2.17 python_version:3.11]
+[Collection Tests/Unit Tests (Source)-2  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Source)-3  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Source)-4  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-4  ] 🧪  Matrix: map[ansible_version:stable-2.19 python_version:3.11]
+[Collection Tests/Unit Tests (Source)-4  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Source)-2  ]   ✅  Success - Main actions/checkout@v5 [991.553728ms]
+[Collection Tests/Unit Tests (Source)-3  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-3  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Galaxy)-1  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-4  ]   ✅  Success - Main actions/checkout@v5 [1.202186941s]
+[Collection Tests/Unit Tests (Source)-2  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Source)-4  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Galaxy)-4  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Source)-2  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-1  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-1  ] 🧪  Matrix: map[ansible_version:stable-2.16 python_version:3.11]
+[Collection Tests/Unit Tests (Source)-1  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Source)-4  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Source)-1  ]   ✅  Success - Main actions/checkout@v5 [694.036352ms]
+[Collection Tests/Unit Tests (Galaxy)-3  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-1  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Source)-1  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-2  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [26.717139ms]
+[Collection Tests/Unit Tests (Source)-4  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-4  ]   ❌  Failure - Main Set up Python [8.721687946s]
+[Collection Tests/Unit Tests (Source)-1  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-2  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-1  ]   ❌  Failure - Main Set up Python [6.055218977s]
+[Collection Tests/Unit Tests (Source)-2  ]   ❌  Failure - Main Set up Python [9.803122198s]
+[Collection Tests/Unit Tests (Galaxy)-2  ] 🧪  Matrix: map[ansible:2.17 python:3.11]
+[Collection Tests/Unit Tests (Source)-3  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-3  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Source)-5  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-5  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Galaxy)-1  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-5  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-2  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Source)-4  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Source)-1  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Source)-2  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-4  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-2  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ❌  Failure - Main actions/checkout@v5 [1.29112067s]
+[Collection Tests/Unit Tests (Source)-4  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-4  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Source)-2  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-2  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Source)-1  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-1  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Galaxy)-3  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Galaxy)-2  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-1  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Galaxy)-4  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Galaxy)-2  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [38.023457ms]
+[Collection Tests/Unit Tests (Galaxy)-3  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Source)-4  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-4  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Source)-6  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-6  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-6  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-2  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [168.320058ms]
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [63.020212ms]
+[Collection Tests/Unit Tests (Galaxy)-2  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ❌  Failure - Post actions/checkout@v5 [581.704645ms]
+[Collection Tests/Unit Tests (Source)-2  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-2  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Source)-7  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Source)-7  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Source)-7  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-1  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-1  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Galaxy)-1  ] 🧪  Matrix: map[ansible:2.17 python:3.10]
+[Collection Tests/Unit Tests (Galaxy)-1  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-3  ] 🧪  Matrix: map[ansible:2.18 python:3.11]
+[Collection Tests/Unit Tests (Galaxy)-3  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-2  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-2  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-2  ] Cleaning up container for job Unit Tests (Galaxy)
+[Collection Tests/Unit Tests (Galaxy)-4  ] 🧪  Matrix: map[ansible:2.19 python:3.11]
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Galaxy)-4  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-1  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ❌  Failure - Main actions/checkout@v5 [4.15136202s]
+[Collection Tests/Unit Tests (Galaxy)-3  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ❌  Failure - Main actions/checkout@v5 [3.951101404s]
+[Collection Tests/Unit Tests (Galaxy)-4  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ❌  Failure - Main actions/checkout@v5 [3.734814466s]
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-5  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-5  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-2  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-2  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Galaxy)-5  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-5  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-5  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-5  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-5  ] 🧪  Matrix: map[ansible_version:stable-2.20 python_version:3.12]
+[Collection Tests/Unit Tests (Source)-5  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-4  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-1  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-3  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Galaxy)-4  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-1  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-3  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-3  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-4  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-1  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-1  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ❌  Failure - Post actions/checkout@v5 [219.146865ms]
+[Collection Tests/Unit Tests (Galaxy)-4  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-3  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ❌  Failure - Post actions/checkout@v5 [275.899701ms]
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ❌  Failure - Post actions/checkout@v5 [336.179225ms]
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-5  ]   ✅  Success - Main actions/checkout@v5 [1.955159007s]
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Source)-6  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-4  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-4  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-4  ] Cleaning up container for job Unit Tests (Galaxy)
+[Collection Tests/Unit Tests (Source)-6  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Galaxy)-3  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-3  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-3  ] Cleaning up container for job Unit Tests (Galaxy)
+[Collection Tests/Unit Tests (Source)-7  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Source)-7  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Galaxy)-1  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-1  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-1  ] Cleaning up container for job Unit Tests (Galaxy)
+[Collection Tests/Unit Tests (Source)-5  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Source)-6  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-6  ] 🧪  Matrix: map[ansible_version:milestone python_version:3.12]
+[Collection Tests/Unit Tests (Source)-6  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Source)-7  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Source)-7  ] 🧪  Matrix: map[ansible_version:devel python_version:3.12]
+[Collection Tests/Unit Tests (Source)-5  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Source)-5  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-5  ]   ❌  Failure - Main Set up Python [2.643057435s]
+[Collection Tests/Unit Tests (Source)-6  ]   ✅  Success - Main actions/checkout@v5 [3.181157114s]
+[Collection Tests/Unit Tests (Source)-5  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Source)-7  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[Collection Tests/Unit Tests (Source)-6  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Galaxy)-4  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-4  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Galaxy)-6  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-6  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-6  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-1  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-1  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Galaxy)-7  ] ⭐ Run Set up job
+[Collection Tests/Unit Tests (Galaxy)-7  ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Unit Tests (Source)-7  ]   ✅  Success - Main actions/checkout@v5 [1.60308164s]
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Unit Tests (Galaxy)-7  ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Source)-5  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-5  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Galaxy)-3  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-3  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Source)-6  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-7  ] ⭐ Run Main Set up Python
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker cp src=/root/.cache/act/actions-setup-python@v6/ dst=/var/run/act/actions/actions-setup-python@v6/
+[Collection Tests/Unit Tests (Source)-7  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-python@v6/dist/setup/index.js] user= workdir=
+[Collection Tests/Unit Tests (Source)-6  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-6  ]   ❌  Failure - Main Set up Python [7.349517597s]
+[Collection Tests/Unit Tests (Source)-7  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Source)-7  ]   ❌  Failure - Main Set up Python [5.191458398s]
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Source)-5  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-5  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Source)-6  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Source)-7  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-5  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-5  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Source)-6  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-6  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Source)-7  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Source)-7  ] Cleaning up container for job Unit Tests (Source)
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Unit Tests (Galaxy)-5  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [36.174379ms]
+[Collection Tests/Unit Tests (Galaxy)-6  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Source)-6  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-6  ] 🏁  Job failed
+[Collection Tests/Unit Tests (Galaxy)-5  ] 🧪  Matrix: map[ansible:2.17 python:3.12]
+[Collection Tests/Unit Tests (Source)-7  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Source)-7  ] 🏁  Job failed
+[changelog/Check changelog/Requires changelog] ⭐ Run Set up job
+[changelog/Check changelog/Requires changelog] 🚀  Start image=python:3.12-slim
+[changelog/Check changelog/Requires changelog]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[changelog/Check changelog/Requires changelog] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Unit Tests (Galaxy)-5  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-7  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Unit Tests (Galaxy)-5  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ❌  Failure - Main actions/checkout@v5 [663.318516ms]
+[Collection Tests/Unit Tests (Galaxy)-6  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Galaxy)-5  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-5  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-5  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-5  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ❌  Failure - Post actions/checkout@v5 [88.161903ms]
+[Collection Tests/Unit Tests (Galaxy)-6  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [54.283745ms]
+[Collection Tests/Unit Tests (Galaxy)-7  ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Galaxy)-5  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-5  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-5  ] Cleaning up container for job Unit Tests (Galaxy)
+[Collection Tests/Unit Tests (Galaxy)-6  ] 🧪  Matrix: map[ansible:2.18 python:3.12]
+[changelog/Check changelog/Requires changelog]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-6  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-7  ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [40.372502ms]
+[Collection Tests/Unit Tests (Galaxy)-7  ] 🧪  Matrix: map[ansible:2.19 python:3.12]
+[Collection Tests/Unit Tests (Galaxy)-7  ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-6  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ❌  Failure - Main actions/checkout@v5 [3.764168725s]
+[Collection Tests/Unit Tests (Galaxy)-7  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ❌  Failure - Main actions/checkout@v5 [2.491874273s]
+[Collection Tests/Unit Tests (Galaxy)-5  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-5  ] 🏁  Job failed
+[changelog/Check changelog/Requires changelog]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Unit Tests (Galaxy)-7  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-6  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-7  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-6  ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Unit Tests (Galaxy)-7  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[changelog/Check changelog/Requires changelog]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Unit Tests (Galaxy)-7  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ❌  Failure - Post actions/checkout@v5 [116.115784ms]
+[changelog/Check changelog/Requires changelog]   ✅  Success - Set up job
+[Collection Tests/Unit Tests (Galaxy)-6  ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[changelog/Check changelog/Requires changelog]   ☁  git clone 'https://github.com/actions/checkout' # ref=v4
+[Collection Tests/Unit Tests (Galaxy)-6  ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ❌  Failure - Post actions/checkout@v5 [110.126289ms]
+[Collection Tests/Unit Tests (Galaxy)-7  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-7  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-7  ] Cleaning up container for job Unit Tests (Galaxy)
+[Collection Tests/Unit Tests (Galaxy)-6  ] exitcode '126': failure
+[Collection Tests/Unit Tests (Galaxy)-6  ] ⭐ Run Complete job
+[Collection Tests/Unit Tests (Galaxy)-6  ] Cleaning up container for job Unit Tests (Galaxy)
+[changelog/Check changelog/Requires changelog] Non-terminating error while running 'git clone': some refs were not updated
+[changelog/Check changelog/Requires changelog]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Unit Tests (Galaxy)-7  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-7  ] 🏁  Job failed
+[changelog/Check changelog/Requires changelog] ⭐ Run Pre Validate changelog
+[Collection Tests/Unit Tests (Galaxy)-6  ]   ✅  Success - Complete job
+[Collection Tests/Unit Tests (Galaxy)-6  ] 🏁  Job failed
+[Collection Tests/build-import-collection] ⭐ Run Set up job
+[Collection Tests/build-import-collection] 🚀  Start image=python:3.12-slim
+[Collection Tests/build-import-collection]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/build-import-collection] using DockerAuthConfig authentication for docker pull
+[changelog/Check changelog/Requires changelog]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[changelog/Check changelog/Requires changelog] Non-terminating error while running 'git clone': some refs were not updated
+[changelog/Check changelog/Requires changelog]   ✅  Success - Pre Validate changelog [754.085888ms]
+[changelog/Check changelog/Requires changelog] ⭐ Run Main Checkout the collection repository
+[changelog/Check changelog/Requires changelog]   🐳  docker cp src=/root/.cache/act/actions-checkout@v4/ dst=/var/run/act/actions/actions-checkout@v4/
+[changelog/Check changelog/Requires changelog]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v4/dist/index.js] user= workdir=
+[changelog/Check changelog/Requires changelog]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[changelog/Check changelog/Requires changelog]   ❌  Failure - Main Checkout the collection repository [765.252281ms]
+[Collection Tests/build-import-collection]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[changelog/Check changelog/Requires changelog] exitcode '126': failure
+[changelog/Check changelog/Requires changelog] ⭐ Run Post Checkout the collection repository
+[changelog/Check changelog/Requires changelog]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v4/dist/index.js] user= workdir=
+[changelog/Check changelog/Requires changelog]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[changelog/Check changelog/Requires changelog]   ❌  Failure - Post Checkout the collection repository [1.338327684s]
+[Collection Tests/build-import-collection]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[changelog/Check changelog/Requires changelog] exitcode '126': failure
+[changelog/Check changelog/Requires changelog] ⭐ Run Complete job
+[changelog/Check changelog/Requires changelog] Cleaning up container for job Requires changelog
+[Collection Tests/build-import-collection]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/build-import-collection]   ✅  Success - Set up job
+[Collection Tests/build-import-collection] ⭐ Run Main Checkout
+[changelog/Check changelog/Requires changelog]   ✅  Success - Complete job
+[changelog/Check changelog/Requires changelog] 🏁  Job failed
+[ansible-lint/Ansible lint/Ansible Lint] ⭐ Run Set up job
+[ansible-lint/Ansible lint/Ansible Lint] 🚀  Start image=python:3.12-slim
+[Collection Tests/build-import-collection]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[ansible-lint/Ansible lint/Ansible Lint] using DockerAuthConfig authentication for docker pull
+[Collection Tests/build-import-collection]   ✅  Success - Main Checkout [726.517379ms]
+[Collection Tests/build-import-collection] ⭐ Run Main Ensure ansible-core and galaxy-importer is installed
+[Collection Tests/build-import-collection]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/1.sh] user= workdir=
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[ansible-lint/Ansible lint/Ansible Lint]   ✅  Success - Set up job
+[ansible-lint/Ansible lint/Ansible Lint]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v5
+[ansible-lint/Ansible lint/Ansible Lint] Non-terminating error while running 'git clone': some refs were not updated
+[ansible-lint/Ansible lint/Ansible Lint] ⭐ Run Main actions/checkout@v4
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker cp src=/root/test_github_workflow/ansible-junos-stdlib/. dst=/root/test_github_workflow/ansible-junos-stdlib
+[ansible-lint/Ansible lint/Ansible Lint]   ✅  Success - Main actions/checkout@v4 [613.906602ms]
+[ansible-lint/Ansible lint/Ansible Lint] ⭐ Run Main Process inputs
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/inputs.sh] user= workdir=
+[ansible-lint/Ansible lint/Ansible Lint]   ✅  Success - Main Process inputs [316.626427ms]
+[ansible-lint/Ansible lint/Ansible Lint]   ⚙  ::set-output:: working_directory=ansible_collections/juniper/device
+[ansible-lint/Ansible lint/Ansible Lint] ⭐ Run Main Install ansible-lint from pip
+[ansible-lint/Ansible lint/Ansible Lint]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3.sh] user= workdir=
+[Collection Tests/build-import-collection]   | Collecting ansible-core
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting ansible-compat==24.10.0
+[Collection Tests/build-import-collection]   |   Downloading ansible_core-2.20.0-py3-none-any.whl.metadata (7.7 kB)
+[Collection Tests/build-import-collection]   | Collecting galaxy-importer
+[Collection Tests/build-import-collection]   |   Downloading galaxy_importer-0.4.35-py3-none-any.whl.metadata (6.0 kB)
+[Collection Tests/build-import-collection]   | Collecting jinja2>=3.1.0 (from ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+[Collection Tests/build-import-collection]   | Collecting PyYAML>=5.1 (from ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+[Collection Tests/build-import-collection]   | Collecting cryptography (from ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading cryptography-46.0.3-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+[Collection Tests/build-import-collection]   | Collecting packaging (from ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+[Collection Tests/build-import-collection]   | Collecting resolvelib<2.0.0,>=0.8.0 (from ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading resolvelib-1.2.1-py3-none-any.whl.metadata (3.7 kB)
+[Collection Tests/build-import-collection]   | Collecting ansible-builder<4.0,>=1.2.0 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading ansible_builder-3.1.1-py3-none-any.whl.metadata (2.8 kB)
+[Collection Tests/build-import-collection]   | Collecting ansible-lint<=25.11.1,>=6.2.2 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading ansible_lint-25.11.1-py3-none-any.whl.metadata (6.3 kB)
+[Collection Tests/build-import-collection]   | Collecting attrs<23,>=21.4.0 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading attrs-22.2.0-py3-none-any.whl.metadata (13 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_compat-24.10.0-py3-none-any.whl.metadata (4.0 kB)
+[Collection Tests/build-import-collection]   | Collecting nh3<3,>=0.2.18 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading nh3-0.3.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.0 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting ansible-lint
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.11.1-py3-none-any.whl.metadata (6.3 kB)
+[Collection Tests/build-import-collection]   | Collecting flake8<7,>=5.0.0 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading flake8-6.1.0-py2.py3-none-any.whl.metadata (3.8 kB)
+[Collection Tests/build-import-collection]   | Collecting markdown<4,>=3.3.4 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading markdown-3.10-py3-none-any.whl.metadata (5.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting ansible-core>=2.14 (from ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_core-2.20.0-py3-none-any.whl.metadata (7.7 kB)
+[Collection Tests/build-import-collection]   | Collecting requests<3,>=2.28.0 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting packaging (from ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+[Collection Tests/build-import-collection]   | Collecting semantic-version<3,>=2.9.0 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+[Collection Tests/build-import-collection]   | Collecting packaging (from ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting PyYAML (from ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+[Collection Tests/build-import-collection]   | Collecting bindep (from ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading bindep-2.13.0-py3-none-any.whl.metadata (10 kB)
+[Collection Tests/build-import-collection]   | Collecting jsonschema (from ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting subprocess-tee>=0.4.1 (from ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading subprocess_tee-0.4.2-py3-none-any.whl.metadata (3.3 kB)
+[Collection Tests/build-import-collection]   | Collecting ansible-compat>=25.8.2 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading ansible_compat-25.11.0-py3-none-any.whl.metadata (3.4 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting jsonschema>=4.6.0 (from ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+[Collection Tests/build-import-collection]   | Collecting black>=24.3.0 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading black-25.11.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (85 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | INFO: pip is looking at multiple versions of ansible-lint to determine which version is compatible with other requirements. This could take a while.
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting ansible-lint
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.11.0-py3-none-any.whl.metadata (6.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.9.2-py3-none-any.whl.metadata (6.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.9.1-py3-none-any.whl.metadata (6.4 kB)
+[Collection Tests/build-import-collection]   | Collecting cffi>=1.17.1 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.9.0-py3-none-any.whl.metadata (6.3 kB)
+[Collection Tests/build-import-collection]   |   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.8.2-py3-none-any.whl.metadata (8.8 kB)
+[Collection Tests/build-import-collection]   | Collecting distro>=1.9.0 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.8.1-py3-none-any.whl.metadata (8.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.8.0-py3-none-any.whl.metadata (8.8 kB)
+[Collection Tests/build-import-collection]   | Collecting filelock>=3.8.2 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading filelock-3.20.0-py3-none-any.whl.metadata (2.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | INFO: pip is still looking at multiple versions of ansible-lint to determine which version is compatible with other requirements. This could take a while.
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.7.0-py3-none-any.whl.metadata (8.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.6.1-py3-none-any.whl.metadata (6.9 kB)
+[Collection Tests/build-import-collection]   | Collecting importlib-metadata>=8.7.0 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.6.0-py3-none-any.whl.metadata (6.9 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.5.0-py3-none-any.whl.metadata (7.0 kB)
+[Collection Tests/build-import-collection]   | Collecting pathspec>=0.10.3 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.4.0-py3-none-any.whl.metadata (7.0 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.2.1-py3-none-any.whl.metadata (7.0 kB)
+[Collection Tests/build-import-collection]   | Collecting referencing>=0.36.2 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.2.0-py3-none-any.whl.metadata (7.0 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.1.3-py3-none-any.whl.metadata (6.8 kB)
+[Collection Tests/build-import-collection]   | Collecting ruamel-yaml>=0.18.11 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.1.2-py3-none-any.whl.metadata (6.8 kB)
+[Collection Tests/build-import-collection]   |   Downloading ruamel.yaml-0.18.16-py3-none-any.whl.metadata (25 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.1.1-py3-none-any.whl.metadata (6.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ansible_lint-25.1.0-py3-none-any.whl.metadata (6.8 kB)
+[Collection Tests/build-import-collection]   | Collecting ruamel-yaml-clib>=0.2.12 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+[Collection Tests/build-import-collection]   | Collecting subprocess-tee>=0.4.1 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading subprocess_tee-0.4.2-py3-none-any.whl.metadata (3.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting black>=24.3.0 (from ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading black-25.11.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (85 kB)
+[Collection Tests/build-import-collection]   | Collecting wcmatch>=8.5.0 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading wcmatch-10.1-py3-none-any.whl.metadata (5.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting filelock>=3.8.2 (from ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading filelock-3.20.0-py3-none-any.whl.metadata (2.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting importlib-metadata (from ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+[Collection Tests/build-import-collection]   | Collecting yamllint>=1.34.0 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading yamllint-1.37.1-py3-none-any.whl.metadata (4.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting pathspec>=0.10.3 (from ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+[Collection Tests/build-import-collection]   | Collecting mccabe<0.8.0,>=0.7.0 (from flake8<7,>=5.0.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+[Collection Tests/build-import-collection]   | Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8<7,>=5.0.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting ruamel.yaml!=0.18.7,!=0.18.8,>=0.18.5 (from ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ruamel.yaml-0.18.16-py3-none-any.whl.metadata (25 kB)
+[Collection Tests/build-import-collection]   | Collecting pyflakes<3.2.0,>=3.1.0 (from flake8<7,>=5.0.0->galaxy-importer)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting yamllint>=1.34.0 (from ansible-lint)
+[Collection Tests/build-import-collection]   |   Downloading pyflakes-3.1.0-py2.py3-none-any.whl.metadata (3.5 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading yamllint-1.37.1-py3-none-any.whl.metadata (4.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting wcmatch>=8.5.0 (from ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading wcmatch-10.1-py3-none-any.whl.metadata (5.1 kB)
+[Collection Tests/build-import-collection]   | Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->ansible-core)
+[Collection Tests/build-import-collection]   |   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting jinja2>=3.1.0 (from ansible-core>=2.14->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+[Collection Tests/build-import-collection]   | Collecting charset_normalizer<4,>=2 (from requests<3,>=2.28.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading charset_normalizer-3.4.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+[Collection Tests/build-import-collection]   | Collecting idna<4,>=2.5 (from requests<3,>=2.28.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting cryptography (from ansible-core>=2.14->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading cryptography-46.0.3-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+[Collection Tests/build-import-collection]   | Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.28.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting resolvelib<2.0.0,>=0.8.0 (from ansible-core>=2.14->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading resolvelib-1.2.1-py3-none-any.whl.metadata (3.7 kB)
+[Collection Tests/build-import-collection]   | Collecting certifi>=2017.4.17 (from requests<3,>=2.28.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+[Collection Tests/build-import-collection]   | INFO: pip is looking at multiple versions of ansible-compat to determine which version is compatible with other requirements. This could take a while.
+[Collection Tests/build-import-collection]   | Collecting ansible-compat>=25.8.2 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting click>=8.0.0 (from black>=24.3.0->ansible-lint)
+[Collection Tests/build-import-collection]   |   Downloading ansible_compat-25.8.2-py3-none-any.whl.metadata (3.4 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+[Collection Tests/build-import-collection]   | Collecting ansible-lint<=25.11.1,>=6.2.2 (from galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading ansible_lint-25.11.0-py3-none-any.whl.metadata (6.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting mypy-extensions>=0.4.3 (from black>=24.3.0->ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+[Collection Tests/build-import-collection]   |   Downloading ansible_lint-25.9.2-py3-none-any.whl.metadata (6.3 kB)
+[Collection Tests/build-import-collection]   |   Downloading ansible_lint-25.9.1-py3-none-any.whl.metadata (6.4 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting platformdirs>=2 (from black>=24.3.0->ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading platformdirs-4.5.0-py3-none-any.whl.metadata (12 kB)
+[Collection Tests/build-import-collection]   | INFO: pip is still looking at multiple versions of ansible-compat to determine which version is compatible with other requirements. This could take a while.
+[Collection Tests/build-import-collection]   | Collecting ansible-compat>=25.8.0 (from ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading ansible_compat-25.8.1-py3-none-any.whl.metadata (3.9 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting pytokens>=0.3.0 (from black>=24.3.0->ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading pytokens-0.3.0-py3-none-any.whl.metadata (2.0 kB)
+[Collection Tests/build-import-collection]   | Collecting click>=8.0.0 (from black>=24.3.0->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting attrs>=22.2.0 (from jsonschema>=4.6.0->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading attrs-25.4.0-py3-none-any.whl.metadata (10 kB)
+[Collection Tests/build-import-collection]   | Collecting mypy-extensions>=0.4.3 (from black>=24.3.0->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.6.0->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+[Collection Tests/build-import-collection]   | Collecting platformdirs>=2 (from black>=24.3.0->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading platformdirs-4.5.0-py3-none-any.whl.metadata (12 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting referencing>=0.28.4 (from jsonschema>=4.6.0->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+[Collection Tests/build-import-collection]   | Collecting pytokens>=0.3.0 (from black>=24.3.0->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading pytokens-0.3.0-py3-none-any.whl.metadata (2.0 kB)
+[Collection Tests/build-import-collection]   | Collecting pycparser (from cffi>=1.17.1->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+[Collection Tests/build-import-collection]   | Collecting zipp>=3.20 (from importlib-metadata>=8.7.0->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting rpds-py>=0.7.1 (from jsonschema>=4.6.0->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading rpds_py-0.29.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+[Collection Tests/build-import-collection]   | Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting ruamel.yaml.clib>=0.2.7 (from ruamel.yaml!=0.18.7,!=0.18.8,>=0.18.5->ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting bracex>=2.1.1 (from wcmatch>=8.5.0->ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading bracex-2.6-py3-none-any.whl.metadata (3.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting zipp>=3.20 (from importlib-metadata->ansible-lint)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+[Collection Tests/build-import-collection]   | Collecting rpds-py>=0.7.1 (from jsonschema->ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading rpds_py-0.29.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->ansible-core>=2.14->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+[Collection Tests/build-import-collection]   | Collecting typing-extensions>=4.4.0 (from referencing>=0.36.2->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting typing-extensions>=4.4.0 (from referencing>=0.28.4->jsonschema>=4.6.0->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+[Collection Tests/build-import-collection]   | Collecting bracex>=2.1.1 (from wcmatch>=8.5.0->ansible-lint<=25.11.1,>=6.2.2->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading bracex-2.6-py3-none-any.whl.metadata (3.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting cffi>=2.0.0 (from cryptography->ansible-core>=2.14->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+[Collection Tests/build-import-collection]   | Collecting Parsley (from bindep->ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading Parsley-1.3-py2.py3-none-any.whl.metadata (4.1 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Collecting pycparser (from cffi>=2.0.0->cryptography->ansible-core>=2.14->ansible-compat==24.10.0)
+[ansible-lint/Ansible lint/Ansible Lint]   |   Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+[Collection Tests/build-import-collection]   | Collecting pbr>=2 (from bindep->ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading pbr-7.0.3-py2.py3-none-any.whl.metadata (3.8 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading ansible_compat-24.10.0-py3-none-any.whl (24 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading ansible_lint-25.1.0-py3-none-any.whl (311 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading ansible_core-2.20.0-py3-none-any.whl (2.4 MB)
+[Collection Tests/build-import-collection]   | Collecting setuptools (from pbr>=2->bindep->ansible-builder<4.0,>=1.2.0->galaxy-importer)
+[Collection Tests/build-import-collection]   |   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 14.5 MB/s eta 0:00:00
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading black-25.11.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+[Collection Tests/build-import-collection]   | Downloading ansible_core-2.20.0-py3-none-any.whl (2.4 MB)
+[ansible-lint/Ansible lint/Ansible Lint]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 9.3 MB/s eta 0:00:00
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading filelock-3.20.0-py3-none-any.whl (16 kB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 13.8 MB/s eta 0:00:00
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading packaging-25.0-py3-none-any.whl (66 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+[Collection Tests/build-import-collection]   | Downloading galaxy_importer-0.4.35-py3-none-any.whl (64 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+[Collection Tests/build-import-collection]   | Downloading ansible_builder-3.1.1-py3-none-any.whl (46 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 5.8 MB/s eta 0:00:00
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading ruamel.yaml-0.18.16-py3-none-any.whl (119 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading subprocess_tee-0.4.2-py3-none-any.whl (5.2 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading wcmatch-10.1-py3-none-any.whl (39 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading yamllint-1.37.1-py3-none-any.whl (68 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+[Collection Tests/build-import-collection]   | Downloading ansible_lint-25.9.1-py3-none-any.whl (322 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading attrs-25.4.0-py3-none-any.whl (67 kB)
+[Collection Tests/build-import-collection]   | Downloading packaging-24.2-py3-none-any.whl (65 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading bracex-2.6-py3-none-any.whl (11 kB)
+[Collection Tests/build-import-collection]   | Downloading ansible_compat-25.8.1-py3-none-any.whl (27 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading click-8.3.1-py3-none-any.whl (108 kB)
+[Collection Tests/build-import-collection]   | Downloading attrs-22.2.0-py3-none-any.whl (60 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+[Collection Tests/build-import-collection]   | Downloading cryptography-46.0.3-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 20.6 MB/s eta 0:00:00
+[Collection Tests/build-import-collection]   | Downloading flake8-6.1.0-py2.py3-none-any.whl (58 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading platformdirs-4.5.0-py3-none-any.whl (18 kB)
+[Collection Tests/build-import-collection]   | Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading pytokens-0.3.0-py3-none-any.whl (12 kB)
+[Collection Tests/build-import-collection]   | Downloading markdown-3.10-py3-none-any.whl (107 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+[Collection Tests/build-import-collection]   | Downloading nh3-0.3.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (797 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading resolvelib-1.2.1-py3-none-any.whl (18 kB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 797.2/797.2 kB 5.0 MB/s eta 0:00:00
+[Collection Tests/build-import-collection]   | Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading rpds_py-0.29.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (395 kB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 2.5 MB/s eta 0:00:00
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (788 kB)
+[Collection Tests/build-import-collection]   | Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 788.2/788.2 kB 6.4 MB/s eta 0:00:00
+[Collection Tests/build-import-collection]   | Downloading resolvelib-1.2.1-py3-none-any.whl (18 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading cryptography-46.0.3-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+[Collection Tests/build-import-collection]   | Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+[Collection Tests/build-import-collection]   | Downloading black-25.11.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+[ansible-lint/Ansible lint/Ansible Lint]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 21.8 MB/s eta 0:00:00
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 7.7 MB/s eta 0:00:00
+[Collection Tests/build-import-collection]   | Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+[Collection Tests/build-import-collection]   | Downloading cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (219 kB)
+[Collection Tests/build-import-collection]   | Downloading charset_normalizer-3.4.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+[Collection Tests/build-import-collection]   | Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+[Collection Tests/build-import-collection]   | Downloading filelock-3.20.0-py3-none-any.whl (16 kB)
+[Collection Tests/build-import-collection]   | Downloading idna-3.11-py3-none-any.whl (71 kB)
+[ansible-lint/Ansible lint/Ansible Lint]   | Installing collected packages: zipp, typing-extensions, subprocess-tee, ruamel.yaml.clib, rpds-py, resolvelib, PyYAML, pytokens, pycparser, platformdirs, pathspec, packaging, mypy-extensions, MarkupSafe, filelock, click, bracex, attrs, yamllint, wcmatch, ruamel.yaml, referencing, jinja2, importlib-metadata, cffi, black, jsonschema-specifications, cryptography, jsonschema, ansible-core, ansible-compat, ansible-lint
+[Collection Tests/build-import-collection]   | Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+[Collection Tests/build-import-collection]   | Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+[Collection Tests/build-import-collection]   | Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+[Collection Tests/build-import-collection]   | Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+[Collection Tests/build-import-collection]   | Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+[Collection Tests/build-import-collection]   | Downloading pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+[Collection Tests/build-import-collection]   | Downloading pyflakes-3.1.0-py2.py3-none-any.whl (62 kB)
+[Collection Tests/build-import-collection]   | Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+[Collection Tests/build-import-collection]   | Downloading ruamel.yaml-0.18.16-py3-none-any.whl (119 kB)
+[Collection Tests/build-import-collection]   | Downloading ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (788 kB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 788.2/788.2 kB 5.6 MB/s eta 0:00:00
+[Collection Tests/build-import-collection]   | Downloading subprocess_tee-0.4.2-py3-none-any.whl (5.2 kB)
+[Collection Tests/build-import-collection]   | Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+[Collection Tests/build-import-collection]   | Downloading wcmatch-10.1-py3-none-any.whl (39 kB)
+[Collection Tests/build-import-collection]   | Downloading yamllint-1.37.1-py3-none-any.whl (68 kB)
+[Collection Tests/build-import-collection]   | Downloading bindep-2.13.0-py3-none-any.whl (34 kB)
+[Collection Tests/build-import-collection]   | Downloading bracex-2.6-py3-none-any.whl (11 kB)
+[Collection Tests/build-import-collection]   | Downloading click-8.3.1-py3-none-any.whl (108 kB)
+[Collection Tests/build-import-collection]   | Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+[Collection Tests/build-import-collection]   | Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+[Collection Tests/build-import-collection]   | Downloading pbr-7.0.3-py2.py3-none-any.whl (131 kB)
+[Collection Tests/build-import-collection]   | Downloading platformdirs-4.5.0-py3-none-any.whl (18 kB)
+[Collection Tests/build-import-collection]   | Downloading pytokens-0.3.0-py3-none-any.whl (12 kB)
+[Collection Tests/build-import-collection]   | Downloading rpds_py-0.29.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (395 kB)
+[Collection Tests/build-import-collection]   | Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+[Collection Tests/build-import-collection]   | Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+[Collection Tests/build-import-collection]   | Downloading Parsley-1.3-py2.py3-none-any.whl (88 kB)
+[Collection Tests/build-import-collection]   | Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+[Collection Tests/build-import-collection]   | Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+[Collection Tests/build-import-collection]   |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 11.9 MB/s eta 0:00:00
+[Collection Tests/build-import-collection]   | Installing collected packages: Parsley, zipp, urllib3, typing-extensions, subprocess-tee, setuptools, semantic-version, ruamel-yaml-clib, rpds-py, resolvelib, PyYAML, pytokens, pyflakes, pycparser, pycodestyle, platformdirs, pathspec, packaging, nh3, mypy-extensions, mccabe, MarkupSafe, markdown, idna, filelock, distro, click, charset_normalizer, certifi, bracex, attrs, yamllint, wcmatch, ruamel-yaml, requests, referencing, pbr, jinja2, importlib-metadata, flake8, cffi, black, jsonschema-specifications, cryptography, bindep, jsonschema, ansible-core, ansible-compat, ansible-builder, ansible-lint, galaxy-importer
+[ansible-lint/Ansible lint/Ansible Lint]   | Successfully installed MarkupSafe-3.0.3 PyYAML-6.0.3 ansible-compat-24.10.0 ansible-core-2.20.0 ansible-lint-25.1.0 attrs-25.4.0 black-25.11.0 bracex-2.6 cffi-2.0.0 click-8.3.1 cryptography-46.0.3 filelock-3.20.0 importlib-metadata-8.7.0 jinja2-3.1.6 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 mypy-extensions-1.1.0 packaging-25.0 pathspec-0.12.1 platformdirs-4.5.0 pycparser-2.23 pytokens-0.3.0 referencing-0.37.0 resolvelib-1.2.1 rpds-py-0.29.0 ruamel.yaml-0.18.16 ruamel.yaml.clib-0.2.15 subprocess-tee-0.4.2 typing-extensions-4.15.0 wcmatch-10.1 yamllint-1.37.1 zipp-3.23.0
+[ansible-lint/Ansible lint/Ansible Lint]   | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[Collection Tests/build-import-collection]   | Successfully installed MarkupSafe-3.0.3 Parsley-1.3 PyYAML-6.0.3 ansible-builder-3.1.1 ansible-compat-25.8.1 ansible-core-2.20.0 ansible-lint-25.9.1 attrs-22.2.0 bindep-2.13.0 black-25.11.0 bracex-2.6 certifi-2025.11.12 cffi-2.0.0 charset_normalizer-3.4.4 click-8.3.1 cryptography-46.0.3 distro-1.9.0 filelock-3.20.0 flake8-6.1.0 galaxy-importer-0.4.35 idna-3.11 importlib-metadata-8.7.0 jinja2-3.1.6 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 markdown-3.10 mccabe-0.7.0 mypy-extensions-1.1.0 nh3-0.3.2 packaging-24.2 pathspec-0.12.1 pbr-7.0.3 platformdirs-4.5.0 pycodestyle-2.11.1 pycparser-2.23 pyflakes-3.1.0 pytokens-0.3.0 referencing-0.37.0 requests-2.32.5 resolvelib-1.2.1 rpds-py-0.29.0 ruamel-yaml-0.18.16 ruamel-yaml-clib-0.2.15 semantic-version-2.10.0 setuptools-80.9.0 subprocess-tee-0.4.2 typing-extensions-4.15.0 urllib3-2.5.0 wcmatch-10.1 yamllint-1.37.1 zipp-3.23.0
+[Collection Tests/build-import-collection]   | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[Collection Tests/build-import-collection]   | 
+[Collection Tests/build-import-collection]   | [notice] A new release of pip is available: 25.0.1 -> 25.3
+[Collection Tests/build-import-collection]   | [notice] To update, run: pip install --upgrade pip
+[ansible-lint/Ansible lint/Ansible Lint]   | 
+[ansible-lint/Ansible lint/Ansible Lint]   | [notice] A new release of pip is available: 25.0.1 -> 25.3
+[ansible-lint/Ansible lint/Ansible Lint]   | [notice] To update, run: pip install --upgrade pip
+[Collection Tests/build-import-collection]   ✅  Success - Main Ensure ansible-core and galaxy-importer is installed [1m12.736345328s]
+[ansible-lint/Ansible lint/Ansible Lint]   | [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+[ansible-lint/Ansible lint/Ansible Lint]   | [DEPRECATION WARNING]: Importing 'to_bytes' from 'ansible.module_utils._text' is deprecated. This feature will be removed from ansible-core version 2.24. Use ansible.module_utils.common.text.converters instead.
+[ansible-lint/Ansible lint/Ansible Lint]   | Traceback (most recent call last):
+[ansible-lint/Ansible lint/Ansible Lint]   |   File "/usr/local/bin/ansible-lint", line 5, in <module>
+[ansible-lint/Ansible lint/Ansible Lint]   |     from ansiblelint.__main__ import _run_cli_entrypoint
+[ansible-lint/Ansible lint/Ansible Lint]   |   File "/usr/local/lib/python3.12/site-packages/ansiblelint/__main__.py", line 50, in <module>
+[ansible-lint/Ansible lint/Ansible Lint]   |     from ansiblelint import cli
+[ansible-lint/Ansible lint/Ansible Lint]   |   File "/usr/local/lib/python3.12/site-packages/ansiblelint/cli.py", line 30, in <module>
+[ansible-lint/Ansible lint/Ansible Lint]   |     from ansiblelint.yaml_utils import clean_json
+[ansible-lint/Ansible lint/Ansible Lint]   |   File "/usr/local/lib/python3.12/site-packages/ansiblelint/yaml_utils.py", line 33, in <module>
+[ansible-lint/Ansible lint/Ansible Lint]   |     from ansiblelint.utils import Task
+[ansible-lint/Ansible lint/Ansible Lint]   |   File "/usr/local/lib/python3.12/site-packages/ansiblelint/utils.py", line 49, in <module>
+[ansible-lint/Ansible lint/Ansible Lint]   |     from ansible.parsing.yaml.constructor import AnsibleConstructor, AnsibleMapping
+[ansible-lint/Ansible lint/Ansible Lint]   | ModuleNotFoundError: No module named 'ansible.parsing.yaml.constructor'
+[ansible-lint/Ansible lint/Ansible Lint]   ❌  Failure - Main Install ansible-lint from pip [1m2.783611455s]
+[Collection Tests/build-import-collection] ⭐ Run Main Update galaxy-importer cfg
+[Collection Tests/build-import-collection]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2.sh] user= workdir=
+[Collection Tests/build-import-collection]   ✅  Success - Main Update galaxy-importer cfg [294.281484ms]
+[ansible-lint/Ansible lint/Ansible Lint] exitcode '1': failure
+[ansible-lint/Ansible lint/Ansible Lint] ⭐ Run Complete job
+[ansible-lint/Ansible lint/Ansible Lint] Cleaning up container for job Ansible Lint
+[Collection Tests/build-import-collection] ⭐ Run Main Build the collection tarball and run galaxy importer on it
+[Collection Tests/build-import-collection]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3.sh] user= workdir=ansible_collections/juniper/device
+[Collection Tests/build-import-collection]   | Importing with galaxy-importer 0.4.35
+[Collection Tests/build-import-collection]   | Building collection tarball with ansible-galaxy collection build
+[ansible-lint/Ansible lint/Ansible Lint]   ✅  Success - Complete job
+[ansible-lint/Ansible lint/Ansible Lint] 🏁  Job failed
+[Collection Tests/Sanity Tests-1         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-4         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-1         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-4         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-2         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-3         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-2         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-3         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-4         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-4         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Sanity Tests-3         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-3         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Sanity Tests-2         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-2         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Sanity Tests-1         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-1         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/build-import-collection]   | Getting doc strings via ansible-doc
+[Collection Tests/Sanity Tests-4         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-2         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-3         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-1         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-4         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-2         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-1         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-3         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-2         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-3         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-1         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-2         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-2         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-4         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-1         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-3         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-1         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-3         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-4         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-4         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-2         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-2         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-1         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-1         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-3         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-3         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-4         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-4         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-2         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-2         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-2         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-2         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [33.098457ms]
+[Collection Tests/build-import-collection]   | Finding content inside collection
+[Collection Tests/build-import-collection]   | Loading action acl_interfaces
+[Collection Tests/build-import-collection]   | Loading action acls
+[Collection Tests/build-import-collection]   | Loading action bgp_address_family
+[Collection Tests/build-import-collection]   | Loading action bgp_global
+[Collection Tests/build-import-collection]   | Loading action command
+[Collection Tests/build-import-collection]   | Loading action config
+[Collection Tests/build-import-collection]   | Loading action extract_data
+[Collection Tests/build-import-collection]   | Loading action facts
+[Collection Tests/build-import-collection]   | Loading action file_copy
+[Collection Tests/build-import-collection]   | Loading action hostname
+[Collection Tests/build-import-collection]   | Loading action interfaces
+[Collection Tests/build-import-collection]   | Loading action jsnapy
+[Collection Tests/build-import-collection]   | Loading action juniper_junos_common_action
+[Collection Tests/build-import-collection]   | Loading action junos
+[Collection Tests/build-import-collection]   | Loading action junos_banner
+[Collection Tests/build-import-collection]   | Loading action junos_command
+[Collection Tests/build-import-collection]   | Loading action junos_config
+[Collection Tests/build-import-collection]   | Loading action junos_facts
+[Collection Tests/build-import-collection]   | Loading action l2_interfaces
+[Collection Tests/build-import-collection]   | Loading action l3_intefaces
+[Collection Tests/build-import-collection]   | Loading action lacp
+[Collection Tests/build-import-collection]   | Loading action lacp_intefaces
+[Collection Tests/build-import-collection]   | Loading action lag_interfaces
+[Collection Tests/build-import-collection]   | Loading action lldp_global
+[Collection Tests/build-import-collection]   | Loading action lldp_interfaces
+[Collection Tests/build-import-collection]   | Loading action logging
+[Collection Tests/build-import-collection]   | Loading action logging_global
+[Collection Tests/build-import-collection]   | Loading action netconf
+[Collection Tests/build-import-collection]   | Loading action ntp_global
+[Collection Tests/build-import-collection]   | Loading action ospf_interfaces
+[Collection Tests/build-import-collection]   | Loading action ospfv2
+[Collection Tests/build-import-collection]   | Loading action ospfv3
+[Collection Tests/build-import-collection]   | Loading action ping
+[Collection Tests/build-import-collection]   | Loading action pmtud
+[Collection Tests/build-import-collection]   | Loading action prefix_lists
+[Collection Tests/build-import-collection]   | Loading action routing_instances
+[Collection Tests/build-import-collection]   | Loading action routing_options
+[Collection Tests/build-import-collection]   | Loading action rpc
+[Collection Tests/build-import-collection]   | Loading action security_policies
+[Collection Tests/build-import-collection]   | Loading action security_policies_global
+[Collection Tests/build-import-collection]   | Loading action security_zones
+[Collection Tests/build-import-collection]   | Loading action snmp_server
+[Collection Tests/build-import-collection]   | Loading action software
+[Collection Tests/build-import-collection]   | Loading action srx_cluster
+[Collection Tests/build-import-collection]   | Loading action static_routes
+[Collection Tests/build-import-collection]   | Loading action system
+[Collection Tests/build-import-collection]   | Loading action table
+[Collection Tests/build-import-collection]   | Loading callback jsnapy
+[Collection Tests/build-import-collection]   | Loading cliconf junos
+[Collection Tests/build-import-collection]   | Loading connection pyez
+[Collection Tests/build-import-collection]   | Loading doc_fragments juniper_junos_doc
+[Collection Tests/build-import-collection]   | Loading doc_fragments junos
+[Collection Tests/build-import-collection]   | Loading module _tbrdevice_hostname
+[Collection Tests/build-import-collection]   | Loading module command
+[Collection Tests/build-import-collection]   | Loading module config
+[Collection Tests/build-import-collection]   | Loading module facts
+[Collection Tests/build-import-collection]   | Loading module file_copy
+[Collection Tests/build-import-collection]   | Loading module jsnapy
+[Collection Tests/build-import-collection]   | Loading module junos
+[Collection Tests/build-import-collection]   | Loading module junos_acl_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_acls
+[Collection Tests/build-import-collection]   | Loading module junos_banner
+[Collection Tests/build-import-collection]   | Loading module junos_bgp_address_family
+[Collection Tests/build-import-collection]   | Loading module junos_bgp_global
+[Collection Tests/build-import-collection]   | Loading module junos_command
+[Collection Tests/build-import-collection]   | Loading module junos_config
+[Collection Tests/build-import-collection]   | Loading module junos_facts
+[Collection Tests/build-import-collection]   | Loading module junos_hostname
+[Collection Tests/build-import-collection]   | Loading module junos_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_l2_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_l3_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_lacp
+[Collection Tests/build-import-collection]   | Loading module junos_lacp_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_lag_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_lldp_global
+[Collection Tests/build-import-collection]   | Loading module junos_lldp_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_logging_global
+[Collection Tests/build-import-collection]   | Loading module junos_netconf
+[Collection Tests/build-import-collection]   | Loading module junos_ntp_global
+[Collection Tests/build-import-collection]   | Loading module junos_ospf_interfaces
+[Collection Tests/build-import-collection]   | Loading module junos_ospfv2
+[Collection Tests/build-import-collection]   | Loading module junos_ospfv3
+[Collection Tests/build-import-collection]   | Loading module junos_package
+[Collection Tests/build-import-collection]   | Loading module junos_ping
+[Collection Tests/build-import-collection]   | Loading module junos_prefix_lists
+[Collection Tests/build-import-collection]   | Loading module junos_routing_instances
+[Collection Tests/build-import-collection]   | Loading module junos_routing_options
+[Collection Tests/build-import-collection]   | Loading module junos_rpc
+[Collection Tests/build-import-collection]   | Loading module junos_security_policies
+[Collection Tests/build-import-collection]   | Loading module junos_security_policies_global
+[Collection Tests/build-import-collection]   | Loading module junos_security_zones
+[Collection Tests/build-import-collection]   | Loading module junos_snmp_server
+[Collection Tests/build-import-collection]   | Loading module junos_static_routes
+[Collection Tests/build-import-collection]   | Loading module junos_system
+[Collection Tests/build-import-collection]   | Loading module junos_user
+[Collection Tests/build-import-collection]   | Loading module junos_vlans
+[Collection Tests/build-import-collection]   | Loading module junos_vrf
+[Collection Tests/build-import-collection]   | Loading module ping
+[Collection Tests/build-import-collection]   | Loading module pmtud
+[Collection Tests/build-import-collection]   | Loading module rpc
+[Collection Tests/build-import-collection]   | Loading module software
+[Collection Tests/build-import-collection]   | Loading module srx_cluster
+[Collection Tests/build-import-collection]   | Loading module system
+[Collection Tests/build-import-collection]   | Loading module table
+[Collection Tests/build-import-collection]   | Loading module tbrdevice_facts
+[Collection Tests/build-import-collection]   | Loading module_utils configuration
+[Collection Tests/build-import-collection]   | Loading module_utils juniper_junos_common
+[Collection Tests/build-import-collection]   | Loading module_utils netconf_tbr.exceptions
+[Collection Tests/build-import-collection]   | Loading module_utils netconf_tbr.junos
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.acl_interfaces.acl_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.acls.acls
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.bgp_address_family.bgp_address_family
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.bgp_global.bgp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.facts.facts
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.hostname.hostname
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.interfaces.interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.l2_interfaces.l2_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.l3_interfaces.l3_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.lacp.lacp
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.lacp_interfaces.lacp_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.lag_interfaces.lag_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.lldp_global.lldp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.lldp_interfaces.lldp_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.logging_global.logging_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.ntp_global.ntp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.ospf_interfaces.ospf_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.ospfv2.ospfv2
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.ospfv3.ospfv3
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.prefix_lists.prefix_lists
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.routing_instances.routing_instances
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.routing_options.routing_options
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.security_policies.security_policies
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.security_policies_global.security_policies_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.security_zones.security_zones
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.snmp_server.snmp_server
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.static_routes.static_routes
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.argspec.vlans.vlans
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.acl_interfaces.acl_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.acls.acls
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.bgp_address_family.bgp_address_family
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.bgp_global.bgp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.hostname.hostname
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.interfaces.interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.l2_interfaces.l2_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.l3_interfaces.l3_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.lacp.lacp
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.lacp_interfaces.lacp_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.lag_interfaces.lag_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.lldp_global.lldp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.lldp_interfaces.lldp_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.logging_global.logging_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.ntp_global.ntp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.ospf_interfaces.ospf_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.ospfv2.ospfv2
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.ospfv3.ospfv3
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.prefix_lists.prefix_lists
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.routing_instances.routing_instances
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.routing_options.routing_options
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.security_policies.security_policies
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.security_policies_global.security_policies_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.security_zones.security_zones
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.snmp_server.snmp_server
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.static_routes.static_routes
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.config.vlans.vlans
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.acl_interfaces.acl_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.acls.acls
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.bgp_address_family.bgp_address_family
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.bgp_global.bgp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.facts
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.hostname.hostname
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.interfaces.interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.l2_interfaces.l2_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.l3_interfaces.l3_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.lacp.lacp
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.lacp_interfaces.lacp_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.lag_interfaces.lag_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.legacy.base
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.lldp_global.lldp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.lldp_interfaces.lldp_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.logging_global.logging_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.ntp_global.ntp_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.ospf_interfaces.ospf_interfaces
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.ospfv2.ospfv2
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.ospfv3.ospfv3
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.prefix_lists.prefix_lists
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.routing_instances.routing_instances
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.routing_options.routing_options
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.security_policies.security_policies
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.security_policies_global.security_policies_global
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.security_zones.security_zones
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.snmp_server.snmp_server
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.static_routes.static_routes
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.facts.vlans.vlans
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.junos
+[Collection Tests/build-import-collection]   | Loading module_utils network.junos.utils.utils
+[Collection Tests/build-import-collection]   | Loading netconf junos
+[Collection Tests/build-import-collection]   | Loading terminal junos
+[Collection Tests/build-import-collection]   | Linting collection via ansible-lint 25.9.1...
+[Collection Tests/Sanity Tests-1         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-1         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-2         ] 🧪  Matrix: map[ansible:2.17 python:3.11]
+[Collection Tests/Sanity Tests-2         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-2         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-3         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-3         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-2         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-2         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-4         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-2         ]   ❌  Failure - Main actions/checkout@v5 [1.215919501s]
+[Collection Tests/Sanity Tests-4         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-1         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-1         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [47.311082ms]
+[Collection Tests/Sanity Tests-2         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-2         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Sanity Tests-3         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-2         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-2         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-2         ]   ❌  Failure - Post actions/checkout@v5 [226.539911ms]
+[Collection Tests/Sanity Tests-3         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [138.3109ms]
+[Collection Tests/Sanity Tests-4         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-1         ] 🧪  Matrix: map[ansible:2.17 python:3.10]
+[Collection Tests/Sanity Tests-1         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-4         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [247.591617ms]
+[Collection Tests/Sanity Tests-1         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-2         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-2         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-2         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-3         ] 🧪  Matrix: map[ansible:2.18 python:3.11]
+[Collection Tests/Sanity Tests-3         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-3         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-4         ] 🧪  Matrix: map[ansible:2.19 python:3.11]
+[Collection Tests/Sanity Tests-4         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-1         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-4         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-3         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-4         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-4         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-4         ]   ❌  Failure - Main actions/checkout@v5 [2.305467902s]
+[Collection Tests/Sanity Tests-3         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-3         ]   ❌  Failure - Main actions/checkout@v5 [3.891925243s]
+[Collection Tests/Sanity Tests-1         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-1         ]   ❌  Failure - Main actions/checkout@v5 [5.092311883s]
+[Collection Tests/Sanity Tests-2         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-2         ] 🏁  Job failed
+[Collection Tests/Sanity Tests-5         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-5         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-5         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-5         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/build-import-collection]   | ...ansible-lint run complete
+[Collection Tests/build-import-collection]   | WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.18.txt with 17 statement(s)
+[Collection Tests/build-import-collection]   | WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.16.txt with 17 statement(s)
+[Collection Tests/build-import-collection]   | WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.17.txt with 17 statement(s)
+[Collection Tests/build-import-collection]   | WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.19.txt with 17 statement(s)
+[Collection Tests/build-import-collection]   | Collection loading complete
+[Collection Tests/build-import-collection]   ✅  Success - Main Build the collection tarball and run galaxy importer on it [35.704439473s]
+[Collection Tests/Sanity Tests-3         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-1         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-4         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-3         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Sanity Tests-1         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Sanity Tests-4         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/build-import-collection] ⭐ Run Complete job
+[Collection Tests/build-import-collection] Cleaning up container for job build-import-collection
+[Collection Tests/Sanity Tests-3         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-3         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-3         ]   ❌  Failure - Post actions/checkout@v5 [147.24654ms]
+[Collection Tests/Sanity Tests-4         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-1         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-4         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-4         ]   ❌  Failure - Post actions/checkout@v5 [288.457121ms]
+[Collection Tests/Sanity Tests-1         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-1         ]   ❌  Failure - Post actions/checkout@v5 [359.143877ms]
+[Collection Tests/Sanity Tests-3         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-3         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-3         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-1         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-1         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-1         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-4         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-4         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-4         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-5         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/build-import-collection]   ✅  Success - Complete job
+[Collection Tests/build-import-collection] 🏁  Job succeeded
+[Collection Tests/Sanity Tests-1         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-1         ] 🏁  Job failed
+[Collection Tests/Sanity Tests-6         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-6         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-6         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-6         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Sanity Tests-5         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-4         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-4         ] 🏁  Job failed
+[Collection Tests/Sanity Tests-7         ] ⭐ Run Set up job
+[Collection Tests/Sanity Tests-7         ] 🚀  Start image=python:3.12-slim
+[Collection Tests/Sanity Tests-7         ]   🐳  docker pull image=python:3.12-slim platform= username= forcePull=true
+[Collection Tests/Sanity Tests-7         ] using DockerAuthConfig authentication for docker pull
+[Collection Tests/Sanity Tests-3         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-3         ] 🏁  Job failed
+[Collection Tests/Sanity Tests-5         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-5         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-5         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-5         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-5         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-5         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-5         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-5         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-6         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-5         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [24.898771ms]
+[Collection Tests/Sanity Tests-7         ]   🐳  docker create image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-6         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-5         ] 🧪  Matrix: map[ansible:2.17 python:3.12]
+[Collection Tests/Sanity Tests-5         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-7         ]   🐳  docker run image=python:3.12-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Collection Tests/Sanity Tests-5         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-6         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-6         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-6         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-7         ]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Collection Tests/Sanity Tests-5         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-7         ]   ✅  Success - Set up job
+[Collection Tests/Sanity Tests-7         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v5
+[Collection Tests/Sanity Tests-5         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-5         ]   ❌  Failure - Main actions/checkout@v5 [1.085220246s]
+[Collection Tests/Sanity Tests-6         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-6         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-5         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-5         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Sanity Tests-5         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-5         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-5         ]   ❌  Failure - Post actions/checkout@v5 [100.814953ms]
+[Collection Tests/Sanity Tests-7         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-7         ]   ☁  git clone 'https://github.com/actions/setup-python' # ref=v6
+[Collection Tests/Sanity Tests-5         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-5         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-5         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-6         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-6         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-7         ] Non-terminating error while running 'git clone': some refs were not updated
+[Collection Tests/Sanity Tests-7         ]   ☁  git clone 'https://github.com/ansible/ansible-content-actions' # ref=main
+[Collection Tests/Sanity Tests-5         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-5         ] 🏁  Job failed
+[Collection Tests/Sanity Tests-6         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-6         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [39.810587ms]
+[Collection Tests/Sanity Tests-7         ] ⭐ Run Pre Check for tox-ansible.ini file, else add default
+[Collection Tests/Sanity Tests-7         ]   ✅  Success - Pre Check for tox-ansible.ini file, else add default [28.060072ms]
+[Collection Tests/Sanity Tests-6         ] 🧪  Matrix: map[ansible:2.18 python:3.12]
+[Collection Tests/Sanity Tests-6         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-6         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-7         ] 🧪  Matrix: map[ansible:2.19 python:3.12]
+[Collection Tests/Sanity Tests-7         ] ⭐ Run Main actions/checkout@v5
+[Collection Tests/Sanity Tests-6         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-7         ]   🐳  docker cp src=/root/.cache/act/actions-checkout@v5/ dst=/var/run/act/actions/actions-checkout@v5/
+[Collection Tests/Sanity Tests-6         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-6         ]   ❌  Failure - Main actions/checkout@v5 [838.396944ms]
+[Collection Tests/Sanity Tests-7         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-7         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-7         ]   ❌  Failure - Main actions/checkout@v5 [810.561424ms]
+[Collection Tests/Sanity Tests-6         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-6         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Sanity Tests-6         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-6         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-6         ]   ❌  Failure - Post actions/checkout@v5 [96.038153ms]
+[Collection Tests/Sanity Tests-7         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-7         ] ⭐ Run Post actions/checkout@v5
+[Collection Tests/Sanity Tests-7         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v5/dist/index.js] user= workdir=
+[Collection Tests/Sanity Tests-7         ]   | OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "node": executable file not found in $PATH: unknown
+[Collection Tests/Sanity Tests-7         ]   ❌  Failure - Post actions/checkout@v5 [89.213216ms]
+[Collection Tests/Sanity Tests-6         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-6         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-6         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-7         ] exitcode '126': failure
+[Collection Tests/Sanity Tests-7         ] ⭐ Run Complete job
+[Collection Tests/Sanity Tests-7         ] Cleaning up container for job Sanity Tests
+[Collection Tests/Sanity Tests-6         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-6         ] 🏁  Job failed
+[Collection Tests/Sanity Tests-7         ]   ✅  Success - Complete job
+[Collection Tests/Sanity Tests-7         ] 🏁  Job failed
