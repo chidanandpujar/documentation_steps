@@ -1,0 +1,11 @@
+uv venv test
+test/Scripts/activate
+uv pip install -r requirements.txt
+uv pip list
+deactivate 
+rm -rf test
+
+uv venv test
+test/Scripts/activate
+uv pip install -r requirements.txt
+uv pip list
