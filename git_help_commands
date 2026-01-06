@@ -1,0 +1,95 @@
+=======================================================================
+Git commands
+=======================================================================
+
+Steps for git commit from forked repository:
+
+git clone https://github.com/chidanandpujar/ansible-junos-stdlib.git
+git checkout -b ansible_review
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git status
+
+
+On branch ansible_review
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+	modified:   requirements.txt
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git add README.md 
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git add requirements.txt 
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git status
+
+On branch ansible_review
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+	modified:   requirements.txt
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git commit -m "fix review comments"
+
+[ansible_review ffdf508] fix review comments
+ 2 files changed, 8 insertions(+), 18 deletions(-)
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git config --global user.email "chidanandpujar@gmail.com"
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git config --global user.name "chidanandpujar"
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git push
+
+fatal: The current branch ansible_review has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ansible_review
+
+root@masterhost:~/ansible_review_comments/ansible-junos-stdlib# git push --set-upstream origin ansible_review
+Username for 'https://github.com': chidanandpujar
+Password for 'https://chidanandpujar@github.com': 
+
+
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 831 bytes | 831.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote: 
+remote: Create a pull request for 'ansible_review' on GitHub by visiting:
+remote:      https://github.com/chidanandpujar/ansible-junos-stdlib/pull/new/ansible_review
+remote: 
+To https://github.com/chidanandpujar/ansible-junos-stdlib.git
+ * [new branch]      ansible_review -> ansible_review
+Branch 'ansible_review' set up to track remote branch 'ansible_review' from 'origin'.
+
+===========================================
+To update files from existing branch:
+===========================================
+
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git status
+On branch ansible_review
+Your branch is up to date with 'origin/ansible_review'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   tests/unit/test_file_copy.py
+
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git add tests/unit/test_file_copy.py 
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git status
+On branch ansible_review
+Your branch is up to date with 'origin/ansible_review'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   tests/unit/test_file_copy.py
+
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git commit -m "fix review comments"
+[ansible_review a035357] fix review comments
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git config --global user.email ""
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git config --global user.name ""
+(reviewvenv) root@masterhost:~/ansible_review_comments/ansible-junos-stdlib/ansible_collections/juniper/device# git push
