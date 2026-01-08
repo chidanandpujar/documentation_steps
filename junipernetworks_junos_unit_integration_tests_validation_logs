@@ -1,1 +1,24 @@
 
+junos_command:
+=============
+
+TASK [junos_command : Run get output for single command] ***********************
+[ERROR]: Task failed: Action failed: command timeout triggered, timeout value is 300 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_command-wdaok3fl-ÅÑŚÌβŁÈ/tests/integration/targets/junos_command/tests/cli/cli_commmand.yaml:7:7
+
+5
+6 - block:
+7     - name: Run get output for single command
+        ^ column 7
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=196  changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=9   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_command
+FATAL: Command "ansible-playbook junos_command-77g7_ug8.yml -i inventory.networking" returned exit status 2.
+
+
+
