@@ -100,4 +100,10 @@ junos_bgp_address_family
 junos_bgp_global 
 junos_facts
 junos_hostname
+junos_l2_interfaces
+junos_l3_interfaces
+junos_lacp 
+junos_lacp_interfaces
+junos_lag_interfaces
+
 
