@@ -1,3 +1,4 @@
+Failed:
 
 junos_command:
 =============
@@ -20,5 +21,8 @@ PLAY RECAP *********************************************************************
 NOTICE: To resume at this test target, use the option: --start-at junos_command
 FATAL: Command "ansible-playbook junos_command-77g7_ug8.yml -i inventory.networking" returned exit status 2.
 
+
+Passed:
+======
 
 
