@@ -21,8 +21,83 @@ PLAY RECAP *********************************************************************
 NOTICE: To resume at this test target, use the option: --start-at junos_command
 FATAL: Command "ansible-playbook junos_command-77g7_ug8.yml -i inventory.networking" returned exit status 2.
 
+junos_config:
+============
+TASK [junos_config : ansible.builtin.assert] ***********************************
+[ERROR]: Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+
+Task failed.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-jhll_zmt-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:18:3
+
+16       - set interfaces lo0 unit 0 family inet address 192.0.2.1/32
+17
+18 - ansible.builtin.assert:
+     ^ column 3
+
+<<< caused by >>>
+
+Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-jhll_zmt-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:21:9
+
+19     that:
+20       - result.changed == true
+21       - "'host-name;' not in result.diff.prepared"
+           ^ column 9
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'"}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=15   changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_config
+FATAL: Command "ansible-playbook junos_config-ya645vfc.yml -i inventory.networking" returned exit status 2.
+
+
+junos_interfaces:
+================
+
+TASK [junos_interfaces : Assert that facts were correctly generated] ***********
+[ERROR]: Task failed: Action failed: Assertion failed
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_interfaces-0yrsuw12-ÅÑŚÌβŁÈ/tests/integration/targets/junos_interfaces/tests/netconf/gathered.yaml:63:7
+
+61         state: gathered
+62
+63     - name: Assert that facts were correctly generated
+         ^ column 7
+
+fatal: [10.221.140.20]: FAILED! => {
+    "assertion": "{{ expected_merged_output | symmetric_difference(result['gathered']) |length == 0 }}",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Assertion failed"
+}
+
+TASK [junos_interfaces : Reset configuration] **********************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_interfaces-0yrsuw12-ÅÑŚÌβŁÈ/tests/integration/targets/junos_interfaces/tests/netconf/_remove_config.yaml for 10.221.140.20
+
+TASK [junos_interfaces : Debug task] *******************************************
+ok: [10.221.140.20] => {
+    "msg": "Start junos_nterfaces deleted remove interface config ansible_connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_interfaces : Setup - remove interface config] **********************
+changed: [10.221.140.20]
+
+TASK [junos_interfaces : Debug task] *******************************************
+ok: [10.221.140.20] => {
+    "msg": "End junos_nterfaces deleted remove interface config ansible_connection=ansible.netcommon.netconf"
+}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=31   changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_interfaces
+FATAL: Command "ansible-playbook junos_interfaces-qmvwsig2.yml -i inventory.networking" returned exit status 2.
 
 Passed:
 ======
-
+junos_bgp_address_family
+junos_bgp_global 
+junos_facts
+junos_hostname
 
