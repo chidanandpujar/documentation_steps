@@ -1,4 +1,8 @@
 Failed:
+junos_command
+junos_config
+junos_interfaces
+junos_netconf
 
 junos_command:
 =============
@@ -94,6 +98,53 @@ PLAY RECAP *********************************************************************
 NOTICE: To resume at this test target, use the option: --start-at junos_interfaces
 FATAL: Command "ansible-playbook junos_interfaces-qmvwsig2.yml -i inventory.networking" returned exit status 2.
 
+
+junos_netconf:
+=============
+
+TASK [junos_netconf : Ensure netconf is enabled] *******************************
+[ERROR]: Task failed: Action failed: command timeout triggered, timeout value is 300 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-r_jucg74-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:4:3
+
+2 - ansible.builtin.debug: msg="START netconf/netconf.yaml on connection={{ ansible_connection }}"
+3
+4 - name: Ensure netconf is enabled
+    ^ column 3
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_netconf
+FATAL: Command "ansible-playbook junos_netconf-vgf91pr3.yml -i inventory.networking" returned exit status 2.
+
+
+junos_net_put:
+=============
+
+TASK [junos_net_put : Delete file from network device] *************************
+[ERROR]: Task failed: Action failed: command timeout triggered, timeout value is 300 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_net_put-__jwtlp7-ÅÑŚÌβŁÈ/tests/integration/targets/junos_net_put/tests/junos_net_put.yaml:33:3
+
+31       - result.failed == false
+32
+33 - name: Delete file from network device
+     ^ column 3
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=10   changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_net_put
+FATAL: Command "ansible-playbook junos_net_put-i4f8s12a.yml -i inventory.networking" returned exit status 2.
+
+
+
+
 Passed:
 ======
 junos_bgp_address_family
@@ -105,5 +156,11 @@ junos_l3_interfaces
 junos_lacp 
 junos_lacp_interfaces
 junos_lag_interfaces
+junos_lldp_global 
+junos_lldp_interfaces
+junos_logging_global
+junos_ntp_global
+
+
 
 
