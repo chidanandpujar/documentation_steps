@@ -279,6 +279,9 @@ junos_snmp_server
 junos_static_routes
 junos_system
 junos_vlans
+junos_acls
+junos_acl_interfaces
+junos_banner
 
 
 
