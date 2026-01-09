@@ -163,6 +163,27 @@ fatal: [10.221.140.20]: FAILED! => {
 }
 
 
+junos_smoke:
+===========
+
+TASK [junos_smoke : ansible.netcommon.cli_command] *****************************
+[ERROR]: Task failed: Action failed: command timeout triggered, timeout value is 300 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_smoke-blhxk0h9-ÅÑŚÌβŁÈ/tests/integration/targets/junos_smoke/tests/cli/reboot.yaml:5:7
+
+3     msg: START cli/cli_reboot.yaml on connection={{ ansible_connection }}
+4 - block:
+5     - ansible.netcommon.cli_command:
+        ^ column 7
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 300 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=8    changed=0    unreachable=0    failed=1    skipped=9    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_smoke
+FATAL: Command "ansible-playbook junos_smoke-m9tceqxp.yml -i inventory.networking" returned exit status 2.
+
 
 
 Passed:
@@ -188,6 +209,11 @@ junos_routing_options
 junos_rpc
 junos_security_policies
 junos_security_policies_global
+junos_security_zones
+junos_snmp_server
+junos_static_routes
+
+
 
 
 
