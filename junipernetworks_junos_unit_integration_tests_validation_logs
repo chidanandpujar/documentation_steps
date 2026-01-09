@@ -184,6 +184,71 @@ PLAY RECAP *********************************************************************
 NOTICE: To resume at this test target, use the option: --start-at junos_smoke
 FATAL: Command "ansible-playbook junos_smoke-m9tceqxp.yml -i inventory.networking" returned exit status 2.
 
+junos_user:
+===========
+
+TASK [junos_user : ansible.builtin.assert] *************************************
+[ERROR]: Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+
+Task failed.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_user-ilw9h9ze-ÅÑŚÌβŁÈ/tests/integration/targets/junos_user/tests/netconf/basic.yaml:196:3
+
+194     purge: true
+195
+196 - ansible.builtin.assert:
+      ^ column 3
+
+<<< caused by >>>
+
+Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_user-ilw9h9ze-ÅÑŚÌβŁÈ/tests/integration/targets/junos_user/tests/netconf/basic.yaml:199:9
+
+197     that:
+198       - result.changed == true
+199       - result.diff.prepared is search("\- *user test_user1")
+            ^ column 9
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'"}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=33   changed=8    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_user
+FATAL: Command "ansible-playbook junos_user-dzmbq1_5.yml -i inventory.networking" returned exit status 2.
+
+
+junos_vrf:
+=========
+
+
+TASK [junos_vrf : ansible.builtin.assert] **************************************
+[ERROR]: Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+
+Task failed.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_vrf-2ybl8e2r-ÅÑŚÌβŁÈ/tests/integration/targets/junos_vrf/tests/netconf/basic.yaml:23:3
+
+21     state: present
+22
+23 - ansible.builtin.assert:
+     ^ column 3
+
+<<< caused by >>>
+
+Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_vrf-2ybl8e2r-ÅÑŚÌβŁÈ/tests/integration/targets/junos_vrf/tests/netconf/basic.yaml:26:9
+
+24     that:
+25       - result.changed == true
+26       - result.diff.prepared is search("\+ *test-1")
+           ^ column 9
+
+fatal: [10.221.140.20]: FAILED! => {"changed": false, "msg": "Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'"}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=9    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_vrf
+FATAL: Command "ansible-playbook junos_vrf-5t5du9lz.yml -i inventory.networking" returned exit status 2.
 
 
 Passed:
@@ -212,6 +277,10 @@ junos_security_policies_global
 junos_security_zones
 junos_snmp_server
 junos_static_routes
+junos_system
+junos_vlans
+
+
 
 
 
