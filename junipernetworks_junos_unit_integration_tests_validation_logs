@@ -3,6 +3,7 @@ junos_command
 junos_config
 junos_interfaces
 junos_netconf
+junos_ospf_interfaces
 
 junos_command:
 =============
@@ -143,6 +144,25 @@ NOTICE: To resume at this test target, use the option: --start-at junos_net_put
 FATAL: Command "ansible-playbook junos_net_put-i4f8s12a.yml -i inventory.networking" returned exit status 2.
 
 
+junos_ospf_interfaces:
+=====================
+TASK [junos_ospf_interfaces : Assert the configuration is reflected on host] ***
+[ERROR]: Task failed: Action failed: Assertion failed
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-w9kfhmcl-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/merged.yaml:159:7
+
+157       register: result
+158
+159     - name: Assert the configuration is reflected on host
+          ^ column 7
+
+fatal: [10.221.140.20]: FAILED! => {
+    "assertion": "{{ expected_config | symmetric_difference(result['after']) |length == 0 }}",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Assertion failed"
+}
+
+
 
 
 Passed:
@@ -160,6 +180,15 @@ junos_lldp_global
 junos_lldp_interfaces
 junos_logging_global
 junos_ntp_global
+junos_ospfv2
+junos_ospfv3 
+junos_prefix_lists 
+junos_routing_instances 
+junos_routing_options
+junos_rpc
+junos_security_policies
+junos_security_policies_global
+
 
 
 
