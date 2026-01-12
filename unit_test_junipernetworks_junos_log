@@ -1,0 +1,651 @@
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# python3.12 -m pytest tests/unit/
+======================================================== test session starts =========================================================
+platform linux -- Python 3.12.0, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python3.12
+cachedir: .pytest_cache
+rootdir: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+configfile: pyproject.toml
+plugins: xdist-3.8.0
+2 workers [300 items]   
+scheduling tests via LoadScheduling
+
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_deleted_032 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_001 
+[gw1] [  0%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_deleted_032 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_multiple_entry_parsed 
+[gw0] [  0%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_001 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_002 
+[gw1] [  1%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_multiple_entry_parsed 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_neighbors_multiple_entry_parsed 
+[gw0] [  1%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_002 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_002_001 
+[gw1] [  1%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_neighbors_multiple_entry_parsed 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_neighbors_single_entry_parsed 
+[gw1] [  2%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_neighbors_single_entry_parsed 
+[gw0] [  2%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_002_001 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_003 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_single_entry_parsed 
+[gw1] [  2%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_groups_single_entry_parsed 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_parsed 
+[gw0] [  3%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_003 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_004 
+[gw1] [  3%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_parsed 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_add_path_nested_parser 
+[gw0] [  3%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_004 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_005 
+[gw1] [  4%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_add_path_nested_parser 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_add_path_parser 
+[gw1] [  4%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_add_path_parser 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_neighbors_multiple_entry_parsed 
+[gw1] [  4%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_neighbors_multiple_entry_parsed 
+[gw0] [  5%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_005 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_005_001 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_neighbors_single_entry_parsed 
+[gw1] [  5%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_neighbors_single_entry_parsed 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_withdrow_priority_parser 
+[gw1] [  5%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_single_groups_withdrow_priority_parser 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_delete 
+[gw0] [  6%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_005_001 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_006 
+[gw1] [  6%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_delete 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_delete_purged 
+[gw0] [  6%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_006 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_007 
+[gw1] [  7%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_delete_purged 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_gathered 
+[gw1] [  7%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_gathered 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merge_groups 
+[gw0] [  7%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_007 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_007_001 
+[gw1] [  8%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merge_groups 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged 
+[gw0] [  8%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_007_001 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_008 
+[gw1] [  8%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_advertise_bgp_static 
+[gw0] [  9%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_008 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_009 
+[gw1] [  9%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_advertise_bgp_static 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_advertise_external 
+[gw0] [  9%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_009 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_010 
+[gw1] [ 10%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_advertise_external 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bfd_liveness_detection 
+[gw0] [ 10%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_010 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_011 
+[gw1] [ 10%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bfd_liveness_detection 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bgp_error_tolerance 
+[gw1] [ 11%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bgp_error_tolerance 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bmp 
+[gw0] [ 11%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_011 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_012 
+[gw1] [ 11%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bmp 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bmp_2 
+[gw0] [ 12%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_012 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_013 
+[gw1] [ 12%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_bmp_2 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_egress_te 
+[gw0] [ 12%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_013 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_013_001 
+[gw1] [ 13%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_egress_te 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_egress_te_backup_paths 
+[gw0] [ 13%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_013_001 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_014 
+[gw1] [ 13%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_egress_te_backup_paths 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_groups_allow 
+[gw0] [ 14%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_014 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_015 
+[gw1] [ 14%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_groups_allow 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_idempotent 
+[gw1] [ 14%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_optimal_route_reflection 
+[gw0] [ 15%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_015 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_016 
+[gw1] [ 15%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_optimal_route_reflection 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_routing_options 
+[gw0] [ 15%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_016 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_017 
+[gw1] [ 16%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_merged_routing_options 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed 
+[gw0] [ 16%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_017 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_018 
+[gw1] [ 16%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_bgp_global 
+[gw1] [ 17%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_bgp_global 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_bgp_group_neighbors_list 
+[gw0] [ 17%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_018 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_019 
+[gw1] [ 17%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_bgp_group_neighbors_list 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_bgp_group_neighbors_list_2 
+[gw0] [ 18%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_019 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_020 
+[gw1] [ 18%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_bgp_group_neighbors_list_2 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_empty_running_config 
+[gw1] [ 18%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_empty_running_config 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_only_routing_options 
+[gw0] [ 19%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_020 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_021 
+[gw1] [ 19%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_parsed_only_routing_options 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_rendered 
+[gw1] [ 19%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_rendered 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_rendered_empty 
+[gw1] [ 20%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_rendered_empty 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_replaced 
+[gw0] [ 20%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_021 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_022 
+[gw1] [ 20%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_replaced 
+tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_replaced_idempotent 
+[gw0] [ 21%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_022 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_023 
+[gw1] [ 21%] PASSED tests/unit/modules/network/junos/test_junos_bgp_global.py::TestJunosBgp_globalModule::test_junos_bgp_global_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_match_all 
+[gw0] [ 21%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_023 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_023_001 
+[gw1] [ 22%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_match_all 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_match_all_failure 
+[gw1] [ 22%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_match_all_failure 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_match_any 
+[gw0] [ 22%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_023_001 
+[gw1] [ 23%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_match_any 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_024 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_multiple 
+[gw1] [ 23%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_multiple 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_retries 
+[gw1] [ 23%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_retries 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple 
+[gw0] [ 24%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_024 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_025 
+[gw1] [ 24%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple_json 
+[gw1] [ 24%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple_json 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple_rpc_json 
+[gw1] [ 25%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple_rpc_json 
+[gw0] [ 25%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_025 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple_rpc_text 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_026 
+[gw1] [ 25%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_simple_rpc_text 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_wait_for 
+[gw1] [ 26%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_wait_for 
+tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_wait_for_fails 
+[gw1] [ 26%] PASSED tests/unit/modules/network/junos/test_junos_command.py::TestJunosCommandModule::test_junos_command_wait_for_fails 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_backup 
+[gw0] [ 26%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_026 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_027 
+[gw0] [ 27%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_027 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_028 
+[gw0] [ 27%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_028 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_029 
+[gw1] [ 27%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_backup 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_confirm 
+[gw0] [ 28%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_029 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_030 
+[gw1] [ 28%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_confirm 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_confirm_commit 
+[gw1] [ 28%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_confirm_commit 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_lines 
+[gw0] [ 29%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_030 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_033 
+[gw1] [ 29%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_lines 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_rollback 
+[gw1] [ 29%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_rollback 
+[gw0] [ 30%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_config_033 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_rollback_0 
+tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_deleted_031 
+[gw1] [ 30%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_rollback_0 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_format_xml 
+[gw1] [ 30%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_format_xml 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_json 
+[gw0] [ 31%] PASSED tests/unit/modules/network/junos/test_junos_bgp_address_family.py::TestJunosBgp_address_familyModule::test_junos_bgp_address_family_deleted_031 
+tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_subset_config_set 
+[gw1] [ 31%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_json 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_set 
+[gw1] [ 31%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_set 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_text 
+[gw1] [ 32%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_text 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_xml 
+[gw1] [ 32%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_xml 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_unchanged 
+[gw1] [ 32%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_unchanged 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_update_override 
+[gw1] [ 33%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_update_override 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_update_replace 
+[gw0] [ 33%] PASSED tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_subset_config_set 
+tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_subset_list 
+[gw1] [ 33%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_update_replace 
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_zeroize 
+[gw0] [ 34%] PASSED tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_subset_list 
+tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_wrong_subset 
+[gw0] [ 34%] PASSED tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_wrong_subset 
+[gw1] [ 34%] PASSED tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_zeroize 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_gathered 
+tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts 
+[gw0] [ 35%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_gathered 
+[gw1] [ 35%] PASSED tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_merged_01 
+tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_subset_config_json 
+[gw1] [ 35%] PASSED tests/unit/modules/network/junos/test_junos_facts.py::TestJunosCommandModule::test_junos_get_facts_subset_config_json 
+[gw0] [ 36%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_merged_01 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_rendered 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_overridden_01 
+[gw1] [ 36%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_rendered 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_replaced 
+[gw0] [ 36%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_overridden_01 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_parsed_01 
+[gw0] [ 37%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_parsed_01 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_rendered 
+[gw1] [ 37%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_replaced 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_replaced_idempotent 
+[gw0] [ 37%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_rendered 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_replaced 
+[gw0] [ 38%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_replaced 
+[gw1] [ 38%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_delete 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_merged 
+[gw1] [ 38%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_merged 
+[gw0] [ 39%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_delete 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_delete_idempotent 
+[gw1] [ 39%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_merged_idempotent 
+[gw0] [ 39%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_delete_idempotent 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_overridden 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_merged 
+[gw1] [ 40%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_overridden 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_overridden_idempotent 
+[gw0] [ 40%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_merged 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_merged_idempotent 
+[gw1] [ 40%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_rendered 
+[gw1] [ 41%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_rendered 
+[gw0] [ 41%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_replaced 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_overridden 
+[gw1] [ 41%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_replaced 
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_replaced_idempotent 
+[gw0] [ 42%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_overridden 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_overridden_idempotent 
+[gw1] [ 42%] PASSED tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_deleted_user_11 
+[gw0] [ 42%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_rendered 
+[gw0] [ 43%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_rendered 
+[gw1] [ 43%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_deleted_user_11 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_replaced 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_gathered_14 
+[gw1] [ 43%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_gathered_14 
+[gw0] [ 44%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_replaced 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_07 
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_replaced_idempotent 
+[gw0] [ 44%] PASSED tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_delete 
+[gw1] [ 44%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_07 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_archive_01 
+[gw0] [ 45%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_delete 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_delete_idempotent 
+[gw1] [ 45%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_archive_01 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_console_02 
+[gw0] [ 45%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_delete_idempotent 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_gathered 
+[gw1] [ 46%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_console_02 
+[gw0] [ 46%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_gathered 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_files_03 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_merged 
+[gw1] [ 46%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_files_03 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_files_04 
+[gw0] [ 47%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_merged 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_merged_idempotent 
+[gw0] [ 47%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_overridden 
+[gw1] [ 47%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_files_04 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_hosts_05 
+[gw0] [ 48%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_overridden 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_overridden_idempotent 
+[gw1] [ 48%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_hosts_05 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_hosts_idempotent_06 
+[gw0] [ 48%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_parsed 
+[gw1] [ 49%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_hosts_idempotent_06 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_user_08 
+[gw0] [ 49%] PASSED tests/unit/modules/network/junos/test_junos_l2_interfaces.py::TestJunosL2InterfacesModule::test_junos_l2_interfaces_parsed 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_15 
+[gw1] [ 49%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_merged_user_08 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_overridden_user_10 
+[gw0] [ 50%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_15 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_16 
+[gw1] [ 50%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_overridden_user_10 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_13 
+[gw0] [ 50%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_16 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_17 
+[gw1] [ 51%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_13 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_delete_idempotent 
+[gw0] [ 51%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_parsed_17 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_rendered_12 
+[gw1] [ 51%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_delete_idempotent 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_merged 
+[gw0] [ 52%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_rendered_12 
+tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_replaced_user_09 
+[gw1] [ 52%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_merged 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_merged_idempotent 
+[gw0] [ 52%] PASSED tests/unit/modules/network/junos/test_junos_logging_global.py::TestJunosLogging_globalModule::test_junos_logging_global_replaced_user_09 
+tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_config_error 
+[gw1] [ 53%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_overridden 
+[gw0] [ 53%] PASSED tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_config_error 
+tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_disable 
+[gw1] [ 53%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_overridden 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_overridden_idempotent 
+[gw0] [ 54%] PASSED tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_disable 
+tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_enable 
+[gw0] [ 54%] PASSED tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_enable 
+tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_port_change 
+[gw1] [ 54%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_rendered 
+[gw0] [ 55%] PASSED tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_port_change 
+tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_port_error 
+[gw1] [ 55%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_rendered 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_replaced 
+[gw0] [ 55%] PASSED tests/unit/modules/network/junos/test_junos_netconf.py::TestJunosCommandModule::test_junos_netconf_port_error 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_gathered 
+[gw1] [ 56%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_replaced 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_replaced_idempotent 
+[gw0] [ 56%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_gathered 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_merged_01 
+[gw1] [ 56%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_deleted 
+[gw0] [ 57%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_merged_01 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_merged_02 
+[gw1] [ 57%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_deleted 
+[gw0] [ 57%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_merged_02 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_gathered 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_overridden_01 
+[gw1] [ 58%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_gathered 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_merged 
+[gw0] [ 58%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_overridden_01 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_parsed_01 
+[gw0] [ 58%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_parsed_01 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_parsed_02 
+[gw1] [ 59%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_merged 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_merged_areas 
+[gw0] [ 59%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_parsed_02 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_parsed_03 
+[gw0] [ 59%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_parsed_03 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_rendered 
+[gw1] [ 60%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_merged_areas 
+[gw0] [ 60%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_rendered 
+tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_replaced_01 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_overridden 
+[gw0] [ 60%] PASSED tests/unit/modules/network/junos/test_junos_ntp_global.py::TestJunosNtp_globalModule::test_junos_ntp_global_replaced_01 
+[gw1] [ 61%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_overridden 
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_delete 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_parsed 
+[gw1] [ 61%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_parsed 
+[gw0] [ 61%] PASSED tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_delete 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_failure_stats 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_rendered 
+[gw0] [ 62%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_failure_stats 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_success_stats 
+[gw1] [ 62%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_rendered 
+tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_replaced 
+[gw0] [ 62%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_success_stats 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_success_stats_with_df_rapid 
+[gw0] [ 63%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_success_stats_with_df_rapid 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_success_stats_with_options 
+[gw1] [ 63%] PASSED tests/unit/modules/network/junos/test_junos_ospfv2.py::TestJunosOspfv2Module::test_junos_ospfv2_replaced 
+[gw0] [ 63%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_success_stats_with_options 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_unexpected_failure 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_delete 
+[gw0] [ 64%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_unexpected_failure 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_unexpected_success 
+[gw0] [ 64%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_unexpected_success 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_gathered_01 
+[gw0] [ 64%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_gathered_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_merged_01 
+[gw0] [ 65%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_merged_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_merged_idempotent_01 
+[gw1] [ 65%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_delete 
+[gw0] [ 65%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_merged_idempotent_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_overridden_01 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_delete_idempotent 
+[gw0] [ 66%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_overridden_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_overridden_idempotent_01 
+[gw0] [ 66%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_overridden_idempotent_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_parsed_01 
+[gw0] [ 66%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_parsed_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_rendered_01 
+[gw0] [ 67%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_rendered_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_replaced_01 
+[gw0] [ 67%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_replaced_01 
+tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_replaced_idempotent_01 
+[gw0] [ 67%] PASSED tests/unit/modules/network/junos/test_junos_prefix_lists.py::TestJunosPrefix_listsModule::test_junos_prefix_lists_replaced_idempotent_01 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_deleted 
+[gw0] [ 68%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_deleted 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_delted_single_entry 
+[gw0] [ 68%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_delted_single_entry 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_domains_merged 
+[gw0] [ 68%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_domains_merged 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_gathered 
+[gw0] [ 69%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_gathered 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_merged 
+[gw1] [ 69%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_delete_idempotent 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_merged 
+[gw0] [ 69%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_merged 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_merged_idempotent 
+[gw0] [ 70%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_overridden 
+[gw0] [ 70%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_overridden 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_overridden_idempotent 
+[gw1] [ 70%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_merged 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_merged_idempotent 
+[gw0] [ 71%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_parsed 
+[gw0] [ 71%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_parsed 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_rendered 
+[gw0] [ 71%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_rendered 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_rendered_02 
+[gw0] [ 72%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_rendered_02 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_replaced 
+[gw1] [ 72%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_overridden 
+[gw0] [ 72%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_replaced 
+tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_replaced_idempotent 
+[gw0] [ 73%] PASSED tests/unit/modules/network/junos/test_junos_routing_instances.py::TestJunosRouting_instancesModule::test_junos_routing_instances_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_merged_01 
+[gw0] [ 73%] PASSED tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_merged_01 
+tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_merged_idempotent 
+[gw0] [ 73%] PASSED tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_merged_idempotent 
+tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_overridden 
+[gw1] [ 74%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_overridden 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_overridden_idempotent 
+[gw0] [ 74%] PASSED tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_overridden 
+tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_parsed_01 
+[gw0] [ 74%] PASSED tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_parsed_01 
+tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_rendered 
+[gw0] [ 75%] PASSED tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_rendered 
+tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_replaced_01 
+[gw0] [ 75%] PASSED tests/unit/modules/network/junos/test_junos_routing_options.py::TestJunosRouting_optionsModule::test_junos_routing_options_replaced_01 
+tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_args 
+[gw0] [ 75%] PASSED tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_args 
+[gw1] [ 76%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_attrs 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_parsed 
+[gw0] [ 76%] PASSED tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_attrs 
+tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_json 
+[gw0] [ 76%] PASSED tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_json 
+tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_text 
+[gw0] [ 77%] PASSED tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_text 
+tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_xml 
+[gw0] [ 77%] PASSED tests/unit/modules/network/junos/test_junos_rpc.py::TestJunosCommandModule::test_junos_rpc_xml 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_gathered 
+[gw1] [ 77%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_parsed 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_rendered 
+[gw1] [ 78%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_rendered 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_replaced 
+[gw0] [ 78%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_gathered 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_merged_01 
+[gw0] [ 78%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_merged_01 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_merged_02 
+[gw1] [ 79%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_replaced 
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_replaced_idempotent 
+[gw0] [ 79%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_merged_02 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_overridden_01 
+[gw1] [ 79%] PASSED tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_replaced_idempotent 
+tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src 
+[gw0] [ 80%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_overridden_01 
+[gw1] [ 80%] PASSED tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_parsed_01 
+tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src_fail 
+[gw1] [ 80%] PASSED tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src_fail 
+tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src_no_copy 
+[gw1] [ 81%] PASSED tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src_no_copy 
+tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src_unlink 
+[gw1] [ 81%] PASSED tests/unit/modules/network/junos/test_junos_package.py::TestJunosPackageModule::test_junos_package_src_unlink 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_expected_failure 
+[gw1] [ 81%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_expected_failure 
+tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_expected_success 
+[gw1] [ 82%] PASSED tests/unit/modules/network/junos/test_junos_ping.py::TestJunosPingModule::test_junos_ping_expected_success 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_01 
+[gw1] [ 82%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_01 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_02 
+[gw1] [ 82%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_02 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_03 
+[gw1] [ 83%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_03 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_04 
+[gw1] [ 83%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_04 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_05 
+[gw1] [ 83%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_05 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_06 
+[gw1] [ 84%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_06 
+[gw0] [ 84%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_parsed_01 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_07 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_rendered 
+[gw1] [ 84%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_parsed_07 
+[gw0] [ 85%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_rendered 
+tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_replaced_01 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_rendered 
+[gw1] [ 85%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_rendered 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_replaced_01 
+[gw0] [ 85%] PASSED tests/unit/modules/network/junos/test_junos_security_policies.py::TestJunosSecurity_policiesModule::test_junos_security_policies_replaced_01 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_gathered 
+[gw0] [ 86%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_gathered 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_01 
+[gw0] [ 86%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_01 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_02 
+[gw0] [ 86%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_02 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_03 
+[gw0] [ 87%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_03 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_04 
+[gw0] [ 87%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_merged_04 
+tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_overridden_01 
+[gw0] [ 87%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_overridden_01 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_parsed_01 
+[gw0] [ 88%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_parsed_01 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_rendered 
+[gw0] [ 88%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_rendered 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_replaced_01 
+[gw1] [ 88%] PASSED tests/unit/modules/network/junos/test_junos_security_policies_global.py::TestJunosSecurity_policies_globalModule::test_junos_security_policies_global_replaced_01 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_gathered 
+[gw1] [ 89%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_gathered 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_merged_01 
+[gw0] [ 89%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_replaced_01 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_ntp_global_rendered 
+[gw0] [ 89%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_ntp_global_rendered 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_06 
+[gw1] [ 90%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_merged_01 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_overridden_01 
+[gw0] [ 90%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_06 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_arp_01 
+[gw1] [ 90%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_overridden_01 
+tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_parsed 
+[gw0] [ 91%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_arp_01 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_client_02 
+[gw1] [ 91%] PASSED tests/unit/modules/network/junos/test_junos_security_zones.py::TestJunosSecurity_zonesModule::test_junos_security_zones_parsed 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_routing_access_04 
+[gw1] [ 91%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_routing_access_04 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_groups 
+[gw0] [ 92%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_client_02 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_clients_03 
+[gw1] [ 92%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_groups 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_groups_02 
+[gw0] [ 92%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_clients_03 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_communities_05 
+[gw1] [ 93%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_groups_02 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_groups_otn_alrams 
+[gw0] [ 93%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_communities_05 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_options 
+[gw1] [ 93%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_groups_otn_alrams 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_views 
+[gw0] [ 94%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_options 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_options_02 
+[gw1] [ 94%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_views 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_parsed_07 
+[gw0] [ 94%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_options_02 
+[gw1] [ 95%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_parsed_07 
+tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_options_set 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_deleted 
+[gw1] [ 95%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_deleted 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_merged 
+[gw0] [ 95%] PASSED tests/unit/modules/network/junos/test_junos_snmp_server.py::TestJunosSnmp_serverModule::test_junos_snmp_server_merged_trap_options_set 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_deleted_01 
+[gw1] [ 96%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_merged 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_merged_idempotent 
+[gw1] [ 96%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_merged_idempotent 
+[gw0] [ 96%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_deleted_01 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_overridden 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_gathered 
+[gw1] [ 97%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_overridden 
+[gw0] [ 97%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_gathered 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_parsed 
+[gw0] [ 97%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_parsed 
+[gw1] [ 98%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_overridden_idempotent 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_rendered 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_replaced 
+[gw1] [ 98%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_rendered 
+tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_replaced_idempotent 
+[gw0] [ 98%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_replaced 
+tests/unit/plugins/terminal/test_junos.py::test_on_open_shell_sets_terminal_parameters 
+[gw1] [ 99%] PASSED tests/unit/modules/network/junos/test_junos_vlans.py::TestJunosVlansModule::test_junos_vlans_replaced_idempotent 
+tests/unit/plugins/terminal/test_junos.py::test_on_open_shell_enters_cli_if_root_prompt 
+[gw0] [ 99%] PASSED tests/unit/plugins/terminal/test_junos.py::test_on_open_shell_sets_terminal_parameters 
+tests/unit/plugins/terminal/test_junos.py::test_on_open_shell_raises_problem_setting_terminal_config 
+[gw1] [ 99%] PASSED tests/unit/plugins/terminal/test_junos.py::test_on_open_shell_enters_cli_if_root_prompt 
+[gw0] [100%] PASSED tests/unit/plugins/terminal/test_junos.py::test_on_open_shell_raises_problem_setting_terminal_config 
+
+========================================================== warnings summary ==========================================================
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_confirm
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_lines
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_json
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_set
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_text
+tests/unit/modules/network/junos/test_junos_config.py::TestJunosConfigModule::test_junos_config_src_xml
+  /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/modules/junos_config.py:497: FutureWarning: Truth-testing of elements was a source of confusion and will always return True in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+    if diff:
+
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_merged
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_overridden
+tests/unit/modules/network/junos/test_junos_l3_interfaces.py::TestJunosL3InterfacesModule::test_junos_l3_interfaces_replaced
+  /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/network/junos/config/l3_interfaces/l3_interfaces.py:109: FutureWarning: Truth-testing of elements was a source of confusion and will always return True in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+    if diff:
+
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_delete
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_merged
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_overridden
+tests/unit/modules/network/junos/test_junos_interfaces.py::TestJunosInterfacesModule::test_junos_interfaces_replaced
+  /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/network/junos/config/interfaces/interfaces.py:105: FutureWarning: Truth-testing of elements was a source of confusion and will always return True in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+    if diff:
+
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_merged
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_overridden
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_replaced
+tests/unit/modules/network/junos/test_junos_ospf_interfaces.py::TestJunosOspfv3Module::test_junos_ospf_interfaces_delete
+  /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/network/junos/config/ospf_interfaces/ospf_interfaces.py:113: FutureWarning: Truth-testing of elements was a source of confusion and will always return True in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+    if diff:
+
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_delete
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_merged
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_overridden
+tests/unit/modules/network/junos/test_junos_ospfv3.py::TestJunosOspfv3Module::test_junos_ospfv3_replaced
+  /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/network/junos/config/ospfv3/ospfv3.py:119: FutureWarning: Truth-testing of elements was a source of confusion and will always return True in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+    if diff:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================================== 300 passed, 21 warnings in 4.40s ==================================================
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# 
