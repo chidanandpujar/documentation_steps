@@ -1,3 +1,19 @@
+ns/module_utils# cp -r network/ /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils# 
+
+
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:197: in exec_module
+    exec(co, module.__dict__)
+tests/unit/modules/network/junos/test_junos_hostname.py:32: in <module>
+    from ansible_collections.junipernetworks.junos.tests.unit.modules.utils import set_module_args
+E   ModuleNotFoundError: No module named 'ansible_collections.junipernetworks.junos.tests'
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# cp -r tests /usr/local/lib/python3.12/site-packages/ansible_collections/junipernetworks/junos/
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# clear
+
+Logs:
+
+
 root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# python3.12 -m pytest tests/unit/
 ======================================================== test session starts =========================================================
 platform linux -- Python 3.12.0, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python3.12
