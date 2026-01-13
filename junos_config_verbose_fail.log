@@ -1,0 +1,556 @@
+Configured locale: en_US.UTF-8
+RLIMIT_NOFILE: (1024, 1048576)
+Falling back to tests in "tests/integration/targets/" because "roles/test/" was not found.
+Detected architecture x86_64 for Python interpreter: /usr/local/bin/python3.12
+Creating container database.
+>>> Container Database
+{}
+Run command: /usr/local/bin/python3.12 /usr/local/lib/python3.12/site-packages/ansible_test/_util/target/tools/yamlcheck.py
+Working directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+Program found: /usr/local/bin/python3.12
+HOME=/root
+LC_ALL=en_US.UTF-8
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+Configuring target inventory.
+Running junos_config integration test role
+Preparing temporary directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ
+Copying tests/integration/targets/junos_config/ to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/
+Copying tests/integration/targets/prepare_junos_tests/ to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/
+Copying /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/integration/inventory.networking to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking
+Copying /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/integration/network-integration.cfg to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg
+>>> Playbook: junos_config-6uzobdpb.yml
+[
+    {
+        "gather_facts": false,
+        "hosts": "junos",
+        "roles": [
+            "junos_config"
+        ],
+        "vars": {
+            "output_dir": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/output_dir"
+        },
+        "vars_files": []
+    }
+]
+Initializing "/tmp/ansible-test-hc_stydr-injector" as the temporary injector directory.
+Injecting "/tmp/python-8tr5d05q-ansible/python" as a execv wrapper for the "/usr/local/bin/python3.12" interpreter.
+Stream command: ansible-playbook junos_config-6uzobdpb.yml -i inventory.networking -vvv
+Working directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration
+Program found: /tmp/ansible-test-hc_stydr-injector/ansible-playbook
+ANSIBLE_CALLBACKS_ENABLED=junit
+ANSIBLE_COLLECTIONS_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib
+ANSIBLE_CONFIG=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg
+ANSIBLE_DEPRECATION_WARNINGS=false
+ANSIBLE_DEVEL_WARNING=false
+ANSIBLE_DISPLAY_TRACEBACK=never
+ANSIBLE_FORCE_COLOR=false
+ANSIBLE_FORCE_HANDLERS=true
+ANSIBLE_HOST_KEY_CHECKING=false
+ANSIBLE_HOST_PATTERN_MISMATCH=error
+ANSIBLE_INVENTORY=/dev/null
+ANSIBLE_LIBRARY=/dev/null
+ANSIBLE_PLAYBOOK_DIR=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration
+ANSIBLE_PYTHON_MODULE_RLIMIT_NOFILE=1024
+ANSIBLE_RETRY_FILES_ENABLED=false
+ANSIBLE_ROLES_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets
+ANSIBLE_TEST_ANSIBLE_LIB_ROOT=/usr/local/lib/python3.12/site-packages/ansible
+ANSIBLE_TEST_CI=
+ANSIBLE_TEST_COVERAGE=
+ANSIBLE_TEST_PYTHON_INTERPRETER=/usr/local/bin/python3.12
+ANSIBLE_TEST_PYTHON_VERSION=3.12
+ANSIBLE_WORKER_SHUTDOWN_POLL_COUNT=100
+ANSIBLE_WORKER_SHUTDOWN_POLL_DELAY=0.1
+HOME=/root
+INVENTORY_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking
+JUNIT_OUTPUT_DIR=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/junit
+JUNIT_REPLACE_OUT_OF_TREE_PATH=out-of-tree:
+JUNIT_TASK_RELATIVE_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ
+LC_ALL=en_US.UTF-8
+OUTPUT_DIR=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/output_dir
+PAGER=/bin/cat
+PATH=/tmp/ansible-test-hc_stydr-injector:/tmp/python-8tr5d05q-ansible:/tmp/ansible-test-x3wnulec-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+PYTHONPATH=/tmp/ansible-test-yyrualds
+ansible-playbook [core 2.20.1]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg
+  configured module search path = ['/dev/null']
+  ansible python module location = /tmp/ansible-test-yyrualds/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib
+  executable location = /tmp/ansible-test-x3wnulec-bin/ansible-playbook
+  python version = 3.12.0 (main, Jan  1 2026, 23:37:02) [GCC 9.3.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.6
+  pyyaml version = 6.0.3 (with libyaml v0.2.5)
+Using /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+yaml declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/inventory.networking inventory source with ini plugin
+running playbook inside collection junipernetworks.junos
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_config-6uzobdpb.yml ********************************************
+1 plays in junos_config-6uzobdpb.yml
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/main.yml:2
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for 10.221.140.20
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml:2
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+ok: [10.221.140.20] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [junos_config : Invoke netconf netconf tasks] *****************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/main.yaml:2
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/netconf.yaml for 10.221.140.20
+
+TASK [junos_config : Collect netconf test cases] *******************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/netconf.yaml:2
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+<10.221.140.20> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.140.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-15204193u9f7j0c `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650 `" && echo ansible-tmp-1768289312.6424139-1520427-39917364419650="` echo /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650 `" ) && sleep 0'
+Using module file /tmp/ansible-test-yyrualds/ansible/modules/find.py
+<10.221.140.20> PUT /root/.ansible/tmp/ansible-local-15204193u9f7j0c/tmpzbe1y0vs TO /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650/AnsiballZ_find.py
+<10.221.140.20> EXEC /bin/sh -c 'chmod u+rwx /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650/ /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650/AnsiballZ_find.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650/AnsiballZ_find.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-15204193u9f7j0c/ansible-tmp-1768289312.6424139-1520427-39917364419650/ > /dev/null 2>&1 && sleep 0'
+ok: [10.221.140.20] => {
+    "changed": false,
+    "examined": 7,
+    "files": [
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33060,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 1295,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33061,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_invalid.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 508,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33062,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/backup.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 835,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33063,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/bad_action.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 440,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33064,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_basic.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 2157,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33065,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/single.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 1846,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768203657.817895,
+            "ctime": 1768289310.725895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 33066,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.3818948,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/invalid.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 703,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "age": null,
+            "age_stamp": "mtime",
+            "checksum_algorithm": "sha1",
+            "contains": null,
+            "depth": null,
+            "encoding": null,
+            "exact_mode": true,
+            "excludes": null,
+            "file_type": "file",
+            "follow": false,
+            "get_checksum": false,
+            "hidden": false,
+            "limit": null,
+            "mode": null,
+            "paths": [
+                "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf"
+            ],
+            "patterns": [
+                "*.yaml"
+            ],
+            "read_whole_file": false,
+            "recurse": false,
+            "size": null,
+            "use_regex": false
+        }
+    },
+    "matched": 7,
+    "msg": "All paths examined",
+    "skipped_paths": {}
+}
+
+TASK [junos_config : Set test_items] *******************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/netconf.yaml:9
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+ok: [10.221.140.20] => {
+    "ansible_facts": {
+        "test_items": [
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_invalid.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/backup.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/bad_action.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_basic.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/single.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/invalid.yaml"
+        ]
+    },
+    "changed": false
+}
+
+TASK [junos_config : Run test case (connection=ansible.netcommon.netconf)] *****
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tasks/netconf.yaml:13
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_invalid.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_invalid.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/backup.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/backup.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/bad_action.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/bad_action.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_basic.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/src_basic.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/single.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/single.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/invalid.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/invalid.yaml)
+
+TASK [junos_config : ansible.builtin.debug] ************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:2
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+ok: [10.221.140.20] => {
+    "msg": "START netconf/multiple.yaml on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_config : setup] ****************************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:4
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+ok: [10.221.140.20] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "configured by junos_config",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": [
+                "set system host-name 10.221.140.20",
+                "delete interfaces lo0"
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [junos_config : configure multiple commands] ******************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:11
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+<10.221.140.20> identified ncclient device handler: junos.
+<10.221.140.20> ESTABLISH NETCONF SSH CONNECTION FOR USER: ansible_user1 on PORT 830 TO 10.221.140.20 WITH SSH_CONFIG = None
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_config to juniper.device.junos_config
+changed: [10.221.140.20] => {
+    "changed": true,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": false,
+            "comment": "configured by junos_config",
+            "confirm": 0,
+            "confirm_commit": false,
+            "lines": [
+                "set system host-name 10.221.140.20",
+                "set interfaces lo0 unit 0 family inet address 192.0.2.1/32"
+            ],
+            "replace": null,
+            "rollback": null,
+            "src": null,
+            "src_format": null,
+            "update": "merge",
+            "zeroize": false
+        }
+    }
+}
+
+TASK [junos_config : ansible.builtin.assert] ***********************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:18
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+[ERROR]: Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+
+Task failed.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:18:3
+
+16       - set interfaces lo0 unit 0 family inet address 192.0.2.1/32
+17
+18 - ansible.builtin.assert:
+     ^ column 3
+
+<<< caused by >>>
+
+Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_config-3st9rn04-ÅÑŚÌβŁÈ/tests/integration/targets/junos_config/tests/netconf/multiple.yaml:21:9
+
+19     that:
+20       - result.changed == true
+21       - "'host-name;' not in result.diff.prepared"
+           ^ column 9
+
+fatal: [10.221.140.20]: FAILED! => {
+    "changed": false,
+    "msg": "Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'diff'"
+}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=15   changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_config
+FATAL: Command "ansible-playbook junos_config-6uzobdpb.yml -i inventory.networking -vvv" returned exit status 2.
+Cleaning up temporary python directory: /tmp/python-8tr5d05q-ansible

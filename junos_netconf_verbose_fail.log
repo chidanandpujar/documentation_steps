@@ -1,0 +1,72 @@
+Running junos_netconf integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [junos_netconf : Invoke netconf] ******************************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tasks/cli.yaml for 10.221.140.20
+
+TASK [junos_netconf : Collect all cli test cases] ******************************
+ok: [10.221.140.20]
+
+TASK [junos_netconf : Set test_items] ******************************************
+ok: [10.221.140.20]
+
+TASK [junos_netconf : Run test case (connection=ansible.netcommon.network_cli)] ***
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/changeport.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/changeport.yaml)
+
+TASK [junos_netconf : ansible.builtin.debug] ***********************************
+ok: [10.221.140.20] => {
+    "msg": "START netconf/netconf.yaml on connection=ansible.netcommon.network_cli"
+}
+
+TASK [junos_netconf : Ensure netconf is enabled] *******************************
+ok: [10.221.140.20]
+
+TASK [junos_netconf : idempotent tests] ****************************************
+ok: [10.221.140.20]
+
+TASK [junos_netconf : ansible.builtin.assert] **********************************
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_netconf : wait for netconf port tcp/830 to be open] ****************
+[ERROR]: Task failed: Finalization of task args for 'ansible.builtin.wait_for' failed: Error while resolving value for 'host': object of type 'HostVarsVars' has no attribute 'ansible_host'
+
+Task failed.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:17:3
+
+15       - result.changed == false
+16
+17 - name: wait for netconf port tcp/830 to be open
+     ^ column 3
+
+<<< caused by >>>
+
+Finalization of task args for 'ansible.builtin.wait_for' failed.
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:18:3
+
+16
+17 - name: wait for netconf port tcp/830 to be open
+18   wait_for:
+     ^ column 3
+
+<<< caused by >>>
+
+Error while resolving value for 'host': object of type 'HostVarsVars' has no attribute 'ansible_host'
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-jcpn_f9m-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:19:11
+
+17 - name: wait for netconf port tcp/830 to be open
+18   wait_for:
+19     host: "{{ hostvars[item].ansible_host }}"
+             ^ column 11
+
+failed: [10.221.140.20] (item=10.221.140.20) => {"ansible_loop_var": "item", "changed": false, "item": "10.221.140.20", "msg": "Task failed: Finalization of task args for 'ansible.builtin.wait_for' failed: Error while resolving value for 'host': object of type 'HostVarsVars' has no attribute 'ansible_host'"}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_netconf
+FATAL: Command "ansible-playbook junos_netconf-f0akiwwu.yml -i inventory.networking" returned exit status 2.

@@ -1,0 +1,538 @@
+Running junos_ospf_interfaces integration test role
+
+PLAY [junos] *******************************************************************
+
+TASK [prepare_junos_tests : Run the prepare steps if requested] ****************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml for 10.221.140.20
+
+TASK [prepare_junos_tests : Debug task] ****************************************
+ok: [10.221.140.20] => {
+    "msg": "START prepare_junos_tests/main.yaml"
+}
+
+TASK [junos_ospf_interfaces : Invoke netconf] **********************************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tasks/netconf.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : Collect all netconf test cases] ******************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Set test_items] **********************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Run test case (connection=ansible.netcommon.netconf)] ***
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/parsed.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/parsed.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/gathered.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/gathered.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/deleted.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/deleted.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/replaced.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/replaced.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/merged_update.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/merged_update.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/rendered.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/rendered.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/overridden.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/overridden.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/merged.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/merged.yaml)
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/empty_config.yaml for 10.221.140.20 => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/empty_config.yaml)
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces parsed integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Parse externally provided interfaces config to agnostic model] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert that config was correctly parsed] *********
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Parse externally provided interfaces config to agnostic model] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert that config was correctly parsed] *********
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces parsed integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces gathered integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_initial_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Set initial configuration for ospf interfaces] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Gather interfaces facts using gathered state] ****
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert that facts were correctly generated] ******
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces gathered integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces deleted integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_initial_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Set initial configuration for ospf interfaces] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Merge the provided configuration with the exisiting running configuration] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Delete single ospf interface configuration] ******
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert changed] **********************************
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Delete all ospf config from the device] **********
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert changed] **********************************
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces deleted integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces replaced integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_initial_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Set initial configuration for ospf interfaces] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Replace configuration] ***************************
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert configuration] ****************************
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces replaced integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces merged update integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_initial_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Set initial configuration for ospf interfaces] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Merge the provided configuration with the exisiting running configuration] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert the configuration is reflected on host] ***
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : Merge the provided configuration with the existing running configuration (IDEMPOTENT)] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert that the previous task was idempotent] ****
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces merged update  integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces rendered integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Render platform specific commands from task input using rendered state] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert that correct set of commands were rendered] ***
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces rendered integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces overridden integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_initial_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Set initial configuration for ospf interfaces] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces initial config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Merge the provided configuration with the exisiting running configuration] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Override configuration] **************************
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert the configuration is reflected on host] ***
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : Override the provided configuration with the existing running configuration (IDEMPOTENT)] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert that the previous task was idempotent] ****
+ok: [10.221.140.20] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END junos_ospf_interfaces overridden integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START junos_ospf_interfaces merged integration tests on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.set_fact] ************************
+ok: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Merge the provided configuration with the exisiting running configuration] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : Assert the configuration is reflected on host] ***
+[ERROR]: Task failed: Action failed: Assertion failed
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/merged.yaml:159:7
+
+157       register: result
+158
+159     - name: Assert the configuration is reflected on host
+          ^ column 7
+
+fatal: [10.221.140.20]: FAILED! => {
+    "assertion": "{{ expected_config | symmetric_difference(result['after']) |length == 0 }}",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Assertion failed"
+}
+
+TASK [junos_ospf_interfaces : ansible.builtin.include_tasks] *******************
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_ospf_interfaces-et55islc-ÅÑŚÌβŁÈ/tests/integration/targets/junos_ospf_interfaces/tests/netconf/_reset_config.yaml for 10.221.140.20
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "START reset ospf and routing-options config on connection=ansible.netcommon.netconf"
+}
+
+TASK [junos_ospf_interfaces : Reset configuration for ospf and routing-options] ***
+changed: [10.221.140.20]
+
+TASK [junos_ospf_interfaces : ansible.builtin.debug] ***************************
+ok: [10.221.140.20] => {
+    "msg": "END ospf and routing-options reset config on connection=ansible.netcommon.netconf"
+}
+
+PLAY RECAP *********************************************************************
+10.221.140.20              : ok=132  changed=19   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_ospf_interfaces
+FATAL: Command "ansible-playbook junos_ospf_interfaces-780ndygm.yml -i inventory.networking" returned exit status 2.
