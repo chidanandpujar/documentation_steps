@@ -1,0 +1,30 @@
+junos-eznc >= 2.7.3
+jsnapy>=1.3.7
+jxmlease
+xmltodict
+packaging
+ansible
+ansible-galaxy collection install juniper.device
+
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# cat inventory_junos 
+[junos]
+10.53.103.61
+
+[junos:vars]
+ansible_network_os=juniper.device.junos
+ansible_ssh_user=
+ansible_ssh_pass=
+ansible_connection=ansible.netcommon.netconf
+
+
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# cat ansible.cfg 
+
+[defaults]
+hash_behaviour=merge
+roles_path = ~/.ansible/roles
+
+[persistent_connection]
+command_timeout = 300
+
+
+
