@@ -6,6 +6,17 @@ packaging
 ansible
 ansible-galaxy collection install juniper.device
 
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# ansible-galaxy collection install juniper.device --force
+Starting galaxy collection install process
+Process install dependency map
+Starting collection install process
+Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/juniper-device-2.0.1.tar.gz to /root/.ansible/tmp/ansible-local-6796xmldt0aw/tmpyuv3ftqg/juniper-device-2.0.1-21ljymac
+Installing 'juniper.device:2.0.1' to '/root/.ansible/collections/ansible_collections/juniper/device'
+juniper.device:2.0.1 was installed successfully
+'ansible.netcommon:8.2.0' is already installed, skipping.
+'ansible.utils:6.0.0' is already installed, skipping.
+
+
 (juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# cat inventory_junos 
 [junos]
 10.53.103.61
@@ -21,10 +32,108 @@ ansible_connection=ansible.netcommon.netconf
 
 [defaults]
 hash_behaviour=merge
-roles_path = ~/.ansible/roles
+inventory = inventory
+host_key_checking = False
+log_path = ./ansible.log
+timeout=120
 
-[persistent_connection]
-command_timeout = 300
 
+
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# cat pb.juniper_junos_facts.yml 
+- name: Functional Test - junos_facts module
+  hosts: all
+  gather_facts: false
+  connection: netconf
+  collections:
+    - juniper.device
+
+  tasks:
+    - name: Collect default set of facts (min)
+      juniper.device.junos_facts:
+      register: default_facts
+
+    - name: Assert default facts gathered
+      assert:
+        that:
+          - default_facts.ansible_facts is defined
+          - default_facts.ansible_facts.ansible_net_model is defined
+          - default_facts.ansible_facts.ansible_net_hostname is defined
+
+    - name: Collect full facts including config and interfaces
+      juniper.device.junos_facts:
+        gather_subset:
+          - all
+      register: full_facts
+
+    - name: Assert full facts gathered
+      assert:
+        that:
+          - full_facts.ansible_facts.ansible_net_interfaces is defined
+          - full_facts.ansible_facts.ansible_net_config is defined
+
+    - name: Collect hardware and config with text format
+      juniper.device.junos_facts:
+        gather_subset:
+          - hardware
+          - config
+        config_format: text
+      register: hw_config_facts
+
+    - name: Assert hardware and config facts gathered
+      assert:
+        that:
+          - hw_config_facts.ansible_facts.ansible_net_config is defined
+          - "'system' in hw_config_facts.ansible_facts.ansible_net_config"
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# clear
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# ansible-playbook pb.juniper_junos_facts.yml 
+[WARNING]: Unable to parse /root/juniper_device_check1/inventory as an inventory source
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+PLAY [Functional Test - junos_facts module] ******************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP ***************************************************************************************************************************
+
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# ls
+ansible.cfg  ansible.log  inventory_junos  juniper_device  pb.juniper_junos_facts.yml  requirements.txt
+(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# ansible-playbook -i inventory_junos pb.juniper_junos_facts.yml 
+
+PLAY [Functional Test - junos_facts module] ******************************************************************************************
+[WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+[DEPRECATION WARNING]: Importing 'to_text' from 'ansible.module_utils._text' is deprecated. This feature will be removed from ansible-core version 2.24. Use ansible.module_utils.common.text.converters instead.
+
+TASK [Collect default set of facts (min)] ********************************************************************************************
+[DEPRECATION WARNING]: Importing 'to_native' from 'ansible.module_utils._text' is deprecated. This feature will be removed from ansible-core version 2.24. Use ansible.module_utils.common.text.converters instead.
+[DEPRECATION WARNING]: Importing 'to_bytes' from 'ansible.module_utils._text' is deprecated. This feature will be removed from ansible-core version 2.24. Use ansible.module_utils.common.text.converters instead.
+[DEPRECATION WARNING]: Passing `warnings` to `exit_json` or `fail_json` is deprecated. This feature will be removed from ansible-core version 2.23. Use `AnsibleModule.warn` instead.
+ok: [10.53.103.61]
+
+TASK [Assert default facts gathered] *************************************************************************************************
+ok: [10.53.103.61] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Collect full facts including config and interfaces] ****************************************************************************
+ok: [10.53.103.61]
+
+TASK [Assert full facts gathered] ****************************************************************************************************
+ok: [10.53.103.61] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Collect hardware and config with text format] **********************************************************************************
+ok: [10.53.103.61]
+
+TASK [Assert hardware and config facts gathered] *************************************************************************************
+ok: [10.53.103.61] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP ***************************************************************************************************************************
+10.53.103.61               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
