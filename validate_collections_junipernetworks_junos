@@ -5,28 +5,20 @@ jxmlease
 xmltodict
 packaging
 ansible
-ansible-galaxy collection install junipernetworks.junos
-
-(juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# ansible-galaxy collection install juniper.device --force
-Starting galaxy collection install process
-Process install dependency map
-Starting collection install process
-Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/juniper-device-2.0.1.tar.gz to /root/.ansible/tmp/ansible-local-6796xmldt0aw/tmpyuv3ftqg/juniper-device-2.0.1-21ljymac
-Installing 'juniper.device:2.0.1' to '/root/.ansible/collections/ansible_collections/juniper/device'
-juniper.device:2.0.1 was installed successfully
-'ansible.netcommon:8.2.0' is already installed, skipping.
-'ansible.utils:6.0.0' is already installed, skipping.
-
+ansible-galaxy collection install junipernetworks.junos ( post v11.1.0 release)
 
 (juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# cat inventory_junos 
 [junos]
 10.53.103.61
 
 [junos:vars]
-ansible_network_os=juniper.device.junos
-ansible_ssh_user=
-ansible_ssh_pass=
+ansible_network_os=junipernetworks.junos.junos 
+ansible_ssh_user=root
+ansible_ssh_pass=Embe1mpls
 ansible_connection=ansible.netcommon.netconf
+
+[all:vars]
+ansible_python_interpreter=/root/juniper_device_check1/juniper_device/bin/python
 
 
 (juniper_device) root@nms5-salt-master-b:~/juniper_device_check1# cat ansible.cfg 
