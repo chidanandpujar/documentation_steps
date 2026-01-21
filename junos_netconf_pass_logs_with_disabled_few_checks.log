@@ -1,0 +1,828 @@
+Configured locale: en_US.UTF-8
+RLIMIT_NOFILE: (1024, 1048576)
+Falling back to tests in "tests/integration/targets/" because "roles/test/" was not found.
+Detected architecture x86_64 for Python interpreter: /usr/local/bin/python3.12
+Creating container database.
+>>> Container Database
+{}
+Run command: /usr/local/bin/python3.12 /usr/local/lib/python3.12/site-packages/ansible_test/_util/target/tools/yamlcheck.py
+Working directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+Program found: /usr/local/bin/python3.12
+HOME=/root
+LC_ALL=en_US.UTF-8
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+Configuring target inventory.
+Running junos_netconf integration test role
+Preparing temporary directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ
+Copying tests/integration/targets/junos_netconf/ to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/
+Copying /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/integration/inventory.networking to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking
+Copying /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/integration/network-integration.cfg to /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg
+>>> Playbook: junos_netconf-8r6tw7mb.yml
+[
+    {
+        "gather_facts": false,
+        "hosts": "junos",
+        "roles": [
+            "junos_netconf"
+        ],
+        "vars": {
+            "output_dir": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/output_dir"
+        },
+        "vars_files": []
+    }
+]
+Initializing "/tmp/ansible-test-divtfzab-injector" as the temporary injector directory.
+Injecting "/tmp/python-787at41a-ansible/python" as a execv wrapper for the "/usr/local/bin/python3.12" interpreter.
+Stream command: ansible-playbook junos_netconf-8r6tw7mb.yml -i inventory.networking -vvv
+Working directory: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration
+Program found: /tmp/ansible-test-divtfzab-injector/ansible-playbook
+ANSIBLE_CALLBACKS_ENABLED=junit
+ANSIBLE_COLLECTIONS_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib
+ANSIBLE_CONFIG=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg
+ANSIBLE_DEPRECATION_WARNINGS=false
+ANSIBLE_DEVEL_WARNING=false
+ANSIBLE_DISPLAY_TRACEBACK=never
+ANSIBLE_FORCE_COLOR=false
+ANSIBLE_FORCE_HANDLERS=true
+ANSIBLE_HOST_KEY_CHECKING=false
+ANSIBLE_HOST_PATTERN_MISMATCH=error
+ANSIBLE_INVENTORY=/dev/null
+ANSIBLE_LIBRARY=/dev/null
+ANSIBLE_PLAYBOOK_DIR=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration
+ANSIBLE_PYTHON_MODULE_RLIMIT_NOFILE=1024
+ANSIBLE_RETRY_FILES_ENABLED=false
+ANSIBLE_ROLES_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets
+ANSIBLE_TEST_ANSIBLE_LIB_ROOT=/usr/local/lib/python3.12/site-packages/ansible
+ANSIBLE_TEST_CI=
+ANSIBLE_TEST_COVERAGE=
+ANSIBLE_TEST_PYTHON_INTERPRETER=/usr/local/bin/python3.12
+ANSIBLE_TEST_PYTHON_VERSION=3.12
+ANSIBLE_WORKER_SHUTDOWN_POLL_COUNT=100
+ANSIBLE_WORKER_SHUTDOWN_POLL_DELAY=0.1
+HOME=/root
+INVENTORY_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking
+JUNIT_OUTPUT_DIR=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/junit
+JUNIT_REPLACE_OUT_OF_TREE_PATH=out-of-tree:
+JUNIT_TASK_RELATIVE_PATH=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ
+LC_ALL=en_US.UTF-8
+OUTPUT_DIR=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/output_dir
+PAGER=/bin/cat
+PATH=/tmp/ansible-test-divtfzab-injector:/tmp/python-787at41a-ansible:/tmp/ansible-test-u8xebwp9-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+PYTHONPATH=/tmp/ansible-test-du93utkm
+ansible-playbook [core 2.20.1]
+  config file = /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg
+  configured module search path = ['/dev/null']
+  ansible python module location = /tmp/ansible-test-du93utkm/ansible
+  ansible collection location = /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib
+  executable location = /tmp/ansible-test-u8xebwp9-bin/ansible-playbook
+  python version = 3.12.0 (main, Jan  1 2026, 23:37:02) [GCC 9.3.0] (/usr/local/bin/python3.12)
+  jinja version = 3.1.6
+  pyyaml version = 6.0.3 (with libyaml v0.2.5)
+Using /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/network-integration.cfg as config file
+host_list declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+script declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+auto declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+yaml declined parsing /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking as it did not pass its verify_file() method
+Parsed /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/inventory.networking inventory source with ini plugin
+running playbook inside collection junipernetworks.junos
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: junos_netconf-8r6tw7mb.yml *******************************************
+1 plays in junos_netconf-8r6tw7mb.yml
+
+PLAY [junos] *******************************************************************
+
+TASK [junos_netconf : Invoke netconf] ******************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tasks/main.yaml:2
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tasks/cli.yaml for junos_test
+
+TASK [junos_netconf : Collect all cli test cases] ******************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tasks/cli.yaml:2
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+<10.221.140.20> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.140.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14 `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965 `" && echo ansible-tmp-1768976850.2970235-1668124-118650945463965="` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965 `" ) && sleep 0'
+Using module file /tmp/ansible-test-du93utkm/ansible/modules/find.py
+<10.221.140.20> PUT /root/.ansible/tmp/ansible-local-1668118fdtegy14/tmp6kngwbuy TO /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965/AnsiballZ_find.py
+<10.221.140.20> EXEC /bin/sh -c 'chmod u+rwx /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965/ /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965/AnsiballZ_find.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965/AnsiballZ_find.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976850.2970235-1668124-118650945463965/ > /dev/null 2>&1 && sleep 0'
+ok: [junos_test] => {
+    "changed": false,
+    "examined": 2,
+    "files": [
+        {
+            "atime": 1768976737.0858948,
+            "ctime": 1768976848.537895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 554805,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1768976735.265895,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 3432,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        },
+        {
+            "atime": 1768975523.9018948,
+            "ctime": 1768976848.537895,
+            "dev": 2049,
+            "gid": 0,
+            "gr_name": "root",
+            "inode": 554806,
+            "isblk": false,
+            "ischr": false,
+            "isdir": false,
+            "isfifo": false,
+            "isgid": false,
+            "islnk": false,
+            "isreg": true,
+            "issock": false,
+            "isuid": false,
+            "mode": "0644",
+            "mtime": 1767350702.389895,
+            "nlink": 1,
+            "path": "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/changeport.yaml",
+            "pw_name": "root",
+            "rgrp": true,
+            "roth": true,
+            "rusr": true,
+            "size": 3191,
+            "uid": 0,
+            "wgrp": false,
+            "woth": false,
+            "wusr": true,
+            "xgrp": false,
+            "xoth": false,
+            "xusr": false
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "age": null,
+            "age_stamp": "mtime",
+            "checksum_algorithm": "sha1",
+            "contains": null,
+            "depth": null,
+            "encoding": null,
+            "exact_mode": true,
+            "excludes": null,
+            "file_type": "file",
+            "follow": false,
+            "get_checksum": false,
+            "hidden": false,
+            "limit": null,
+            "mode": null,
+            "paths": [
+                "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli"
+            ],
+            "patterns": [
+                "*.yaml"
+            ],
+            "read_whole_file": false,
+            "recurse": false,
+            "size": null,
+            "use_regex": false
+        }
+    },
+    "matched": 2,
+    "msg": "All paths examined",
+    "skipped_paths": {}
+}
+
+TASK [junos_netconf : Set test_items] ******************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tasks/cli.yaml:9
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+ok: [junos_test] => {
+    "ansible_facts": {
+        "test_items": [
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml",
+            "/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/changeport.yaml"
+        ]
+    },
+    "changed": false
+}
+
+TASK [junos_netconf : Run test case (connection=ansible.netcommon.network_cli)] ***
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tasks/cli.yaml:13
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml)
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/changeport.yaml for junos_test => (item=/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/changeport.yaml)
+
+TASK [junos_netconf : ansible.builtin.debug] ***********************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:2
+redirecting (type: cliconf) junipernetworks.junos.junos to juniper.device.junos
+ok: [junos_test] => {
+    "msg": "START netconf/netconf.yaml on connection=ansible.netcommon.network_cli"
+}
+
+TASK [junos_netconf : wait for netconf port tcp/830 to be open] ****************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:17
+redirecting (type: cliconf) junipernetworks.junos.junos to juniper.device.junos
+<10.221.140.20> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.140.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14 `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043 `" && echo ansible-tmp-1768976852.19149-1668155-177975647912043="` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043 `" ) && sleep 0'
+Using module file /tmp/ansible-test-du93utkm/ansible/modules/wait_for.py
+<10.221.140.20> PUT /root/.ansible/tmp/ansible-local-1668118fdtegy14/tmpv_l_l1aa TO /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043/AnsiballZ_wait_for.py
+<10.221.140.20> EXEC /bin/sh -c 'chmod u+rwx /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043/ /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043/AnsiballZ_wait_for.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043/AnsiballZ_wait_for.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976852.19149-1668155-177975647912043/ > /dev/null 2>&1 && sleep 0'
+ok: [junos_test] => (item=junos_test) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "elapsed": 0,
+    "invocation": {
+        "module_args": {
+            "active_connection_states": [
+                "ESTABLISHED",
+                "FIN_WAIT1",
+                "FIN_WAIT2",
+                "SYN_RECV",
+                "SYN_SENT",
+                "TIME_WAIT"
+            ],
+            "connect_timeout": 5,
+            "delay": 0,
+            "exclude_hosts": null,
+            "host": "10.221.140.20",
+            "msg": null,
+            "path": null,
+            "port": 830,
+            "search_regex": null,
+            "sleep": 1,
+            "state": "started",
+            "timeout": 300
+        }
+    },
+    "item": "junos_test",
+    "match_groupdict": {},
+    "match_groups": [],
+    "path": null,
+    "port": 830,
+    "search_regex": null,
+    "state": "started"
+}
+
+TASK [junos_netconf : Reset ansible connections] *******************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:23
+META: reset connection
+
+TASK [junos_netconf : Ensure we can communicate over netconf] ******************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:26
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/utils/junos_command.yaml for junos_test
+
+TASK [junos_netconf : run junos_command to check netconf connectivity] *********
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/utils/junos_command.yaml:2
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+ok: [junos_test] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "commands": null,
+            "display": null,
+            "interval": 1,
+            "match": "all",
+            "retries": 10,
+            "rpcs": [
+                "get-software-information"
+            ],
+            "wait_for": null
+        }
+    },
+    "output": [
+        {
+            "rpc-reply": {
+                "software-information": {
+                    "host-name": "junos_test",
+                    "junos-version": "18.4R3-S11",
+                    "package-information": [
+                        {
+                            "comment": "JUNOS OS Kernel 64-bit XEN [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-kernel",
+                            "package-name": "os-kernel-xen-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS libs [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-libs",
+                            "package-name": "os-libs-11-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS runtime [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-runtime",
+                            "package-name": "os-runtime-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS time zone information [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "zoneinfo",
+                            "package-name": "os-zoneinfo-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS libs compat32 [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-libs-compat32",
+                            "package-name": "os-libs-compat32-11-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS 32-bit compatibility [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-compat32",
+                            "package-name": "os-compat32-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS py extensions [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "py-extensions",
+                            "package-name": "py-extensions-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS py base [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "py-base",
+                            "package-name": "py-base-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS OS vmguest [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-vmguest",
+                            "package-name": "os-vmguest-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS crypto [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-crypto",
+                            "package-name": "os-crypto-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS network stack and utilities [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "netstack",
+                            "package-name": "junos-net-prd-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS libs [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs",
+                            "package-name": "junos-libs-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS libs compat32 [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs-compat32",
+                            "package-name": "junos-libs-compat32-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS runtime [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-runtime",
+                            "package-name": "junos-runtime-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS Web Management Platform Package [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "jweb-srxtvp",
+                            "package-name": "jweb-srxtvp-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS vsrx modules [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-vmguest-platform",
+                            "package-name": "junos-modules-vsrx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx libs compat32 [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs-compat32-platform",
+                            "package-name": "junos-libs-compat32-srx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx runtime [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-runtime-platform",
+                            "package-name": "junos-runtime-srx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx platform support [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-platform-platform",
+                            "package-name": "junos-platform-srx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS common platform support [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-platform",
+                            "package-name": "junos-platform-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS vsrx runtime [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-runtime-vsrx",
+                            "package-name": "junos-runtime-vsrx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS pppoe [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-pppoe",
+                            "package-name": "junos-pppoe-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS mtx network modules [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-net-platform",
+                            "package-name": "junos-net-mtx-prd-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS modules [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-modules",
+                            "package-name": "junos-modules-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx libs [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs-platform",
+                            "package-name": "junos-libs-srx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx Data Plane Crypto Support [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-dp-crypto-support-platform",
+                            "package-name": "junos-dp-crypto-support-srx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS daemons [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-daemons",
+                            "package-name": "junos-daemons-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx daemons [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-daemons-platform",
+                            "package-name": "junos-daemons-srx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS SRX TVP AppQos Daemon [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-appsecure-tvp",
+                            "package-name": "junos-appsecure-tvp-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS J-Insight [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "jinsight",
+                            "package-name": "jinsight-x86-32-18.4R3-S11"
+                        },
+                        {
+                            "comment": "JUNOS Online Documentation [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "jdocs",
+                            "package-name": "jdocs-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS jail runtime [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "jail-runtime",
+                            "package-name": "jail-runtime-x86-32-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS FIPS mode utilities [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "fips-mode",
+                            "package-name": "fips-mode-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        }
+                    ],
+                    "product-model": "vSRX",
+                    "product-name": "vsrx"
+                }
+            }
+        }
+    ],
+    "stdout": [
+        "<rpc-reply message-id=\"urn:uuid:1d651617-a1f2-4863-bdf6-c07f9e128a29\"><software-information><host-name>junos_test</host-name><product-model>vSRX</product-model><product-name>vsrx</product-name><junos-version>18.4R3-S11</junos-version><package-information><name>os-kernel</name><package-name>os-kernel-xen-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS Kernel 64-bit XEN [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs</name><package-name>os-libs-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-runtime</name><package-name>os-runtime-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>zoneinfo</name><package-name>os-zoneinfo-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS time zone information [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs-compat32</name><package-name>os-libs-compat32-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs compat32 [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-compat32</name><package-name>os-compat32-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS 32-bit compatibility [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>py-extensions</name><package-name>py-extensions-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py extensions [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>py-base</name><package-name>py-base-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py base [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>os-vmguest</name><package-name>os-vmguest-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS vmguest [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-crypto</name><package-name>os-crypto-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS crypto [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>netstack</name><package-name>junos-net-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS network stack and utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs</name><package-name>junos-libs-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32</name><package-name>junos-libs-compat32-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime</name><package-name>junos-runtime-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jweb-srxtvp</name><package-name>jweb-srxtvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Web Management Platform Package [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-vmguest-platform</name><package-name>junos-modules-vsrx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32-platform</name><package-name>junos-libs-compat32-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-platform</name><package-name>junos-runtime-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform-platform</name><package-name>junos-platform-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform</name><package-name>junos-platform-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS common platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-vsrx</name><package-name>junos-runtime-vsrx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-pppoe</name><package-name>junos-pppoe-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS pppoe [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-net-platform</name><package-name>junos-net-mtx-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS mtx network modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-modules</name><package-name>junos-modules-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-platform</name><package-name>junos-libs-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-dp-crypto-support-platform</name><package-name>junos-dp-crypto-support-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx Data Plane Crypto Support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons</name><package-name>junos-daemons-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons-platform</name><package-name>junos-daemons-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-appsecure-tvp</name><package-name>junos-appsecure-tvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS SRX TVP AppQos Daemon [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jinsight</name><package-name>jinsight-x86-32-18.4R3-S11</package-name><comment>JUNOS J-Insight [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jdocs</name><package-name>jdocs-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Online Documentation [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jail-runtime</name><package-name>jail-runtime-x86-32-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS jail runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>fips-mode</name><package-name>fips-mode-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS FIPS mode utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information></software-information></rpc-reply>"
+    ],
+    "stdout_lines": [
+        [
+            "<rpc-reply message-id=\"urn:uuid:1d651617-a1f2-4863-bdf6-c07f9e128a29\"><software-information><host-name>junos_test</host-name><product-model>vSRX</product-model><product-name>vsrx</product-name><junos-version>18.4R3-S11</junos-version><package-information><name>os-kernel</name><package-name>os-kernel-xen-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS Kernel 64-bit XEN [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs</name><package-name>os-libs-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-runtime</name><package-name>os-runtime-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>zoneinfo</name><package-name>os-zoneinfo-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS time zone information [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs-compat32</name><package-name>os-libs-compat32-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs compat32 [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-compat32</name><package-name>os-compat32-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS 32-bit compatibility [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>py-extensions</name><package-name>py-extensions-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py extensions [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>py-base</name><package-name>py-base-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py base [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>os-vmguest</name><package-name>os-vmguest-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS vmguest [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-crypto</name><package-name>os-crypto-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS crypto [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>netstack</name><package-name>junos-net-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS network stack and utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs</name><package-name>junos-libs-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32</name><package-name>junos-libs-compat32-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime</name><package-name>junos-runtime-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jweb-srxtvp</name><package-name>jweb-srxtvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Web Management Platform Package [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-vmguest-platform</name><package-name>junos-modules-vsrx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32-platform</name><package-name>junos-libs-compat32-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-platform</name><package-name>junos-runtime-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform-platform</name><package-name>junos-platform-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform</name><package-name>junos-platform-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS common platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-vsrx</name><package-name>junos-runtime-vsrx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-pppoe</name><package-name>junos-pppoe-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS pppoe [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-net-platform</name><package-name>junos-net-mtx-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS mtx network modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-modules</name><package-name>junos-modules-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-platform</name><package-name>junos-libs-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-dp-crypto-support-platform</name><package-name>junos-dp-crypto-support-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx Data Plane Crypto Support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons</name><package-name>junos-daemons-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons-platform</name><package-name>junos-daemons-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-appsecure-tvp</name><package-name>junos-appsecure-tvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS SRX TVP AppQos Daemon [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jinsight</name><package-name>jinsight-x86-32-18.4R3-S11</package-name><comment>JUNOS J-Insight [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jdocs</name><package-name>jdocs-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Online Documentation [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jail-runtime</name><package-name>jail-runtime-x86-32-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS jail runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>fips-mode</name><package-name>fips-mode-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS FIPS mode utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information></software-information></rpc-reply>"
+        ]
+    ]
+}
+
+TASK [junos_netconf : wait for netconf port tcp/830 to be open] ****************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:43
+redirecting (type: cliconf) junipernetworks.junos.junos to juniper.device.junos
+<10.221.140.20> ESTABLISH LOCAL CONNECTION FOR USER: root
+<10.221.140.20> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14 `"&& mkdir "` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995 `" && echo ansible-tmp-1768976858.631342-1668194-217396589242995="` echo /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995 `" ) && sleep 0'
+Using module file /tmp/ansible-test-du93utkm/ansible/modules/wait_for.py
+<10.221.140.20> PUT /root/.ansible/tmp/ansible-local-1668118fdtegy14/tmpftjug6r6 TO /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995/AnsiballZ_wait_for.py
+<10.221.140.20> EXEC /bin/sh -c 'chmod u+rwx /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995/ /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995/AnsiballZ_wait_for.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c '/usr/local/bin/python3.12 /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995/AnsiballZ_wait_for.py && sleep 0'
+<10.221.140.20> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-local-1668118fdtegy14/ansible-tmp-1768976858.631342-1668194-217396589242995/ > /dev/null 2>&1 && sleep 0'
+ok: [junos_test] => (item=junos_test) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "elapsed": 0,
+    "invocation": {
+        "module_args": {
+            "active_connection_states": [
+                "ESTABLISHED",
+                "FIN_WAIT1",
+                "FIN_WAIT2",
+                "SYN_RECV",
+                "SYN_SENT",
+                "TIME_WAIT"
+            ],
+            "connect_timeout": 5,
+            "delay": 0,
+            "exclude_hosts": null,
+            "host": "10.221.140.20",
+            "msg": null,
+            "path": null,
+            "port": 830,
+            "search_regex": null,
+            "sleep": 1,
+            "state": "started",
+            "timeout": 300
+        }
+    },
+    "item": "junos_test",
+    "match_groupdict": {},
+    "match_groups": [],
+    "path": null,
+    "port": 830,
+    "search_regex": null,
+    "state": "started"
+}
+
+TASK [junos_netconf : Reset ansible connections] *******************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:49
+META: reset connection
+
+TASK [junos_netconf : Ensure we can communicate over netconf] ******************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:52
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+included: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/utils/junos_command.yaml for junos_test
+
+TASK [junos_netconf : run junos_command to check netconf connectivity] *********
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/utils/junos_command.yaml:2
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: netconf) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_command to juniper.device.junos_command
+ok: [junos_test] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "commands": null,
+            "display": null,
+            "interval": 1,
+            "match": "all",
+            "retries": 10,
+            "rpcs": [
+                "get-software-information"
+            ],
+            "wait_for": null
+        }
+    },
+    "output": [
+        {
+            "rpc-reply": {
+                "software-information": {
+                    "host-name": "junos_test",
+                    "junos-version": "18.4R3-S11",
+                    "package-information": [
+                        {
+                            "comment": "JUNOS OS Kernel 64-bit XEN [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-kernel",
+                            "package-name": "os-kernel-xen-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS libs [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-libs",
+                            "package-name": "os-libs-11-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS runtime [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-runtime",
+                            "package-name": "os-runtime-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS time zone information [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "zoneinfo",
+                            "package-name": "os-zoneinfo-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS libs compat32 [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-libs-compat32",
+                            "package-name": "os-libs-compat32-11-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS 32-bit compatibility [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-compat32",
+                            "package-name": "os-compat32-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS py extensions [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "py-extensions",
+                            "package-name": "py-extensions-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS py base [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "py-base",
+                            "package-name": "py-base-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS OS vmguest [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-vmguest",
+                            "package-name": "os-vmguest-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS OS crypto [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "os-crypto",
+                            "package-name": "os-crypto-x86-64-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS network stack and utilities [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "netstack",
+                            "package-name": "junos-net-prd-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS libs [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs",
+                            "package-name": "junos-libs-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS libs compat32 [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs-compat32",
+                            "package-name": "junos-libs-compat32-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS runtime [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-runtime",
+                            "package-name": "junos-runtime-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS Web Management Platform Package [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "jweb-srxtvp",
+                            "package-name": "jweb-srxtvp-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS vsrx modules [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-vmguest-platform",
+                            "package-name": "junos-modules-vsrx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx libs compat32 [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs-compat32-platform",
+                            "package-name": "junos-libs-compat32-srx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx runtime [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-runtime-platform",
+                            "package-name": "junos-runtime-srx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx platform support [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-platform-platform",
+                            "package-name": "junos-platform-srx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS common platform support [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-platform",
+                            "package-name": "junos-platform-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS vsrx runtime [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-runtime-vsrx",
+                            "package-name": "junos-runtime-vsrx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS pppoe [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-pppoe",
+                            "package-name": "junos-pppoe-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS mtx network modules [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-net-platform",
+                            "package-name": "junos-net-mtx-prd-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS modules [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-modules",
+                            "package-name": "junos-modules-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx libs [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-libs-platform",
+                            "package-name": "junos-libs-srx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx Data Plane Crypto Support [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-dp-crypto-support-platform",
+                            "package-name": "junos-dp-crypto-support-srx-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS daemons [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-daemons",
+                            "package-name": "junos-daemons-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS srx daemons [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-daemons-platform",
+                            "package-name": "junos-daemons-srx-x86-64-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS SRX TVP AppQos Daemon [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "junos-appsecure-tvp",
+                            "package-name": "junos-appsecure-tvp-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS J-Insight [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "jinsight",
+                            "package-name": "jinsight-x86-32-18.4R3-S11"
+                        },
+                        {
+                            "comment": "JUNOS Online Documentation [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "jdocs",
+                            "package-name": "jdocs-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        },
+                        {
+                            "comment": "JUNOS jail runtime [20211117.c779bdc_builder_stable_11-204ab]",
+                            "name": "jail-runtime",
+                            "package-name": "jail-runtime-x86-32-20211117.c779bdc_builder_stable_11-204ab"
+                        },
+                        {
+                            "comment": "JUNOS FIPS mode utilities [20220106.060821_builder_junos_184_r3_s11]",
+                            "name": "fips-mode",
+                            "package-name": "fips-mode-x86-32-20220106.060821_builder_junos_184_r3_s11"
+                        }
+                    ],
+                    "product-model": "vSRX",
+                    "product-name": "vsrx"
+                }
+            }
+        }
+    ],
+    "stdout": [
+        "<rpc-reply message-id=\"urn:uuid:e129790f-a28b-4d38-bb9a-1f6bb74a07a6\"><software-information><host-name>junos_test</host-name><product-model>vSRX</product-model><product-name>vsrx</product-name><junos-version>18.4R3-S11</junos-version><package-information><name>os-kernel</name><package-name>os-kernel-xen-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS Kernel 64-bit XEN [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs</name><package-name>os-libs-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-runtime</name><package-name>os-runtime-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>zoneinfo</name><package-name>os-zoneinfo-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS time zone information [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs-compat32</name><package-name>os-libs-compat32-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs compat32 [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-compat32</name><package-name>os-compat32-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS 32-bit compatibility [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>py-extensions</name><package-name>py-extensions-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py extensions [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>py-base</name><package-name>py-base-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py base [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>os-vmguest</name><package-name>os-vmguest-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS vmguest [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-crypto</name><package-name>os-crypto-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS crypto [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>netstack</name><package-name>junos-net-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS network stack and utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs</name><package-name>junos-libs-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32</name><package-name>junos-libs-compat32-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime</name><package-name>junos-runtime-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jweb-srxtvp</name><package-name>jweb-srxtvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Web Management Platform Package [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-vmguest-platform</name><package-name>junos-modules-vsrx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32-platform</name><package-name>junos-libs-compat32-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-platform</name><package-name>junos-runtime-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform-platform</name><package-name>junos-platform-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform</name><package-name>junos-platform-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS common platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-vsrx</name><package-name>junos-runtime-vsrx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-pppoe</name><package-name>junos-pppoe-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS pppoe [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-net-platform</name><package-name>junos-net-mtx-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS mtx network modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-modules</name><package-name>junos-modules-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-platform</name><package-name>junos-libs-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-dp-crypto-support-platform</name><package-name>junos-dp-crypto-support-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx Data Plane Crypto Support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons</name><package-name>junos-daemons-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons-platform</name><package-name>junos-daemons-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-appsecure-tvp</name><package-name>junos-appsecure-tvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS SRX TVP AppQos Daemon [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jinsight</name><package-name>jinsight-x86-32-18.4R3-S11</package-name><comment>JUNOS J-Insight [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jdocs</name><package-name>jdocs-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Online Documentation [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jail-runtime</name><package-name>jail-runtime-x86-32-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS jail runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>fips-mode</name><package-name>fips-mode-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS FIPS mode utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information></software-information></rpc-reply>"
+    ],
+    "stdout_lines": [
+        [
+            "<rpc-reply message-id=\"urn:uuid:e129790f-a28b-4d38-bb9a-1f6bb74a07a6\"><software-information><host-name>junos_test</host-name><product-model>vSRX</product-model><product-name>vsrx</product-name><junos-version>18.4R3-S11</junos-version><package-information><name>os-kernel</name><package-name>os-kernel-xen-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS Kernel 64-bit XEN [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs</name><package-name>os-libs-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-runtime</name><package-name>os-runtime-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>zoneinfo</name><package-name>os-zoneinfo-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS time zone information [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-libs-compat32</name><package-name>os-libs-compat32-11-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS libs compat32 [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-compat32</name><package-name>os-compat32-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS 32-bit compatibility [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>py-extensions</name><package-name>py-extensions-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py extensions [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>py-base</name><package-name>py-base-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS py base [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>os-vmguest</name><package-name>os-vmguest-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS vmguest [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>os-crypto</name><package-name>os-crypto-x86-64-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS OS crypto [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>netstack</name><package-name>junos-net-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS network stack and utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs</name><package-name>junos-libs-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32</name><package-name>junos-libs-compat32-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime</name><package-name>junos-runtime-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jweb-srxtvp</name><package-name>jweb-srxtvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Web Management Platform Package [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-vmguest-platform</name><package-name>junos-modules-vsrx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-compat32-platform</name><package-name>junos-libs-compat32-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs compat32 [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-platform</name><package-name>junos-runtime-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform-platform</name><package-name>junos-platform-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-platform</name><package-name>junos-platform-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS common platform support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-runtime-vsrx</name><package-name>junos-runtime-vsrx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS vsrx runtime [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-pppoe</name><package-name>junos-pppoe-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS pppoe [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-net-platform</name><package-name>junos-net-mtx-prd-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS mtx network modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-modules</name><package-name>junos-modules-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS modules [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-libs-platform</name><package-name>junos-libs-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx libs [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-dp-crypto-support-platform</name><package-name>junos-dp-crypto-support-srx-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx Data Plane Crypto Support [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons</name><package-name>junos-daemons-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-daemons-platform</name><package-name>junos-daemons-srx-x86-64-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS srx daemons [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>junos-appsecure-tvp</name><package-name>junos-appsecure-tvp-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS SRX TVP AppQos Daemon [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jinsight</name><package-name>jinsight-x86-32-18.4R3-S11</package-name><comment>JUNOS J-Insight [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jdocs</name><package-name>jdocs-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS Online Documentation [20220106.060821_builder_junos_184_r3_s11]</comment></package-information><package-information><name>jail-runtime</name><package-name>jail-runtime-x86-32-20211117.c779bdc_builder_stable_11-204ab</package-name><comment>JUNOS jail runtime [20211117.c779bdc_builder_stable_11-204ab]</comment></package-information><package-information><name>fips-mode</name><package-name>fips-mode-x86-32-20220106.060821_builder_junos_184_r3_s11</package-name><comment>JUNOS FIPS mode utilities [20220106.060821_builder_junos_184_r3_s11]</comment></package-information></software-information></rpc-reply>"
+        ]
+    ]
+}
+
+TASK [junos_netconf : idempotent tests] ****************************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:68
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: cliconf) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: action) junipernetworks.junos.junos to juniper.device.junos
+redirecting (type: modules) junipernetworks.junos.junos_netconf to juniper.device.junos_netconf
+changed: [junos_test] => {
+    "changed": true,
+    "commands": [
+        "delete system services netconf"
+    ],
+    "invocation": {
+        "module_args": {
+            "netconf_port": 830,
+            "state": "absent"
+        }
+    }
+}
+
+TASK [junos_netconf : ansible.builtin.assert] **********************************
+task path: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:73
+redirecting (type: cliconf) junipernetworks.junos.junos to juniper.device.junos
+[ERROR]: Task failed: Action failed: Assertion failed
+Origin: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/output/.tmp/integration/junos_netconf-yfhgjpqj-ÅÑŚÌβŁÈ/tests/integration/targets/junos_netconf/tests/cli/netconf.yaml:73:3
+
+71     state: absent
+72
+73 - ansible.builtin.assert:
+     ^ column 3
+
+fatal: [junos_test]: FAILED! => {
+    "assertion": "result.changed == false",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Assertion failed"
+}
+
+PLAY RECAP *********************************************************************
+junos_test                 : ok=13   changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+NOTICE: To resume at this test target, use the option: --start-at junos_netconf
+FATAL: Command "ansible-playbook junos_netconf-8r6tw7mb.yml -i inventory.networking -vvv" returned exit status 2.
+Cleaning up temporary python directory: /tmp/python-787at41a-ansible
