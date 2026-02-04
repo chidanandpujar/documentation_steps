@@ -148,6 +148,9 @@ ansible-test sanity --local
 
 ## Troubleshooting
 
+
+https://gist.github.com/Ruchip16/ebb8ae43d14699de86f1245ad858764d
+
 **Issue**: "FATAL: Target pattern not matched"
 - **Solution**: Ensure `juniper.device` collection is installed
 
