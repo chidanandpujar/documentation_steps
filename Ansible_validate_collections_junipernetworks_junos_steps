@@ -1,0 +1,257 @@
+
+https://gist.github.com/Ruchip16/ebb8ae43d14699de86f1245ad858764d
+===============================================================================================
+Ansible merged collection validation steps:
+===============================================================================================
+
+To Run Junipernetworks.junos unit/sanity/integration tests:
+
+mkdir ansible_modules_redirection_ansible_merger_branch_venv
+cd ansible_modules_redirection_ansible_merger_branch_venv
+
+
+Quick guide to run integration tests for the `junipernetworks.junos` collection.
+
+## Prerequisites
+
+- Python
+- Ansible
+- Access to a Junos device with NETCONF enabled
+
+## Step 1: Install Requirements
+
+```bash
+cd ansible_collections/junipernetworks/junos
+
+# Install Ansible collections
+ansible-galaxy collection install ansible.netcommon ansible.utils
+ansible-galaxy collection install juniper.device junipernetworks.junos
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+## Step 2: Configure Files
+
+### Inventory: `tests/integration/test-inventory`
+
+```ini
+[junos]
+<your ip>
+
+[junos:vars]
+ansible_network_os=junipernetworks.junos.junos
+ansible_user=<username>
+ansible_ssh_pass=<pwd>
+ansible_connection=ansible.netcommon.netconf
+ansible_python_interpreter=/usr/bin/python3
+```
+
+### Ansible Config: `ansible_collections/ansible.cfg`
+
+```ini
+[defaults]
+INVENTORY = /path/to/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/integration/test-inventory
+collections_paths=/path/to/ansible-junos-stdlib/ansible_collections
+host_key_checking = False
+ansible_python_interpreter=/usr/bin/python3
+
+[persistent_connection]
+command_timeout = 100
+connect_timeout = 100
+connect_retry_timeout = 100
+```
+
+**Note**: Update the paths to match your repository location.
+
+### Network Integration Config: `tests/integration/network-integration.cfg`
+
+```ini
+[network-integration]
+inventory = ./test-inventory
+```
+
+Install:
+
+pytest-xdist
+
+## Step 3: Run Tests
+
+### Integration Tests
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+```bash
+# Run specific test target
+$ pwd 
+dev-workspace/ansible-dev/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+$ ansible-test network-integration   junos_hostname -vvv
+```
+
+### Unit Tests
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+```bash
+# Run specific unit test file
+python3 -m pytest tests/unit/modules/network/junos/test_junos_hostname.py	
+
+# Run all unit tests
+python3 -m pytest tests/unit/
+
+# Run with verbose output
+python3 -m pytest tests/unit/modules/network/junos/test_junos_hostname.py -vvv
+```
+
+**Note**: Unit tests don't require a device connection and run faster than integration tests.
+
+### Ansible Lint
+
+**Note**: The `junipernetworks.junos` collection redirects modules to `juniper.device` via `meta/runtime.yml`. Most modules are in `juniper.device`, not `junipernetworks.junos`.
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+```bash
+# Install ansible-lint
+pip install ansible-lint
+
+# Run ansible-lint on entire collection (will lint playbooks, tasks, etc.)
+ansible-lint
+
+```
+
+To lint modules (which are in `juniper.device`):
+
+```bash
+# Navigate to juniper.device collection
+cd ../juniper/device
+
+# Run ansible-lint on modules
+ansible-lint plugins/modules/junos_hostname.py
+
+# Or lint all modules
+ansible-lint plugins/modules/
+```
+
+### Sanity Tests
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+**Option 1: Using ansible-test (Recommended for local testing)**
+
+```bash
+# Install ansible-core
+pip install ansible-core
+
+# Run sanity tests
+ansible-test sanity --local
+
+## Troubleshooting
+
+**Issue**: "FATAL: Target pattern not matched"
+- **Solution**: Ensure `juniper.device` collection is installed
+
+**Issue**: "FileNotFoundError: test-inventory"
+- **Solution**: Ensure you're in the collection directory and the inventory file exists
+
+**Issue**: Connection timeout
+- **Solution**: Verify NETCONF is enabled: `show system services netconf` and test port 830: `nc -zv <host> 830`
+
+**Issue**: "load-failure[not-found]: File or directory not found" when running ansible-lint
+- **Solution**: The `junipernetworks.junos` collection doesn't contain module files (they're in `juniper.device`). Run `ansible-lint` from the `juniper.device` collection directory to lint modules, or run `ansible-lint` without specifying a file to lint the collection's playbooks and tasks.
+
+From your details, the device is:
+       - Appliance: vSRX 18.4R1
+       - Day-0 config: root auth, fxp0 DHCP, SSH, NETCONF enabledThis Day-0 configuration is sufficient to start NETCONF-based tests, but it is not sufficient for all integration targets, so partial failures at ACL / policy tests are expected.
+For local validation at our end we have (vsrx 18.4R1):
+•	Day 0 configuration:
+cli --> configure
+•	
+o	Root Authentication
+set system root-authentication plain-text-password
+•	
+o	Management Interface IP
+set interfaces fxp0 unit 0 family inet dhcp
+o	Enable SSH
+set system services ssh
+set system services ssh root-login allow 
+•	
+o	Enable Netconf
+set system services netconf ssh
+o	commit
+
+
+for validation at your end , I would recommend : 
+ - Running integration tests relevant to your changes OR 
+ - Aligning the appliance image and baseline config closer to what CI uses if full-suite execution is required 
+Happy to review a specific failing task if you want to confirm whether it’s an environment limitation or something we should guard better in the tests.
+
+
+
+junos_bgp_address_family  junos_l3_interfaces    junos_net_put            junos_rpc                       junos_user
+junos_bgp_global          junos_lacp             junos_ntp_global         junos_security_policies         junos_vlans
+junos_command             junos_lacp_interfaces  junos_ospf_interfaces    junos_security_policies_global  junos_vrf
+junos_config              junos_lag_interfaces   junos_ospfv2             junos_security_zones            prepare_junos_tests
+junos_facts               junos_lldp_global      junos_ospfv3             junos_smoke
+junos_hostname            junos_lldp_interfaces  junos_prefix_lists       junos_snmp_server
+junos_interfaces          junos_logging_global   junos_routing_instances  junos_static_routes
+junos_l2_interfaces       junos_netconf          junos_routing_options    junos_system
+junos_acls
+junos_acl_interfaces
+junos_banner
+
+
+Unit tests:
+From the unit test traceback, I see the same issue we discussed in the earlier call which was Python is importing juniper.device from site-packages:
+
+/usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/modules/junos_hostname.py 
+It appears the installed collection at this path does not contain the updated module_utils / argspec changes, which is why the import fails. Could you please confirm whether this is the intended collection path being used for testing, and ensure that the installed juniper.device collection includes the latest updated code?
+ Please let us know if you have any questions or concerns. We can also set up a call to walk through this together if that helps.
+
+
+
+ns/module_utils# cp -r network/ /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils# 
+
+
+
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:197: in exec_module
+    exec(co, module.__dict__)
+tests/unit/modules/network/junos/test_junos_hostname.py:32: in <module>
+    from ansible_collections.junipernetworks.junos.tests.unit.modules.utils import set_module_args
+E   ModuleNotFoundError: No module named 'ansible_collections.junipernetworks.junos.tests'
+
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# cp -r tests /usr/local/lib/python3.12/site-packages/ansible_collections/junipernetworks/junos/
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# clear
+
+
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# python3.12 -m pytest tests/unit/modules/network/junos/test_junos_hostname.py -vvv
+======================================================== test session starts =========================================================
+platform linux -- Python 3.12.0, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python3.12
+cachedir: .pytest_cache
+rootdir: /root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+configfile: pyproject.toml
+plugins: xdist-3.8.0
+2 workers [6 items]     
+scheduling tests via LoadScheduling
+
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_overridden_01 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_gathered 
+[gw1] [ 16%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_overridden_01 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_parsed_01 
+[gw0] [ 33%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_gathered 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_merged_01 
+[gw1] [ 50%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_parsed_01 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_rendered 
+[gw1] [ 66%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_rendered 
+[gw0] [ 83%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_merged_01 
+tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_replaced 
+[gw0] [100%] PASSED tests/unit/modules/network/junos/test_junos_hostname.py::TestJunosHostnameModule::test_junos_hostname_replaced 
+
+========================================================= 6 passed in 2.23s ==========================================================
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# 
+
+
+https://github.com/chidanandpujar/documentation_steps/blob/main/unit_test_junipernetworks_junos_log
