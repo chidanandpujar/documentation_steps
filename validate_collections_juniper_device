@@ -141,3 +141,33 @@ PLAY RECAP *********************************************************************
 10.53.103.61               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
+
+ansible-test:
+
+1) Integration 
+
+ansible-test network-integration --python 3.12 --inventory /root/ansible_integration_test/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking
+
+Issues:
+a)
+File "/tmp/ansible_ansible.builtin.find_payload_jsp87qb9/ansible_ansible.builtin.find_payload.zip/ansible/module_utils/basic.py", line 5
+SyntaxError: future feature annotations is not defined
+
+Fix:
+update python interpreter path in inventory.networking.
+[all:vars]
+ansible_python_interpreter=/root/pyez_ansible_release_validation1/venv/bin/python
+
+b) nNameError: name 'LooseVersion' is not defined
+Fix:
+pip install LooseVersion
+
+2) Sanity
+ansible-test sanity
+
+3) Unit
+python3.12 -m pip install pytest
+python3.12 -m  pytest 
+
+4) To run specific target
+ansible-test network-integration --python 3.12 --inventory /root/pyez_ansible_release_validation1/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration/inventory.networking --start-at junos_system
