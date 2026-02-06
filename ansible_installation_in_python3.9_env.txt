@@ -933,6 +933,45 @@ echo "Passed test results saved to $PASS_LOG"
 
 
 
+
+#!/bin/bash
+
+echo "Starting execution of all Ansible Junos playbooks..."
+echo "-----------------------------------------------------"
+
+# File to store passed test logs
+PASS_LOG="junos_passed_tests.log"
+> "$PASS_LOG"  # Clear previous contents
+
+for file in \
+  junos_bgp_address_family junos_bgp_global junos_command junos_config junos_facts \
+  junos_hostname junos_interfaces junos_l2_interfaces junos_l3_interfaces junos_lacp \
+  junos_lacp_interfaces junos_lag_interfaces junos_lldp_global junos_lldp_interfaces \
+  junos_logging_global junos_netconf junos_net_put junos_ntp_global junos_ospf_interfaces \
+  junos_ospfv2 junos_ospfv3 junos_prefix_lists junos_routing_instances junos_routing_options \
+  junos_rpc junos_security_policies junos_security_policies_global junos_security_zones \
+  junos_smoke junos_snmp_server junos_static_routes junos_system junos_user junos_vlans \
+  junos_vrf prepare_junos_tests junos_acls junos_acl_interfaces junos_banner
+do
+  echo "Running $file"
+  ansible-test network-integration $file
+  status=$?
+  if [ $status -ne 0 ]; then
+    echo "❌ $file failed with status $status"
+    echo "$file failed at $(date)" >> "$PASS_LOG"
+  else
+    echo "✅ $file completed successfully"
+    echo "$file PASSED at $(date)" >> "$PASS_LOG"
+  fi
+
+  echo "-----------------------------------------------------"
+  sleep 60
+done
+
+echo "All playbooks processed."
+echo "Passed test results saved to $PASS_LOG"
+
+
 doc for fix validation :
 
 https://gist.github.com/Ruchip16/ebb8ae43d14699de86f1245ad858764d
