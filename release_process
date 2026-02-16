@@ -1,0 +1,266 @@
+======================================================================================================
+juniper.device validation steps
+======================================================================================================
+
+mkdir ansible_modules_redirection_ansible_merger_branch_venv
+cd ansible_modules_redirection_ansible_merger_branch_venv
+git clone https://github.com/Juniper/ansible-junos-stdlib.git
+cd ansible-junos-stdlib/
+python3 -m pip install -r requirements.txt 
+python3 -m pip install ansible
+ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device
+ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/junipernetworks/junos
+
+optional
+vi /root/.ansible/collections/ansible_collections/junipernetworks/junos/meta/runtime.yml 
+vi /root/.ansible/collections/ansible_collections/juniper/device/meta/runtime.yml 
+
+-------------------------
+To Run Integration tests:
+-------------------------
+
+/root/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration
+
+Update inventory:
+/integration# cat inventory.networking 
+# This is the configuration template for ansible-test network-integration tests.
+#
+# You do not need this template if you are:
+#
+# 1) Running integration tests without using ansible-test.
+# 2) Using the `--platform` option to provision temporary network instances on EC2.
+#
+# If you do not want to use the automatically provisioned temporary network instances,
+# fill in the @VAR placeholders below and save this file without the .template extension,
+# into the tests/integration directory of the collection you're testing.
+#
+# NOTE: Automatic provisioning of network instances on EC2 requires an ansible-core-ci API key.
+[junos]
+junos_test ansible_host=x.x.x.x ansible_network_os="junos" ansible_user=xyz ansible_ssh_pass=xyz
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/integration# ansible-test network-integration --python 3.12
+
+--------------------
+To Run Sanity tests:
+--------------------
+
+python3 -m pip install pytest
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib# python3 -m pip install .
+
+Fix module not found error:
+  https://gist.github.com/Ruchip16/ebb8ae43d14699de86f1245ad858764d
+
+cd ~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ 
+ansible-galaxy collection install ansible.netcommon -p ./ansible_collections --force
+ansible-galaxy collection install ansible.utils -p ./ansible_collections --force
+
+cd ~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device#  
+ansible-test sanity --python 3.12
+
+------------------
+To Run Unit tests
+------------------
+cd ~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/tests/unit# 
+
+python3 -m pytest
+
+
+====================================================================================================================
+junipernetworks.junos validation steps
+====================================================================================================================
+
+mkdir ansible_modules_redirection_ansible_merger_branch_venv
+cd ansible_modules_redirection_ansible_merger_branch_venv
+
+git clone
+
+Quick guide to run integration tests for the `junipernetworks.junos` collection.
+
+## Prerequisites
+
+- Python
+- Ansible
+- Access to a Junos device with NETCONF enabled
+
+## Step 1: Install Requirements
+
+```bash
+cd ansible_collections/junipernetworks/junos
+
+# Install Ansible collections
+ansible-galaxy collection install ansible.netcommon ansible.utils
+ansible-galaxy collection install juniper.device junipernetworks.junos
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+-------------------
+To Run Unit tests
+-------------------
+
+python3 -m pip install pytest-xdist
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils# cp -r network /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils# 
+
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos#  cp -r tests /usr/local/lib/python3.12/site-packages/ansible_collections/junipernetworks/junos/
+root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/junipernetworks/junos# 
+
+python3 -m pytest tests/unit/
+
+
+### Ansible Lint
+
+**Note**: The `junipernetworks.junos` collection redirects modules to `juniper.device` via `meta/runtime.yml`. Most modules are in `juniper.device`, not `junipernetworks.junos`.
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+```bash
+# Install ansible-lint
+pip install ansible-lint
+
+# Run ansible-lint on entire collection (will lint playbooks, tasks, etc.)
+ansible-lint
+
+
+### Sanity Tests
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+**Option 1: Using ansible-test (Recommended for local testing)**
+
+```bash
+# Install ansible-core
+pip install ansible-core
+
+# Run sanity tests
+ansible-test sanity --local
+
+
+===============================
+Integration tests:
+
+## Step 2: Configure Files
+
+### Inventory: `tests/integration/test-inventory`
+
+```ini
+[junos]
+<your ip>
+
+[junos:vars]
+ansible_network_os=junipernetworks.junos.junos
+ansible_user=<username>
+ansible_ssh_pass=<pwd>
+ansible_connection=ansible.netcommon.netconf
+ansible_python_interpreter=/usr/bin/python3
+```
+### Ansible Config: `ansible_collections/ansible.cfg`
+
+```ini
+[defaults]
+INVENTORY = /path/to/ansible-junos-stdlib/ansible_collections/junipernetworks/junos/tests/integration/test-inventory
+collections_paths=/path/to/ansible-junos-stdlib/ansible_collections
+host_key_checking = False
+ansible_python_interpreter=/usr/bin/python3
+
+[persistent_connection]
+command_timeout = 100
+connect_timeout = 100
+connect_retry_timeout = 100
+```
+**Note**: Update the paths to match your repository location.
+
+### Network Integration Config: `tests/integration/network-integration.cfg`
+
+```ini
+[network-integration]
+inventory = ./test-inventory
+```
+
+Install:
+
+pytest-xdist
+
+## Step 3: Run Tests
+
+### Integration Tests
+
+From the collection directory (`ansible_collections/junipernetworks/junos`):
+
+```bash
+# Run specific test target
+$ pwd 
+dev-workspace/ansible-dev/ansible-junos-stdlib/ansible_collections/junipernetworks/junos
+$ ansible-test network-integration   junos_hostname -vvv
+```
+From your details, the device is:
+       - Appliance: vSRX 18.4R1
+       - Day-0 config: root auth, fxp0 DHCP, SSH, NETCONF enabledThis Day-0 configuration is sufficient to start NETCONF-based tests, but it is not sufficient for all integration targets, so partial failures at ACL / policy tests are expected.
+For local validation at our end we have (vsrx 18.4R1):
+•	Day 0 configuration:
+cli --> configure
+•	
+o	Root Authentication
+set system root-authentication plain-text-password
+•	
+o	Management Interface IP
+set interfaces fxp0 unit 0 family inet dhcp
+o	Enable SSH
+set system services ssh
+set system services ssh root-login allow 
+•	
+o	Enable Netconf
+set system services netconf ssh
+o	commit
+
+
+Integration tests (local runs):
+For local execution of integration tests, please comment out all tasks in the following file:
+https://github.com/Juniper/ansible-junos-stdlib/blob/master/ansible_collections/junipernetworks/junos/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml
+
+
+junos_bgp_address_family  junos_l3_interfaces    junos_net_put            junos_rpc                       junos_user
+junos_bgp_global          junos_lacp             junos_ntp_global         junos_security_policies         junos_vlans
+junos_command             junos_lacp_interfaces  junos_ospf_interfaces    junos_security_policies_global  junos_vrf
+junos_config              junos_lag_interfaces   junos_ospfv2             junos_security_zones            prepare_junos_tests
+junos_facts               junos_lldp_global      junos_ospfv3             junos_smoke
+junos_hostname            junos_lldp_interfaces  junos_prefix_lists       junos_snmp_server
+junos_interfaces          junos_logging_global   junos_routing_instances  junos_static_routes
+junos_l2_interfaces       junos_netconf          junos_routing_options    junos_system
+junos_acls
+junos_acl_interfaces
+junos_banner
+
+1)	We included --diff when running the junos_config module tests.
+ansible-test network-integration –diff junos_config 
+2)	Updated the start_time as per expected_config for junos_ospf_interfaces.
+start_time: "2023-7-1.07:30:00 +0530"
+3)	Updated the inventory with jnos_test for junos_netconf.
+junos_test ansible_host=<your ip>
+
+
+[junos]
+junos_test ansible_host=xx.xx.xx.xx
+
+[junos:vars]
+ansible_network_os=junipernetworks.junos.junos
+ansible_user=ansible_user1
+ansible_ssh_pass=ansible123
+ansible_connection=ansible.netcommon.netconf
+ansible_python_interpreter=/usr/bin/python3
+
+
+[junos]
+junos_test ansible_host=x.x.x.x ansible_network_os="junos" ansible_user=regress ansible_ssh_pass=MaRtInI
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+                                
+
+
+
