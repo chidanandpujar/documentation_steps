@@ -236,6 +236,24 @@ junos_acls
 junos_acl_interfaces
 junos_banner
 
+
+Fixes
+============================================================================================================================
+
+Following modules works fine now with the suggested changes.
+a)	junos_interfaces works fine after removal of lo0 interface, pass logs - junos_interfaces_without_lo0_verbose_pass_log.log
+b)	junos_command works with non-root user setup, pass logs - junos_command_verbose_with_nonroot_user_pass.log
+
+Following modules fails with both root and non-root user.
+a)	junos_ospf_interfaces fails for TASK [junos_ospf_interfaces : Assert the configuration is reflected on host
+junos_ospf_interfaces_fail.log
+
+b)	junos_netconf fails with Error while resolving value for 'host': object of type 'HostVarsVars' has no attribute 'ansible_host'
+junos_netconf_verbose_fail.log
+
+c)	junos_config   fails with Error while evaluating conditional: object of type 'dict' has no attribute 'diff'
+junos_config_verbose_fail.log
+
 1)	We included --diff when running the junos_config module tests.
 ansible-test network-integration –diff junos_config 
 2)	Updated the start_time as per expected_config for junos_ospf_interfaces.
@@ -243,7 +261,7 @@ start_time: "2023-7-1.07:30:00 +0530"
 3)	Updated the inventory with jnos_test for junos_netconf.
 junos_test ansible_host=<your ip>
 
-
+===========================================================================================================================
 [junos]
 junos_test ansible_host=xx.xx.xx.xx
 
