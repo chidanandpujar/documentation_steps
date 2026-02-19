@@ -336,3 +336,22 @@ echo "Passed test results saved to $PASS_LOG"
 
 
 
+RELEASE PROCESS:
+ 
+Start preparing the repo for release, run ansible-changelog on the repo locally, make a PR, and get it merged. Now we are set to release.
+antsibull-changelog release -v --version 7.0.0 
+
+
+antsibull-changelog release --refresh --version 11.1.0
+
+Make sure galaxy.yml is in sync with the release version. The version pushed in Galaxy and AH is referenced from version: in galaxy.yml
+Release process through GitHub:
+Go to the releases page in GitHub UI and create a new release.
+Create a new tag and name it in this format - v[version_num] - eg. v5.2.1
+Also, note that the v prefix exists in the GH tag and is redacted in AH and Galaxy releases. 
+Name the title the same as the tag
+Put in the changelog - which can be found in CHANGELOG.rst (RAW)
+Push the release button and it will release the collection.
+Look out for the release action in the Actions tab. The AH release happens first followed by the Galaxy release. If the AH release fails the Galaxy release fails too.
+
+https://github.com/ansible-collections/junipernetworks.junos/pull/568
