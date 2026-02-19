@@ -278,7 +278,19 @@ junos_test ansible_host=x.x.x.x ansible_network_os="junos" ansible_user=regress 
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
-                                
+
+
+
+				1)  junos_interfaces works fine after removal of lo0 interface
+     				2) We included --diff when running the junos_config module tests.
+ansible-test network-integration –diff junos_config 
+     				3) Updated the start_time as per expected_config for junos_ospf_interfaces.
+start_time: "2023-7-1.07:30:00 +0530"
+     				4) Updated the inventory with jnos_test for junos_netconf.
+junos_test ansible_host=<your ip>
+
+
+
 
 cat run_all_tests.sh 
 #!/bin/bash
