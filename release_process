@@ -355,3 +355,16 @@ Push the release button and it will release the collection.
 Look out for the release action in the Actions tab. The AH release happens first followed by the Galaxy release. If the AH release fails the Galaxy release fails too.
 
 https://github.com/ansible-collections/junipernetworks.junos/pull/568
+
+
+
+New steps for publishing
+Git clone <>
+Cd ansible_collections to galaxy.
+
+Build command 
+ansible-galaxy collection build
+Copy the tar file and go to ansible galaxy website 
+Select new version and select the file .
+
+
