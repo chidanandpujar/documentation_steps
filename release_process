@@ -11,9 +11,6 @@ python3 -m pip install ansible
 ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/juniper/device
 ansible-galaxy collection install git+https://github.com/Juniper/ansible-junos-stdlib.git#/ansible_collections/junipernetworks/junos
 
-optional
-vi /root/.ansible/collections/ansible_collections/junipernetworks/junos/meta/runtime.yml 
-vi /root/.ansible/collections/ansible_collections/juniper/device/meta/runtime.yml 
 
 -------------------------
 To Run Integration tests:
