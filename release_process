@@ -365,6 +365,7 @@ Copy the tar file and go to ansible galaxy website
 Select new version and select the file .
 
 
+python3 -m pip install galaxy_importer
 
 root@masterhost:~/ansible_fix2/ansible-junos-stdlib/ansible_collections/juniper/device#  python3 -m galaxy_importer.main  juniper-device-2.0.2.tar.gz 
 Importing with galaxy-importer 0.4.37
