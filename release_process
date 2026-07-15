@@ -57,6 +57,9 @@ ansible-galaxy collection install ansible.utils -p ./ansible_collections --force
 cd ~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device#  
 ansible-test sanity --python 3.12
 
+To run for individual modules:
+
+ansible-test sanity --test validate-modules plugins/modules/facts.py
 ------------------
 To Run Unit tests
 ------------------
