@@ -105,6 +105,11 @@ To Run Unit tests
 
 python3 -m pip install pytest-xdist
 
+In case of venv:
+cp -r /root/ansible_release/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils/network   /root/ansible_release/venvansrel/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils
+cp -r /root/ansible__release/ansible-junos-stdlib/ansible_collections/junipernetworks   /root/ansible_release/venvansrel/lib/python3.12/site-packages/ansible_collections/
+
+
 root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils# cp -r network /usr/local/lib/python3.12/site-packages/ansible_collections/juniper/device/plugins/module_utils/
 root@masterhost:~/ansible_modules_redirection_ansible_merger_branch_venv/ansible-junos-stdlib/ansible_collections/juniper/device/plugins/module_utils# 
 
