@@ -164,6 +164,9 @@ ansible_user=<username>
 ansible_ssh_pass=<pwd>
 ansible_connection=ansible.netcommon.netconf
 ansible_python_interpreter=/usr/bin/python3
+ansible_connect_timeout=120
+ansible_command_timeout=120
+
 ```
 ### Ansible Config: `ansible_collections/ansible.cfg`
 
