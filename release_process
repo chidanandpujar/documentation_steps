@@ -589,3 +589,6 @@ WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.18.txt with
 WARNING: Ignore files skip ansible-test sanity tests, found ignore-2.19.txt with 17 statement(s)
 Collection loading complete
 Importer processing completed successfully
+
+For junos_ping_junos_netconf run
+https://gist.github.com/rohitthakur2590/3b546341d661b952c983bd06bf62dad3
