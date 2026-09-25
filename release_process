@@ -232,6 +232,7 @@ Integration tests (local runs):
 For local execution of integration tests, please comment out all tasks in the following file:
 https://github.com/Juniper/ansible-junos-stdlib/blob/master/ansible_collections/junipernetworks/junos/tests/integration/targets/prepare_junos_tests/tasks/prepare.yml
 
+ansible-test network-integration --python 3.12
 
 junos_bgp_address_family  junos_l3_interfaces    junos_net_put            junos_rpc                       junos_user
 junos_bgp_global          junos_lacp             junos_ntp_global         junos_security_policies         junos_vlans
