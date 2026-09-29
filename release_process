@@ -299,6 +299,9 @@ start_time: "2023-7-1.07:30:00 +0530"
      				4) Updated the inventory with jnos_test for junos_netconf.
 junos_test ansible_host=<your ip>
 
+5) junos_user works with --diff
+ansible-test network-integration --python 3.12 junos_user --diff
+
 
 
 
