@@ -372,15 +372,14 @@ https://github.com/ansible-collections/junipernetworks.junos/pull/568
 
 
 New steps for publishing
-Git clone <>
-Cd ansible_collections to galaxy.
-
-Build command 
+1 Git clone <>
+2 cd /root/relupdate/ansible-junos-stdlib/ansible_collections/juniper/device
+(Cd ansible_collections to path where galaxy.yml is present )
+3 Build command 
 ansible-galaxy collection build
-Copy the tar file and go to ansible galaxy website 
+4 Copy the tar file and go to ansible galaxy website 
 Select new version and select the file .
-
-
+5
 python3 -m pip install galaxy_importer
 
 root@masterhost:~/ansible_fix2/ansible-junos-stdlib/ansible_collections/juniper/device#  python3 -m galaxy_importer.main  juniper-device-2.0.2.tar.gz 
